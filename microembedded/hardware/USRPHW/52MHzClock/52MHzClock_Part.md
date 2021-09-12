@@ -1,8 +1,8 @@
-# RFX900 / RFX1800 产品配件说明
+# RFX900 / RFX1800 daughter board
 
 
-### 0X01 --- RFX900部分：
+### 0X01 --- RFX900：
 
-其包括 RFX900子板、馈线2个、Vert900天线2个。
+Include RFX900 board、SMA-Bulkhead Cable x 2、VERT900 Antenna x 2。
 
 ###### 0X01 --- ：
