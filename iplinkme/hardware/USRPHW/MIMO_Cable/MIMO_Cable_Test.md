@@ -1,12 +1,12 @@
 # MIMO Cable Test
 
-###### 0x01 --- 介绍:
+###### 0x01 --- Intro:
 
-MIMO扩展电缆用来连接一对USRP N2xx 系统。长度为0.5米。每一对USRP只需要一根线缆(不能用于USRP1和USRP E100)。
+MIMO cable is used to connect two USRP N2xx. Its length is 0.5 meter. (Not fit USRP1 and USRP E100)。
 
 ###### 0x02 --- 使用USRP N2XX MIMO电缆测试
 
-* 1.	用MIMO电缆将两台USRP N210连起来在其中的一台USRP N210用网线与电脑连起来。如``图-1`` （注意两台USRP N210的ip不能设为一样）
+* 1.	用 MIMO 电缆将两台 USRP N210 连起来在其中的一台 USRP N210 用网线与电脑连起来。如 ``图-1`` （注意两台 USRP N210 的 ip 不能设为一样）
 
 ![MIMO Cable Test 1](https://s3.amazonaws.com/rfagora/image/img/MIMO_Cable_Test/MIMO_Cable_Test01.png)
 
