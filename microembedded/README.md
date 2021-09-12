@@ -2,7 +2,7 @@
 
 ###### 0X01 --- Hardware
 
-* [RFX900](<./hardware/USRPHW/RFX900/RFX900_Info.md>)
+* [RFX900](<./../hardware/USRPHW/RFX900/RFX900_Part.md>)
 
 * [URAN-1](<./hardware/USRPHW/URAN1/URAN1_Info.md>)
 
