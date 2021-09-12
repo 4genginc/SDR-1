@@ -1,4 +1,4 @@
-# SDR
+# USRP SDR
 
 ###### 0X01 --- Hardware
 
