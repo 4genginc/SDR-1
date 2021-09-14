@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/microembedded-wiki.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo-me.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside"> <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" border="0" cellpadding="{scmCellpadding}" cellspacing="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UHD: Build Guide</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-one-column sites-layout-hbox" cellspacing="0"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><font size="3"><b>UHD - 构建指导</b></font><br><br><div class="sites-embed-align-left-wrapping-off"><div class="sites-embed-border-off sites-embed sites-embed-full-width" style="width:100%;"><div class="sites-embed-content sites-embed-type-toc"><div class="goog-toc sites-embed-toc-maxdepth-6"><p>目录</p><ol class="goog-toc"><li class="goog-toc"><a href="#TOC---Build-Dependencies"><strong>1 </strong>依存性 - Build Dependencies</a><ol class="goog-toc"><li class="goog-toc"><a href="#TOC-Git"><strong>1.1 </strong>Git</a></li><li class="goog-toc"><a href="#TOC-C-"><strong>1.2 </strong>C++</a></li><li class="goog-toc"><a href="#TOC-CMake"><strong>1.3 </strong>CMake</a></li><li class="goog-toc"><a href="#TOC-Boost"><strong>1.4 </strong>Boost</a></li><li class="goog-toc"><a href="#TOC-LibUSB"><strong>1.5 </strong>LibUSB</a></li><li class="goog-toc"><a href="#TOC-Python"><strong>1.6 </strong>Python</a></li><li class="goog-toc"><a href="#TOC-Cheetah"><strong>1.7 </strong>Cheetah</a></li><li class="goog-toc"><a href="#TOC-Doxygen"><strong>1.8 </strong>Doxygen</a></li><li class="goog-toc"><a href="#TOC-Docutils"><strong>1.9 </strong>Docutils</a></li></ol></li><li class="goog-toc"><a href="#TOC-Unix-"><strong>2 </strong>创建指导 (Unix)</a><ol class="goog-toc"><li class="goog-toc"><a href="#TOC-cmake-Makefiles"><strong>2.1 </strong>生成带 cmake 的 Makefiles</a></li><li class="goog-toc"><a href="#TOC--"><strong>2.2 </strong>构建和安装</a></li><li class="goog-toc"><a href="#TOC-Linux-"><strong>2.3 </strong>配置库的路径 (Linux)</a></li><li class="goog-toc"><a href="#TOC-Mac-OS-X-"><strong>2.4 </strong>配置库的路径 (Mac OS X)</a></li></ol></li><li class="goog-toc"><a href="#TOC-Windows-"><strong>3 </strong>创建指导&nbsp; (Windows)</a><ol class="goog-toc"><li class="goog-toc"><a href="#TOC-cmake-project-"><strong>3.1 </strong>生成带 cmake 的项目（ project）</a></li><li class="goog-toc"><a href="#TOC-LibUSB-cmake-"><strong>3.2 </strong>LibUSB cmake 的注解</a></li><li class="goog-toc"><a href="#TOC-MSVC-project-"><strong>3.3 </strong>在 MSVC 中构建项目（project）</a></li><li class="goog-toc"><a href="#TOC-MSVC-command-line-"><strong>3.4 </strong>在 MSVC 中构建项目 (command line)</a></li><li class="goog-toc"><a href="#TOC-PATH-"><strong>3.5 </strong>配置环境变量的路径（PATH）</a></li></ol></li></ol></div></div></div></div><br><br><h2><a name="TOC---Build-Dependencies"></a><font size="3"><font size="3">依存性 - </font>Build Dependencies</font></h2><hr size="2" width="100%"><p><font size="2"><b>Linux Notes: </b>其依存性可以通过包管理来处理。 </font></p><p><font size="2"><b>Mac OS X Notes:</b> 安装</font><font size="2"> "Xcode Developer Tools" 便可获得构建用的工具（</font><font size="2">gcc 和 make</font><font size="2">）。使用 </font><font size="2">MacPorts 处理 </font><font size="2">Boost 和 Cheetah 的依赖关系。其它依存性可从站点下载 dmg 安装管理来实现。<br></font></p><p><font size="2"><b>Windows Notes:</b> 其依存性可以通过可安装的 exe 文件来获得。通常 Windows 的安装文件可在站点获得。有些站点也许没有 Windows 的安装程序。如若如此，只有沿循用于 Windows 安装程序的附件下载 url (如下)。<br></font></p><h3><a name="TOC-Git"></a><font size="2">Git</font></h3><p><font size="2">需要查看库（</font><font size="2">repository</font><font size="2">）。对于 Windows 而言，需要安装带有 Git 的 Cygwin 来查看库（</font><font size="2">repository</font><font size="2">）；或者也可以到如下站点获得并安装 Msysgit：</font></p><p style="margin-left:40px"><font size="2"><a href="http://code.google.com/p/msysgit/downloads/list">http://code.google.com/p/msysgit/downloads/list</a></font></p><h3><a name="TOC-C-"></a><font size="2">C++</font></h3><p><font size="2">对 Unix 而言，使用 GCC 4.0 或更高版本。对 Windows 而言，使用 MSVC 2008。其它的编译器还没有被测试并确认其可用性。 </font></p><h3><a name="TOC-CMake"></a><font size="2">CMake </font></h3><ul><li>目的：产生项目的构建文档 - generates project build files</li><li>版本：最低 2.8</li><li>用法：构建时必选 - build time (required)</li><li>下载的 URL： <a href="http://www.cmake.org/cmake/resources/software.html">http://www.cmake.org/cmake/resources/software.html</a></li></ul><h3><a name="TOC-Boost"></a><font size="2">Boost </font></h3><ul><li>目的：C++ 库</li><li>版本：最低 1.36 （Unix）, 最低 1.40 （Windows）</li><li>用法：构建时 (build-time) + 运行时（必选）（run time - required)</li><li>下载 URL： <a href="http://www.boost.org/users/download/">http://www.boost.org/users/download/</a></li><li>下载 URL (Windows installer)： <a href="http://www.boostpro.com/download">http://www.boostpro.com/download</a></li></ul><h3><a name="TOC-LibUSB"></a><font size="2">LibUSB </font></h3><ul><li>目的： 支持基于 USB 的硬件<br></li><li>版本： 最低 1.0</li><li>用法：构建时 (build-time) + 运行时（必选）（run time - optional）</li><li>下载 URL： <a href="http://sourceforge.net/projects/libusb/files/libusb-1.0/">http://sourceforge.net/projects/libusb/files/libusb-1.0/</a></li><li>下载 URL (Windows binaries 二进制版)： <a href="http://www.libusb.org/wiki/windows_backend#LatestBinarySnapshots">http://www.libusb.org/wiki/windows_backend#LatestBinarySnapshots</a></li></ul><h3><a name="TOC-Python"></a><font size="2">Python </font></h3><ul><li>目的: 用于 Cheetah 和功用脚本（utility scripts）</li><li>版本: 最低 2.6</li><li>用法：构建时 (build-time) + 运行时的功用脚本必选（run time utility scripts - required）</li><li>下载 URL： <a href="http://www.python.org/download/">http://www.python.org/download/</a></li></ul><h3><a name="TOC-Cheetah"></a><font size="2">Cheetah </font></h3><ul><li>目的：源码生成器</li><li>版本：最低 2.0</li><li>用法：构建时必选 (build-time - required)</li><li>下载 URL： <a href="http://www.cheetahtemplate.org/download.html">http://www.cheetahtemplate.org/download.html</a></li><li>下载 URL (windows installer)： <a href="http://feisley.com/python/cheetah/">http://feisley.com/python/cheetah/</a></li></ul><h3><a name="TOC-Doxygen"></a><font size="2">Doxygen </font></h3><ul><li>目的：产生 Html 版本的 API 文档</li><li>用法：构建时可选 (build-time - optional)</li><li>下载 URL:&nbsp; <a href="http://www.stack.nl/%7Edimitri/doxygen/download.html#latestsrc">http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc</a></li></ul><h3><a name="TOC-Docutils"></a><font size="2">Docutils </font></h3><ul><li>目的：产生 Html 版的用户手册</li><li>用法：构建时可选 (build-time - optional)</li><li>下载 URL： <a href="http://docutils.sourceforge.net/">http://docutils.sourceforge.net/</a></li></ul><h2><a name="TOC-Unix-"></a><font size="3">创建指导 (Unix)</font></h2><div><hr size="2" width="100%">
+</div><h3><a name="TOC-cmake-Makefiles"></a><font size="2">生成带 cmake 的 Makefiles <br></font></h3><div style="margin-left:40px">cd &lt;uhd-repo-path&gt;/host<br>mkdir build<br>cd build<br>cmake ../<br></div><p>进而，配置参数可以通过命令行传输到 cmake。下面便是一些常见的配置参数：<br></p><ul><li>用于定制安装的前缀： -DCMAKE_INSTALL_PREFIX=&lt;prefix&gt;</li><li>将 libs 装入 lib64: cmake -DLIB_SUFFIX=64 </li></ul><p>用法示例:</p><div style="margin-left:40px">cmake -DCMAKE_INSTALL_PREFIX=/opt/uhd ../<br></div><h3><a name="TOC--"></a><font size="2">构建和安装</font></h3><div style="margin-left:40px">make<br>make test<br>sudo make install<br></div><h3><a name="TOC-Linux-"></a><font size="2">配置库的路径 (Linux) </font></h3>明确 libuhd.so 处于 LD_LIBRARY_PATH 中，或者将其添加进 /etc/ld.so.conf 中并运行 sudo ldconfig<br><h3><a name="TOC-1"></a> </h3><h3><a name="TOC-Mac-OS-X-"></a><font size="2"><font size="2">配置库的路径</font> (Mac OS X) </font></h3>确保 libuhd.dylib 处于 DYLD_LIBRARY_PATH 之中。<br><h2><a name="TOC-Windows-"></a><font size="3"><font size="3">创建指导&nbsp; </font>(Windows)</font></h2><hr size="2" width="100%"><h3><a name="TOC-cmake-project-"></a><font size="2"><font size="2">生成带 cmake 的项目（</font> project）</font></h3><ul><li>打开 cmake gui 程序.</li><li>配置源代码的路径： &lt;uhd-repo-path&gt;/host</li><li>配置构建目录的路径： &lt;uhd-repo-path&gt;/host/build</li><li>确保路径（paths ）不能包含空格。</li><li>点击进入 configure 并选择 MSVC 编译器。</li><li>配置构建参数然后再点击 configure 一次。</li><li>点击 generate 这样项目文档（project file）便在构建目录（build directory）下被生成。</li></ul> <h3><a name="TOC-LibUSB-cmake-"></a><font size="2">LibUSB cmake 的注解 </font></h3><p>在 Windows 环境下，cmake 不具备 pkg-config 的优势，这样便须手动告知 cmake 如何定位 LibUSB 的头和库 （header 和 lib）。 </p><p>在 cmake gui 中，选择 "Advanded View"： </p><ul style="color:rgb(255,0,0)"><li>Set LIBUSB_INCLUDE_DIR to the directory with "libusb.h".</li><li>Set LIBUSB_LIBRARIES to the full path for "libusb-1.0.lib". </li></ul><p>然后选择 enable USRP1 support 点击 configure 和 generate。 </p> <h3><a name="TOC-MSVC-project-"></a><font size="2">在 MSVC 中构建项目（project）</font></h3><ul><li>打开 MSVC 中生成的项目文档。</li><li>将构建类型从 "Debug" 变为 "Release"。</li><li>选择构建所有的目标（build all target），右击鼠标并选择构建（build）。</li><li>选择安装目标，右击、并选择构建（build）。 </li></ul><p><b>注:</b> 或许没有权限来构建安装目标。如若如此以管理员或以管理员身份运行 MSVC。</p><h3><a name="TOC-MSVC-command-line-"></a><font size="2">在<font size="2"> MSVC 中构建项目</font> (command line) </font></h3><p>打开 Visual Studio 命令提示符（Command Prompt Shorcut）：</p><div style="margin-left:40px">cd &lt;uhd-repo-path&gt;\host\build<br>DevEnv ALL_BUILD.vcproj /Build Release<br>DevEnv INSTALL.vcproj /Build Release<br></div><h3><a name="TOC-PATH-"></a><font size="2">配置环境变量的路径（PATH） </font></h3><ul><li>添加 boost library path 到 %PATH% (usually c:\program files\boost\&lt;version&gt;\lib)</li><li>添加 uhd library path 到 %PATH% (usually c:\program files\uhd\lib)</li><li>添加 libusb library 到 %PATH% (if using usb support) </li></ul><b>注:</b> Windows 环境下的编辑环境变量的路径的接口十分不好用。建议通过 "Rapid Environment Editor" (<a href="http://www.rapidee.com/">http://www.rapidee.com</a>) 缺省编辑。<br><br><br><br><br><br><br><br><br><br><br><br><b><br>注：<a href="http://www.ettus.com/uhd_docs/manual/html/build.html">UHD - Build Guide</a> （英文原文出处，以上翻译整理仅供参考 Email: <a href="mailto:support@microembedded.com">support@microembedded.com</a> !）</b><br></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_04328132504654081" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://www.microembedded.com.cn/" class="sites-navigation-link">微嵌软件技术(北京)有限责任公司</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_7209174634271963" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="../kb/usrp.html" class="sites-navigation-link">微嵌 - KnowledgeBase</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/usrp" jotid="wuid:gx:32517581af6b8b5b" class="sites-navigation-link">FAQ: 如何选择 USRP 平台 ?</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/usrpe1xx" jotid="wuid:gx:320105673ec850f8" class="sites-navigation-link">FAQ: 如何着手 E1XX 系列 ?</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/usrp2howto" jotid="wuid:gx:2a822d673b93e67b" class="sites-navigation-link">FAQ: 如何着手 USRP2 ？</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_8129618135961609" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://kb.microembedded.com/grc" class="sites-navigation-link">微嵌 - GRC 中文维客</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_7612165220984319" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://kb.microembedded.com/uhdwikistart" class="sites-navigation-link">微嵌 - UHD 中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/uhddboards" jotid="wuid:gx:1fa384b816b979f" class="sites-navigation-link">UHD: UHD 下的 USRP 子板</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/usrpuhdmanual" jotid="wuid:gx:4f4c36184c668f44" class="sites-navigation-link">UHD: UHD 下的 USRP 母板</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/usrp2uhdmanual" jotid="wuid:gx:555f526449542c7a" class="sites-navigation-link">UHD: UHD 下的 USRP2/N210</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_7189595725178437" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_08307463648904134" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://kb.microembedded.com/ossie" class="sites-navigation-link">微嵌 - OSSIE 中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://kb.microembedded.com/sdr" class="sites-navigation-link">微嵌 - SDR 教育园地</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/titleindex" class="sites-navigation-link">微嵌 - OSSIE 按标题索引</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9846266509709335" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_5419183123406403" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/wikistart" class="sites-navigation-link">微嵌 - GNU Radio 中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://diy.microembedded.com/" class="sites-navigation-link">微嵌 - 搭建软件无线电系统</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">微嵌 - OpenBTS 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    
+                    
+                     <!-- InstanceEndEditable --> </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="overflow:auto;text-align:center;">
+                                            <div>
+                                                <p><b><span style="font-family:simsun,serif"><a href="http://www.microembedded.com.cn/">微嵌电子技术（北京）有限责任公司</a></span></b></p>
+                                                <span style="font-family:simsun,serif"><br>
+                                                <span style="font-family:ms song,monospace"><a href="mailto:info@microembedded.com">info@microembedded.com</a></span><br>
+                                                <br>
+                                                电话：（010）62416824 / (010) 82168683 传真：（010）62416834  客服 QQ：800028546<br>
+                                                <br>
+                                                地址：<a href="http://g.co/maps/y8g9q">北京市海淀区中关村南大街甲 10 号银海大厦七层南 217 室</a> 邮编：100081<br>
+                                                <br>
+                                                <br>
+                                                <a href="http://www.miibeian.gov.cn/">©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

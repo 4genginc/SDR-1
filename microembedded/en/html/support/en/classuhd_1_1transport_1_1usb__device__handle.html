@@ -1,0 +1,634 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::transport::usb_device_handle Class Reference abstract</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::transport::usb_device_handle Class Reference abstract</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::transport::usb_device_handle Class Reference abstract</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="usb__device__handle_8hpp_source.html">uhd/transport/usb_device_handle.hpp</a>&gt;</code></p> 
+        <div class="dynheader">
+          Inheritance diagram for uhd::transport::usb_device_handle: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1transport_1_1usb__device__handle__inherit__graph.png" border="0" usemap="#uhd_1_1transport_1_1usb__device__handle_inherit__map" alt="Inheritance graph" /> 
+         </div> 
+         <map name="uhd_1_1transport_1_1usb__device__handle_inherit__map" id="uhd_1_1transport_1_1usb__device__handle_inherit__map"> </map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <div class="dynheader">
+          Collaboration diagram for uhd::transport::usb_device_handle: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1transport_1_1usb__device__handle__coll__graph.png" border="0" usemap="#uhd_1_1transport_1_1usb__device__handle_coll__map" alt="Collaboration graph" /> 
+         </div> 
+         <map name="uhd_1_1transport_1_1usb__device__handle_coll__map" id="uhd_1_1transport_1_1usb__device__handle_coll__map"> </map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:a83bb842365c68add8a095d2817e603b7"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak" /> &lt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html">usb_device_handle</a> &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">sptr</a></td> 
+          </tr> 
+          <tr class="separator:a83bb842365c68add8a095d2817e603b7"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8deacd4e684e8252b0ca15b8062ca73b"> 
+           <td class="memItemLeft" align="right" valign="top">typedef std::pair<br class="typebreak" /> &lt; boost::uint16_t, <br class="typebreak" /> boost::uint16_t &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a8deacd4e684e8252b0ca15b8062ca73b">vid_pid_pair_t</a></td> 
+          </tr> 
+          <tr class="separator:a8deacd4e684e8252b0ca15b8062ca73b"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a38af66d39f55542d7fc9d0fc95175d45"> 
+           <td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a38af66d39f55542d7fc9d0fc95175d45">~usb_device_handle</a> (void)</td> 
+          </tr> 
+          <tr class="separator:a38af66d39f55542d7fc9d0fc95175d45"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a43f7e19a67c87cfde15931699dad7818"> 
+           <td class="memItemLeft" align="right" valign="top">virtual std::string&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a43f7e19a67c87cfde15931699dad7818">get_serial</a> () const =0</td> 
+          </tr> 
+          <tr class="separator:a43f7e19a67c87cfde15931699dad7818"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1842dbe899ac157980c3ab4af3149017"> 
+           <td class="memItemLeft" align="right" valign="top">virtual std::string&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a1842dbe899ac157980c3ab4af3149017">get_manufacturer</a> () const =0</td> 
+          </tr> 
+          <tr class="separator:a1842dbe899ac157980c3ab4af3149017"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a68760f0823730d8ff9e17b6bf5be2ed5"> 
+           <td class="memItemLeft" align="right" valign="top">virtual std::string&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a68760f0823730d8ff9e17b6bf5be2ed5">get_product</a> () const =0</td> 
+          </tr> 
+          <tr class="separator:a68760f0823730d8ff9e17b6bf5be2ed5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a020be69e08d3328d4c047003a7a4819c"> 
+           <td class="memItemLeft" align="right" valign="top">virtual boost::uint16_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a020be69e08d3328d4c047003a7a4819c">get_vendor_id</a> () const =0</td> 
+          </tr> 
+          <tr class="separator:a020be69e08d3328d4c047003a7a4819c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aaab8f08bf5b7a2f52e54c3faea4a420e"> 
+           <td class="memItemLeft" align="right" valign="top">virtual boost::uint16_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#aaab8f08bf5b7a2f52e54c3faea4a420e">get_product_id</a> () const =0</td> 
+          </tr> 
+          <tr class="separator:aaab8f08bf5b7a2f52e54c3faea4a420e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a7d0568f3223ba2f980f5386a3594ccdf"> 
+           <td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a7d0568f3223ba2f980f5386a3594ccdf">firmware_loaded</a> ()=0</td> 
+          </tr> 
+          <tr class="separator:a7d0568f3223ba2f980f5386a3594ccdf"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a> Static Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a8e7319f6779caeafc5df59e72b154dbe"> 
+           <td class="memItemLeft" align="right" valign="top">static std::vector<br class="typebreak" /> &lt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">usb_device_handle::sptr</a> &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a8e7319f6779caeafc5df59e72b154dbe">get_device_list</a> (boost::uint16_t vid, boost::uint16_t pid)</td> 
+          </tr> 
+          <tr class="separator:a8e7319f6779caeafc5df59e72b154dbe"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aee86df5a509afd89dec1a20301003b59"> 
+           <td class="memItemLeft" align="right" valign="top">static std::vector<br class="typebreak" /> &lt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">usb_device_handle::sptr</a> &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#aee86df5a509afd89dec1a20301003b59">get_device_list</a> (const std::vector&lt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a8deacd4e684e8252b0ca15b8062ca73b">usb_device_handle::vid_pid_pair_t</a> &gt; &amp;vid_pid_pair_list)</td> 
+          </tr> 
+          <tr class="separator:aee86df5a509afd89dec1a20301003b59"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>Device handle class that represents a USB device Used for identifying devices on the USB bus and selecting which device is used when creating a USB transport. A minimal subset of USB descriptor fields are used. Fields can be found in the USB 2.0 specification Table 9-8 (Standard Device Descriptor). In addition to fields of the device descriptor, the interface returns the device's USB device address.</p> 
+         <p>Note: The USB 2.0 Standard Device Descriptor contains an index rather then a true descriptor serial number string. This interface returns the actual string descriptor. </p> 
+        </div> 
+        <h2 class="groupheader">Member Typedef Documentation</h2> 
+        <a class="anchor" id="a83bb842365c68add8a095d2817e603b7"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html">usb_device_handle</a>&gt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">uhd::transport::usb_device_handle::sptr</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8deacd4e684e8252b0ca15b8062ca73b"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef std::pair&lt;boost::uint16_t, boost::uint16_t&gt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a8deacd4e684e8252b0ca15b8062ca73b">uhd::transport::usb_device_handle::vid_pid_pair_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="a38af66d39f55542d7fc9d0fc95175d45"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual uhd::transport::usb_device_handle::~usb_device_handle </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Function Documentation</h2> 
+        <a class="anchor" id="a7d0568f3223ba2f980f5386a3594ccdf"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual bool uhd::transport::usb_device_handle::firmware_loaded </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Test whether the firmware is loaded on the device. </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             true if firmware is loaded 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8e7319f6779caeafc5df59e72b154dbe"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static std::vector&lt;<a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">usb_device_handle::sptr</a>&gt; uhd::transport::usb_device_handle::get_device_list </td> 
+                 <td>(</td> 
+                 <td class="paramtype">boost::uint16_t&nbsp;</td> 
+                 <td class="paramname"><em>vid</em>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype">boost::uint16_t&nbsp;</td> 
+                 <td class="paramname"><em>pid</em>&nbsp;</td> 
+                </tr> 
+                <tr> 
+                 <td></td> 
+                 <td>)</td> 
+                 <td></td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return a vector of USB devices on this host </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a vector of USB device handles that match vid and pid 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aee86df5a509afd89dec1a20301003b59"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static std::vector&lt;<a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a83bb842365c68add8a095d2817e603b7">usb_device_handle::sptr</a>&gt; uhd::transport::usb_device_handle::get_device_list </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const std::vector&lt; <a class="el" href="classuhd_1_1transport_1_1usb__device__handle.html#a8deacd4e684e8252b0ca15b8062ca73b">usb_device_handle::vid_pid_pair_t</a> &gt; &amp;&nbsp;</td> 
+                 <td class="paramname"><em>vid_pid_pair_list</em></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a1842dbe899ac157980c3ab4af3149017"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual std::string uhd::transport::usb_device_handle::get_manufacturer </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return the device's manufacturer identification string </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a string describing the device's manufacturer string 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a68760f0823730d8ff9e17b6bf5be2ed5"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual std::string uhd::transport::usb_device_handle::get_product </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return the device's product identification string </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a string describing the device's product string 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aaab8f08bf5b7a2f52e54c3faea4a420e"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual boost::uint16_t uhd::transport::usb_device_handle::get_product_id </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return the device's Product ID (usually assigned by manufacturer) </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a Product ID 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a43f7e19a67c87cfde15931699dad7818"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual std::string uhd::transport::usb_device_handle::get_serial </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return the device's serial number </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a string describing the device's serial number 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a020be69e08d3328d4c047003a7a4819c"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual boost::uint16_t uhd::transport::usb_device_handle::get_vendor_id </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Return the device's Vendor ID (usually assigned by the USB-IF) </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a Vendor ID 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <hr />The documentation for this class was generated from the following file: 
+        <ul> 
+         <li>include/uhd/transport/<a class="el" href="usb__device__handle_8hpp_source.html">usb_device_handle.hpp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

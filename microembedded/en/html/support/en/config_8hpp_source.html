@@ -1,0 +1,288 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>config.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="faq_mingxi">
+        <div class="middle">
+            <div class="tab"> <a href="../faq.html">Documents</a> &raquo; <span>config.hpp</span> </div>
+            <div class="content box_shadow">
+                <div class="box">
+                    <p class="content_title">config.hpp</p>
+                    <hr />
+                    <div class="contents">
+<a href="config_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&nbsp;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&nbsp;<span class="comment">// Copyright 2010-2011,2014-2016 Ettus Research LLC</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&nbsp;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&nbsp;<span class="comment">// This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&nbsp;<span class="comment">// it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&nbsp;<span class="comment">// the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&nbsp;<span class="comment">// (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&nbsp;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&nbsp;<span class="comment">// This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&nbsp;<span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&nbsp;<span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&nbsp;<span class="comment">// GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&nbsp;<span class="comment">//</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&nbsp;<span class="comment">// You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&nbsp;<span class="comment">// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&nbsp;<span class="comment">//</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&nbsp;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&nbsp;<span class="preprocessor">#ifndef INCLUDED_UHD_CONFIG_HPP</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDED_UHD_CONFIG_HPP</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&nbsp;<span class="preprocessor">#include &lt;boost/config.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&nbsp;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&nbsp;<span class="preprocessor">#ifdef BOOST_MSVC</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&nbsp;<span class="preprocessor"></span><span class="comment">// suppress warnings</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&nbsp;<span class="comment">//# pragma warning(push)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&nbsp;<span class="comment">//# pragma warning(disable: 4511) // copy constructor can't not be generated</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&nbsp;<span class="comment">//# pragma warning(disable: 4512) // assignment operator can't not be generated</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&nbsp;<span class="comment">//# pragma warning(disable: 4100) // unreferenced formal parameter</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&nbsp;<span class="comment">//# pragma warning(disable: 4996) // &lt;symbol&gt; was declared deprecated</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&nbsp;<span class="preprocessor"># pragma warning(disable: 4355) // 'this' : used in base member initializer list</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&nbsp;<span class="preprocessor"></span><span class="comment">//# pragma warning(disable: 4706) // assignment within conditional expression</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&nbsp;<span class="preprocessor"># pragma warning(disable: 4251) // class 'A&lt;T&gt;' needs to have dll-interface to be used by clients of class 'B'</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&nbsp;<span class="preprocessor"></span><span class="comment">//# pragma warning(disable: 4127) // conditional expression is constant</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&nbsp;<span class="comment">//# pragma warning(disable: 4290) // C++ exception specification ignored except to ...</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&nbsp;<span class="comment">//# pragma warning(disable: 4180) // qualifier applied to function type has no meaning; ignored</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&nbsp;<span class="preprocessor"># pragma warning(disable: 4275) // non dll-interface class ... used as base for dll-interface class ...</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&nbsp;<span class="preprocessor"></span><span class="comment">//# pragma warning(disable: 4267) // 'var' : conversion from 'size_t' to 'type', possible loss of data</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&nbsp;<span class="comment">//# pragma warning(disable: 4511) // 'class' : copy constructor could not be generated</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&nbsp;<span class="preprocessor"># pragma warning(disable: 4250) // 'class' : inherits 'method' via dominance</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor"># pragma warning(disable: 4200) // nonstandard extension used : zero-sized array in struct/union</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&nbsp;<span class="comment">// define logical operators</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&nbsp;<span class="preprocessor">#include &lt;ciso646&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&nbsp;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&nbsp;<span class="comment">// define ssize_t</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&nbsp;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&nbsp;<span class="keyword">typedef</span> ptrdiff_t ssize_t;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&nbsp;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&nbsp;<span class="preprocessor">#endif //BOOST_MSVC</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&nbsp;<span class="comment">//define cross platform attribute macros</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&nbsp;<span class="preprocessor">#if defined(BOOST_MSVC)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_EXPORT         __declspec(dllexport)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_IMPORT         __declspec(dllimport)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_INLINE         __forceinline</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_FORCE_INLINE   __forceinline</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_DEPRECATED     __declspec(deprecated)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_ALIGNED(x)     __declspec(align(x))</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_UNUSED(x)      x</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(__MINGW32__)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_EXPORT         __declspec(dllexport)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_IMPORT         __declspec(dllimport)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_INLINE         inline</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_FORCE_INLINE   inline</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_DEPRECATED     __declspec(deprecated)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_ALIGNED(x)     __declspec(align(x))</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_UNUSED(x)      x __attribute__((unused))</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(__GNUG__) &amp;&amp; __GNUG__ &gt;= 4</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_EXPORT         __attribute__((visibility("default")))</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_IMPORT         __attribute__((visibility("default")))</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_INLINE         inline __attribute__((always_inline))</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_FORCE_INLINE   inline __attribute__((always_inline))</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_DEPRECATED     __attribute__((deprecated))</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_ALIGNED(x)     __attribute__((aligned(x)))</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_UNUSED(x)      x __attribute__((unused))</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(__clang__)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_EXPORT         __attribute__((visibility("default")))</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_IMPORT         __attribute__((visibility("default")))</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_INLINE         inline __attribute__((always_inline))</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_FORCE_INLINE   inline __attribute__((always_inline))</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_DEPRECATED     __attribute__((deprecated))</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_ALIGNED(x)     __attribute__((aligned(x)))</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_UNUSED(x)      x __attribute__((unused))</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="config_8hpp.html#a312283ab505e1210f48db5e10f99e5e4">   85</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_EXPORT</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="config_8hpp.html#a3933ce975896a086c0aabb8cee9dd2f0">   86</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_IMPORT</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">   87</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_INLINE         inline</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="config_8hpp.html#a4e25bf23d97c766950deb2e57232504f">   88</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_FORCE_INLINE   inline</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="config_8hpp.html#a009518b78c453470e2856bebf2746f37">   89</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_DEPRECATED</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="config_8hpp.html#a91d58ac7c1d79816eb260a32ba36affd">   90</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_ALIGNED(x)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="config_8hpp.html#ada94fcec1883b1e6a65535881f6da0ed">   91</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_UNUSED(x)      x</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&nbsp;<span class="comment">// Define API declaration macro</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&nbsp;<span class="preprocessor">#ifdef UHD_DLL_EXPORTS</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_API UHD_EXPORT</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="config_8hpp.html#adc68e1c030efb88af856decedf19aedf">   98</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_API UHD_IMPORT</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#endif // UHD_DLL_EXPORTS</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#ifdef UHD_RFNOC_ENABLED</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_RFNOC_API UHD_API</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="config_8hpp.html#adc752f5f6f98457d2518dbe983b2a075">  103</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_RFNOC_API</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#endif // UHD_RFNOC_ENABLED</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&nbsp;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&nbsp;<span class="comment">// Platform defines for conditional parts of headers:</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&nbsp;<span class="comment">// Taken from boost/config/select_platform_config.hpp,</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&nbsp;<span class="comment">// however, we define macros, not strings for platforms.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&nbsp;<span class="preprocessor">#if (defined(linux) || defined(__linux) || defined(__linux__) || defined(__GLIBC__)) &amp;&amp; !defined(_CRAYC) &amp;&amp; !defined(__FreeBSD_kernel__) &amp;&amp; !defined(__GNU__)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_PLATFORM_LINUX</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_PLATFORM_WIN32</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__)</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_PLATFORM_MACOS</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD_kernel__)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define UHD_PLATFORM_BSD</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&nbsp;<span class="comment">// Define 'stringize' preprocessor macros. The stringize macro, XSTR, takes</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&nbsp;<span class="comment">// variable arguments so that it can deal with strings that contain commas.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&nbsp;<span class="comment">// There are two different versions because MSVC handles this syntax a bit</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&nbsp;<span class="comment">// differently than other compilers.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&nbsp;<span class="preprocessor">#if defined(BOOST_MSVC)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define XSTR(x,...) #x</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="config_8hpp.html#aa1a519fd32410ce257ca4a54477bd454">  127</a></span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">    #define XSTR(x...) #x</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&nbsp;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="config_8hpp.html#a18d295a837ac71add5578860b55e5502">  130</a></span>&nbsp;<span class="preprocessor">#define STR(x) XSTR(x)</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&nbsp;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&nbsp;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDED_UHD_CONFIG_HPP */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

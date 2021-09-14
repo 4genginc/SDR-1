@@ -1,0 +1,524 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>muxed_zero_copy_if.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>muxed_zero_copy_if.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">muxed_zero_copy_if.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="muxed__zero__copy__if_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2016 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_LIBUHD_TRANSPORT_MUXED_ZERO_COPY_IF_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_LIBUHD_TRANSPORT_MUXED_ZERO_COPY_IF_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="zero__copy_8hpp.html">uhd/transport/zero_copy.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/function.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/noncopyable.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+          <span class="preprocessor">#include &lt;stdint.h&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00027"></a> 
+          <span class="lineno"> 27</span>&nbsp; 
+          <span class="keyword">namespace </span>uhd { 
+          <span class="keyword">namespace </span>transport { 
+         </div> 
+         <div class="line"> 
+          <a name="l00028"></a> 
+          <span class="lineno"> 28</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00038"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html"> 38</a></span>&nbsp; 
+          <span class="keyword">class </span> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html">muxed_zero_copy_if</a> : 
+          <span class="keyword">private</span> boost::noncopyable { 
+         </div> 
+         <div class="line"> 
+          <a name="l00039"></a> 
+          <span class="lineno"> 39</span>&nbsp; 
+          <span class="keyword">public</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00040"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a50408a50c03dbd4cea342daafbcd5331"> 40</a></span>&nbsp; 
+          <span class="keyword">typedef</span> boost::shared_ptr&lt;muxed_zero_copy_if&gt; 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a50408a50c03dbd4cea342daafbcd5331">sptr</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00041"></a> 
+          <span class="lineno"> 41</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aeeb6ede08ae4dc7306a6102bb5c17638"> 52</a></span>&nbsp; 
+          <span class="keyword">typedef</span> boost::function&lt;uint32_t(void* buff, size_t size)&gt; 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aeeb6ede08ae4dc7306a6102bb5c17638">stream_classifier_fn</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00053"></a> 
+          <span class="lineno"> 53</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a8ce4001367d2f5adbf36354b5626eee1"> 55</a></span>&nbsp; 
+          <span class="keyword">virtual</span> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a8ce4001367d2f5adbf36354b5626eee1">~muxed_zero_copy_if</a>() {} 
+         </div> 
+         <div class="line"> 
+          <a name="l00056"></a> 
+          <span class="lineno"> 56</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"> 58</span>&nbsp; 
+          <span class="keyword">virtual</span> 
+          <a class="code" href="classuhd_1_1transport_1_1zero__copy__if.html#aee1d3b676905a547aede35b85438e613">zero_copy_if::sptr</a> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a97de6c7d26fb1944b6c6e3490a0e00a7">make_stream</a>( 
+          <span class="keyword">const</span> uint32_t stream_num) = 0; 
+         </div> 
+         <div class="line"> 
+          <a name="l00059"></a> 
+          <span class="lineno"> 59</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00061"></a> 
+          <span class="lineno"> 61</span>&nbsp; 
+          <span class="keyword">virtual</span> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a8e74fc62af77e7727adfc4fa7d5a5a9a">remove_stream</a>( 
+          <span class="keyword">const</span> uint32_t stream_num) = 0; 
+         </div> 
+         <div class="line"> 
+          <a name="l00062"></a> 
+          <span class="lineno"> 62</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00064"></a> 
+          <span class="lineno"> 64</span>&nbsp; 
+          <span class="keyword">virtual</span> 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aaa208dbc45adda71a34725c63ba3cddf">get_num_dropped_frames</a>() 
+          <span class="keyword">const</span> = 0; 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"> 65</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00067"></a> 
+          <span class="lineno"> 67</span>&nbsp; 
+          <span class="keyword">static</span> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a50408a50c03dbd4cea342daafbcd5331">sptr</a> 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aa3372f28d49efc8eaa21238e15e72e76">make</a>( 
+          <a class="code" href="classuhd_1_1transport_1_1zero__copy__if.html#aee1d3b676905a547aede35b85438e613">zero_copy_if::sptr</a> base_xport, 
+          <a class="code" href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aeeb6ede08ae4dc7306a6102bb5c17638">stream_classifier_fn</a> classify_fn, 
+          <span class="keywordtype">size_t</span> max_streams); 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"> 68</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00070"></a> 
+          <span class="lineno"> 70</span>&nbsp;}} 
+          <span class="comment">//namespace uhd::transport</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00071"></a> 
+          <span class="lineno"> 71</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00072"></a> 
+          <span class="lineno"> 72</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_LIBUHD_TRANSPORT_MUXED_ZERO_COPY_IF_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="zero__copy_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="zero__copy_8hpp.html">zero_copy.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html">uhd::transport::muxed_zero_copy_if</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> muxed_zero_copy_if.hpp:38 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1zero__copy__if_html_aee1d3b676905a547aede35b85438e613"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1zero__copy__if.html#aee1d3b676905a547aede35b85438e613">uhd::transport::zero_copy_if::sptr</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::shared_ptr&lt; zero_copy_if &gt; sptr 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> zero_copy.hpp:154 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_a8ce4001367d2f5adbf36354b5626eee1"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a8ce4001367d2f5adbf36354b5626eee1">uhd::transport::muxed_zero_copy_if::~muxed_zero_copy_if</a> 
+          </div> 
+          <div class="ttdeci">
+            virtual ~muxed_zero_copy_if() 
+          </div> 
+          <div class="ttdoc">
+            virtual dtor 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> muxed_zero_copy_if.hpp:55 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_aeeb6ede08ae4dc7306a6102bb5c17638"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aeeb6ede08ae4dc7306a6102bb5c17638">uhd::transport::muxed_zero_copy_if::stream_classifier_fn</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::function&lt; uint32_t(void *buff, size_t size)&gt; stream_classifier_fn 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> muxed_zero_copy_if.hpp:52 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_aaa208dbc45adda71a34725c63ba3cddf"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aaa208dbc45adda71a34725c63ba3cddf">uhd::transport::muxed_zero_copy_if::get_num_dropped_frames</a> 
+          </div> 
+          <div class="ttdeci">
+            virtual size_t get_num_dropped_frames() const =0 
+          </div> 
+          <div class="ttdoc">
+            Get number of frames dropped due to unregistered streams. 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_a97de6c7d26fb1944b6c6e3490a0e00a7"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a97de6c7d26fb1944b6c6e3490a0e00a7">uhd::transport::muxed_zero_copy_if::make_stream</a> 
+          </div> 
+          <div class="ttdeci">
+            virtual zero_copy_if::sptr make_stream(const uint32_t stream_num)=0 
+          </div> 
+          <div class="ttdoc">
+            Make a virtual transport for the specified stream number. 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_a50408a50c03dbd4cea342daafbcd5331"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a50408a50c03dbd4cea342daafbcd5331">uhd::transport::muxed_zero_copy_if::sptr</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::shared_ptr&lt; muxed_zero_copy_if &gt; sptr 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> muxed_zero_copy_if.hpp:40 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_aa3372f28d49efc8eaa21238e15e72e76"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#aa3372f28d49efc8eaa21238e15e72e76">uhd::transport::muxed_zero_copy_if::make</a> 
+          </div> 
+          <div class="ttdeci">
+            static sptr make(zero_copy_if::sptr base_xport, stream_classifier_fn classify_fn, size_t max_streams) 
+          </div> 
+          <div class="ttdoc">
+            Make a new demuxer from a transport and parameters. 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1transport_1_1muxed__zero__copy__if_html_a8e74fc62af77e7727adfc4fa7d5a5a9a"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1transport_1_1muxed__zero__copy__if.html#a8e74fc62af77e7727adfc4fa7d5a5a9a">uhd::transport::muxed_zero_copy_if::remove_stream</a> 
+          </div> 
+          <div class="ttdeci">
+            virtual void remove_stream(const uint32_t stream_num)=0 
+          </div> 
+          <div class="ttdoc">
+            Unregister the stream number. All packets destined to the stream will be dropped. ... 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>LFTX测试文档_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <a href="rftest.html">RF子板测试文档</a> » <span>LFTX测试文档</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">LFTX-LFRX数据传输</p><hr><p class="min_title">硬件要求：</p><p>1.甲乙两台装有openBTS live版本的Ubuntu系统的电脑。</p><p>2.两个USRP1主板。</p><p>3.一个LFTX-LF（DC-30MHz）子板和一个LFRX-LF（DC-30MHz）子板。</p><p>4.一根SMA-SMA的USRP馈线。</p><p class="min_title">软件环境：</p><p>USRP1镜像系统（64MHz或52MHz）。</p><p class="min_title">DEMO调试</p><p>1.介绍一下子板</p><p>LFRX</p><p class="img"><img src="images/lfrx1.png"></p><p>LFRX子板采用两个高速运算放大器，工作频率为0-30MHz。产品通常被应用于将外部的射频前端信号通过下变频到其工作频段范围内。在使用适当的组件情况下，LFRX也可以将USRP工作在HF频段。通过数据转换后，LFRX接收到的每个信号既可以独立操作，又作为一个完整的I/Q信号。典型应用包括HF通信、配合外置的射频前端和直接接收30MHz以下的信号测量。如上图为LFRX子板图。</p><p></p><p>LFTX</p><p class="img"><img src="images/lfrx2.png"></p><p>LFTX子板采用两个高速运算放大器，工作频率为0-30MHz。产品通常应用在HF波段的，或采用一个外部的射频前端来实现上变频后者信号放大。LFTX可以提供独立的输出，后输出完整的I/Q信号。典型应用包括HF通信、配合外置的射频前端和直接产生30MHz以下的信号。如上图为LFTX子板图。</p><p class="min_title">DEMO测试步骤</p><p>1、获取root权限(因为都要直接对硬件操作)&nbsp;</p><p>终端输入命令：</p><p class="code">sudo su</p><p>2、甲PC机连接的母板上使用接收A接口并检测主机与板子USB口的连接&nbsp;</p><p>终端输入命令：</p><p class="code">lsusb | grep fffe:0002&nbsp;</p><p>若出现...Device 004:ID fffe:0002这样的字样，表示正常连接。</p><p>3、乙PC机连接的母板上使用发送A接口并检测主机与板子USB口的连接&nbsp;</p><p>终端输入命令：</p><p class="code">lsusb | grep fffe:0002&nbsp;</p><p>若出现...Device 004:ID fffe:0002这样的字样，表示正常连接 &nbsp;</p><p>4、乙PC机向甲主机发送20M Hz的正弦波。</p><p>终端输入命令：</p><p class="code">cd &nbsp;/usr/share/gnuradio/examples/digital/</p><p class="code">./benchmark_tx.py -f 20M -T A:0</p><p>出现下图则发送正常</p><p class="img"><img src="images/lfrx3.png" width="900"></p><p>5、甲PC机准备接收数据</p><p>终端输入命令：</p><p class="code">cd &nbsp;/usr/share/gnuradio/examples/digital/</p><p class="code">./benchmark_rx.py -f 20M -T A:0</p><p>出现下图则接收正常</p><p class="img"><img src="images/lfrx4.png" width="900"></p>
+                
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

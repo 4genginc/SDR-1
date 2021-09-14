@@ -1,0 +1,244 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">FPGA Verilog 问题</p>
+				<hr />
+				<p class="faq_title">USRP 的 FPGA Verilog 代码可以被修改吗? </p>
+				<p class="faq_mingxi">是的，可以被修改。FPGA 的 Verilog 的顶层文件可以在 usrp/fpga/toplevel/usrp_std/usrp_std.v 找到，其它的代码在 usrp/fpga/sdr_lib/*.v。 </p>
+				
+				<p class="faq_title">想通过重新编译所有的 FPGA 的 Verilog 文件以便对每个模块的功用有更好的理解。这些代码是用 Quartus II 进行编译的，对吗? </p>
+				<p class="faq_mingxi">如果想从源代码来构建 FPGA 的 .rbf 文件（这其实没有必要，在 usrp/fpga/rbf 的目录下已经提供预编译好的 .rbf 文件），便需要 Altera 公司的免费工具软件 Qutarus II。我们使用的是 Quartus II Web 版。 </p>
+				<p class="faq_mingxi"><del>（项目文件是 usrp/fpga/toplevel/usrp_std/usrp_std.qpf。FPGA 的 Verilog 的顶层文件可以在 usrp/fpga/toplevel/usrp_std/usrp_std.v 找到，其它的代码在 usrp/fpga/sdr_lib/*.v。）</del></p>
+				
+				<p class="faq_title">FPGA是如何掌控数据入出 AD9862 的？ </p>
+				<p class="faq_mingxi">对于FPGA 接收（RX ）链路而言，DC 偏置 (DC offset) 去除的过程中，其输入被赋值如下： </p>
+				<p class="faq_mingxi2"><del>在 adc_interface.v 代码中，</del> 不难发现 rx_dcoffset 模块的输入被赋值如下：</p>
+				<p class="faq_mingxi2">.adc_in({adc0[11],adc0,3'b0}) </p>
+				<p class="faq_mingxi2">其中，1位符号延伸，12位原始数据位，然后3位0标志。 </p>
+				<p class="faq_mingxi">对于FPGA 的发射（TX）链路而言，可参看 [source:gnuradio/trunk/usrp/fpga/toplevel/usrp_std/usrp_std.v#L179 usrp_std.v]  <del>usrp_std.v</del>， 来自于 tx_chain 模块的 16 位的数据流被分割成一个 2 位的单元然后被传出到 DACs。 </p>
+				
+				<p class="faq_title">tx_chain.v 用到 phase_acc 模块。它用一个7 位串行地址和 32 位串行数据作为输入并且输出 32位相位。有人了解它在发射链路（tx_china)中的功用和目的吗？ </p>
+				<p class="faq_mingxi">它没有被使能（激活）。如果被激活的话，它将替代 AD9862 中的 DUC 在 FPGA 中起上变频的作用。请注意，此代码多年都没有做过任何测试，（所以对它想做些工作）是有些困难的。 </p>
+				
+				<p class="faq_title">正在研究 serial_io.v 模块，不解其功用和目的？ </p>
+				<p class="faq_mingxi">serial_io.v 仅仅用于读写 FPGA 的寄存器。 </p>
+				
+				<p class="faq_title">数据流以串行输入方式（从 USB 总线）进入 FX2 芯片。然后通过 GPIF 总线以16 位并行方式进入 FPGA 。在 FPGA 内该输入信号被命名为 usb_data。然而在研读 verilog 的 serial_io.v 模块的代码时，似乎此模块在把 SDI （串行数据输入）输入的串行数据变换成并行数据并且把它放入一个 32 位的串行数据输出寄存器中。纳闷的是 FX2 芯片把来自 USB 串行数据变为并行数据还是以串行数据进入 FPGA 后，由 FPGA 内部的 Verilog 的模块把它转换成并行数据。所以，不确定数据从 USB 到 usrp_std.v 模块是 16 位的 usb_data 输入还是 SDI（串行数据）输入。 </p>
+				<p class="faq_mingxi">真实的进出 DACs/ADCs (DUCs/DDCs) 的数据是通过 16-位 GPIF 总线。(#帮帮我# 我没有回答这儿的所有的问题！) </p>
+				
+				<p class="faq_title">正在研究顶层模块 usrp_std.v。个人理解从 PC 送出的数据或者接收送往 PC 的数据是 “usb 类的数据” 的入出信号。其它入出信号 io_tx_a, io_tx_b, io_rx_a 和 io_rx_b 是同子板关联的。但还是纳闷下列输入信号：rx_a_a, rx_b_a, rx_a_b, rx_b_b 和输出信号：tx_a, tx_b 的功用？ </p>
+				<p class="faq_mingxi">参考： <a href="../../../wiki/pdf/AD9860_9862.pdf">AD9862 Data Sheet</a>.   #FIXME: cannot reference attachments of other objects</p>
+				
+				<p class="faq_title">正在研究发射缓存器的 verilog 代码（tx_buffer.v）。 它好像用到两个时钟信号。txclk 用于读取 fifo_4k，usbclk 用于写入 fifo_4k。这些时钟信号的频率如何？ </p>
+				<p class="faq_mingxi">USB 的时钟由 FX2 提供，它的频率是 48 MHz。 </p>
+				
+				<p class="faq_title">usrp_std 模块的一个输入是 SDI （串行数据输入）。它的源头何处？ </p>
+				<p class="faq_mingxi">8051 位拆裂的（bit-bangs -软件替代专职硬件的串行通信的技术产生的） SDI （串行数据输入）、时钟、及选通脉冲信号。相比 FPGA 的其它功用它的响应很“慢”，源码参考：usrp/firmware/src/usrp2/spi.c。 </p>
+				
+				<p class="faq_title">tx_buffer 和 rx_buffer 里的 FIFO 存储器的容量分配是其容量的两倍，Quartus 的编译报告显示 65K '位'（8192 字节）。这其中有什么奥秘？ </p>
+				<p class="faq_mingxi">FIFO 段的长度是 4K行，每行是 16 位。 </p>
+				
+				<p class="faq_title"><del>在 cordic.v 中，16 位的向量 xi, yi 和 zi 是作为输入传输的。cordic 的常量是预定义的。诸如：wire [bitwidth+1:0] xi_ext = {{2{xi[bitwidth-1]}},xi}; 此类操作。这仅仅是一般意义的级联和赋值吗？</del></p>
+				<p class="faq_mingxi"><del>是的，我们使用 xi 的符号延伸. </del></p>
+				
+				<p class="faq_title">就 @posedg 时钟而言，在复位的情况下，x0, y0, z0 被初始化为‘0’。其次，如果被使能，z0 除头两位外其余都被赋值。头两位用于状态标志位。在此，它们被用于标志四象限和用xi_ext 和 yi_ext 标志四象限的90、180、270 或 360 度的调整角。此理解正确吗？ </p>
+				<p class="faq_mingxi">正确。</p>
+				
+				<p class="faq_title"><del>cordic_stage 的过程都被定义了，它们一般用来传输输入的参数 x0, y0, z0 及常数 c00 等。我还是不明白 #(bitwidth+2,zwidth-1,0) 的含义？ </del></p>
+				<p class="faq_mingxi"><del>#( ) 是用来把参数传给被例程的模块。 </del></p>
+				
+				<p class="faq_title"><del>在 cordic_stage.v 中，如果复位，x0, y0, z0 便被赋值为0。如果被使能，便检查 z 值。我是这样理解 cordic 逻辑的：如果说目前的角度是45，希望值是20，从希望值中减去，然后根据相应的调整去调整相应的 x 轴和 y 轴的数值。这段代码检查, if "z_is_pos" 便进行下一步. 我不太清楚 xi - {{shift+1{yi[bitwidth-1]}}, yi[bitwidth-2:shift]} 的功用。我的理解 CORDIC 是基于角度的调整，把 x 和 y 轴偶数化。{ } 的语句是用来在 Verilog 内级联。 </del></p>
+				<p class="faq_mingxi"><del>符号延伸 </del></p>
+				
+				<p class="faq_title">在 cordic.v 中，xo, yo 和 zo 连续不断的每次相应地以 x12, y12 或 z12 为增（减）值变化。但是还是不太清楚 cordic.v 是如何达到想要的准确的变化角的。研究表明算法是不停的调整当前的角度来趋近希望的角度，但是我没有清楚它是如何在 cordic.v 中实现的。 </p>
+				<p class="faq_mingxi">它的调整原理如下。如果角度是正值便减少；如果角度是负值便增加。它是不停地趋近零值。 </p>
+				
+				<p class="faq_title">如何对 tx_chain.v 写测试用例（test bench）？ </p>
+				<p class="faq_mingxi">写测试用例 (testbench)，必须恰当的设置内插频率。如果想用 CORDIC 还必须设置好相位累积器。应当把(选通)采样频率设置为 Fs。其 Fs 是小于时钟频率并且满足 Fs x interp_rate = the clock rate。这样一来以频率 Fs 把采样数据（选通）送往链路。 </p>
+				<p class="faq_mingxi">还应当确认内插频率（定时或同步的选通脉冲）和采样频率（定时或同步的选通脉冲）的一致连贯性 -- 比如说：每 15 个时钟（补插和采样一次）。不能随机设置或撤销。 </p>
+				<p class="faq_mingxi">并不需要一组（测试）频率。只需这么一些频率，这些频率之间应当具有2*PI 的相位差，而每个 CORDIC 的采样频率值是处于 231-1 之内。可能需要 sine 函数波形或者一些滤波信号，尝试一下脉冲链{1,0,1,0,...}或者下载 [source:gnuradio/branches/developers/zhuochen/simulations/burst_test/math_real.v math_real.v]  模块，如下的测试用例 [source:gnuradio/branches/developers/zhuochen/simulations/burst_test/test_chan_fifo_reader.v test_chan_fifo_reader.v] 可以被用来产生一些 sine 和 cosines 函数。</p>
+				
+				<p class="faq_title">可以把自己的 Verilog 代码烧入去测试吗？ </p>
+				<p class="faq_mingxi">对于前期综合、RTL仿真和测试，使用 Linux 版本的 ICARUS Verilog 和 GTKWave。 （这里）值得注意的是，如若计划使用 ICARUS Verilog，需参阅最新的开发者指导简介，因为此前编写的代码在使用中发现有些纰漏。 </p>
+				<p class="faq_mingxi">在这里肯定得不到赞同的是，在对自己所做的事情没有把握的情况下，却简单地把这些代码下载到 FPGA 去运行它。精确地建模会节约大量的诊错时间。 </p>
+				
+				<p class="faq_title">浏览邮件列表后发现目前的 Verilog/VHDL 的代码构建占据了 FPGA 的 95% 的资源。然而有些邮件指出，简化接收机的功能可以节省一些 FPGA 的资源。这是如何实现？ </p>
+				<p class="faq_mingxi">头文件 config.vh（骨架？）掌控着配置的构建而且是功能化的。修改它来<del>使用文件: ../include/common_config_1rxhb_1tx.vh</del>  便是方法（如下）： </p>
+				<p class="faq_mingxi2">// Uncomment this for 1 RX channel (w/ halfband) & 1 transmit channel</p>
+				<p class="faq_mingxi2">@include "../include/common_config_1rxhb_1tx.vh" </p>
+				<p class="faq_mingxi">这样便可节省出 FPGA 大量的资源！</p>
+				
+				<p class="faq_title">在 rx_chain.v 中, 下面信号 - sample_strobe, decimator_strobe, hb_strobe, serial_addr, serial_data, serial_strobe, debugdata, debugctrl 的功用如何? </p>
+				<p class="faq_mingxi"><del>sample_strobe 是在 ADC 全采样之后，用于抽取器-级联积分梳状滤波器（CIC Filters）输入。 </del></p>
+				<p class="faq_mingxi"><del>decimator_strobe 是由抽取器-级联积分梳状滤波器（CIC Filters）产生，用于特定和抽取频率下用。如果抽取系数为N，你会得到一个 1/N 周期的采样。这个比率在此链路中一直被保存。 </del></p>
+				<p class="faq_mingxi"><del>hb_strobe 来自于半带（HB FIR）滤波器。它是一个抽取系数为常数 2 ，在半带（HB FIR） 滤波器需要把数据送出 RX 链路时被使能。serial_* </del></p>
+				<p class="faq_mingxi"><del>serial_* （serial_addr, serial_data, serial_strobe）是用来写寄存器的接口。如果你想在模块内修改任何寄存器，简单的串行接口 FX2 -> FPGA 便能改变它们。在这种情况下，他们一般被用于 FPGA 的 CORDIC 的相位累加器相关联的寄存器。 </del></p>
+				<p class="faq_mingxi"><del>debug* （debugdata, debugctrl ）正如名字暗示是用于诊错。在目前的构架中，它好像是输入到半带（HB FIR） 滤波器是诊错总线的输出(#帮帮我，可能有错#） </del></p>
+				<p class="faq_mingxi">仅用作提供一点信息，插值选通（interpolation strobes）和滤波模块可参考 [source:gnuradio/trunk/usrp/fpga/sdr_lib/master_control.v master_control.v]。</p>
+				<p class="faq_mingxi"><del>一旦串行数据被恰当写入，寄存器便被更新。strobe_gen 是个倒计数器，一旦计数减到零，便被复位到比率计数器的输入值。</del></p>
+				
+				<p class="faq_title">CORDIC 模块输出有效的数据需占有多少时钟，为何 cordic 算法的构建（cordic.v　中）要固定为１２层迭代呢？</p>
+				<p class="faq_mingxi">管道流水线模块（pipeline module）全速的采样信号，它需 12 个管道流水线阶段并输出旋转向量（rotated vector）。为何是12，仅仅是用于生成寄存器并表示阶段用。也可以表现更深的管道流水线（更多的管道流水线阶段），甚至用变量表现管道流水线阶段。TODO 在此被建议用来关联变量的长度 - 不太确定是运行还是构建阶段，无论如何值得去尝试。</p>
+				
+				<p class="faq_title">可以使用 Altera 的巨集（megacell）模块吗？ </p>
+				<p class="faq_mingxi">是的、可以， 比如，在构建 tx_usb_fifo 和 rx_usb_fifo 中，可以让 Quartus 产生一个合适的双时钟 FIFO 巨集（megacell）。基于此，Matt 已经产生 fifo_2k 和 fifo_4k 模块。参考Quartus的手册和《Cyclone Device Handbook》。 </p>
+				
+				<p class="faq_title">setting_reg 模块如下。 </p>
+				<p class="faq_mingxi2">module setting_reg(input clock, input reset, input strobe, input wire [6:0] addr, </p>
+				<p class="faq_mingxi2">input wire [31:0] in, output reg [31:0] out, output reg changed);</p>
+				
+				<p class="faq_title">在[source:gnuradio/trunk/usrp/fpga/sdr_lib/master_control.v master_control.v] 所谈及的模块中, 发现 setting_reg 被如下方式调用: </p>
+				<p class="faq_mingxi2">setting_reg #(`FR_MASTER_CTRL) sr_mstr_ctrl(.clock(master_clk),.reset(1'b0),.strobe(serial_strobe), </p>
+				<p class="faq_mingxi2">.addr(serial_addr),.in(serial_data),.out(master_controls)); </p>
+				
+				<p class="faq_title">然而,在[source:gnuradio/trunk/usrp/fpga/sdr_lib/setting_reg.v setting_reg.v] 所涉及的模块中, setting_reg 模块有一个输出信号被称为 "changed". 有人能告诉我 "changed" 信号的情况吗?</p>
+				<p class="faq_mingxi">“changed” 已不使用, 被淘汰了.</p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

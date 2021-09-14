@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">USRPClockingNotes</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div><h2><a name="TOC-USRP-"></a><font size="3">USRP 时钟问题备注</font></h2>
+<p style="font-family:simsun,serif"><font size="2">将时钟在整个收发链同步， 构建 MIMO 系统、智能天线、</font>相控阵、和干涉仪。USRP 在设计之初便怀有此心。以下是如何使用（时钟同步）的几点备注。<br></p>
+<h3 style="font-family:simsun,serif"><a name="TOC-LO---Synchronizing-all-daughterboard-LOs"></a><font size="2">同步所有子板的本振（LO）-&nbsp; Synchronizing all daughterboard LOs</font></h3>
+<p style="font-family:simsun,serif"><font size="2">如果系统上有多个子板，希望它们相位相干（</font><font size="2">phase coherenc</font><font size="2">）</font><font size="2">。取决于不同的子板，采用如下步骤：<br></font></p>
+<ul style="font-family:simsun,serif"><li><font size="2">BasicRX, BasicTX, LFRX, LFTX 
+</font></li><ul><li>这些子板没有本振（LOs），便不必关心这些。</li><li>如果有用户自己的外部 RF 前端，这是你自己的“私事”</li></ul></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">TVRX -- TVRX 不适合需同步的多天线的应用的情况。 <br></font></li><ul><li>TVRX 子板的屏蔽盒内有自身的晶振。</li><li>没有办法使得这些子板<font size="2">相位相干。</font></li></ul></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">DBSRX 
+</font></li><ul><li><font size="2">DBSRX 是使用来自 USRP 的主时钟，所以它总是</font><font size="2">相位相干的。</font><font size="2">
+</font></li></ul></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">Flex400, Flex900, Flex2400 
+</font></li><ul><li><font size="2">早期这些子板被配置使用自备的</font>晶振，<font size="2">新近（从 2006年）被配置成使用 USRP 母板上的</font>晶振。</li><li><font size="2">对于 USRP 版本 2，3，或 3B，如下修改以求</font><font size="2">相位相干：</font><br><ul><li><font size="2">在子板上，把 R64 移到 R84，R142 移到 R153 
+</font><ul><li><font size="2">这将使得这些子板的时钟闲置</font><font size="2"> </font></li></ul>
+</li><li><font size="2">在子板上，把 R35 移到 R34，R117 移到 R116 
+</font><ul><li><font size="2">这将把 </font><font size="2">FPGA 的时钟输出</font><font size="2"> 相向</font><font size="2">这些子板同 </font></li></ul>
+</li><li><font size="2">将子板插入 USRP 的 A 端口然后运行如下的相应命令之一来重写 EEPROM: 
+</font><br><div style="margin-left:40px"><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx400_mimo_a --force 
+</font><br><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx900_mimo_a --force 
+</font><br><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx2400_mimo_a --force 
+</font></div></li></ul></li></ul></ul>
+<ul style="font-family:simsun,serif"><ul><li><font size="2">对于 USRP 版本 4，如下修改以求</font><font size="2">相位相干：</font><ul><li><font size="2">最近的板子不需这些，仅适用早期的 RFX 子板 
+</font></li><li><font size="2">把 R64 移到 R84,&nbsp; R142 移到 R153 
+</font><ul><li><font size="2">这将使得这些子板的时钟闲置</font></li></ul>
+</li><li><font size="2">把 R35 移到 R36,&nbsp; R117 移到 R115 
+</font><ul><li><font size="2">这将把这些子板同母板的时钟相连 
+</font></li><li><font size="2">它们全是 0-ohm 电阻，如果不小心丢失一个，直接把相应焊盘相连即可 </font></li></ul>
+</li><li><font size="2">将子板插入 USRP 的 A 端口然后运行如下的相应命令之一来重写 EEPROM: 
+</font><br><div style="margin-left:40px"><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx400_mimo_b --force 
+</font><br><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx900_mimo_b --force 
+</font><br><font size="2">usrp/host/apps/burn-db-eeprom -A -t rfx2400_mimo_b --force 
+</font></div></li></ul></li></ul></ul>
+<h3 style="font-family:simsun,serif"><a name="TOC-USRP---Synchronizing-multiple-USRPs"></a><font size="2">同步多个 USRP 系统 - Synchronizing multiple USRPs</font></h3><font size="2" style="font-family:simsun,serif">想使多个 USRP 系统同步有现实意义，必须谨记如下两点：</font><ul style="font-family:simsun,serif"><li><font size="2">时钟同步，下面详解</font></li><li><font size="2">匹配板间的采样。Martin DvH 做过翔实的工作。联系他寻求详情。 </font></li></ul>
+<p style="font-family:simsun,serif"><font size="2">同步多个 USRP 系统的时钟，就是使得它们使用相同的参考时钟。步骤如下：<br></font></p>
+<ul style="font-family:simsun,serif"><li><font size="2">Rev 3 USRPs 
+</font></li><ul><li><font size="2">切断来自 X2 的联系 - Cut the traces coming from X2 
+</font></li><li><font size="2">用 0 Ohm 代替 R2027 (封装 0603) 
+</font></li><li><font size="2">把 SMA 连接器置于 J2001 
+</font><ul><li><font size="2">注：不能把 TVRX 置于如此改动后的母板的 RXB 端口 </font></li></ul>
+</li><li><font size="2">将你的主频（master clock）注入此 SMA 连接器。它是介于 10 到 
+64 MHz，将充当你的采样频率 </font></li></ul></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">Rev 3B USRPs 
+</font></li><ul><li><font size="2">从 J2001 上焊退时钟板 - Desolder the clock board from J2001 
+</font></li><li><font size="2">把 SMA 连接器置于 J2001&nbsp;</font><ul><li><font size="2">注：不能把 TVRX 置于如此改动后的母板的 RXB 端口&nbsp;</font></li></ul>
+</li><li><font size="2">将你的主频（master clock）注入此 SMA 连接器。它是介于 10 到 
+64 MHz，将充当你的采样频率</font></li></ul></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">Rev 4 USRPs 
+</font></li><ul><li><font size="2">Rev 4 USRPs 引入一个新的概念来让一个母板充当主频板，而其它便从属该主频板。</font></li><li><font size="2">主时钟板 - For the master clock board: 
+</font><ul><li><font size="2">把 SMA 连接器焊置于 J2002. 这便是主频的输出。焊接 SMA 连接器时应格外小心不要损伤 J2002 到 R2028 的连接. 
+</font></li><ul><li><font size="2">注：不能把 TVRX 置于如此改动后的母板的 RXB 端口。</font><font size="2"> </font></li></ul></ul>
+</li><li><font size="2">从板 - For the slave boards: 
+</font><ul><li><font size="2">把 SMA 连接器焊置于 J2001. 这便是输入频率</font><font size="2"> 。</font><font size="2">焊接 SMA 连接器时应格外小心不要损伤 J2001 到</font><font size="2"> 
+C927</font><font size="2"> 的连接</font><font size="2">。</font><ul><li><font size="2">注：不能把 TVRX 置于如此改动后的母板的 RXB 端口。</font></li></ul>
+</li><li><font size="2">把 R2029 移到 R2030. 这将废除板上时钟。R2029/R2030 是个 0-ohm电阻。 <br></font></li><li><font size="2">把 C925 移到 C926。 
+</font></li><li><font size="2">去掉 C924. 
+</font></li><li><font size="2">如果想把另一个 USRP 同此级联，使用 J2002 来输出频率。 </font></li></ul></li></ul></ul><font size="2" style="font-family:simsun,serif"><br><br><br><br><br></font><div style="font-family:simsun,serif">
+<p><b><font size="2"><font style="color:rgb(0,0,0)">注： </font></font><font size="2"><a href="http://vps.gnuradio.org/redmine/wiki/gnuradio/USRPClockingNotes" target="_blank">USRP Clocking Notes</a> （原文出处，翻译整理仅供参考!）</font></b></p></div></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

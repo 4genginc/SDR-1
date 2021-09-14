@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UsrpFAQCPPInterface</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr">
+<p><b><font size="3">C++ 接口问题</font></b></p><div style="text-align:right"><p><font size="2"><b>[ <a href="usrpfaqdboards.html">&lt;&lt;
+ 
+子板</a> |&nbsp;<a href="usrpfaq.html">^ 
+USRP FAQ 首页 ^</a> | <a href="usrpfaqrssi.html">RSSI
+测量 &gt;&gt;</a> ] </b><br></font></p></div><font size="2"><br></font>
+<ul><li><font size="2"><b>How we can write Linux C++ application program to interface with USRP? 
+</b></font></li></ul>
+<blockquote>
+<blockquote>
+<p><font size="2">Here it how we can do it:<br></font></p></blockquote></blockquote>
+<blockquote>
+<blockquote>
+<p><font size="2">1) The gnuradio project provides a complete USRP interface library. When 
+compiling the interface program, these library must be linked with our code by 
+using G++ library command (-lusrp). <br></font></p></blockquote></blockquote>
+<blockquote>
+<blockquote>
+<p><font size="2">2) To show the used procedure, suppose we have written a C++ USRP interface 
+program called usrp_test_c++.cpp. To compile this program, we use the following 
+command: </font></p><font face="Courier New" size="2">$ g++ usrp_test_c++.cpp -o testusrp 
+-lusrp<br></font></blockquote>
+<p><font size="2">where g++ is the GNU C++ compiler, usrp_test_c++.cpp is our c++ source file, 
+testusrp is our output file, -lusrp is the USRP C++ library. </font></p></blockquote>
+<blockquote>
+<p><font size="2">Note: The following USRP two header files should be in the same compilation 
+directory: fpga_regs_common.h, fpga_regs_standard.h<br><br></font></p></blockquote>
+<blockquote>
+<p><font size="2">3) To run the output file from Linux command line:<br></font></p><font face="Courier New" size="2">./testusrp<br></font></blockquote>
+<ul><li><font size="2"><b>Is there a simple C++ USRP interfacing demonstration program? 
+</b></font></li></ul>
+<blockquote>
+<blockquote>
+<p><font size="2">Below is the list for such program </font></p><font face="Courier New" size="2">// Simple C++ 
+USRP interfacing demonstration program<br>//<br>//<br>// This program was 
+derived and modified from test_usrp_standard_rx.cc <br><br>/* -*- c++ -*- 
+*/<br>/*<br>* Copyright 2003,2006,2007,2008 Free Software Foundation, Inc.<br>* 
+<br>* This file is part of GNU Radio<br>* <br>* GNU Radio is free software; you 
+can redistribute it and/or modify<br>* it under the terms of the GNU General 
+Public License as published by<br>* the Free Software Foundation; either version 
+3, or (at your option)<br>* any later version.<br>* <br>* GNU Radio is 
+distributed in the hope that it will be useful,<br>* but WITHOUT ANY WARRANTY; 
+without even the implied warranty of<br>* MERCHANTABILITY or FITNESS FOR A 
+PARTICULAR PURPOSE. See the<br>* GNU General Public License for more 
+details.<br>* <br>* You should have received a copy of the GNU General Public 
+License<br>* along with GNU Radio; see the file COPYING. If not, write to<br>* 
+the Free Software Foundation, Inc., 51 Franklin Street,<br>* Boston, MA 
+02110-1301, USA.<br>*/<br><br><br>#include "usrp_standard.h" <br><br>// Dummy 
+Function to process USRP data<br>void process_data(int 
+*buffer)<br>{<br>/*<br>Each buffer element, for example buffer[0] contains 4 
+bytes <br>2 bytes For (I) and 2 bytes for (Q). <br>*/<br>}<br><br>#define 
+SAMPELS_PER_READ (512) // Must be a multiple of 
+128<br><br>/*<br>SAMPELS_PER_READ :Each sample is consists of 4 bytes (2 bytes 
+for I and <br>2 bytes for Q. Since the reading length from USRP should be 
+multiple of 512 <br>bytes see "usrp_basic.h", then we have to read multiple of 
+128 samples each <br>time (4 bytes * 128 sample = 512 bytes) 
+<br>*/<br><br>int<br>main (int argc, char **argv)<br>{<br>bool loopback_p = 
+false;<br>bool counting_p = false;<br>bool width_8_p = false;<br>int which_board 
+= 0;<br>int decim = 8; // 32 MB/sec<br>double center_freq = 0;<br>int 
+fusb_block_size = 0;<br>int fusb_nblocks = 0;<br>int nchannels = 1;<br>int gain 
+= 0;<br>int mode = 0;<br>int noverruns = 0;<br>bool overrun;<br>int total_reads 
+= 10000;<br>int i;<br>int buf[SAMPELS_PER_READ];<br>int bufsize = 
+SAMPELS_PER_READ*4; // Should be multiple of 512 Bytes<br><br><br>if 
+(loopback_p) mode |= usrp_standard_rx::FPGA_MODE_LOOPBACK;<br><br>if 
+(counting_p) mode |= 
+usrp_standard_rx::FPGA_MODE_COUNTING;<br><br><br><br>usrp_standard_rx_sptr urx = 
+usrp_standard_rx::make (which_board, decim, 1, -1, mode,<br>fusb_block_size, 
+fusb_nblocks);<br><br>if (!urx)<br>{<br>fprintf (stderr, "Error: 
+usrp_standard_rx::make\n");<br>exit (1);<br>}<br><br>if (width_8_p)<br>{<br>int 
+width = 8;<br>int shift = 8;<br>bool want_q = true;<br>if 
+(!urx-&gt;set_format(usrp_standard_rx::make_format(width, shift, 
+want_q)))<br>{<br>fprintf (stderr, "Error: urx-&gt;set_format\n");<br>exit 
+(1);<br>}<br>}<br><br>// Set DDC center frequency<br>urx-&gt;set_rx_freq (0, 
+center_freq);<br><br>// Set Number of 
+channels<br>urx-&gt;set_nchannels(1);<br><br>// Set ADC PGA 
+gain<br>urx-&gt;set_pga(0,gain);<br><br>// Set FPGA 
+Mux<br>urx-&gt;set_mux(0x32103210); // Board A only<br><br>// Set DDC decimation 
+rate<br>urx-&gt;set_decim_rate(decim);<br><br>// Set DDC phase 
+<br>urx-&gt;set_ddc_phase(0,0);<br><br>urx-&gt;start(); // Start data 
+transfer<br><br>printf("USRP Transfer Started\n");<br><br>// Do USRP Samples 
+Reading <br>for (i = 0; i &lt; total_reads; 
+i++)<br>{<br>urx-&gt;read(&amp;buf[0], bufsize, &amp;overrun); <br><br>if 
+(overrun)<br>{<br>printf ("USRP Rx Overrun\n");<br>noverruns++;<br>}<br><br>// 
+Do whatever you want with the 
+data<br>process_data(&amp;buf[0]);<br><br>}<br><br><br>urx-&gt;stop(); // Stop 
+data transfer<br>printf("USRP Transfer Stoped\n");<br>delete urx;<br>return 
+0;<br>}<br><br></font></blockquote></blockquote>
+<ul><li><font size="2"><b>Currently, all USRP daughterboards control is handled from Python. Where 
+I can find the C++ drivers for these boards? </b></font></li></ul>
+<blockquote>
+<blockquote>
+<p><font size="2">The gnuradio team is developing an all C++ daughterboards drivers [I don’t 
+know if they finished it]. There are some gnuradio users that developed their 
+own C++ drivers but they did not publish it yet [I Think They Should]. 
+</font></p></blockquote></blockquote>
+<blockquote>
+<p><font size="2">The only published C++ driver is for DBSRX daughterboard by Gregory W 
+Heckler. </font></p></blockquote>
+<ul><li><font size="2"><b>Where can I obtain Gregory DBSRX driver ? How to use the driver ? 
+</b></font></li></ul>
+<blockquote>
+<p><font size="2">The DBSRX C++ driver can be obtained from <a href="http://github.com/gps-sdr/gps-sdr/tree/master/usrp" rel="nofollow"><span>GPS-SDR</span></a> code repo. </font></p></blockquote>
+<blockquote>
+<blockquote>
+<p><font size="2">We can use: </font></p><font face="Courier New" size="2">$ g++ db_dbs_rx.cpp usrp_sdr.cpp -o 
+testdriver -lm -lusrp -lpthread <br></font></blockquote></blockquote>
+<blockquote>
+<p><font size="2">Note: The following files should be in the same compilation directory: 
+db-dbs_rx.cpp, db_dbs_rx.h, fpga_regs_common.h, fpga_regs_standard.h. 
+</font></p></blockquote><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p style="text-align:right"><font size="2"><b>[ <a href="usrpfaqdboards.html">&lt;&lt; 
+子板</a> |&nbsp;<a href="usrpfaq.html">^ 
+USRP FAQ 首页 ^</a> | <a href="usrpfaqrssi.html">RSSI测量 &gt;&gt;</a> ] </b><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><b>注：<a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/UsrpFAQCppInterface" target="_blank">C++ Interfacing Questions</a>（原文出处，翻译整理仅供参考!）</b></font></p></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,320 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">C++ 接口问题</p>
+				<hr />
+				<p class="faq_title">How we can write Linux C++ application program to interface with USRP? </p>
+				<p class="faq_mingxi2">Here it how we can do it:</p>
+				<p class="faq_mingxi2">1) The gnuradio project provides a complete USRP interface library. When compiling the interface program, these library must be linked with our code by using G++ library command (-lusrp). </p>
+				<p class="faq_mingxi2">2) To show the used procedure, suppose we have written a C++ USRP interface program called usrp_test_c++.cpp. To compile this program, we use the following command: </p>
+				<p class="faq_mingxi2">$ g++ usrp_test_c++.cpp -o testusrp -lusrp</p>
+				<p class="faq_mingxi">where g++ is the GNU C++ compiler, usrp_test_c++.cpp is our c++ source file, testusrp is our output file, -lusrp is the USRP C++ library. </p>
+				<p class="faq_mingxi">Note: The following USRP two header files should be in the same compilation directory: fpga_regs_common.h, fpga_regs_standard.h</p>
+				<p class="faq_mingxi">3) To run the output file from Linux command line:</p>
+				<p class="faq_mingxi">./testusrp</p>
+				
+				
+				<p class="faq_title">Is there a simple C++ USRP interfacing demonstration program? </p>
+	<pre>
+	Below is the list for such program
+	// Simple C++ USRP interfacing demonstration program
+	//
+	//
+	// This program was derived and modified from test_usrp_standard_rx.cc
+	
+	/* -*- c++ -*- */
+	/*
+	* Copyright 2003,2006,2007,2008 Free Software Foundation, Inc.
+	*
+	* This file is part of GNU Radio
+	*
+	* GNU Radio is free software; you can redistribute it and/or modify
+	* it under the terms of the GNU General Public License as published by
+	* the Free Software Foundation; either version 3, or (at your option)
+	* any later version.
+	*
+	* GNU Radio is distributed in the hope that it will be useful,
+	* but WITHOUT ANY WARRANTY; without even the implied warranty of
+	* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	* GNU General Public License for more details.
+	*
+	* You should have received a copy of the GNU General Public License
+	* along with GNU Radio; see the file COPYING. If not, write to
+	* the Free Software Foundation, Inc., 51 Franklin Street,
+	* Boston, MA 02110-1301, USA.
+	*/
+	
+	
+	#include "usrp_standard.h"
+	
+	// Dummy Function to process USRP data
+	void process_data(int *buffer)
+	{
+	/*
+	Each buffer element, for example buffer[0] contains 4 bytes
+	2 bytes For (I) and 2 bytes for (Q).
+	*/
+	}
+	
+	#define SAMPELS_PER_READ (512) // Must be a multiple of 128
+	
+	/*
+	SAMPELS_PER_READ :Each sample is consists of 4 bytes (2 bytes for I and
+	2 bytes for Q. Since the reading length from USRP should be multiple of 512
+	bytes see "usrp_basic.h", then we have to read multiple of 128 samples each
+	time (4 bytes * 128 sample = 512 bytes)
+	*/
+	
+	int
+	main (int argc, char **argv)
+	{
+	bool loopback_p = false;
+	bool counting_p = false;
+	bool width_8_p = false;
+	int which_board = 0;
+	int decim = 8; // 32 MB/sec
+	double center_freq = 0;
+	int fusb_block_size = 0;
+	int fusb_nblocks = 0;
+	int nchannels = 1;
+	int gain = 0;
+	int mode = 0;
+	int noverruns = 0;
+	bool overrun;
+	int total_reads = 10000;
+	int i;
+	int buf[SAMPELS_PER_READ];
+	int bufsize = SAMPELS_PER_READ*4; // Should be multiple of 512 Bytes
+	
+	
+	if (loopback_p) mode |= usrp_standard_rx::FPGA_MODE_LOOPBACK;
+	
+	if (counting_p) mode |= usrp_standard_rx::FPGA_MODE_COUNTING;
+	
+	
+	
+	usrp_standard_rx_sptr urx = usrp_standard_rx::make (which_board, decim, 1, -1, mode,
+	fusb_block_size, fusb_nblocks);
+	
+	if (!urx)
+	{
+	fprintf (stderr, "Error: usrp_standard_rx::make\n");
+	exit (1);
+	}
+	
+	if (width_8_p)
+	{
+	int width = 8;
+	int shift = 8;
+	bool want_q = true;
+	if (!urx->set_format(usrp_standard_rx::make_format(width, shift, want_q)))
+	{
+	fprintf (stderr, "Error: urx->set_format\n");
+	exit (1);
+	}
+	}
+	
+	// Set DDC center frequency
+	urx->set_rx_freq (0, center_freq);
+	
+	// Set Number of channels
+	urx->set_nchannels(1);
+	
+	// Set ADC PGA gain
+	urx->set_pga(0,gain);
+	
+	// Set FPGA Mux
+	urx->set_mux(0x32103210); // Board A only
+	
+	// Set DDC decimation rate
+	urx->set_decim_rate(decim);
+	
+	// Set DDC phase
+	urx->set_ddc_phase(0,0);
+	
+	urx->start(); // Start data transfer
+	
+	printf("USRP Transfer Started\n");
+	
+	// Do USRP Samples Reading
+	for (i = 0; i < total_reads; i++)
+	{
+	urx->read(&buf[0], bufsize, &overrun);
+	
+	if (overrun)
+	{
+	printf ("USRP Rx Overrun\n");
+	noverruns++;
+	}
+	
+	// Do whatever you want with the data
+	process_data(&buf[0]);
+	
+	}
+	
+	
+	urx->stop(); // Stop data transfer
+	printf("USRP Transfer Stoped\n");
+	delete urx;
+	return 0;
+	}
+	</pre>
+				
+				<p class="faq_title">Currently, all USRP daughterboards control is handled from Python. Where I can find the C++ drivers for these boards? </p>
+				<p class="faq_mingxi2">The gnuradio team is developing an all C++ daughterboards drivers [I don’t know if they finished it]. There are some gnuradio users that developed their own C++ drivers but they did not publish it yet [I Think They Should]. </p>
+				<p class="faq_mingxi">The only published C++ driver is for DBSRX daughterboard by Gregory W Heckler. </p>
+				
+				<p class="faq_title">Where can I obtain Gregory DBSRX driver ? How to use the driver ? </p>
+				<p class="faq_mingxi">The DBSRX C++ driver can be obtained from GPS-SDR code repo. </p>
+				<p class="faq_mingxi2">We can use: </p>
+				<p class="faq_mingxi2">$ g++ db_dbs_rx.cpp usrp_sdr.cpp -o testdriver -lm -lusrp -lpthread </p>
+				<p class="faq_mingxi">Note: The following files should be in the same compilation directory: db-dbs_rx.cpp, db_dbs_rx.h, fpga_regs_common.h, fpga_regs_standard.h. </p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

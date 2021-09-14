@@ -1,0 +1,212 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">时延</p>
+				<hr />
+				<p class="faq_title">We can calculate the latency introduced by the USB since the USB packet is only sent when we have a sufficient amount of data collected in the USRP buffer, i.e., the smallest allowed USB packet is 512 byte, and the largest one is specified by the user by two parameters, fusb_nblock and fusb_block_size. As a paper mentions, the USB delay (Tu) is according to the equation: </p>
+				<p class="faq_mingxi">Tu = f(512, fusb_block_size*fusb_nblock) / (fs*sample_size )</p>
+				<p class="faq_mingxi">Where:f(x,y) is depends on the data in the buffer and it is at least x and at most y and fs is the sampling frequency. Since we use complex 16 bit samples, the sample size is </p>
+				<p class="faq_mingxi">sample_ size = 2 * 16bit= 4 bytes</p>
+				<p class="faq_mingxi">So, does that mean if we have large product of fusb_block_size and fusb_nblock, then the theoretical maximum delay will be increased? </p>
+				<p class="faq_mingxi">Yes that is true. If you're trying to minimize latency you want the smallest values that work reliably (no over/underruns) and with acceptable overhead. If you enable real time scheduling, you can reliably use smaller values. Try fusb_block_size 2048 and fusb_nblock 4 or 8. You may be able to run with fusb_block_size 1024. It depends on your data rate across the USB. </p>
+				
+				<p class="faq_title">What is the theoretical minimum roundtrip latency that we can achieve with the USRP? </p>
+	<pre>
+    Different cases:
+
+    1) On the host I think that the minimum number of packet buffers we can live with is 2 in each direction. This is to ensure that
+the EHCI USB host controller end point queue always has something in it for our end points. This is required to keep the throughput 
+up and to keep us from suffering underrun or overruns on the USRP.
+
+    2) On the FX2 the minimum we can use is two in each direction.
+
+    3) On the output path to the FPGA, there's a FIFO, but the pipeline runs if there's any data in the FIFO. This doesn't appear to
+add any delay. In USRP, we're currently running with 512 byte packets.
+
+    Theoretical Calculations:
+
+    Let the PKTSIZE = 512. In both directions we can't start the transport until you've assembled a full packet. Assume we're running
+at 32MB/sec, t0 = 16usec. The transport time of a single packet from the host controller to the FX2 is
+
+        t1 = PKTSIZE (bytes)/32(Mbyte/sec) = 16 usec
+
+    The transport time of a single packet from the FX2 to the FPGA is about
+
+        t2 = 4 us + PKTSIZE (bytes)/96(Mbyte/sec) = 9.33 usec
+
+    [The 4 us is firmware overhead in the FX2. It could be improved]
+
+    The best case:
+
+    Outbound looks like = t0 + t1 + t2 = 41.33 usec. Inbound is the same 41.33 usec.
+
+    With 512 byte packets, total round trip latency
+
+        2 * (t0 + t1 + t2) = 83 usec
+
+    Lowering the packet size to 64 bytes would reduce this to
+
+        2 * (2 + 2 + 4.7) = 8.7 us
+
+    [This is optimistic, since our throughput will drop, and there are lots of other unaccounted factors. E.g., greater USB overhead
+because of the small packets]
+	</pre>
+				
+				<p class="faq_title">How we can practically measure the round trip latency? </p>
+				<p class="faq_mingxi">Here's an easy way to measure round trip latency:</p>
+				<p class="faq_mingxi">Hook up a signal generator to one of the Rx basic inputs and to one input of an oscilloscope. Hook up one Tx basic output to another input on the o'scope. Write some code on the host that reads from usrp.source_c and writes to usrp.sink_c Look at the delay between the two traces on your o'scope. </p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

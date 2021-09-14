@@ -1,0 +1,225 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Generation 2 USRP Build Documentation</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Generation 2 USRP Build Documentation</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Generation 2 USRP Build Documentation</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <h2>Dependencies and Requirements</h2> 
+         <h3>Dependencies</h3> 
+         <p>The USRP FPGA build system requires a UNIX-like environment with the following dependencies</p> 
+         <ul> 
+          <li><a href="http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v12_2.html">Xilinx ISE 12.2</a></li> 
+          <li><a href="https://www.gnu.org/software/make/">GNU Make</a></li> 
+          <li>(Recommended) <a href="https://www.gnu.org/software/bash/">GNU Bash</a></li> 
+         </ul> 
+         <h3>Requirements</h3> 
+         <ul> 
+          <li><a href="http://www.xilinx.com/support/documentation/sw_manuals/xilinx12_2/irn.pdf">Xilinx ISE Platform Requirements</a></li> 
+         </ul> 
+         <h3>What FPGA does my USRP have?</h3> 
+         <ul> 
+          <li>USRP N200: Spartan&reg; 3A-DSP 1800</li> 
+          <li>USRP N210: Spartan&reg; 3A-DSP 3400</li> 
+          <li>USRP E100: Spartan&reg; 3A-DSP 1800</li> 
+          <li>USRP E110: Spartan&reg; 3A-DSP 3400</li> 
+         </ul> 
+         <h2>Build Instructions</h2> 
+         <ul> 
+          <li>Download and install <a href="http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v12_2.html">Xilinx ISE 12.2</a></li> 
+          <li>To add xtclsh to the PATH and to setup up the Xilinx build environment run 
+           <ul> 
+            <li><code>source &lt;install_dir&gt;/Xilinx/12.2/ISE_DS/settings64.sh</code> (64-bit platform)</li> 
+            <li><code>source &lt;install_dir&gt;/Xilinx/12.2/ISE_DS/settings32.sh</code> (32-bit platform)</li> 
+           </ul> </li> 
+          <li>Navigate to <code>usrp2/top/{project}</code> where project is: 
+           <ul> 
+            <li>N2x0: For USRP N200 and USRP N210</li> 
+            <li>E1x0: For USRP E100 and USRP E110</li> 
+           </ul> </li> 
+          <li>To build a binary configuration bitstream run <code>make &lt;target&gt;</code> where the target is specific to each product. To get a list of supported targets run <code>make help</code>.</li> 
+          <li>The build output will be specific to the product and will be located in the <code>usrp2/top/{project}/build</code> directory. Run <code>make help</code> for more information.</li> 
+         </ul> 
+         <h3>N2x0 Targets and Outputs</h3> 
+         <h4>Supported Targets</h4> 
+         <ul> 
+          <li>N200R3: Builds the USRP N200 Rev 3 design.</li> 
+          <li>N200R4: Builds the USRP N200 Rev 4 design.</li> 
+          <li>N210R3: Builds the USRP N210 Rev 3 design.</li> 
+          <li>N210R4: Builds the USRP N210 Rev 4 design.</li> 
+         </ul> 
+         <h4>Outputs</h4> 
+         <ul> 
+          <li><code>build-&lt;target&gt;/u2plus.bit</code> : Configuration bitstream with header</li> 
+          <li><code>build-&lt;target&gt;/u2plus.bin</code> : Configuration bitstream without header</li> 
+          <li><code>build-&lt;target&gt;/u2plus.syr</code> : Xilinx system report</li> 
+          <li><code>build-&lt;target&gt;/u2plus.twr</code> : Xilinx timing report</li> 
+         </ul> 
+         <h3>E1x0 Targets and Outputs</h3> 
+         <h4>Supported Targets</h4> 
+         <ul> 
+          <li>E100: Builds the USRP E100 design.</li> 
+          <li>E110: Builds the USRP E110 design.</li> 
+         </ul> 
+         <h4>Outputs</h4> 
+         <ul> 
+          <li><code>build-&lt;target&gt;/E1x0.bit</code> : Configuration bitstream with header</li> 
+          <li><code>build-&lt;target&gt;/E1x0.bin</code> : Configuration bitstream without header</li> 
+          <li><code>build-&lt;target&gt;/E1x0.syr</code> : Xilinx system report</li> 
+          <li><code>build-&lt;target&gt;/E1x0.twr</code> : Xilinx timing report </li> 
+         </ul> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

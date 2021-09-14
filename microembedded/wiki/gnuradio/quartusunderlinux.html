@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">QuartusUnderLinux</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div>
+<h2><a name="TOC-Running-Altera-Quartus-II-Web-Edition-under-Linux"></a><font size="3">Running 
+Altera Quartus II Web Edition under Linux</font></h2>
+<p><font size="2">To generate the firmware for the altera Cyclone FPGA on the usrp 
+from the usrp verilog sourcecode you need Quartus II Web Edition version
+ 5.1 or later.<br>
+Unfortunately this is not opensource, but there is a free download with 
+from the altera website.</font></p>
+<p><font size="2">You also need to get a free license.</font></p>
+<p><font size="2"><a href="https://www.altera.com/support/software/download/sof-download_center.html">Download Quartus II Web edition</a></font></p>
+<p><font size="2">This is windows-only software.</font></p>
+<p><font size="2">At the time of this writing, version 5.1SP1 and version 6.0 seems to
+ work fine for the usrp verilog code.<br>
+I don't think the 5.1SP1 version is still available for download (the 
+6.0SPx version is)<br>
+The files I downloaded and tested were:<br>
+ quartusii_51_sp1_web_edition.exe<br>
+ quartusii_60_sp1_web_edition.exe</font></p>
+<p><font size="2">There are several ways to run this software under linux.</font></p>
+<hr>
+<h2><a name="TOC-Method-1-Quartus-using-Wine:"></a><font size="2">Method 1 Quartus using  Wine:</font></h2>
+<p><font size="2">Install Wine version 0.9.19 or later (a recent cvs version will 
+probably also work).<br>
+(Older versions do not work, believe me, I tried. I even tried 
+cxoffice.)<br>
+Now make sure you set the emulated operating system to <b>windows 
+98</b>.<br>
+(run winecfg and set Applicatios\default settings  Windows to windows98)<br>
+If you emulate windows 2000 it will not work.<br>
+The problem is mainly that the licensing copy protection crashes.<br>
+I have allways found it strange that you need to install a very invasive
+ kernel_mode licensing/copyprotection tool to install software which is 
+free to download with a license that is free and forever renewable.</font></p>
+<p><font size="2">If you want to get rid of any old wine settings and applications you
+ can just move ~/.wine to something else and run winecfg. It will 
+generate a clean .wine folder including default registry settings for 
+you.</font></p>
+<p><font size="2">Now run the quartus installer.<br>
+make sure you select at least the quartus core component and the cyclone
+ device, the tutorials are also probably handy.<br>
+All other devices are not needed for the usrp.</font></p>
+<p><font size="2">You don't really need the extra options you get when you select the 
+talkback feature, so you can disable it.<br>
+If you want to do timing analysis and stuff you should keep it selected.
+ <br>
+Quartus Ii 5.1SP1 should run to completion without any trouble.<br>
+It might hang on the last screen. If you nothing happens for a very long
+ time you can savely kill it with CRTL-C in the console which started 
+wine.</font></p>
+<p><font size="2">Now you need to get and install the (free) license.<br>
+You can request it on the altera website.</font></p>
+<p><font size="2">To request a license you need your NIC ID.<br>
+NIC ID<br>
+The NIC ID is a 12-character hexadecimal string embedded in the<br>
+network interface card that Altera uses to uniquely identify the PC 
+where<br>
+the software is installed.</font></p><font size="2">
+
+
+Wine should present your real NIC ID without alteration towine which 
+will pas it to quartus.<br>
+(beware, this is not the case for all emulators)<br>
+There are multiple ways of getting this ID.<br>
+ Linux: Type /sbin/ifconfig eth0  at a command prompt. <br></font>
+<pre><font size="2">nldudok1@quarkdeb:/$ /sbin/ifconfig eth0<br>eth0      Link encap:Ethernet  HWaddr 00:B0:D0:AB:CC:BA<br>          inet addr:192.168.0.1  Bcast:10.0.0.255  Mask:255.255.255.0<br>          inet6 addr: fe80::213:ffff:aabb:ccdd/64 Scope:Link<br>          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1<br>          RX packets:16137 errors:0 dropped:0 overruns:0 frame:0<br>          TX packets:10640 errors:0 dropped:0 overruns:0 carrier:0<br>          collisions:2 txqueuelen:1000<br>          RX bytes:20428079 (19.4 MiB)  TX bytes:898048 (877.0 KiB)<br>          Interrupt:58 Base address:0xe400<br></font></pre><font size="2"><br>
+NIC ID is the ID to the right of HWaddr, <b>without the colons</b>,
+ e.g.,<br>
+00B0D0ABCCBA.
+
+To be sure wine sees exactly the same ID you can also use lmutil.exe 
+which installed with quartus<br>
+Do the following.<br></font>
+<pre><font size="2">/$ cd ~/.wine/drive_c/altera/quartusXXX/win/<br>~/.wine/drive_c/altera/quartusXXX/win$ wine lmutil.exe hostid<br>Invoking /usr/lib/wine/wine.bin lmutil.exe hostid ...<br>lmutil - Copyright (c) 1989-2003 by Macrovision Corporation. All rights reserved.<br>The FLEXlm host ID of this machine is ""00b0d0abccba 001122334455"" <br>Only use ONE from the list of hostids.<br>Wine exited with a successful status<br></font></pre><font size="2"><br>
+In this case only use the first number (00b0d0abccba in the example 
+above)
+
+	</font><p><font size="2">Now you have the right NIC ID you can request a license on the 
+altera website:<br>
+Go back to the quatus download page and click "Get  Web Edition License"
+ <br><a href="https://www.altera.com/support/software/download/sof-download_center.html">Download Quartus and get web edition license</a></font>
+<font size="2"><br>
+Fill out the form, including the NIC ID and a valid emailadres.<br>
+You should now get a licensefile by email.<br>
+Save the license file somewhere on you wine C-drive<br>
+for example:<br>
+~/.wine/drive_c/altera/</font></p>
+<p><font size="2">For any other licensing problems see the altera licensing document<br><a href="http://www.altera.com/literature/an/an340.pdf">Altera
+ Software Licensing</a></font>
+</p><font size="2">
+
+
+Now it is time to start quartus.<br></font>
+<pre><font size="2">/$ cd ~/.wine/drive_c/altera/quartusXXX/bin/<br>~/.wine/drive_c/altera/quartusXXX/bin$ wine quartus.exe<br></font></pre>
+<p><font size="2">Quartus 6.0 will open with a few  errors:<br>
+error:This program is for windows NT only.<br>
+Click on OK.<br>
+error:Quartus II is not fully registered, with a list of problems.<br>
+Click on OK.<br>
+Quartus 5.1SP will not have these errormessage.</font></p>
+<p><font size="2">message:Quartus II help will only work if you have installed 
+Internet Explorer 4.0 or higher.<br>
+I haven't worked on this error yet. It might go away if you install the 
+wine gecko fake IE or find a way to install a real IE.</font></p>
+<p><font size="2">Quartus should now start with a license options screen.<br>
+Choose, "I have a valid license" <br>
+And direct it to C:\altera\ (or wherever you put the file) and choose 
+the license file.</font></p>
+<p><font size="2">You can allways change the license file and options with the Tools 
+menu\License setup.<br>
+Here you will also see the NICID you entered earlier.</font></p>
+<p><font size="2">Now you are ready to compile the usrp verilog code to a usrp????.rbf
+ file.<br>
+The easiest way is to open the usrp quartus project file<br>
+gnuradiosrcdir/usrp/fpga/toplevel/usrp_std/usrp_std.qpf</font></p>
+<p><font size="2">(Note with the default wine configuration you Z: drive is the same 
+as /)</font></p>
+<p><font size="2">If you want you can now try to set back the default settings of wine
+ to windows 2000 and only run quartus.exe and quartus_sh.exe as windows 
+98.<br>
+I have not tried this though.<br>
+For this you have to run winecfg again.</font></p>
+<hr>
+<h2><a name="TOC-Method-2-Quartus-using-qemu"></a><font size="2">Method 2 Quartus using qemu</font></h2>
+<p><font size="2">Warning Untested:</font></p>
+<p><font size="2">Install a recent Qemu.<br>
+Make a new virtual machine and install windows 98 or windows 2000 or 
+windows XP.<br>
+Download Quartus II (see above)<br>
+Install Quartus within the virtual machine.</font></p>
+<p><font size="2">Request a license file using the <b>NICID of you virtual 
+machine</b></font> <font size="2"><br>
+In you virtual windows do:<br>
+Type ipconfig /all  at a commandprompt. <br>
+The NIC ID is the physical address without the dashes. If<br>
+your PC has more than one network card, you can use any of the<br>
+cards’ NIC IDs as long as the selected network card is always<br>
+connected to the computer.</font></p>
+<p><font size="2">Now you have the right NIC ID you can request a license on the 
+altera website:<br>
+Go back to the quatus download page and click "Get  Web Edition License"
+ <br><a href="https://www.altera.com/support/software/download/sof-download_center.html">Download Quartus and get web edition license</a></font>
+<font size="2"><br>
+Fill out the form, including the NIC ID and a valid emailadres.<br>
+You should now get a licensefile by email.<br>
+Save the license file somewhere on you qemu virtual C-drive.<br>
+Run quartus II from the start menu and choose "have valid license"</font></p>
+<p><font size="2">You could also choose request a license now. (This should work 
+within Qemu if you have networking setup and working)</font></p>
+<hr>
+<h2><a name="TOC-Method-3:-Quartus-using-VMware"></a><font size="2">Method 3: Quartus using VMware</font></h2>
+<p><font size="2">Install some flavour of VMware. <br>
+Make a new virtual machine and install windows 2000 or windows XP.<br>
+Download Quartus II (see above)<br>
+Install Quartus within the virtual machine.</font></p>
+<p><font size="2">Request a license file using the <b>NICID of you virtual 
+machine</b></font> <font size="2"><br>
+In you virtual windows do:<br>
+Type ipconfig /all  at a commandprompt. <br>
+The NIC ID is the physical address without the dashes. If<br>
+your PC has more than one network card, you can use any of the<br>
+cards’ NIC IDs as long as the selected network card is always<br>
+connected to the computer.</font></p>
+<p><font size="2">Now you have the right NIC ID you can request a license on the 
+altera website:<br>
+Go back to the quatus download page and click "Get  Web Edition License"
+ <br><a href="https://www.altera.com/support/software/download/sof-download_center.html">Download Quartus and get web edition license</a></font>
+<font size="2"><br>
+Fill out the form, including the NIC ID and a valid emailadres.<br>
+You should now get a licensefile by email.<br>
+Save the license file somewhere on you vmware virtual C-drive.<br>
+Run quartus II from the start menu and choose "have valid license"</font></p>
+<p><font size="2">You could also choose "request a license now". (This should work 
+within VMware if you have networking setup and working)</font></p>
+<hr>
+<p><font size="2">I have used the VMware method for a long time now. It works, is 
+stable and the speed is usable.</font></p>
+<p><font size="2">But I don't like having to install a complete windows inside my 
+linux machine just to run one program.<br>
+The same disadvantage goes for Qemu. (although Qemu itself is a very 
+nice opensource product which I can recommend to anyone.)</font></p>
+<p><font size="2">The wine method doesn't need any microsoft components.<br>
+It is less stable though and only works if you emulate windows 98, which
+ is not supported anymore by quartus II 6.0 and later.<br>
+I had a few crashes already, but also succesfull compiles (both with 
+version 5.1SP1 and 6.0SP1)</font></p>
+<p><font size="2">I hope this is of help to others trying to develop opensource 
+verilog code but who are forced to running closed-source windows 
+programs.</font></p>
+<p><font size="2">Martin</font></p>
+</div><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><b><font style="color:rgb(0,0,0)">注：</font><a href="http://vps.gnuradio.org/redmine/wiki/gnuradio/QuartusUnderLinux" target="_blank">Quartus Under Linux</a>（原文出处，翻译整理仅供参考!）</b></font></p></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

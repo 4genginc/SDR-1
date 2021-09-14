@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">USRP</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><p>
+</p><p>
+</p>
+<div>
+<p>
+</p><h2><a name="TOC-USRP-"></a><font size="2"><font size="3"><b><div style="display:inline;margin:5px 10px;float:right"><a href="../images/USRP_max.jpg" target="_blank" imageanchor="1"><img border="0" src="../images/USRP.jpg"></a></div>USRP 文档</b></font></font></h2><h3><a name="TOC--"></a><font size="2">驱动</font></h3><p>通用硬件驱动(<a href="../kb/uhdwikistart.html">UHD</a>), <a href="http://www.microembedded.com/" target="_blank">Ettus 兼用产品</a>（包括 USRP1 在内）的核心驱动。它是面向所有的 USRP 的用户。</p><p>另外，旧有驱动是包含在 GNU Radio 并被编译作为一个独立库文件 - libusrp, 这种方式已经停止也不对其进行支持。对于个别特例（<a href="openbts.html" target="_blank">exceptions</a>）情况，旧有驱动的用户理应升级到 UHD。</p><p>有关 UHD 的详情请咨询 <a href="http://www.microembedded.com/" target="_blank">微嵌软件</a>。</p><h3><a name="TOC-USRP-FAQ-"></a><font size="2">USRP-FAQ （常见问题）<br></font></h3>
+<ul><li><font size="2"><a href="usrpfaq.html" target="_blank">USRP 常见问题</a></font></li></ul>
+<h3><a name="TOC--1"></a><font size="2">电路原理图及构架<br></font></h3><font size="2">Ettus 的所有产品包括 USRP 和 USRP2 以及所有的子板的原理图在下面的地址可以找到:<font> <br></font></font><ul><li><font size="2"><a href="microschematics.html" target="_blank">电路设计文档</a> - <a href="http://code.ettus.com/redmine/ettus/projects/public/documents" target="_blank">http://code.ettus.com/redmine/ettus/projects/public/documents</a></font></li></ul><h3><a name="TOC--2"></a><font size="2">时钟 <br></font></h3>
+<ul><li><font size="2"><a href="usrpclockingnotes.html" target="_blank">USRPClockingNotes</a><span style="color:rgb(255,0,0)">&nbsp;<span style="color:rgb(0,0,0)"> -&nbsp; USRP 时钟问题。</span></span></font></li><li><font size="2"><a href="usrpserialbelow500.html" target="_blank">USRPSerialBelow500</a>&nbsp; 如何将 USRP 的时钟同步到子板 - 序列号小于 500 的 USRP。</font></li></ul><h3><a name="TOC-FPGA-"></a><font size="2">FPGA 文档</font></h3>
+<ul><li><font size="2"><a href="usrpfpga.html" target="_blank">FPGA 文档</a> - 包含关联RX/TX 链路的详细的USB 接口资料。
+</font></li></ul><h3><a name="TOC--3"></a><font size="2">子板文档</font></h3>
+<ul><li><font size="2"><a href="list_of_usrp_daughterboards.html" target="_blank" title="List of USRP Daughterboards">USRP 子板清单</a></font>
+</li><li style="color:rgb(0,0,0)"><font size="2"><a href="rfxdboards.html" target="_blank">RFX 系列</a></font>
+</li></ul></div>
+<div><font size="2"><br></font></div><div><font size="2"><a name="Drivers"></a></font>
+<font size="2"><br><br><br></font><p><font size="2"><b>注：<a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/USRP" rel="nofollow" target="_blank">USRP Docs</a>（原文出处，翻译整理仅供参考!）</b></font></p></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Device Calibration</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Device Calibration</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Device Calibration</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#calibration_self">Self-Calibration</a> 
+           <ul> 
+            <li class="level2"><a href="#calibration_self_utils">Calibration Utilities</a></li> 
+            <li class="level2"><a href="#calibration_data">Calibration Data</a></li> 
+            <li class="level2"><a href="#ignore_cal_file">Ignoring Calibration Files</a></li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="calibration_self"></a> Self-Calibration</h1> 
+         <p>UHD software comes with several self-calibration utilities for minimizing IQ imbalance and DC offset. These utilities perform calibration sweeps using transmit leakage into the receive path (special equipment is not required). The results from a calibration are written to a CSV file in the user's home directory. UHD software will automatically apply corrections at runtime when the user re-tunes the daughterboard LO. Calibration results are specific to an individual RF board.</p> 
+         <p><b>Note:</b> When a calibration table is present, and the user wishes to override the calibration settings through the API: the user should re-apply the desired setting every time the LO is re-tuned.</p> 
+         <p>UHD software comes with the following calibration utilities:</p> 
+         <ul> 
+          <li><b>uhd_cal_rx_iq_balance:</b> - mimimizes RX IQ imbalance vs. LO frequency</li> 
+          <li><b>uhd_cal_tx_dc_offset:</b> - mimimizes TX DC offset vs. LO frequency</li> 
+          <li><b>uhd_cal_tx_iq_balance:</b> - mimimizes TX IQ imbalance vs. LO frequency</li> 
+         </ul> 
+         <p>The following RF frontends are supported by the self-calibration utilities:</p> 
+         <ul> 
+          <li>RFX Series transceiver boards</li> 
+          <li>WBX Series transceiver boards</li> 
+          <li>SBX Series transceiver boards</li> 
+          <li>CBX Series transceiver boards</li> 
+          <li>UBX Series transceiver boards</li> 
+         </ul> 
+         <h2><a class="anchor" id="calibration_self_utils"></a> Calibration Utilities</h2> 
+         <p>UHD software installs the calibration utilities into <code>&lt;install-path&gt;/bin</code>. <b>Disconnect</b> any external hardware from the RF antenna ports, and run the following from the command line. Each utility will take several minutes to complete: </p> 
+         <pre class="fragment">uhd_cal_rx_iq_balance --verbose --args=&lt;optional device args&gt;
+uhd_cal_tx_iq_balance --verbose --args=&lt;optional device args&gt;
+uhd_cal_tx_dc_offset --verbose --args=&lt;optional device args&gt;
+</pre> 
+         <p>See the output given by <code>--help</code> for more advanced options, such as manually choosing the frequency range and step size for the sweeps.</p> 
+         <p><b>Note:</b> Your daughterboard needs a serial number to run a calibration utility. Some older daughterboards may not have a serial number. If this is the case, run the following command to burn a serial number into the daughterboard's EEPROM: </p> 
+         <pre class="fragment">&lt;install dir&gt;/lib/uhd/utils/usrp_burn_db_eeprom --ser=&lt;desired serial&gt; --args=&lt;optional device args&gt;
+</pre> 
+         <h2><a class="anchor" id="calibration_data"></a> Calibration Data</h2> 
+         <p>By default, calibration files are stored in the user's home/application directory:</p> 
+         <ul> 
+          <li><b>Linux:</b> <code>${HOME}/.uhd/cal/</code></li> 
+          <li><b>Windows:</b> <code>APPDATA%\.uhd\cal\</code></li> 
+         </ul> 
+         <p>If you would like to specify a custom directory, you can do so with the <code>$UHD_CONFIG_DIR</code> environment variable:</p> 
+         <ul> 
+          <li><b>Custom (any OS):</b> <code>${UHD_CONFIG_DIR}/.uhd/cal/</code></li> 
+         </ul> 
+         <p>Calibration files can easily be moved from one machine to another by copying the &quot;cal&quot; directory. Re-running a calibration utility will replace the existing calibration file. The old calibration file will be renamed so it may be recovered by the user.</p> 
+         <h2><a class="anchor" id="ignore_cal_file"></a> Ignoring Calibration Files</h2> 
+         <p>At runtime, the user can choose to ignore a daughterboard's calibration file by adding &quot;ignore-cal-file&quot; to the arguments. With the UHD API, it can be done as follows:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <a class="code" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a> hint; 
+          </div> 
+          <div class="line">
+            hint[ 
+           <span class="stringliteral">&quot;type&quot;</span>] = 
+           <span class="stringliteral">&quot;usrp1&quot;</span>; 
+          </div> 
+          <div class="line">
+            hint[ 
+           <span class="stringliteral">&quot;ignore-cal-file&quot;</span>] = 
+           <span class="stringliteral">&quot;&quot;</span>; 
+          </div> 
+          <div class="line"> 
+           <a class="code" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">uhd::device_addrs_t</a> dev_addrs = 
+           <a class="code" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">uhd::device::find</a>(hint); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p>Using tx_waveforms as an example, the user can apply this argument as follows: </p> 
+         <pre class="fragment">tx_waveforms --args=&quot;addr=192.168.10.2,ignore-cal-file&quot; --freq=100e6 --rate=1e6</pre> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

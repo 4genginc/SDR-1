@@ -1,0 +1,233 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Vivado Environment Utilities</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Vivado Environment Utilities</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Vivado Environment Utilities</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <h2>Environment Setup</h2> 
+         <ul> 
+          <li>Navigate to <code>usrp3/top/{project}</code> where project is: 
+           <ul> 
+            <li>x300: For USRP X300 and USRP X310</li> 
+            <li>e300: For USRP E310</li> 
+           </ul> </li> 
+          <li>To setup up the Ettus Research Xilinx build environment run 
+           <ul> 
+            <li><code>source setupenv.sh</code> (If Vivado is installed in the default path /opt/Xilinx/Vivado) <em>OR</em></li> 
+            <li><code>source setupenv.sh --vivado-path=&lt;VIVADO_PATH&gt;</code> (where VIVADO_PATH is a non-default installation path)</li> 
+           </ul> </li> 
+          <li>This should not only enable building USRP FPGAs but also make the following utlities available</li> 
+         </ul> 
+         <h2>ModelSim Specific</h2> 
+         <p>The setupenv.sh script will search the system for ModelSim installations and setup everything to run it natively and within Vivado. The currently support versions of ModelSim are PE, DE, SE, DE-64, SE-64.</p> 
+         <p>The following functions are also available in the environment: </p> 
+         <pre class="fragment">build_simlibs: Build ModelSim simulation libraries for Vivado
+</pre> 
+         <h2>IP Management</h2> 
+         <h3>Create Vivado IP</h3> 
+         <pre class="fragment">viv_create_new_ip: Create a new Vivado IP instance and a Makefile for it
+
+Usage: viv_create_new_ip &lt;IP Name&gt; &lt;IP Location&gt; &lt;IP VLNV&gt; &lt;Product&gt;
+- &lt;IP Name&gt;: Name of the IP instance
+- &lt;IP Location&gt;: Base location for IP
+- &lt;IP VLNV&gt;: The vendor, library, name, and version (VLNV) string for the IP as defined by Xilinx
+- &lt;Product&gt;: Product to generate IP for
+</pre> 
+         <h3>Modify existing Vivado IP</h3> 
+         <pre class="fragment">viv_modify_ip: Modify an existing Vivado IP instance
+
+Usage: viv_modify_ip &lt;IP XCI Path&gt;
+- &lt;IP XCI Path&gt;: Path to the IP XCI file.
+</pre> 
+         <h3>List supported Vivado IP</h3> 
+         <pre class="fragment">viv_ls_ip: List the items in the Vivado IP catalog
+
+Usage: viv_ls_ip &lt;Product&gt;
+- &lt;Product&gt;: Product to generate IP for.
+</pre> 
+         <h3>Upgrade IP to the environment version of Vivado</h3> 
+         <pre class="fragment">viv_upgrade_ip: Upgrade one or more Xilinx IP targets
+
+Usage: viv_upgrade_ip &lt;IP Directory&gt; [--recursive]
+- &lt;IP Directory&gt;: Path to the IP XCI file.
+</pre> 
+         <h2>Hardware Management</h2> 
+         <h3>Launch Vivado Hardware Console</h3> 
+         <pre class="fragment">viv_hw_console: Launch the Tcl hardware console
+
+Usage: viv_upgrade_ip
+</pre> 
+         <h3>List connected JTAG devices</h3> 
+         <pre class="fragment">viv_jtag_list: List all devices (and their addresses) that are connected to the system using the Xilinx platform cable
+
+Usage: viv_jtag_list
+</pre> 
+         <h3>Program device over JTAG</h3> 
+         <pre class="fragment">viv_jtag_program: Downloads a bitfile to an FPGA device using Vivado
+
+Usage: viv_jtag_program &lt;Bitfile Path&gt; [&lt;Device Address&gt; = 0:0]
+- &lt;Bitfile Path&gt;: Path to a .bit FPGA configuration file
+- &lt;Device Address&gt;: Address to the device in the form &lt;Target&gt;:&lt;Device&gt;
+                    Run viv_jtag_list to get a list of connected devices
+</pre> 
+         <h3>Probe Xilinx bitfile</h3> 
+         <pre class="fragment">probe_bitfile: Probe a Xilinx bit file and report header information
+
+Usage: probe_bitfile &lt;Bitfile Path&gt;
+- &lt;Bitfile Path&gt;: Path to a .bit FPGA configuration file</pre> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>USRP1使用手册_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <span>USRP1使用手册</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">USRP1使用手册</p>
+                <hr>
+                <p class="min_title">产品特征：</p>
+                <p>两个收发器卡槽</p>
+                <p>SC16样品模式 - RX和TX：16bit的采样可达到8MHz的射频带宽</p>
+                <p>SC8采样模式 – RX： 8bit的采样可达到16MHz的射频带宽</p>
+                <p>USB 2.0 高速连接</p>
+                <p>低成本解决方案</p>
+                <p>MIMO 可构建性- USRP 母板上的两路收发使得单个USRP 可以构建MIMO</p>
+                <p>FPGA：Altera Cyclone</p>
+                <p>ADCs: 12-位64 MS/s</p>
+                <p>DACs: 14-位128 MS/s</p>
+                <p class="min_title">运行环境</p>
+                <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/system_mirrors/openbts_v3.09_52M.iso" target="_blank">USRP1 52MHz时钟 系统镜像</a></p>
+                <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/system_mirrors/Openbts_v2.09_64.iso" target="_blank">USRP1 64MHz时钟 系统镜像</a></p>
+                <p><a href="usrp1install.html">USRP1系统安装测试</a></p>
+                <p class="min_title">相关命令</p>
+                <p>常用命令</p>
+                <p class="code">lsusb &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//查看RAD1设备是否与电脑相连 &nbsp;</p>
+                <p class="code">lsusrp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //查看gnuradio驱动是否识别RAD1</p>
+                <p class="code">usrp_probe &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//查看RAD1板子的相关信息</p>
+                <p class="code">usrp_fft.py &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //grc的模拟频谱接收模块如：</p>
+                <p class="code">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;usrp_fft.py –f 900M –R –A</p>
+                <p class="code">usrp_benchmark_usb.py &nbsp;//测试RAD1和电脑的USB通信速率</p>
+                <p></p>
+                <p>USRP1主板程序刷写</p>
+                <p class="code">**测试USRP1和电脑的USB通信速率**</p>
+                <p class="code">/usr/local/share/gnuradio/examples/usrp/usrp_benchmark_usb.py&nbsp;</p>
+                <p class="code">** 重新烧写USRP1程序命令**</p>
+                <p class="code">/usr/local/src/gnuradio-3.3.0/usrp/firmware/src/usrp2/burn-usrp4-eeprom</p>
+                <p class="code">**以RFX900子板为例，烧写子板 &nbsp;A槽烧写 **</p>
+                <p class="code">/usr/local/src /gnuradio-3.3.0/usrp/host/apps/burn-db-eeprom -t rfx900_mimo_b -A –f</p>
+                <p class="code">**以RFX900子板为例，烧写子板 &nbsp;B槽烧写 **</p>
+                <p class="code">/usr/local/src /gnuradio-3.3.0/usrp/host/apps/burn-db-eeprom -t rfx900_mimo_b -B –f</p>
+                <p></p>
+                <p>USRP1测试</p>
+                <p class="code">USRP1与电脑的USB总线测试</p>
+                <p class="code">/usr/local/share/gnuradio/examples/usrp/usrp_benchmark_usb.py</p>
+                <p class="code">benchmark信号发射测试</p>
+                <p class="code">cd /usr/local/share/gnuradio/examples/digital/narrowband/</p>
+                <p class="code">./benchmark_tx.py –f 900M –T A &nbsp; &nbsp;//发射一个900M的信号（使用RFX900子板）</p>
+                <p></p>
+                <p>接收测试</p>
+                <p class="code">cd /usr/local/share/gnuradio/examples/digital/narrowband/</p>
+                <p class="code">./benchmark_rx.py –f 900M –R A &nbsp; &nbsp;//接收一个900M的信号（使用RFX900子板）</p>
+                <p class="code">或者</p>
+                <p class="code">usrp_fft.py –f 900M –f –R A &nbsp; //模拟频谱接收900M的信号 （使用RFX900子板）</p>
+                <p class="min_title">硬件相关</p>
+                <p class="min_title"><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP1/USRP1%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/USRP1%E5%8E%9F%E7%90%86%E5%9B%BE/usrp1.pdf" target="_blank">USRP1原理图</a></p>
+                <p class="min_title"><a href="usrp1datasheet.html">USRP 1数据手册</a></p>
+                <p class="min_title">应用实例</p>
+                <p><a href="usrp1demo.html">OpenBTS的应用</a></p>
+                <p><a href="usrp1shiyan.html">USRP1实验指导书</a></p>
+                <p class="min_title">资料</p>
+                <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP1/USRP1%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/USRP1--GRC--PPT/gr_tutorial.pdf" target="_blank">GRC编程ppt</a></p>
+                <p><a href="usrp1chanping.html">USRP1硬件产品说明</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UsrpFAQClocking</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><p><b><font size="3">母板重定时</font></b></p><div style="text-align:right;font-family:simsun,serif"><p><font size="2"><b>[ <a href="usrpfaqrssi.html">&lt;&lt;
+ 
+RSSI 测量</a> |&nbsp;<a href="usrpfaq.html">^ USRP 
+FAQ 首页 ^</a> | <a href="usrpfaqbitstream.html">装
+载 FPGA 微码 
+&gt;&gt;</a> ] </b><br></font></p></div>
+<p style="font-family:simsun,serif;margin-left:40px"><br></p><p style="margin-left:40px">FIXME this section is outdated, from before c++ drivers.</p>
+<ul style="font-family:simsun,serif"><li><p><font size="2"><b>I would like to run my USRP off a 44 MHz clock instead of the 64 MHz 
+clock that is currently used. Can I generate a 44 MHz clock from the 64 MHz or 
+do I have to change the crystal? If I change over to the 44 MHz will everything 
+else still work? Especially the DBSRX and RFX2400 boards? </b></font></p></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">You need a new crystal or an external oscillator. You'll need to change the 
+definition of </font></p><blockquote>
+</blockquote><div><ol><li><font size="2"><i><span>/*! </span></i></font></li><li><font size="2"><i><span>* 
+\brief return frequency of master oscillator on USRP </span></i></font></li><li><font size="2"><i><span>*/</span></i></font></li><li><font size="2"><b><span>long</span></b> fpga_master_clock_freq () <b><span>const</span></b> { <b><span>return</span></b> 
+64000000; } </font></li></ol></div><blockquote><div>
+</div></blockquote></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">in <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/usrp/host/lib/legacy/usrp_basic.h" rel="nofollow">usrp_basic.h</a>. 
+</font></p></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2"><b>Procedure:</b><br><br>I purchased a 44 MHz oscillator from digi-key (p/n 
+300-7254-1-ND, CSX750FJC44) for $3.38. The first attempt to remove the USRP 64 
+MHz failed miserably with a pen iron. I purchased a heat gun from digi-key 
+(MA1008-ND) for $52, set it to the 1000 degree setting and the old oscillator 
+came up in about 10 seconds. Installed the new oscillator and checked the 44 MHz 
+clock with a scope. I am using the std_4rx_0tx.rbf FPGA image. </font></p></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">I then tried to run my customized dbs application that records 8-bit I/Q data 
+to a file for me from any of the 802.11b channels. I got all zeros in the data. 
+Then remembered Eric told me to change the clock in <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gr-usrp/src/db_dbs_rx.py" rel="nofollow">db_dbs_rx.py</a>. 
+</font></p></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">My code is a little older than current but here are my modifications: 
+<br><br>In <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gr-usrp/src/db_dbs_rx.py" rel="nofollow">gr-usrp/src/db_dbs_rx.py</a> 
+changed line 88 from <br></font></p><div style="margin-left:40px"><font size="2">self.refclk_divisor = 16 
+</font><br></div>
+<p><font size="2">to </font></p><div style="margin-left:40px"><font size="2">self.refclk_divisor = 11 </font><br></div>
+<p><font size="2">and changed line 108 from <br></font></p><div style="margin-left:40px"><font size="2">return 
+64e6/self.refclk_divisor </font><br></div>
+<p><font size="2">to </font></p><div style="margin-left:40px"><font size="2">return 44e6/self.refclk_divisor 
+</font><br></div></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">then in /gr-usrp I did<br></font></p><div style="margin-left:40px"><font size="2">make clean</font><br><font size="2">make 
+</font><br><font size="2">make check </font><br><font size="2">make install </font><br></div></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">Rerun my custom dbs program and it worked fine. I used a decimation of 4 so 
+I'm recording at 11 MSsamples per second.(#FIXME# is this correct ?) 
+</font></p></blockquote>
+<ul style="font-family:simsun,serif"><li><font size="2"><b>Is there another way to achieve 10 MSample/second without changing USRP 
+clock? </b></font></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">I have been working with fractional rate decimeter/interpolators inside the 
+USRP FPGA. You can put a fractional rate decimeter inside the FPGA which 
+decimates by 6.4. </font></p></blockquote>
+<blockquote style="font-family:simsun,serif">
+<p><font size="2">It is a bit hard to get them to fit but you get a lot of flexibility out of 
+them without changing the clocks. .(#FIXME# is this correct ?) </font></p></blockquote><ul><li><b>The file usrp_basic.h has the following member: </b></li></ul><p style="margin-left:80px">long fpga_master_clock_freq () const { return 64000000; } </p><p style="margin-left:40px"><b>If I want my system to work at 50 MHz, will I need to change this constant? </b></p><blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">Yes. The idea was that there was a single place in the code 
+(fpga_master_clock_freq) that "knows" the actual frequency. 
+</font></p></blockquote>
+<ul style="font-family:simsun,serif"><li><font size="2"><b>I've got a USRP v4 board that I'm planning to run off of a 13 MHz 
+external clock. However, I'm intending to use a pair of RFX 900 daughterboards, 
+and I’m wondering if there are any known modifications needed to allow these 
+daughterboards to operate with a 13 MHz clock? </b></font></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">You need to go into the <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gr-usrp/src/db_flexrf.py" rel="nofollow">db_flexrf.py</a> 
+and <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gr-usrp/src/db_flexrf_mimo.py" rel="nofollow">db_flexrf_mimo.py</a> 
+files in the <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gr-usrp/src" rel="nofollow">gr-usrp/src</a> 
+directory. Any references to 64 MHz need to be changed to 13 MHz. You also need 
+to make sure that you tell the usrp object what its sampling rate is. 
+</font></p></blockquote>
+<ul style="font-family:simsun,serif"><li><font size="2"><b>What is the voltage level for the USRP external clock? Is 1.0V peak to 
+peak ok? Do I need to add a dc offset to my external clock to prevent the 
+negative swings? </b></font></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">Yes 1V p-p for USRP rev 4. Use 3.3V for rev 2 and 3. 
+</font></p></blockquote>
+<ul style="font-family:simsun,serif"><li><font size="2"><b>What are the limits on the USRP external clock? Will using a 
+“non-standard" clock frequency break any parts of Gnuradio? </b></font></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">You can drive the clock line anywhere between about 10MHz and 65MHz. Be sure 
+to edit usrp_basic: :fpga_master_clock_freq() to return the new value. 
+</font></p></blockquote>
+<ul style="font-family:simsun,serif"><li><font size="2"><b>I re-clocked my USRP from 64 to 65.536 MHz and have recently discovered 
+that I &amp; Q samples are no longer orthogonal, rather they seem to be only 70 
+degrees or so apart. I would guess this is due to some hard coded values in the 
+CIC or HB filters? Is there a USRP command to correct for this phase imbalance? 
+</b></font></li></ul>
+<blockquote style="font-family:simsun,serif">
+<blockquote>
+</blockquote><p><font size="2">That's an odd problem. Sounds like a timing issue. Keep in mind that the ADCs 
+are only specified to work to 64 MHz and the FPGA image is compiled to meet 
+timing at 64 MHz. You might need to recompile it with the stricter timing 
+numbers. All of the DSP stuff in the FPGA should not care about the absolute 
+frequency as long as it meets timing. </font></p></blockquote>
+<font size="2"><br style="font-family:simsun,serif"></font><div><font size="2"><br style="font-family:simsun,serif"></font>
+<p style="text-align:right;font-family:simsun,serif"><font size="2"><b>[ <a href="usrpfaqrssi.html">&lt;&lt; 
+RSSI 测量</a> |&nbsp;<a href="usrpfaq.html">^ USRP FAQ 首页 ^</a> | <a href="usrpfaqbitstream.html">装载 FPGA 微码 
+&gt;&gt;</a> ] </b><br></font></p><p style="font-family:simsun,serif"><font size="2"><br></font></p><p style="font-family:simsun,serif"><font size="2"><br></font></p><p style="font-family:simsun,serif"><font size="2"><br></font></p><p style="font-family:simsun,serif"><br></p><p style="font-family:simsun,serif"><font size="2"><br><b>注：</b><b><a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/UsrpFAQClocking" target="_blank">Motherboard Re-Clocking Questions</a>（原文出处，翻译整理仅供参考!）</b></font></p></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

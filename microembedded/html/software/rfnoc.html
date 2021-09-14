@@ -1,0 +1,202 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>RFNoC_微嵌</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../support/faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../support/faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="software">
+            <div class="middle">
+            <div class="tab">
+                <a href="software.html">SDR 软件</a> » <span>RFNoC™ (RF Network on Chip)</span>
+            </div>
+                <div class="content box_shadow">
+                    <p class="content_title">RFNoC™ (RF Network on Chip)</p>
+                    <hr />
+                    <p class="mingxi">目前的FPGA，如赛灵思的Kintex-7和第三代USRP特别提款权使用ZYNQ-7000系列，具有令人难以置信的计算能力，但服用这种功能的优点是可以使用传统的FPGA设计流程的时候很困难。 RFNoC设计，让您有效地利用最新的FPGA几代的全部功能而没有成为一个专家的固件开发。它提供了尽可能轻松，你可以创建的GNU Radio flowgraphs创建FPGA应用的能力。这包括在应用程序无缝地传输数据从一个FPGA＆，从主机，极大地提高了FPGA的方便卸货的能力。同时拥有FPGA和PC主机上运行的整个SDR应用的系统级视图使远远优于开发和调试。混合和匹配基于主机和基于FPGA的处理是透明的你，该处理可以扩展到多个FPGA和设备在网络上。</p>
+                    <br />
+                    <p class="mingxi">下面是使用GNU Radio的伴侣流程图建立了一个RFNoC的一个例子。具有四个块，数据在主机上产生，卸载到FPGA中进行筛选，然后运回主机进行绘图：</p>
+                    <img src="../../images/sdr_software/rfnoc/1.png" width="920" height="129" alt="" />
+                    <img src="../../images/sdr_software/rfnoc/2.png" width="920" height="389" alt="" />
+                    <br />
+                    <p class="mingxi">下面是另一种称为RFNoC fosphor，这是一个RTSA式显示由FPGA RFNoC块加速RFNoC例子。旁每个设计是截图的实时显示的，中心在2.45千兆赫，一个在100MHz的带宽，以及其他在200MHz的带宽。两人都与一个UBX-160子卡的X310来实现。</p>
+                    <br />
+                    <img src="../../images/sdr_software/rfnoc/3.png" width="920" height="300" />
+                    <img src="../../images/sdr_software/rfnoc/4.png" width="920" height="300" />
+                    <br /><br />
+                    <p class="mingxi">RFNoC信号处理算法被封装在容易使用的包装，使它们能够被动态地连接，并根据需要使用。这些RFNoC块可以在许多设计环境或语言包括VHDL，Verilog的开发，赛灵思Vivado HLS（C代码），或能够支持AXI流接口的任何其它工具。赛灵思CoreGen IP也可以轻松导入RFNoC环境。此外，还有一些RFNoC块已经可用今天从内的GNU Radio伴侣，并且该列表正在迅速增长：</p>
+                    <br />
+                    <ul class="content_list">
+                        <li>FIFO</li>
+                        <li>FFT</li>
+                        <li>FIR</li>
+                        <li>fosphor (real-time spectrum analyzer)</li>
+                        <li>Decimator (Keep 1 in N)</li>
+                        <li>Log Power Calculator</li>
+                        <li>Radio Interface</li>
+                        <li>Vector IIR (moving average)</li>
+                        <li>Window multiplier (for FFT)</li>
+                        <li>OFDM: Burst detection + synchronization, equalizer, packet demodulator</li>
+                    </ul>
+                    <br />
+                    <p class="mingxi">所有这些块，你现在可以进行自定义FPGA设计甚至无需编写Verilog或VHDL！</p>
+                    <br />
+                    <p class="mingxi">RFNoC已经融入了UHD我们的第三代USRP特别提款权（X300系列，E300系列和未来的设备），让您可以轻松地共享跨设备的FPGA设计。</p>
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

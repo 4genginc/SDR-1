@@ -1,0 +1,277 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>N210使用手册_微嵌</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="doc">
+            <div class="middle">
+                <div class="tab">
+                    <a href="../../faq.html">文档资料</a> » <span>N210使用手册</span>
+                </div>
+                <div class="content box_shadow">
+                    <p class="content_title">N210使用手册</p>
+                    <hr />
+                    
+                        <p class="min_title">产品特征：</p>
+                        <ul class="liebiao">
+                            <li>50 MHz 瞬时射频带宽</li>
+                            <li>千兆级以太网连接</li>
+                            <li>MIMO 电缆连接 - 基于每台 USRP N210 上只有单路收发链路，MIMO 的构建必须由两台或两台以上 USRP N210 来构建</li>
+                            <li>板上 FPGA 处理 - Onboard FPGA processing</li>
+                            <li>FPGA: Xilinx Spartan XC3SD3400A</li>
+                            <li>ADCs: 14-位 100 MS/s</li>
+                            <li>DACs: 16-位 400 MS/s</li>
+                            <li>能够锁定一个外部 5 或 10 MHz 的参考时钟</li>
+                            <li>TCXO 时钟参考</li>
+                            <li>可选的内部 GPS 伺服时钟 - USRP N200 GPSDO</li>
+                            <li>仅可以使用付费的 Xilinx® ISE® Design Suite 工具修改 FPGA 代码</li>
+                        </ul>
+                    
+                        <p class="min_title">运行环境</p>
+                        <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/system_mirrors/v10-iso/livecd.iso" target="_blank">N210系统镜像</a></p>
+                        <p><a href="n210install.html">N210系统安装测试</a></p>
+                    
+                        <p class="min_title">相关命令</p>
+                        <p>测试USRP N210设备是否与系统连接</p>
+                        <p class="code">#usrp_find_devices</p>
+                        <p>查看USRP N210设备的信息</p>
+                        <p class="code">#uhd_usrp_probe</p>
+                        <p>Benchmark命令发射信号测试</p>
+                        <p class="code">#/usr/local/share/gnuradio/examples/digital/benchmark_tx.py -f  900M </p>
+                        <p>模拟频谱接收</p>
+                        <p class="code">#uhd_fft  -f  900M   </p>
+                        <p>修改N210中eeprom中的相关信息命令</p>
+                        <p class="code">#cd /usr/local/lib/uhd/utils/</p>
+                        <p class="code">#./usrp_burn_mb_eeprom –help 可查看相关参数</p>
+                        <p>可修改设备ip-addr、subnet、gateway、mac-addr等，事例如下：</p>
+                        <p class="code">1）#./usrp_burn_mb_eeprom  --key=ip-addr --val=192.168.10.2</p>
+                        <p class="code">2）#./usrp_burn_mb_eeprom   --key=subnet --val=255.255.255.0</p>
+                        <p class="code">3）#./usrp_burn_mb_eeprom  --key=gateway --val=192.168.10.1</p>
+                        <p class="code">4）#./usrp_burn_mb_eeprom  --key=mac-addr --val=a0:36:fa:25:3a:0f</p>
+                    
+                    
+                    
+                        <p class="min_title">刷写N210固件、FPGA命令</p>
+                        <p>刷写FPGA</p>
+                        <p class="code">#/usr/local/lib/uhd/utils/usrp_n2xx_net_burner.py --addr=192.168.10.2 </p>
+                        <p class="code">--fpga=/usr/local/share/uhd/images/usrp_n210_r4_fpga.bin</p>
+                        <p>刷写固件</p>
+                        <p class="code">#/usr/local/lib/uhd/utils/usrp_n2xx_net_burner.py --addr=192.168.10.2 </p>
+                        <p class="code">--fw=/usr/local/share/uhd/images/usrp_n210_fw.bin</p>
+                        <p>N210+子板的单独发射信号</p>
+                        <p class="code">#cd /usr/local/share/gnuradio/examples/digital/narrowband/</p>
+                        <p class="code">#./benchmark_tx.py –f 900M   //发射一个900M的信号。可以发射任意频率的信号但是必须是在子板所覆盖的范围内。</p>
+                        <p class="code">或</p>
+                        <p class="code">#cd /usr/local/share/gnuradio/examples/digital/ofdm/</p>
+                        <p class="code">#./benchmark_tx.py –f 900M   //发射一个900M信号。可以发射任意频率的信号但是必须是在子板所覆盖的范围内。</p>
+                        <p>N210+子板的单独接收信号</p>
+                        <p class="code">#uhd_fft –f 900M   //接收一个900M信号。可以发射任意频率的信号但是必须是在子板所覆盖的范围内。</p>
+                    
+                    <br><br><br>
+                    <p class="content_title">硬件相关</p>
+                    <hr>
+                    
+                        <p class="min_title"><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+N210/N210%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/N210%E5%8E%9F%E7%90%86%E5%9B%BE/N210%EF%BC%88%E6%96%B0%E7%89%88%EF%BC%89%E5%8E%9F%E7%90%86%E5%9B%BE.pdf" target="_blank">N210原理图</a></p>
+                        <p class="min_title"><a href="n210datasheet.html">N210 数据手册</a></p>
+                        <p class="min_title">N210前面板指示灯</p>
+                        <p>前面板上的LED在调试硬件和软件问题非常有用。</p>
+                        <p>LED的揭示关于装置的状态如下：</p>
+                        <pre class="code">LED A：transmitting         LED B：MIMO cable link</pre>
+                        <pre class="code">LED C：receiving            LED D：firmware loaded</pre>
+                        <pre class="code">LED E：reference            LED F：CPLD load</pre>
+                    
+                        <p class="min_title">参考时钟—10 MHz</p>
+                        <p>使用外部10MHz参考时钟，方波将提供最佳的相位噪声性能，但是正弦波也是可以接受的。
+    参考时钟需要以下功率电平：</p>
+                        <p class="code">USRP2   5 to 15 dBm</p>
+                        <p class="code">USRP N210  0 to 15 dBm</p>
+                    
+                        <p class="min_title">PPS—秒脉冲</p>
+                        <p>用一个时间戳同步PPS信号要求以下幅度的方波信号：</p>
+                        <p class="code">USRP2   5Vpp</p>
+                        <p class="code">USRP N210   3.3  to  5Vpp</p>
+                        <p>使用下面的应用测试</p>
+                        <p><args>的是设备的地址参数（可选如果只有一个USRP设备是你的机器上）</p>
+                        <p class="code">#cd /usr/local/lib/uhd/examples</p>
+                        <p class="code">#./test_pps_input –args=<args></p>
+                        <p>内部GPSDO</p>
+                        <p>请参阅内部GPSDO（USRP-N2x0/ E1X0型号）的信息，配置和使用内部GPSDO。</p>
+                    
+                        <p class="min_title">可用传感器</p>
+                        <p>mimo_locked--时钟参考锁定在MIMO电缆</p>
+                        <p>ref_locked--时钟参考锁定（内部/外部）</p>
+                        <p>启用GPSDO当其他传感器被加入</p>
+                    
+                        <p class="min_title">多个RX接收通道</p>
+                        <p>在FPGA中有两条完成DDC的链路，在单通道情况下，只有一个链用过。从两个通道接收时，用户必须设置在RX子设备规范。该硬件只有一个子板插槽，这已经恰当地命名为A.插槽</p>
+                        <p>在下面的例子中，一个TVRX2安装。通道0从子设备RX1采购，通道1是从子设备RX2（RX1和RX2是天线源在TVRX2子端口）：</p>
+                        <p class="code">usrp->set_rx_subdev_spec("A:RX1 A:RX2");</p>
+                    
+                        <p class="min_title">应用实例</p>
+                        <p><a href="n210gpsdo.html">N210-GPSDO</a></p>
+                        <p><a href="n210demo.html">N210-mode-事例</a></p>
+                        <p><a href="n210shiyan.html">N210-GRC实验指导书</a></p>
+                        <p class="min_title">资料</p>
+                        <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+N210/N210%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/N210%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0ppt/USRP+N210%E7%A1%AC%E4%BB%B6.pptx" target="_blank">硬件介绍ppt</a></p>
+                        <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+N210/N210%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/N210--GRC--PPT/gr_tutorial.pdf" target="_blank">GRC编程ppt</a></p>
+                        <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+N210/N210%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/N210%E5%90%AF%E5%8A%A8%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B/USRP+N210%E5%90%AF%E5%8A%A8%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.pdf" target="_blank">N210启动加载过程</a></p>
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

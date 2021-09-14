@@ -1,0 +1,217 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">数字上变频问题</p>
+				<hr />
+				<p class="faq_title">So from what I understand, in the transmit side the digital up converters are implemented in the AD9862 chip but the interpolation is done in the FPGA. I believe in the receive side the down conversion is done in the FPGA. So why can't we do the same for the transmit side and implement the Digital UP Converters in the FPGA? </p>
+				<p class="faq_mingxi">On the transmit side we use our own CIC to interpolate from whatever ratio comes over the USB to 32 MS/s. This is sent to the 9862 which then interpolates again by a factor of four to bring us to 128 MS/s. The up converter is in the 9862 as you say. In the receive side, the down conversion is done in the FPGA, because the 9862 does not have a down converter in the RX path. The bus going to the TX path on the 9862 is multiplexed (I then Q samples), and we run it at our normal clock rate of 64 MHz. This means we can only get 32 MS/s complex across it. If we did the up conversion in the FPGA, we would thus be limited to about a 12 MHz carrier. </p>
+				
+				<p class="faq_title">The AD9862 chip contains interpolation filters as well. Could those be used instead of the CIC interpolators on the FPGA? In that way, both the up conversion and the interpolation would be done in the AD9862 chip and more space would be available on the FPGA? </p>
+				<p class="faq_mingxi">We use those interpolation filters already, but they only do a factor of 4, so we still need a CIC in the FPGA. </p>
+				
+				<p class="faq_title">What happened to the cic_int_shifter.v file in the USRP source? I am looking at re-enabling up conversion in the FPGA but cannot seem to locate this file. </p>
+				<p class="faq_mingxi">It's still in: usrp/fpga/sdr_lib/cic_int_shifter.v</p>
+				
+				<p class="faq_title">Is the data being clocked out of the USRP to DAC is at 64Msps? </p>
+				<p class="faq_mingxi">More precisely, there are two interleaved channels, each running at 32MS/s. The AD9862 interpolates each stream by 4, giving two streams at 128MS/s. </p>
+				
+				<p class="faq_title">There are two points that interpolation can happen - inside the AD9862 and internal to the FPGA. Within the FPGA, the CIC filter is the interpolating structure and has a variable rate, whereas the AD9862 has a fixed interpolation rate of 2x if a real-only signal is being used, or 4x is possible if interleaved with I/Q at 64Msps - giving the sample rate of I/Q 32Msps.Is that correct? </p>
+				<p class="faq_mingxi">Yes. </p>
+				
+				<p class="faq_title">I am unsure what the minimum interpolating rate of the CIC is, or the maximum for that matter? </p>
+				<p class="faq_mingxi">It's probably 1 or 2, though I doubt it's been tested. The (workable) maximum is determined by the width of the intermediate stages of the CIC. I believe we're good to 128 in the FPGA CIC. </p>
+				
+				<p class="faq_title">Who sets the interpolation rate of the CIC internal to the FPGA to get from the specified number of samples per symbol from a modulator block in GNU Radio to a number that the CIC can interpolate into 64Msps? </p>
+				<p class="faq_mingxi">The code in usrp_standard.cc controls the FPGA interpolation rate. The rates do not have to be powers of two. From the user point of view the net interpolation rate must be in [4, 512] and a multiple of 4. This is all controlled in usrp_standard.cc. </p>
+				
+				<p class="faq_title">There are 2 complex interpolators implemented in the FPGA (say int0, and int1). There are 4 real (ie, 2 complex) up converters implemented in the DAC chips (say DAC0, DAC1, DAC2, DAC3). The mux routes I and Q of int0 and int1 to the appropriate DACs. Is it true that DAC0,1 are hardwired to the TXA side of the USRP and dac2,3 to the TXB? Also, is the second complex interpolator used only if nchannels = 2? </p>
+				<p class="faq_mingxi">Yes. </p>
+				
+				<p class="faq_title">I found out that the max TX freq is limited in usrp_standard.cc to 44MHz (since USE_FPGA_TX_CORDIC is undefined). Now, since a 128MSps should safely ensure 64MHz, what is actually imposing that limitation? </p>
+				<p class="faq_mingxi">Its set by the passband of the interpolator in the AD9862. The digital up converters in the AD9862 don't allow you to set the frequency to values close to the Nyquist frequencies (from 44MHz to 84MHz). Since it samples at 128 MHz, the prohibited ranges are around multiples of 64 MHz. </p>
+				
+				<p class="faq_title">I'm having trouble understanding exactly how to go about sending two independent, real-valued signals to different SMA connectors on the same transmit daughterboards? </p>
+				<p class="faq_mingxi">As the software is currently built, you cannot send two independent, real-valued signals to different connectors on the same transmit daughterboard. The reason is that we are using the digital up-converters in the AD9862, and have the AD9862's configured in "Dual Channel Complex DAC Data" mode. See pages 20-21 of the AD9862 datasheet. If you only need two independent TX channels, the quick fix is to use two Basic Tx daughterboards. This is supported. Just tell the USRP that you're using two channels of data, and then provide a stream with two interleaved channels of I & Q data. An additional thought is that if you don't need digital up-conversion, I don't think it would take much to get two independent channels out. You should be able to use the existing FPGA and host code, and just manually jam the right magic values into the AD9862 registers 19 and 20. Make sure that you continue to run the 4x interpolator on the AD9862 so all the data rates remain the same. You can write the AD9862 regs from python using: </p>
+				<p class="faq_mingxi">u = usrp.sink_s(...)</p>
+				<p class="faq_mingxi">u._write_9862(which_codec, regno, value) # note the leading _ character</p>
+				<p class="faq_mingxi"># which_codec is 0 or 1 for side A or B</p>
+				<p class="faq_mingxi">Look in usrp_standard.cc to see how we normally setup these registers. </p>
+				
+				<p class="faq_title">At what rate should I send the samples to the tx_chains? Is every 4 clock cycles? They seem to be controlled by tx_strobe, but I failed to understand what this signal actually mean. </p>
+				<p class="faq_mingxi">The minimum interpolation rate is 4 due to the CIC filter limitations, so once every 4 will yield one side of the spectrum. I believe 128 is the other end of the spectrum, but you should set a constant for the rate so we can test with different ones. The tx_strobe happens once every rate clock cycles - with which it will send in a new sample. That strobe sends a new value down the TX stream and reads a new one ready for the next tx_strobe. </p>
+				
+				<p class="faq_title">What is the point of the bus_reset and the clear_status signal? They are both input to current tx_buffer. </p>
+				<p class="faq_mingxi">I am not sure of this - but I am assuming to stop/reset the transmit path and clear any status messages respectively. </p>
+				
+				<p class="faq_title">We have multiple USRPs clock-synchronized, but we haven't found a way to set things up so that the different sample streams hit the D/A converters at the same clock. </p>
+				<p class="faq_mingxi">We have gotten multiple USRPs synchronized for receive. That FPGA code and host code is in the subversion. For transmit, the problem could be a bit more difficult, depending on whether you can deal with a constant phase difference between the transmitting USRPs or not (MIMO vs beam forming). If you need the phases to be identical between the USRPs then you will have to change the verilog such that you are no longer using the digital up converters in the AD9862 and instead implement the DUC in the FPGA. This is because there's no way to directly control the phase accumulator in the AD9862. If you can deal with a constant phase offset, then a strategy similar to what Marin used for Rx should work for TX. </p>
+				
+				<p class="faq_title">My questions are regarding tx_chain.v. I am a bit confused as to how the flow of the code would proceed. There is no "always" statement in the code. </p>
+				<p class="faq_mingxi">This is just wiring a couple things together to get the transmission chain to work at the full clock rate. There are 3 main components here: a phase accumulator, a CORDIC and an interpolating CIC filter. The baseband signals are fed into the CORDIC along with a phase from the phase accumulator. For each sample that goes in, the phase accumulator rotates. This generates an IF that is mixed with your baseband signal. The interpolating CIC filter gets your baseband signal up to the proper sample rate to feed the DACs. </p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

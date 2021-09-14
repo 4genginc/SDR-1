@@ -1,0 +1,536 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>soft_register.hpp File Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>soft_register.hpp File Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">soft_register.hpp File Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <code>#include &lt;boost/cstdint.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/noncopyable.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="wb__iface_8hpp_source.html">uhd/types/wb_iface.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="exception_8hpp_source.html">uhd/exception.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="dirty__tracked_8hpp_source.html">uhd/utils/dirty_tracked.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/thread/mutex.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/thread/locks.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/unordered_map.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/tokenizer.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/foreach.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/lexical_cast.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;list&gt;</code> 
+         <br /> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           Include dependency graph for soft_register.hpp: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="soft__register_8hpp__incl.png" width="900" border="0" usemap="#include_2uhd_2utils_2soft__register_8hpp" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2soft__register_8hpp" id="include_2uhd_2utils_2soft__register_8hpp"> <area shape="rect" id="node4" href="wb__iface_8hpp.html" title="uhd/types/wb_iface.hpp" alt="" coords="336,96,495,123"></area><area shape="rect" id="node11" href="exception_8hpp.html" title="uhd/exception.hpp" alt="" coords="579,96,707,123"></area><area shape="rect" id="node15" href="dirty__tracked_8hpp.html" title="uhd/utils/dirty_tracked.hpp" alt="" coords="911,96,1085,123"></area><area shape="rect" id="node5" href="config_8hpp.html" title="uhd/config.hpp" alt="" coords="472,245,579,272"></area><area shape="rect" id="node7" href="time__spec_8hpp.html" title="uhd/types/time_spec.hpp" alt="" coords="152,171,320,197"></area></map> 
+         </div> 
+        </div> 
+        <p><a href="soft__register_8hpp_source.html">Go to the source code of this file.</a></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a> Classes</h2></td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__register__base.html">uhd::soft_register_base</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__register__t.html">uhd::soft_register_t&lt; reg_data_t, readable, writable &gt;</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__register__sync__t.html">uhd::soft_register_sync_t&lt; reg_data_t, readable, writable &gt;</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__regmap__accessor__t.html">uhd::soft_regmap_accessor_t</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__regmap__t.html">uhd::soft_regmap_t</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1soft__regmap__db__t.html">uhd::soft_regmap_db_t</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="namespaces"></a> Namespaces</h2></td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html">uhd</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1soft__reg__field"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1soft__reg__field.html">uhd::soft_reg_field</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="define-members"></a> Macros</h2></td> 
+          </tr> 
+          <tr class="memitem:a90948c954ccce196de880718aa843876"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="soft__register_8hpp.html#a90948c954ccce196de880718aa843876">UHD_DEFINE_SOFT_REG_FIELD</a>(name, width, shift)&nbsp;&nbsp;&nbsp;static const <a class="el" href="namespaceuhd.html#aa47788804ad7fa0e0a2ec6a61a4838e0">uhd::soft_reg_field_t</a> name = (((shift &amp; 0xFF) &lt;&lt; 8) | (width &amp; 0xFF))</td> 
+          </tr> 
+          <tr class="separator:a90948c954ccce196de880718aa843876"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a> Typedefs</h2></td> 
+          </tr> 
+          <tr class="memitem:aa47788804ad7fa0e0a2ec6a61a4838e0"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::uint32_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#aa47788804ad7fa0e0a2ec6a61a4838e0">uhd::soft_reg_field_t</a></td> 
+          </tr> 
+          <tr class="separator:aa47788804ad7fa0e0a2ec6a61a4838e0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a4c883a60a2640ee9a8bb05a1aa8b9be3"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint16_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a4c883a60a2640ee9a8bb05a1aa8b9be3">uhd::soft_reg16_wo_t</a></td> 
+          </tr> 
+          <tr class="separator:a4c883a60a2640ee9a8bb05a1aa8b9be3"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a5ca29f31526536e21ea677603daf7ea5"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint16_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a5ca29f31526536e21ea677603daf7ea5">uhd::soft_reg16_ro_t</a></td> 
+          </tr> 
+          <tr class="separator:a5ca29f31526536e21ea677603daf7ea5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a9c605e40cd0172c7ca7d577e40757597"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint16_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a9c605e40cd0172c7ca7d577e40757597">uhd::soft_reg16_rw_t</a></td> 
+          </tr> 
+          <tr class="separator:a9c605e40cd0172c7ca7d577e40757597"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a3f925fd03e80e16b6f2d34ca427fd8a5"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint16_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a3f925fd03e80e16b6f2d34ca427fd8a5">uhd::soft_reg16_wo_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a3f925fd03e80e16b6f2d34ca427fd8a5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a444d8250cfe07ded42b0d27507f3e425"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint16_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a444d8250cfe07ded42b0d27507f3e425">uhd::soft_reg16_ro_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a444d8250cfe07ded42b0d27507f3e425"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a5116794cb91bac25fd49091f5d9d70fc"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint16_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a5116794cb91bac25fd49091f5d9d70fc">uhd::soft_reg16_rw_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a5116794cb91bac25fd49091f5d9d70fc"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a7f3d36ba2f9e37ee66359701b7ce34b8"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint32_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a7f3d36ba2f9e37ee66359701b7ce34b8">uhd::soft_reg32_wo_t</a></td> 
+          </tr> 
+          <tr class="separator:a7f3d36ba2f9e37ee66359701b7ce34b8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a15d12ccc19b7393182545910d04975af"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint32_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a15d12ccc19b7393182545910d04975af">uhd::soft_reg32_ro_t</a></td> 
+          </tr> 
+          <tr class="separator:a15d12ccc19b7393182545910d04975af"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ac167cc46be2410ea7e1a2298daeebdbe"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint32_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#ac167cc46be2410ea7e1a2298daeebdbe">uhd::soft_reg32_rw_t</a></td> 
+          </tr> 
+          <tr class="separator:ac167cc46be2410ea7e1a2298daeebdbe"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a557f5796288d590c4045463e2966cbaa"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint32_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a557f5796288d590c4045463e2966cbaa">uhd::soft_reg32_wo_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a557f5796288d590c4045463e2966cbaa"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a408e2b279c37962f8a368e14476041e2"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint32_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a408e2b279c37962f8a368e14476041e2">uhd::soft_reg32_ro_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a408e2b279c37962f8a368e14476041e2"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a61bd5f1d04d4f9886d7e1a06c1238516"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint32_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a61bd5f1d04d4f9886d7e1a06c1238516">uhd::soft_reg32_rw_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a61bd5f1d04d4f9886d7e1a06c1238516"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1aa8b93d988e5a8c6711eb2388985d98"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint64_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a1aa8b93d988e5a8c6711eb2388985d98">uhd::soft_reg64_wo_t</a></td> 
+          </tr> 
+          <tr class="separator:a1aa8b93d988e5a8c6711eb2388985d98"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aa533cdd7a796d77b0297d233d9176a21"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint64_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#aa533cdd7a796d77b0297d233d9176a21">uhd::soft_reg64_ro_t</a></td> 
+          </tr> 
+          <tr class="separator:aa533cdd7a796d77b0297d233d9176a21"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a5e24924a5f779541b6f393b106ce4508"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_t<br class="typebreak" /> &lt; boost::uint64_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a5e24924a5f779541b6f393b106ce4508">uhd::soft_reg64_rw_t</a></td> 
+          </tr> 
+          <tr class="separator:a5e24924a5f779541b6f393b106ce4508"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a2e5e9c0580b3a6641cd83e0a2b2db76e"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint64_t, false, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a2e5e9c0580b3a6641cd83e0a2b2db76e">uhd::soft_reg64_wo_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a2e5e9c0580b3a6641cd83e0a2b2db76e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ab1a00df86e9c073949534b094f1e6f62"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint64_t, true, false &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#ab1a00df86e9c073949534b094f1e6f62">uhd::soft_reg64_ro_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:ab1a00df86e9c073949534b094f1e6f62"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8e15e4fc9ba43c6a367e4685c3c8f72e"> 
+           <td class="memItemLeft" align="right" valign="top">typedef soft_register_sync_t<br class="typebreak" /> &lt; boost::uint64_t, true, true &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a8e15e4fc9ba43c6a367e4685c3c8f72e">uhd::soft_reg64_rw_sync_t</a></td> 
+          </tr> 
+          <tr class="separator:a8e15e4fc9ba43c6a367e4685c3c8f72e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="enum-members"></a> Enumerations</h2></td> 
+          </tr> 
+          <tr class="memitem:ad780ee43a0ed61d03b7c217e1e7c3e21"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#ad780ee43a0ed61d03b7c217e1e7c3e21">uhd::soft_reg_flush_mode_t</a> { <a class="el" href="namespaceuhd.html#ad780ee43a0ed61d03b7c217e1e7c3e21a74d5568c04bd90ae11f4bf02012a2e4a">uhd::OPTIMIZED_FLUSH</a>, <a class="el" href="namespaceuhd.html#ad780ee43a0ed61d03b7c217e1e7c3e21ae613792d0cb1e928c6cafd7f595f7ab4">uhd::ALWAYS_FLUSH</a> }</td> 
+          </tr> 
+          <tr class="separator:ad780ee43a0ed61d03b7c217e1e7c3e21"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="func-members"></a> Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a05c1925e6ba499c5855e20c5a5b6e352"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a05c1925e6ba499c5855e20c5a5b6e352">uhd::likely</a> (bool expr)</td> 
+          </tr> 
+          <tr class="memdesc:a05c1925e6ba499c5855e20c5a5b6e352"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">hint for the branch prediction <a href="#a05c1925e6ba499c5855e20c5a5b6e352">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a05c1925e6ba499c5855e20c5a5b6e352"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a13b304ec2c517bfba480c1f59ca180d0"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html#a13b304ec2c517bfba480c1f59ca180d0">uhd::unlikely</a> (bool expr)</td> 
+          </tr> 
+          <tr class="memdesc:a13b304ec2c517bfba480c1f59ca180d0"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">hint for the branch prediction <a href="#a13b304ec2c517bfba480c1f59ca180d0">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a13b304ec2c517bfba480c1f59ca180d0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:af204ce6f004a1d780d7dff246a6dffbb"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1soft__reg__field.html#af204ce6f004a1d780d7dff246a6dffbb">uhd::soft_reg_field::width</a> (const soft_reg_field_t field)</td> 
+          </tr> 
+          <tr class="separator:af204ce6f004a1d780d7dff246a6dffbb"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a10e6b68c969d1a68e7fb6515b1060123"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1soft__reg__field.html#a10e6b68c969d1a68e7fb6515b1060123">uhd::soft_reg_field::shift</a> (const soft_reg_field_t field)</td> 
+          </tr> 
+          <tr class="separator:a10e6b68c969d1a68e7fb6515b1060123"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8ace66f8b5a6cfdd0fc893e700bef096"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename data_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a8ace66f8b5a6cfdd0fc893e700bef096"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> size_t&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1soft__reg__field.html#a8ace66f8b5a6cfdd0fc893e700bef096">uhd::soft_reg_field::mask</a> (const soft_reg_field_t field)</td> 
+          </tr> 
+          <tr class="separator:a8ace66f8b5a6cfdd0fc893e700bef096"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>Utilities to access and index hardware registers.</p> 
+         <p>This file contains three main utilities:</p> 
+         <ul> 
+          <li>A soft_register wrapper class that can manage a soft-copy, do dirty tracking and allow symbolic access to various field of a register.</li> 
+          <li>A register map class that can own multiple soft registers that share the same underlying control interface.</li> 
+          <li>A register map database that can be used to collect multiple register maps and other databases to create a hierarchy of registers that can be accessed using the UHD register API. </li> 
+         </ul> 
+        </div> 
+        <h2 class="groupheader">Macro Definition Documentation</h2> 
+        <a class="anchor" id="a90948c954ccce196de880718aa843876"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_DEFINE_SOFT_REG_FIELD</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">name, </td> 
+            </tr> 
+            <tr> 
+             <td class="paramkey"></td> 
+             <td></td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">width, </td> 
+            </tr> 
+            <tr> 
+             <td class="paramkey"></td> 
+             <td></td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">shift&nbsp;</td> 
+            </tr> 
+            <tr> 
+             <td></td> 
+             <td>)</td> 
+             <td></td> 
+             <td>&nbsp;&nbsp;&nbsp;static const <a class="el" href="namespaceuhd.html#aa47788804ad7fa0e0a2ec6a61a4838e0">uhd::soft_reg_field_t</a> name = (((shift &amp; 0xFF) &lt;&lt; 8) | (width &amp; 0xFF))</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

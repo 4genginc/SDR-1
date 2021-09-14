@@ -1,0 +1,152 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>RFX900测试文档_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <a href="rftest.html">RF子板测试文档</a> » <span>RFX900测试文档（主板使用USRP N210）</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">RFX900测试文档（主板使用USRP N210）</p><hr><p class="min_title">烧写与测试环境：</p><p>N210系统镜像。</p><p class="min_title">设备要求：</p><p>一台装有N210系统镜像的电脑，一台USRPN210设备，一个6V电源，一根网线。</p><p class="min_title">测板思想：</p><p>由于子板RFX900的收发是750MHz到1050GH，所以多测试几个这个范围内的几个频率的收发就可以测试该RFX900的好坏。以下我是用的900MHz为例做的测试。</p><p class="min_title">收发信号测试</p><p class="min_title">使用usrpn210母版用uhd相关程序对子板RFX900进行测试。</p><p class="min_title">测试方法一：</p><p class="min_title">1、测发射信号</p><p>在一台电脑上运行：</p><p>在sudo su下运行</p><p class="code">cd /usr/local/bin</p><p class="code">./uhd_siggen --sine -f 900M –A TX/RX &nbsp; (测试信号发射)</p><p>通过频谱仪观察是否有波形，若接收到信号频谱仪上会显示相应的波形，标识该子板发射信号好使，否则不好使。</p><p>2、测接收信号</p><p>1）、一台电脑上运行：</p><p>在sudo su下运行</p><p class="code">cd /usr/local/share/gnuradio/example/digital</p><p class="code">./benchmark_tx.py –f 900M –T A&nbsp;</p><p>2）、另一台电脑上运行：</p><p>在sudo su下运行</p><p class="code">cd /usr/local/bin</p><p class="code">./uhd_fft -f 900M(默认接收信号用的是RX2天线)</p><p class="code">./uhd_fft -f 900M –A TX/RX(这里接收信号用的是TX/RX天线)</p><p>如果接收到信号则会出现信号波形，表示RFX900的接收好使，否则不好使。&nbsp;</p><p class="min_title">测试方法二：</p><p>注：如果对命令相关参数不理解，可在你所用命令后加--help运行，查看相关信息。</p><p>1、一台电脑上运行</p><p>在sudo su下(发射)</p><p class="code">/usr/local/share/gnuradio/examples/digital/narrowband#</p><p class="code">./benchmark_tx.py -f 900M -A TX/RX</p><p>2、另一台电脑上运行</p><p>在sudo su下(接收)</p><p class="code">uhd_fft -f 900M(默认接收信号用的是RX2天线)</p><p class="code">uhd_fft -f 900M –A TX/RX(这里接收信号用的是TX/RX天线)</p><p>如果接收到信号则会出现信号波形，表示wbx的接收好使，否则不好使</p><p class="min_title">实例测试WBX</p><p class="min_title">1．基本测试</p><p>将设备与电脑相连</p><p>终端切换到root权限</p><p>终端输入命令：</p><p>sudo su&nbsp;</p><p>回车后输入下面命令</p><p>uhd_find_devices</p><p>检测usrp设备是否电脑相连。</p><p>如下图为成功连接</p><p class="img"><img src="images/rfx900_n210_1.png"></p><p>uhd_usrp_probe</p><p>查看usrp主板和子板里的相关信息。</p><p>如下图为成功连接</p><p class="img"><img src="images/rfx900_n210_2.png"></p><p class="min_title">2．FM接收测试</p><p>将设备与电脑相连</p><p>终端切换到root权限</p><p>终端输入命令：</p><p>sudo su&nbsp;</p><p>回车后输入下面命令</p><p class="code">cd /usr/local/share/gnuradio/examples/uhd</p><p class="code">./usrp_wfm_rcv_pll.py</p><p>如下图所示</p><p class="img"><img src="images/rfx900_n210_3.png"></p><p>在运行的脚本会出现下面这样一个图形界面。</p><p class="img"><img src="images/rfx900_n210_4.png"></p><p>在图形界面上调节接收频率Freq，可收到广播，wbx子板好使。(用的是400MHz的天线)</p><p class="min_title">3. OpenBTS测试</p><p>注意：如果是硬盘系统基站就不需要配置参数了，若是U盘启动必须配置基站参数。如果基站是900MHz的频段就不需要配置了。</p><p>WBX（750MHz~1050MHz）需要将基站的频率调到900MHz的频段上。在运行基站之前创建一个缓存目录和启动asterisk。root用户终端输入命令如下：</p><p class="code">mkdir–p /var/run/OpenBTS //创建缓存目录</p><p class="code">asterisk &nbsp;//启动asterisk</p><p>需要改一下openbts的相应基站参数具体操作如下：</p><p>打开一个终端root用户运OpenBTS,命令如下：</p><p class="code">cd /microembedded/src/openbts-2.8.0/openbts/trunk/apps/ &nbsp;//打开OpenBTS所在目录</p><p class="code">./OpenBTS &nbsp;//运行基站</p><p>打开另一个终端root用户运行OpenBTSCLI，命令如下：</p><p class="code">cd /microembedded/src/openbts-2.8.0/openbts/trunk/apps/ &nbsp;//打开OpenBTS所在目录</p><p class="code">./OpenBTSCLI //修改基站参数</p><p class="code">config GSM.Radio.Band 900 //频带</p><p class="code">config GSM.Radio.C0 72 &nbsp;//修改绝对频点</p><p class="code">config Control.LUR.OpenRegistration .*</p><p>配置完，重启OpenBTS，手机插上07基站的sim卡即可通电话。</p><p class="img"><img src="images/rfx900_n210_5.png"></p>
+                
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,868 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>usrp_clock.h</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>usrp_clock.h</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">usrp_clock.h</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="usrp__clock_8h.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2015 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_USRP_CLOCK_H</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_USRP_CLOCK_H</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">uhd/config.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="error_8h.html">uhd/error.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="sensors_8h.html">uhd/types/sensors.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="string__vector_8h.html">uhd/types/string_vector.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+          <span class="preprocessor">#include &lt;stdlib.h&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00027"></a> 
+          <span class="lineno"> 27</span>&nbsp; 
+          <span class="preprocessor">#include &lt;stdint.h&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00028"></a> 
+          <span class="lineno"> 28</span>&nbsp; 
+          <span class="preprocessor">#include &lt;time.h&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00029"></a> 
+          <span class="lineno"> 29</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00030"></a> 
+          <span class="lineno"> 30</span>&nbsp; 
+          <span class="comment">/****************************************************************************</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"> 31</span>&nbsp; 
+          <span class="comment"> * Public Datatypes for USRP clock</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00032"></a> 
+          <span class="lineno"> 32</span>&nbsp; 
+          <span class="comment"> ***************************************************************************/</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp; 
+          <span class="keyword">struct </span>uhd_usrp_clock; 
+         </div> 
+         <div class="line"> 
+          <a name="l00034"></a> 
+          <span class="lineno"> 34</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00036"></a> 
+          <span class="lineno"> 36</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00042"></a> 
+          <span class="lineno"><a class="line" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5"> 42</a></span>&nbsp; 
+          <span class="keyword">typedef</span> 
+          <span class="keyword">struct </span>uhd_usrp_clock* 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00043"></a> 
+          <span class="lineno"> 43</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00044"></a> 
+          <span class="lineno"> 44</span>&nbsp; 
+          <span class="comment">/****************************************************************************</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00045"></a> 
+          <span class="lineno"> 45</span>&nbsp; 
+          <span class="comment"> * Make / Free API calls</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00046"></a> 
+          <span class="lineno"> 46</span>&nbsp; 
+          <span class="comment"> ***************************************************************************/</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00047"></a> 
+          <span class="lineno"> 47</span>&nbsp; 
+          <span class="preprocessor">#ifdef __cplusplus</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00048"></a> 
+          <span class="lineno"> 48</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="keyword">extern</span> 
+          <span class="stringliteral">&quot;C&quot;</span> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"> 49</span>&nbsp; 
+          <span class="preprocessor">#endif</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00050"></a> 
+          <span class="lineno"> 50</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"> 52</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"> 55</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a41077f640afa9e70d34f02c3dab30bbd">uhd_usrp_clock_find</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00056"></a> 
+          <span class="lineno"> 56</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* args, 
+         </div> 
+         <div class="line"> 
+          <a name="l00057"></a> 
+          <span class="lineno"> 57</span>&nbsp; 
+          <a class="code" href="string__vector_8h.html#a9f2fc7a3ed6a6457bc24be47b33220af">uhd_string_vector_t</a> *devices_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"> 58</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00059"></a> 
+          <span class="lineno"> 59</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00061"></a> 
+          <span class="lineno"> 61</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"> 65</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#af95f10d34d0e759856770cf9986689bf">uhd_usrp_clock_make</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00066"></a> 
+          <span class="lineno"> 66</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> *h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00067"></a> 
+          <span class="lineno"> 67</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span> *args 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"> 68</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00071"></a> 
+          <span class="lineno"> 71</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00075"></a> 
+          <span class="lineno"> 75</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a066d9d253a2d8c1c94711df2c7acb5aa">uhd_usrp_clock_free</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00076"></a> 
+          <span class="lineno"> 76</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> *h 
+         </div> 
+         <div class="line"> 
+          <a name="l00077"></a> 
+          <span class="lineno"> 77</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00078"></a> 
+          <span class="lineno"> 78</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00080"></a> 
+          <span class="lineno"> 80</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#aefa249a4d7c885d1d9a450ef144c6daa">uhd_usrp_clock_last_error</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00081"></a> 
+          <span class="lineno"> 81</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00082"></a> 
+          <span class="lineno"> 82</span>&nbsp; 
+          <span class="keywordtype">char</span>* error_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00083"></a> 
+          <span class="lineno"> 83</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00084"></a> 
+          <span class="lineno"> 84</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00085"></a> 
+          <span class="lineno"> 85</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00087"></a> 
+          <span class="lineno"> 87</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#acba99b1e3c0c9d37b255a20033ad5d13">uhd_usrp_clock_get_pp_string</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00088"></a> 
+          <span class="lineno"> 88</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00089"></a> 
+          <span class="lineno"> 89</span>&nbsp; 
+          <span class="keywordtype">char</span>* pp_string_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00090"></a> 
+          <span class="lineno"> 90</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00091"></a> 
+          <span class="lineno"> 91</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00092"></a> 
+          <span class="lineno"> 92</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00094"></a> 
+          <span class="lineno"> 94</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a887be66d21a7203c5b508b9a6d178d0d">uhd_usrp_clock_get_num_boards</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00095"></a> 
+          <span class="lineno"> 95</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00096"></a> 
+          <span class="lineno"> 96</span>&nbsp; 
+          <span class="keywordtype">size_t</span> *num_boards_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00097"></a> 
+          <span class="lineno"> 97</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00098"></a> 
+          <span class="lineno"> 98</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00100"></a> 
+          <span class="lineno"> 100</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a3768ebd9dac3c3168a950a255af1b1e7">uhd_usrp_clock_get_time</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00101"></a> 
+          <span class="lineno"> 101</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00102"></a> 
+          <span class="lineno"> 102</span>&nbsp; 
+          <span class="keywordtype">size_t</span> board, 
+         </div> 
+         <div class="line"> 
+          <a name="l00103"></a> 
+          <span class="lineno"> 103</span>&nbsp; uint32_t *clock_time_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00104"></a> 
+          <span class="lineno"> 104</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00105"></a> 
+          <span class="lineno"> 105</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00107"></a> 
+          <span class="lineno"> 107</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a8df7341c34b61c93520733f68579d3d2">uhd_usrp_clock_get_sensor</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00108"></a> 
+          <span class="lineno"> 108</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00109"></a> 
+          <span class="lineno"> 109</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* name, 
+         </div> 
+         <div class="line"> 
+          <a name="l00110"></a> 
+          <span class="lineno"> 110</span>&nbsp; 
+          <span class="keywordtype">size_t</span> board, 
+         </div> 
+         <div class="line"> 
+          <a name="l00111"></a> 
+          <span class="lineno"> 111</span>&nbsp; 
+          <a class="code" href="sensors_8h.html#aeb03cca2394aaacbb1766e42ced78b13">uhd_sensor_value_handle</a> *sensor_value_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00112"></a> 
+          <span class="lineno"> 112</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00113"></a> 
+          <span class="lineno"> 113</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00115"></a> 
+          <span class="lineno"> 115</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="usrp__clock_8h.html#a57fab256e318f6e62ae649b459c9b6e1">uhd_usrp_clock_get_sensor_names</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00116"></a> 
+          <span class="lineno"> 116</span>&nbsp; 
+          <a class="code" href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00117"></a> 
+          <span class="lineno"> 117</span>&nbsp; 
+          <span class="keywordtype">size_t</span> board, 
+         </div> 
+         <div class="line"> 
+          <a name="l00118"></a> 
+          <span class="lineno"> 118</span>&nbsp; 
+          <a class="code" href="string__vector_8h.html#ab9d226d16b0ff2033b9862abc254afe3">uhd_string_vector_handle</a> *sensor_names_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00119"></a> 
+          <span class="lineno"> 119</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00120"></a> 
+          <span class="lineno"> 120</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00121"></a> 
+          <span class="lineno"> 121</span>&nbsp; 
+          <span class="preprocessor">#ifdef __cplusplus</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00122"></a> 
+          <span class="lineno"> 122</span>&nbsp; 
+          <span class="preprocessor"></span>} 
+         </div> 
+         <div class="line"> 
+          <a name="l00123"></a> 
+          <span class="lineno"> 123</span>&nbsp; 
+          <span class="preprocessor">#endif</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00124"></a> 
+          <span class="lineno"> 124</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00125"></a> 
+          <span class="lineno"> 125</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_USRP_CLOCK_H */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_acba99b1e3c0c9d37b255a20033ad5d13"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#acba99b1e3c0c9d37b255a20033ad5d13">uhd_usrp_clock_get_pp_string</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_get_pp_string(uhd_usrp_clock_handle h, char *pp_string_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get board information in a nice output. 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a066d9d253a2d8c1c94711df2c7acb5aa"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a066d9d253a2d8c1c94711df2c7acb5aa">uhd_usrp_clock_free</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_free(uhd_usrp_clock_handle *h) 
+          </div> 
+          <div class="ttdoc">
+            Safely destroy the clock object underlying the handle. 
+          </div> 
+         </div> 
+         <div class="ttc" id="string__vector_8h_html_a9f2fc7a3ed6a6457bc24be47b33220af"> 
+          <div class="ttname"> 
+           <a href="string__vector_8h.html#a9f2fc7a3ed6a6457bc24be47b33220af">uhd_string_vector_t</a> 
+          </div> 
+          <div class="ttdeci">
+            struct uhd_string_vector_t uhd_string_vector_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> string_vector.h:41 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a8df7341c34b61c93520733f68579d3d2"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a8df7341c34b61c93520733f68579d3d2">uhd_usrp_clock_get_sensor</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_get_sensor(uhd_usrp_clock_handle h, const char *name, size_t board, uhd_sensor_value_handle *sensor_value_out) 
+          </div> 
+          <div class="ttdoc">
+            Get sensor. 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_af95f10d34d0e759856770cf9986689bf"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#af95f10d34d0e759856770cf9986689bf">uhd_usrp_clock_make</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_make(uhd_usrp_clock_handle *h, const char *args) 
+          </div> 
+          <div class="ttdoc">
+            Create a clock handle. 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html"> 
+          <div class="ttname"> 
+           <a href="config_8h.html">config.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a3768ebd9dac3c3168a950a255af1b1e7"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a3768ebd9dac3c3168a950a255af1b1e7">uhd_usrp_clock_get_time</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_get_time(uhd_usrp_clock_handle h, size_t board, uint32_t *clock_time_out) 
+          </div> 
+          <div class="ttdoc">
+            Get time. 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a887be66d21a7203c5b508b9a6d178d0d"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a887be66d21a7203c5b508b9a6d178d0d">uhd_usrp_clock_get_num_boards</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_get_num_boards(uhd_usrp_clock_handle h, size_t *num_boards_out) 
+          </div> 
+          <div class="ttdoc">
+            Get number of boards. 
+          </div> 
+         </div> 
+         <div class="ttc" id="error_8h_html"> 
+          <div class="ttname"> 
+           <a href="error_8h.html">error.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a57fab256e318f6e62ae649b459c9b6e1"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a57fab256e318f6e62ae649b459c9b6e1">uhd_usrp_clock_get_sensor_names</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_get_sensor_names(uhd_usrp_clock_handle h, size_t board, uhd_string_vector_handle *sensor_names_out) 
+          </div> 
+          <div class="ttdoc">
+            Get sensor names. 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_a41077f640afa9e70d34f02c3dab30bbd"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#a41077f640afa9e70d34f02c3dab30bbd">uhd_usrp_clock_find</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_find(const char *args, uhd_string_vector_t *devices_out) 
+          </div> 
+          <div class="ttdoc">
+            Find all connected clock devices. 
+          </div> 
+         </div> 
+         <div class="ttc" id="error_8h_html_a7fbc3f872dadd2c73cd656b2e5acdd2b"> 
+          <div class="ttname"> 
+           <a href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          </div> 
+          <div class="ttdeci">
+            uhd_error 
+          </div> 
+          <div class="ttdoc">
+            UHD error codes. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> error.h:31 
+          </div> 
+         </div> 
+         <div class="ttc" id="string__vector_8h_html"> 
+          <div class="ttname"> 
+           <a href="string__vector_8h.html">string_vector.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html">sensors.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="string__vector_8h_html_ab9d226d16b0ff2033b9862abc254afe3"> 
+          <div class="ttname"> 
+           <a href="string__vector_8h.html#ab9d226d16b0ff2033b9862abc254afe3">uhd_string_vector_handle</a> 
+          </div> 
+          <div class="ttdeci">
+            uhd_string_vector_t * uhd_string_vector_handle 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> string_vector.h:43 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_aeb03cca2394aaacbb1766e42ced78b13"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#aeb03cca2394aaacbb1766e42ced78b13">uhd_sensor_value_handle</a> 
+          </div> 
+          <div class="ttdeci">
+            struct uhd_sensor_value_t * uhd_sensor_value_handle 
+          </div> 
+          <div class="ttdoc">
+            C-level interface for a UHD sensor. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:44 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_ab1deef86e49eaef8c78e9f93adbedbf5"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#ab1deef86e49eaef8c78e9f93adbedbf5">uhd_usrp_clock_handle</a> 
+          </div> 
+          <div class="ttdeci">
+            struct uhd_usrp_clock * uhd_usrp_clock_handle 
+          </div> 
+          <div class="ttdoc">
+            A C-level interface for interacting with an Ettus Research clock device. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> usrp_clock.h:42 
+          </div> 
+         </div> 
+         <div class="ttc" id="usrp__clock_8h_html_aefa249a4d7c885d1d9a450ef144c6daa"> 
+          <div class="ttname"> 
+           <a href="usrp__clock_8h.html#aefa249a4d7c885d1d9a450ef144c6daa">uhd_usrp_clock_last_error</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_usrp_clock_last_error(uhd_usrp_clock_handle h, char *error_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get last error. 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

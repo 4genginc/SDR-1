@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" --><table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">WindowsInstall</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><h2><a name="TOC-Windows-"></a><font size="3">安装 Windows 版本</font></h2><h3><a name="TOC-Windows-GNU-Radio-"></a><font size="2">目前 Windows 版本的 GNU 
+Radio 状况</font></h3><font size="2">将 GNU Radio 和 USRP 安装在 Windows 
+系统上不是常规安装。但请将任何的成功和失败公布出来。补丁和提升是受到格外的欢迎的。<br></font><h3><a name="TOC-Windows-1"></a><font size="2">移植到 Windows 的话题 </font></h3><font size="2">尽管 GNU Radio 在代码的可移植性方面做过相当的努力，但还是有以下诸多原因使得它在 Windows 
+环境下的编译和运行颇费周折：<br></font><ul><li><font size="2">构建和安装的程式是基于 Linux 
+的脚本和工具的。</font></li><li><font size="2">所用及的几个第三方的库，都涉及拥有自己的、依赖系统的安装程式。</font></li><li><font size="2">大多数 GNU Radio 应用都涉及同硬件的接口（诸如，声卡或 USRP），这些都需要同系统关联的驱动和安装程式。</font></li><li><font size="2">GNU Radio 的应用是以 Python 的外延的方式编写的。如果用于GNU Radio 和 Python 
+的动态库相异的话，这将会导致 Windows 出错。</font></li></ul>以下各部分将详阐这些话题。<font size="2"><br></font><h3><a name="TOC-1"></a><font size="2"><font size="3"><font size="2">安装选项 </font><br></font></font></h3>GNU
+ Radio&nbsp; 的设计宗旨是便于灵活应用。它包含一些能够使能的模块、功能和选项来迎合用户的需求，而且用户还可以给系统添加定制的功能块或模块。<br>基
+于营造这些灵活性，便使用了一系列的 GNU 软件工具作为构建文档和脚本<font size="2">(比如: sh, make, 
+autoconf, automake,等...)</font>。这些工具使用 Linux 一类的命令和文件命名规则，它们一般鲜见于 
+Windows 之中。<br><font size="2">在此值得庆幸的是，我们不是第一个遇见诸如此类的问题的人，因而一些解决这些问题答案也已
+经被回答。下面对此依据由简及难</font><font size="2">来</font><font size="2">逐步阐述：<br></font><h4><a name="TOC-Cygwin"></a><font size="2">Cygwin </font></h4><font size="2">Cygwin
+ ( <a href="http://www.cygwin.com/" rel="nofollow" target="_blank">http://www.cygwin.com/</a>
+ ) </font>是一个在 windows 平台上运行的 Linux 模拟环境。<br>它提供了所需的 Linux 类的 
+Shell，文件命名，和构建工具，以及容易被安装的诸多的 GNU Radio 所需的第三方库。也提供了并非 GNU Radio 所需的 
+Linux 编程接口（API）；但却是已将被很好地测试过的 Linux 版本的功能。<br><font size="2">基于 Linux 
+API 使用它自己的 C 的动态库的原因，在使用 Cygwin 构建 GNU Radio 的时候，最好使用 Cygwin 版的 Python 
+和第三方的库函数。<br>有关详细的使用 Cygwin 的安装指导请参阅“基于 Cygwin 的 GNU Radio 的安”。<br></font><h4><a name="TOC-MinGW-MSYS"></a><font size="2">MinGW / MSYS </font></h4><font size="2">MinGW ( <a href="http://www.mingw.org/" rel="nofollow">http://www.mingw.org/
+ </a>) 提供了 GNU 版本的</font><font size="2">编译器</font><font size="2">和 
+Window 头文件用于编译纯粹的 Windows 应用程序。<br></font><font size="2">MSYS (<a href="http://www.mingw.org/msys.shtml" rel="nofollow">http://www.mingw.org/msys.shtml</a>)
+ 是 Linux 类的命令、Shell、和构建工具的一组</font>辅助软件。<br><font size="2">MinGW 不包含 
+linux 的程序接口；因此（理论上）比 Cygwin 代码紧凑、速度快，相应问题是它需要更多的 Windows 专属代码。</font><br><font size="2">MSYS 的主要目的是充当一个构建环境，这使得它比 Cygwin 紧凑。<br><br>鉴于没有 Linux API 
+的仿真器，使用 MinGW 构建 GNU Radio 时应当使用 Windows 的标准版的 Python 和第三方的库。<br>MinGW 
+也没有像 Cygwin 那样提供安装第三方库的支持，但是在一般情况下预先编译的二进制代码还是可以找到的。<br><br>有关详细的使用 
+MinGW 和 MSYS 的安装指导请参阅“基于 MinGW 的 GNU Radio 的安装”。 <br></font><h4><a name="TOC-Windows-2"></a><font size="2">基于 Windows&nbsp; 传统工具的构建</font></h4>理
+论上，可以使用 Windows 的传统工具的编辑器<font size="2">(Microsoft, Borland, GNU, 等.)</font>
+ 和 构建工具（IDE 或 脚本语言）来构建和安装 GNU Radio。在 “Windos 传统安装”描述了一个该尝试的过程。<br><h4><a name="TOC-Windows-3"></a><font size="2">用于 Windows 的二进制预编码</font></h4><font size="2">将来，可能会提供基于 Windows 
+环境的预构建好的二进制包。它将使安装变得更容易，但这也限制了用户修改或添加信号处理功能可或模块的权力。<br></font><h3><a name="TOC-2"></a><font size="2">如何得到帮助 </font></h3><ul><li>到 “Windows 环境下的问题和答案”查看</li><li>寻求 邮件列表
+（http://vps.gnuradio.org/redmine/wiki/gnuradio/MailingLists）；一些富有知识和乐于助的
+人们等候在此。<br></li><li><font size="2">瑕疵 - Bugs (理应如此但非如此的任何事）理应被报告到 </font><font size="2"> <a href="http://gnuradio.org/trac/query" rel="nofollow">GNU 
+Radio bug 
+tracker</a></font></li></ul> <h3><a name="TOC-Windows-4"></a><font size="2">所知的 Windows 构建 </font></h3><font size="2">至此，我们致力于收集所有的有关此问题的报
+告： <br><br>[[TicketQuery(status!=closed&amp;type=defect&amp;summary~=cygwin|mingw|windows)]]<br><br><br><br><br><br><br><br><br><b>注：</b><b><a href="http://vps.gnuradio.org/redmine/wiki/gnuradio/WindowsInstall" rel="nofollow">Windows Installation</a>（原文出处，翻译整理仅供参考!）</b></font></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

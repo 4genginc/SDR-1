@@ -1,0 +1,567 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Writing a Testbench</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Writing a Testbench</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Writing a Testbench</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <p>Writing a unit test or system level test is easy with the Vivado makefile infrastructure! Most of the overhead of building and running a testbench is handled by the build tools. Even recurring tasks like reporting and monitoring are implemented by framework libraries.</p> 
+         <p>Each executable FPGA unit test must have the following components:</p> 
+         <ol type="1"> 
+          <li>A Makefile</li> 
+          <li>A Testbench top-level module</li> 
+         </ol> 
+         <h2>Testbench Makefile</h2> 
+         <p>The Testbench Makefile tell the build tools what to build, where to build it, dependency information and runtime information. The build infrastructure will handle the how-to part for each supported simulation tool.</p> 
+         <p>Here is a sample Makefile (you are encouraged to use this as a starting point) </p> 
+         <pre class="fragment">#
+# Copyright 2015 Ettus Research LLC
+#
+
+#-------------------------------------------------
+# Top-of-Makefile
+#-------------------------------------------------
+# Define BASE_DIR to point to the &quot;top&quot; dir
+BASE_DIR = $(abspath ../../..)
+# Include viv_sim_preample after defining BASE_DIR
+include $(BASE_DIR)/../tools/make/viv_sim_preamble.mak
+
+#-------------------------------------------------
+# Design Specific
+#-------------------------------------------------
+# Define part using PART_ID (&lt;device&gt;/&lt;package&gt;/&lt;speedgrade&gt;)
+ARCH = kintex7
+PART_ID = xc7k410t/ffg900/-2
+
+# Include makefiles and sources for the DUT and its dependencies
+include $(BASE_DIR)/../lib/fifo/Makefile.srcs
+include $(BASE_DIR)/../lib/axi/Makefile.srcs
+include $(BASE_DIR)/../lib/control/Makefile.srcs
+
+DESIGN_SRCS = $(abspath \
+$(FIFO_SRCS) \
+$(AXI_SRCS) \
+$(CONTROL_LIB_SRCS) \
+)
+
+#-------------------------------------------------
+# IP Specific
+#-------------------------------------------------
+# If simulation contains IP, define the IP_DIR and point
+# it to the base level IP directory
+IP_DIR = ../../ip
+
+# Include makefiles and sources for all IP components
+# *after* defining the IP_DIR
+include $(IP_DIR)/ddr3_32bit/Makefile.inc
+include $(IP_DIR)/axi_intercon_2x64_128/Makefile.inc
+include $(IP_DIR)/fifo_short_2clk/Makefile.inc
+include $(IP_DIR)/fifo_4k_2clk/Makefile.inc
+include $(IP_DIR)/axi4_bram_1kx64/Makefile.inc
+
+DESIGN_SRCS += $(abspath \
+$(IP_DDR3_32BIT_SRCS) \
+$(IP_AXI_INTERCON_2X64_128_SRCS) \
+$(IP_FIFO_4K_2CLK_SRCS) \
+$(IP_FIFO_SHORT_2CLK_SRCS) \
+$(IP_AXI4_BRAM_1KX64_SRCS) \
+)
+
+#-------------------------------------------------
+# Testbench Specific
+#-------------------------------------------------
+include $(BASE_DIR)/../sim/general/Makefile.srcs
+include $(BASE_DIR)/../sim/axi/Makefile.srcs
+
+# Define only one toplevel module
+SIM_TOP = dram_fifo_tb
+# Simulation runtime in microseconds
+SIM_RUNTIME_US = 80
+
+SIM_SRCS = \
+$(abspath dram_fifo_tb.sv) \
+$(abspath axis_dram_fifo_single.sv) \
+$(IP_DDR3_32BIT_SIM_OUTS) \
+$(SIM_GENERAL_SRCS) \
+$(SIM_AXI_SRCS)
+
+#-------------------------------------------------
+# Bottom-of-Makefile
+#-------------------------------------------------
+# Include all simulator specific makefiles here
+# Each should define a unique target to simulate
+# e.g. xsim, vsim, etc and a common &quot;clean&quot; target
+include $(BASE_DIR)/../tools/make/viv_simulator.mak
+</pre> 
+         <p>You will notice that the Makefile has 5 distinct sections.</p> 
+         <h3>Section 1: Boilerplate</h3> 
+         <pre class="fragment">#-------------------------------------------------
+# Top-of-Makefile
+#-------------------------------------------------
+# Define BASE_DIR to point to the &quot;top&quot; dir
+BASE_DIR = $(abspath ../../..)
+# Include viv_sim_preample after defining BASE_DIR
+include $(BASE_DIR)/../tools/make/viv_sim_preamble.mak
+</pre> 
+         <p>Before declaring any variables or using any recipes, the following must be done (in order):</p> 
+         <ul> 
+          <li>Define <code>BASE_DIR</code> to tell the build system where the <code>&lt;repo&gt;/usrp3/top</code> directory is relative to the current testbench directory.</li> 
+          <li>Include <code>viv_sim_preamble.mak</code> to initialize boilerplate variables and functions</li> 
+         </ul> 
+         <h3>Section 2: Design Specific</h3> 
+         <pre class="fragment">#-------------------------------------------------
+# Design Specific
+#-------------------------------------------------
+# Define part using PART_ID (&lt;device&gt;/&lt;package&gt;/&lt;speedgrade&gt;)
+ARCH = kintex7
+PART_ID = xc7k410t/ffg900/-2
+
+# Include makefiles and sources for the DUT and its dependencies
+include $(BASE_DIR)/../lib/fifo/Makefile.srcs
+include $(BASE_DIR)/../lib/axi/Makefile.srcs
+include $(BASE_DIR)/../lib/control/Makefile.srcs
+
+DESIGN_SRCS = $(abspath \
+$(FIFO_SRCS) \
+$(AXI_SRCS) \
+$(CONTROL_LIB_SRCS) \
+)
+</pre> 
+         <p>This section contains pointers to sources and other variables for the DUT to function. In the example above, we are including all sources from the lib/fifo, lib/axi, lib/control directories.</p> 
+         <p>The following makefile variables are special and must be defined:</p> 
+         <ul> 
+          <li><code>ARCH</code>: The architecture targeted for the simulation.</li> 
+          <li><code>PART_ID</code>: The exact part targeted for the simulation. Format: <code>&lt;device&gt;/&lt;package&gt;/&lt;speedgrade&gt;</code></li> 
+          <li><code>DESIGN_SRCS</code>: Space-separated paths to the DUT and all of its dependencies.</li> 
+         </ul> 
+         <h3>Section 3: IP Specific</h3> 
+         <pre class="fragment">#-------------------------------------------------
+# IP Specific
+#-------------------------------------------------
+# If simulation contains IP, define the IP_DIR and point
+# it to the base level IP directory
+IP_DIR = ../../ip
+
+# Include makefiles and sources for all IP components
+# *after* defining the IP_DIR
+include $(IP_DIR)/ddr3_32bit/Makefile.inc
+include $(IP_DIR)/axi_intercon_2x64_128/Makefile.inc
+include $(IP_DIR)/fifo_short_2clk/Makefile.inc
+include $(IP_DIR)/fifo_4k_2clk/Makefile.inc
+include $(IP_DIR)/axi4_bram_1kx64/Makefile.inc
+
+DESIGN_SRCS += $(abspath \
+$(IP_DDR3_32BIT_SRCS) \
+$(IP_AXI_INTERCON_2X64_128_SRCS) \
+$(IP_FIFO_4K_2CLK_SRCS) \
+$(IP_FIFO_SHORT_2CLK_SRCS) \
+$(IP_AXI4_BRAM_1KX64_SRCS) \
+)
+</pre> 
+         <p>If the DUT depends on any Xilinx IP then this section is required. It tell the tools which IP cores need to be built in order to run the simulation. The IP specific Makefile includes handle the &quot;how&quot; part of building IP. As long as the correct Mafefile is included and the IP XCI sources are added to <code>DESIGN_SRCS</code>, the IP intermediates will be built correctly.</p> 
+         <p>The <code>IP_DIR</code> variable must be defined to point to the base ip directory that contains XCI sources.</p> 
+         <h3>Section 4: Testbench Specific</h3> 
+         <pre class="fragment">#-------------------------------------------------
+# Testbench Specific
+#-------------------------------------------------
+include $(BASE_DIR)/../sim/general/Makefile.srcs
+include $(BASE_DIR)/../sim/axi/Makefile.srcs
+
+# Define only one toplevel module
+SIM_TOP = dram_fifo_tb
+# Simulation runtime in microseconds
+SIM_RUNTIME_US = 80
+
+SIM_SRCS = \
+$(abspath dram_fifo_tb.sv) \
+$(abspath axis_dram_fifo_single.sv) \
+$(IP_DDR3_32BIT_SIM_OUTS) \
+$(SIM_GENERAL_SRCS) \
+$(SIM_AXI_SRCS)
+</pre> 
+         <p>This section contains all sources and parameters for the actual testbench. Any simulation dependency makefiles can be included here.</p> 
+         <p>The following variables must be defined:</p> 
+         <ul> 
+          <li><code>SIM_TOP</code>: The toplevel module name for the simulation project</li> 
+          <li><code>SIM_RUNTIME_US</code>: The maximum runtime of the simulation in microseconds. At this time $finish will be called to terminate the testbench.</li> 
+          <li><code>SIM_SRCS</code>: This is similar to DESIGN_SRCS except that that should contain a path to <code>SIM_TOP</code> and all of its dependencies.</li> 
+         </ul> 
+         <h3>Section 5: Tool Support</h3> 
+         <pre class="fragment">#-------------------------------------------------
+# Bottom-of-Makefile
+#-------------------------------------------------
+# Include all simulator specific makefiles here
+# Each should define a unique target to simulate
+# e.g. xsim, vsim, etc and a common &quot;clean&quot; target
+include $(BASE_DIR)/../tools/make/viv_simulator.mak
+</pre> 
+         <p>Now that the Makefile knows all the basic information about the testbench, include tool-specific makefiles to implement simulation targets. Currently the following simulator makefiles exits:</p> 
+         <ul> 
+          <li><code>&lt;repo&gt;/tools/make/viv_simulator.mak</code></li> 
+         </ul> 
+         <p>Please refer to the next section for more information about targets</p> 
+         <h2>Testbench Top Level</h2> 
+         <p>The top-level module will instantiate the DUT and implement self-checking behavior. Test benches could be written in any language (SystemVerilog, Verilog, VHDL) but to take advantage of our repository of simulation libraries, it is recommended that SystemVerilog be used.</p> 
+         <p>Here is a sample SystemVerilog top module (you are encouraged to use this as a starting point) </p> 
+         <pre class="fragment">//
+// Copyright 2015 Ettus Research LLC
+//
+
+`timescale 1ns/1ps
+`define NS_PER_TICK     1
+`define NUM_TEST_CASES  3
+
+`include &quot;sim_clks_rsts.vh&quot;
+`include &quot;sim_exec_report.vh&quot;
+`include &quot;sim_cvita_lib.sv&quot;
+
+module example_fifo_tb();
+  `TEST_BENCH_INIT(&quot;example_fifo_tb&quot;,`NUM_TEST_CASES,`NS_PER_TICK)
+
+  // Define all clocks and resets
+  `DEFINE_CLK(bus_clk, 1000/166.6667, 50) //166MHz bus_clk
+  `DEFINE_RESET(bus_rst, 0, 100)          //100ns for GSR to deassert
+
+  cvita_stream_t chdr_i (.clk(bus_clk));
+  cvita_stream_t chdr_o (.clk(bus_clk));
+
+  // Initialize DUT
+  axi_fifo #(.WIDTH(65), .SIZE(24)) dut_single (
+    .clk(bus_clk),
+    .reset(bus_rst),
+    .clear(1'b0),
+
+    .i_tdata({chdr_i.axis.tlast, chdr_i.axis.tdata}),
+    .i_tvalid(chdr_i.axis.tvalid),
+    .i_tready(chdr_i.axis.tready),
+
+    .o_tdata({chdr_o.axis.tlast, chdr_o.axis.tdata}),
+    .o_tvalid(chdr_o.axis.tvalid),
+    .o_tready(chdr_o.axis.tready),
+
+    .space(),
+    .occupied()
+  );
+
+  //Testbench variables
+  cvita_hdr_t   header, header_out;
+  cvita_stats_t stats;
+
+  //------------------------------------------
+  //Main thread for testbench execution
+  //------------------------------------------
+  initial begin : tb_main
+
+    `TEST_CASE_START(&quot;Wait for reset&quot;);
+    while (bus_rst) @(posedge bus_clk);
+    `TEST_CASE_DONE((~bus_rst));
+
+    repeat (200) @(posedge bus_clk);
+
+    header = '{
+      pkt_type:DATA, has_time:0, eob:0, seqno:12'h666,
+      length:0, sid:$random, timestamp:64'h0};
+
+    `TEST_CASE_START(&quot;Fill up empty FIFO then drain (short packet)&quot;);
+      chdr_o.axis.tready = 0;
+      chdr_i.push_ramp_pkt(16, 64'd0, 64'h100, header);
+      chdr_o.axis.tready = 1;
+      chdr_o.wait_for_pkt_get_info(header_out, stats);
+      `ASSERT_ERROR(stats.count==16,            &quot;Bad packet: Length mismatch&quot;);
+      `ASSERT_ERROR(header.sid==header_out.sid, &quot;Bad packet: Wrong SID&quot;);
+      `ASSERT_ERROR(chdr_i.axis.tready,         &quot;Bus not ready&quot;);
+    `TEST_CASE_DONE(1);
+
+    header = '{
+      pkt_type:DATA, has_time:1, eob:0, seqno:12'h666, 
+      length:0, sid:$random, timestamp:64'h0};
+
+    `TEST_CASE_START(&quot;Concurrent read and write (single packet)&quot;);
+      chdr_o.axis.tready = 1;
+      fork
+          begin
+            chdr_i.push_ramp_pkt(20, 64'd0, 64'h100, header);
+          end
+          begin
+            chdr_o.wait_for_pkt_get_info(header_out, stats);
+          end
+      join
+    `ASSERT_ERROR(stats.count==20,      &quot;Bad packet: Length mismatch&quot;);
+    `TEST_CASE_DONE(1);
+  end
+endmodule
+</pre> 
+         <p>Each testbench should have the following basic components:</p> 
+         <h3>Timescale Defines and Includes</h3> 
+         <pre class="fragment">`timescale 1ns/1ps
+`define NS_PER_TICK     1
+`define NUM_TEST_CASES  3
+
+`include &quot;sim_clks_rsts.vh&quot;
+`include &quot;sim_exec_report.vh&quot;
+`include &quot;sim_cvita_lib.sv&quot;
+</pre> 
+         <p>In addition to the timescale, the infrastructure needs to know the number of nanoseconds per simulator tick. This can be a floating point number.</p> 
+         <p>In addition to the timescale, you may include any Verilog/SystemVerilog headers here.</p> 
+         <h3>Main Module Definition</h3> 
+         <pre class="fragment">`include &quot;sim_exec_report.vh&quot;
+
+module example_fifo_tb();
+  `TEST_BENCH_INIT(&quot;example_fifo_tb&quot;,`NUM_TEST_CASES,`NS_PER_TICK)
+
+  ...
+
+  //------------------------------------------
+  //Main thread for testbench execution
+  //------------------------------------------
+  initial begin : tb_main
+
+    ...
+
+  end
+endmodule
+</pre> 
+         <p>The name of the main module must match the <code>SIM_TOP</code> variable value in the Makefile. To register this module with the framework, the <code>TEST_BENCH_INIT</code> macro must be called. This macro is defined in <code>&lt;repo&gt;/usrp3/sim/general/sim_exec_report.vh</code>.</p> 
+         <p><code>TEST_BENCH_INIT</code>: </p> 
+         <pre class="fragment">// Initializes state for a test bench.
+// This macro *must be* called within the testbench module but 
+// outside the primary initial block
+// Its sets up boilerplate code for:
+// - Logging to console
+// - Test execution tracking
+// - Gathering test results
+// - Bounding execution time based on the SIM_RUNTIME_US vdef
+//
+// Usage: `TEST_BENCH_INIT(test_name,min_tc_run_count,ns_per_tick)
+// where
+//  - tb_name:          Name of the testbench. (Only used during reporting)
+//  - min_tc_run_count: Number of test cases in testbench. (Used to detect stalls and inf-loops)
+//  - ns_per_tick:      The time_unit_base from the timescale declaration
+</pre> 
+         <p>The testbench must also have at least one initial block that consists tests cases (covered later). For the sake of convention it should be called <code>tb_main</code>. <em>All test cases must live in <code>tb_main</code></em>. You may have other initial block but they must not call macros from <code>sim_exec_report.vh</code> because the code there is not thread-safe.</p> 
+         <h3>Test Cases</h3> 
+         <p>A test case in this context is defined as an independent entity that validates an aspect of the DUT behavior and which is independent from other test cases i.e. the result of one test case should ideally not affect others.</p> 
+         <p>Test cases are wrapped in the <code>TEST_CASE_START</code> and <code>TEST_CASE_DONE</code> macros: </p> 
+         <pre class="fragment">`TEST_CASE_START(&quot;Fill up empty FIFO then drain (short packet)&quot;);
+  chdr_o.axis.tready = 0;
+  chdr_i.push_ramp_pkt(16, 64'd0, 64'h100, header);
+  chdr_o.axis.tready = 1;
+  chdr_o.wait_for_pkt_get_info(header_out, stats);
+  `ASSERT_ERROR(stats.count==16,            &quot;Bad packet: Length mismatch&quot;);
+  `ASSERT_ERROR(header.sid==header_out.sid, &quot;Bad packet: Wrong SID&quot;);
+  `ASSERT_ERROR(chdr_i.axis.tready,         &quot;Bus not ready&quot;);
+`TEST_CASE_DONE(1);
+</pre> 
+         <p>Here are the signatures of the two macros:</p> 
+         <p><code>TEST_CASE_START</code>: </p> 
+         <pre class="fragment">// Indicates the start of a test case
+// This macro *must be* called inside the primary initial block
+//
+// Usage: `TEST_CASE_START(test_name)
+// where
+//  - test_name:        The name of the test.
+//
+</pre> 
+         <p><code>TEST_CASE_DONE</code>: </p> 
+         <pre class="fragment">// Indicates the end of a test case
+// This macro *must be* called inside the primary initial block
+// The pass/fail status of test case is determined based on the
+// the user specified outcome and the number of fatal or error
+// ASSERTs triggered in the test case.
+//
+// Usage: `TEST_CASE_DONE(test_result)
+// where
+//  - test_result:  User specified outcome
+//
+</pre> 
+         <p>In addition to the test case status, it is also possible to have asserts within a test case. We have wrappers for the different kinds of SystemVerilog asserts that additionally fail the test case in case the assert fails. An assert triggered in a test case will not affect the outcome of another (except for a fatal assert which halts the simulator). Supported assert macros: </p> 
+         <pre class="fragment">// Wrapper around a an assert.
+// ASSERT_FATAL throws an error assertion and halts the simulator
+// if cond is not satisfied
+//
+// Usage: `ASSERT_FATAL(cond,msg)
+// where
+//  - cond: Condition for the assert
+//  - msg:  Message for the assert
+//
+
+
+// Wrapper around a an assert.
+// ASSERT_ERROR throws an error assertion and fails the test case
+// if cond is not satisfied. The simulator will *not* halt
+//
+// Usage: `ASSERT_ERROR(cond,msg)
+// where
+//  - cond: Condition for the assert
+//  - msg:  Message for the assert
+//
+
+
+// Wrapper around a an assert.
+// ASSERT_WARNING throws an warning assertion but does not fail the
+// test case if cond is not satisfied. The simulator will *not* halt
+//
+// Usage: `ASSERT_WARNING(cond,msg)
+// where
+//  - cond: Condition for the assert
+//  - msg:  Message for the assert
+//
+</pre> 
+         <h3>Optional Libraries</h3> 
+         <p>It is encouraged to use (and create) reusable libraries in product specific test benches. Libraries can provide macros, modules, tasks and functions for ease-of-use with particular protocols and subsystems.</p> 
+         <p>The <a class="el" href="md_usrp3_sim_writing_testbenches.html">Writing a Testbench</a> page has more information. </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

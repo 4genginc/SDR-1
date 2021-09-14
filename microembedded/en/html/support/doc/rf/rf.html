@@ -1,0 +1,421 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>RF子板_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <span>RF子板</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">子板介绍</p>
+                <hr>
+                <!--  WBX  -->
+                <p class="min_title">WBX</p>
+                <p>特征：</p>
+                <p>&nbsp; &nbsp; •&nbsp;&nbsp;2个正交前端（1发射，接收1）</p>
+                <p>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;默认为直接转换</p>
+                <p>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;通过使用uhd::tunne_request_t设置lo_offset，可在低IF模式下使用</p>
+                <p>&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;独立的接收和发送LO和合成器</p>
+                <p>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;允许在不同的发射和接收频率进行全双工操作</p>
+                <p>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;可以设置使用中具有更好的性能调优，通过uhd::tune_request_t</p>
+                <p>频率范围：50MHz至2.2GHz的</p>
+                <p>发射天线：TX/ RX</p>
+                <p>接收天线：TX/ RX或RX2</p>
+                <p class="code">前端0：对选定的天线复合基带信号</p>
+                <p class="code">注：用户可以设置接收天线为TX / RX或RX2。然而，在全双工模式中使用WBX板时，接收天线将总是被设置为RX2，无论设置。</p>
+                <p>发送收益：PGA0，范围：0-25dB</p>
+                <p>接收增益：PGA0，范围：0-31.5dB</p>
+                <p>带宽：</p>
+                <p class="code">WBX：40MHz，RX和TX</p>
+                <p class="code">WBX-120：120MHz，RX和TX</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔值LO为锁定状态</p>
+                <p><a href="wbxtest_n210.html">WBX测试文档（主板使用USRP N210）</a></p>
+                <p><a href="wbxtest_u1.html">WBX测试文档（主板使用USRP1）</a></p>
+                
+                <!--  SBX  -->
+                <p></p>
+                <p></p>
+                <p class="min_title">SBX</p>
+                <p>特征：</p>
+                <p>&nbsp; &nbsp; •&nbsp;&nbsp;2个正交前端（1发射，接收1）</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;默认为直接转换</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;通过使用uhd::tunne_request_t设置lo_offset，可在低IF模式下使用</p>
+                <p>&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;独立的接收和发送LO和合成器</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;允许在不同的发射和接收频率进行全双工操作</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;可以设置使用中具有更好的性能调优，通过uhd::tune_request_t</p>
+                <p>频率范围：400MHz至4.4GHz的</p>
+                <p>发射天线：TX/ RX</p>
+                <p>接收天线：TX/ RX或RX2</p>
+                <p class="code">前端0：对选定的天线复合基带信号</p>
+                <p class="code">注：用户可以设置接收天线为TX / RX或RX2。然而，在全双工模式中使用WBX板时，接收天线将总是被设置为RX2，无论设置。</p>
+                <p>发送收益：PGA0，范围：0-31.5dB</p>
+                <p>接收增益：PGA0，范围：0-31.5dB</p>
+                <p>带宽：</p>
+                <p class="code">WBX：40MHz，RX和TX</p>
+                <p class="code">WBX-120：120MHz，RX和TX</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔值LO为锁定状态</p>
+                <p>LED指示灯：</p>
+                <p class="code">当RF射频子板初始化的时候所有的LED指示灯闪亮</p>
+                <p class="code">TX LD：发送合成器锁定检测&nbsp;</p>
+                <p class="code">TX / RX：TX/ RX天线端口上的接收器（NO TX）</p>
+                <p class="code">RX LD：接收合成器锁定检测</p>
+                <p class="code">RX1/ RX2：RX2接收天线端口上</p>
+                <p><a href="sbxtest.html">SBX测试文档</a></p>
+                
+                <!--  CBX  -->
+                <p></p>
+                <p></p>
+                <p class="min_title">CBX</p>
+                <p>特征：</p>
+                <p>&nbsp; &nbsp; •&nbsp;&nbsp;2个正交前端（1发射，接收1）</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;默认为直接转换</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;通过使用uhd::tunne_request_t设置lo_offset，可在低IF模式下使用</p>
+                <p>&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;独立的接收和发送LO和合成器</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;允许在不同的发射和接收频率进行全双工操作</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;可以设置使用中具有更好的性能调优，通过uhd::tune_request_t</p>
+                <p>频率范围：1.2GHz至6GHz的</p>
+                <p>发射天线：TX/ RX</p>
+                <p>接收天线：TX/ RX或RX2</p>
+                <p class="code">前端0：对选定的天线复合基带信号</p>
+                <p class="code">注：用户可以设置接收天线为TX / RX或RX2。然而，在全双工模式中使用WBX板时，接收天线将总是被设置为RX2，无论设置。</p>
+                <p>发送收益：PGA0，范围：0-31.5dB</p>
+                <p>接收增益：PGA0，范围：0-31.5dB</p>
+                <p>带宽：</p>
+                <p class="code">WBX：40MHz，RX和TX</p>
+                <p class="code">WBX-120：120MHz，RX和TX</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔值LO为锁定状态</p>
+                <p>LED指示灯：</p>
+                <p class="code">当RF射频子板初始化的时候所有的LED指示灯闪亮</p>
+                <p class="code">TX LD：发送合成器锁定检测&nbsp;</p>
+                <p class="code">TX / RX：TX/ RX天线端口上的接收器（NO TX）</p>
+                <p class="code">RX LD：接收合成器锁定检测</p>
+                <p class="code">RX1/ RX2：RX2接收天线端口上</p>
+                <p><a href="cbxtest.html">CBX测试文档</a></p>
+                
+                <!--  UBX  -->
+                <p></p>
+                <p></p>
+                <p class="min_title">UBX</p>
+                <p>特征：</p>
+                <p>&nbsp; &nbsp; •&nbsp;&nbsp;2个正交前端（1发射，接收1）</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;默认为直接转换</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;通过使用uhd::tunne_request_t设置lo_offset，可在低IF模式下使用</p>
+                <p>&nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;独立的接收和发送LO和合成器</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;允许在不同的发射和接收频率进行全双工操作</p>
+                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;•&nbsp;&nbsp;可以设置使用中具有更好的性能调优，通过uhd::tune_request_t</p>
+                <p>频率范围：10MHz至6GHz的</p>
+                <p>发射天线：TX/ RX</p>
+                <p>接收天线：TX/ RX或RX2</p>
+                <p class="code">前端0：对选定的天线复合基带信号</p>
+                <p class="code">注：用户可以设置接收天线为TX / RX或RX2。然而，在全双工模式中使用WBX板时，接收天线将总是被设置为RX2，无论设置。</p>
+                <p>发送收益：PGA0，范围：0-31.5dB</p>
+                <p>接收增益：PGA0，范围：0-31.5dB</p>
+                <p>带宽：</p>
+                <p class="code">WBX：40MHz，RX和TX</p>
+                <p class="code">WBX-120：120MHz，RX和TX</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔值LO为锁定状态</p>
+                <p>LED指示灯：</p>
+                <p class="code">LOCK：合成器锁定检测</p>
+                <p class="code">TX/ RX TXD：发射的 TX / RX天线端口</p>
+                <p class="code">TX/ RX RXD：接收的TX / RX天线端口</p>
+                <p class="code">RX2 RXD：接收天线RX2端口上</p>
+                <p></p>
+                <p></p>
+                
+                
+                
+                <p class="min_title">XCVR2450</p>
+                <p>XCVR2450有两个正交的前端，一个发射，一个接收. 发送和接收默认直接转换，但如果通过使用uhd::tunne_request_t设置lo_offset，可在低IF模式下使用</p>
+                <p>XCVR2450具有非连续调谐由高波段范围（4.9-6.0 GHz）和低频（2.4-2.5 GHz）。</p>
+                <p>发射天线：J1或J2</p>
+                <p>接收天线：J1或J2</p>
+                <p class="code">前端0：选择天线的复基带信号</p>
+                <p>XCVR2450不支持全双工模式，试图在全双工操作将导致只有传输操作。</p>
+                <p>传输增益：</p>
+                <p class="code">VGA，范围：0-30db</p>
+                <p class="code">BB，范围：0-5db</p>
+                <p>接收增益：</p>
+                <p class="code">LNA，范围：0-30.5db</p>
+                <p class="code">VGA，范围：0-62db</p>
+                <p>Bandwidths：</p>
+                <p class="code">RX：15MHz，19 MHz，28 MHz，36 MHz；（each+ - 0，5，或10%）</p>
+                <p class="code">TX：24 MHz，36 MHz，48 MHz</p>
+                <p>传感器:</p>
+                <p class="code">lo_locked：LO锁定状态的布尔</p>
+                <p class="code">RSSI：float for rssi in dBm</p>
+                <p><a href="xcvr2450.html">XCVR2450测试文档</a></p>
+                
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">RFX系列</p>
+                <p>RFX系列主板有2个正交前端：发送和接收。发送默认为低中频，并接收默认为直接转换。中频可以通过UHD:: tune_request_t对lo_offset进行调整。</p>
+                <p>RFX系列板卡具有独立的接收和发射LO的和合成器允许在不同的发射全双工操作和接收频率。</p>
+                <p>发射天线：TX/ RX</p>
+                <p>接收天线：TX/ RX或RX2</p>
+                <p class="code">前端0：对选定的天线复合基带信号</p>
+                <p>用户可以设置接收天线为TX / RX或RX2。然而，在全双工模式下使用RFX板时，接收天线总是被设置为RX2。</p>
+                <p>接收增益：PGA0，范围：0-70dB（除RFX400范围为0-45dB）</p>
+                <p>带宽：</p>
+                <p class="code">RX：40MHz&nbsp;</p>
+                <p class="code">TX：40MHz</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔为LO锁定状态</p>
+                <p>RFX系列包括（RFX400, RFX900,RFX1800 RFX1200 RFX2400）</p>
+                <p><a href="rfx900_n210.html">RFX900 测试文档（主板使用USRP N210）</a></p>
+                <p><a href="rfx900_u1.html">RFX900 测试文档（主板使用USRP1）</a></p>
+                
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">BasicRX and LFRX</p>
+                <p>Basic RX and LFRX子板有4个前端</p>
+                <p class="code">前端A：天线RXA真实信号</p>
+                <p class="code">前端B：对天线RXB真实信号</p>
+                <p class="code">前端AB：使用两个天线正交前端（IQ）</p>
+                <p class="code">前端BA：使用两个天线正交前端（QI）</p>
+                <p>这些板没有可调的元件或可编程增益。通过混频的功能，可以通过下变频获得比ADC的尼奎斯特速率更高的信号。</p>
+                <p>Basic RX具有带宽：</p>
+                <p class="code">对于实模式（A或B前端）：250MHz&nbsp;</p>
+                <p class="code">对于复杂的（AB或BA前端）：500MHz</p>
+                <p>LFRX带宽：</p>
+                <p class="code">对于实模式（A或B前端）：33MHz</p>
+                <p class="code">对于复杂的（AB或BA前端）：66MHz</p>
+                <p><a href="basicrx.html">BasicRX 测试文档</a></p>
+                <p><a href="lfrx.html">LFRX 测试文档</a></p>
+                
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">BasicTX and LFTX</p>
+                <p>Basic TX 和LFTX板有4个前端：</p>
+                <p class="code">前端A：天线TXA真实信号</p>
+                <p class="code">前端B：对天线TXB真实信号</p>
+                <p class="code">前端AB：使用两个天线正交前端（IQ）</p>
+                <p class="code">前端BA：使用两个天线正交前端（QI）</p>
+                <p>这些板没有可调的元件或可编程增益。通过混频的功能，可以通过下变频获得比DAC的尼奎斯特速率更高的信号。</p>
+                <p>BasicTX带宽：</p>
+                <p class="code">对于实模式（A或B前端）：250MHz&nbsp;</p>
+                <p class="code">对于复杂的（AB或BA前端）：500MHz</p>
+                <p>LFTX带宽：</p>
+                <p class="code">对于实模式（A或B前端）：33MHz</p>
+                <p class="code">对于复杂的（AB或BA前端）：66MHz</p>
+                <p><a href="basictx.html">BasicTX 测试文档</a></p>
+                <p><a href="lftx.html">LFTX 测试文档</a></p>
+                
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">DBSRX</p>
+                <p>DBSRX板有1正交前端。它默认为直接转换，但可以使用low IF通过lo_offset中的UHD:: tune_request_t。</p>
+                <p>频率范围：800 MHz到2.4GHz</p>
+                <p>接收天线：J3</p>
+                <p class="code">前端0：从天线J3的复基带信号</p>
+                <p>该板子没有用户可选择天线设置。</p>
+                <p>接收增益：</p>
+                <p class="code">GC1，范围：0-56dB</p>
+                <p class="code">GC2，范围：0-24dB</p>
+                <p>带宽：8MHZ – 66MHz</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔为LO锁定状态</p>
+                <p><a href="dbsrx.html">DBSRX测试文档</a></p>
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">DBSRX2</p>
+                <p>DBSRX2板有1正交前端。它默认为直接转换，但可以使用low IF通过lo_offset中的UHD:: tune_request_t。</p>
+                <p>频率范围：800 MHz到2.3GHz</p>
+                <p>接收天线：J3</p>
+                <p class="code">前端0：从天线J3复基带信号</p>
+                <p>该板子没有用户可选择的天线设置。</p>
+                <p>接收增益：</p>
+                <p class="code">GC1，范围：0-73dB</p>
+                <p class="code">BBG，范围：0-15dB</p>
+                <p>带宽（Hz）：8MHz – 80MHz</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔为LO锁定状态</p>
+                <p><a href="dbsrx2.html">DBSRX2测试文档</a></p>
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">TVRX</p>
+                <p>TVRX板有1实模式的前端。这是在低IF操作</p>
+                <p>频率接收范围：50MHz – 860MHz</p>
+                <p>接收天线：RX</p>
+                <p class="code">前端0：从天线接收实模式基带信号</p>
+                <p>接收增益：</p>
+                <p class="code">RF，范围：-13.3-50.3dB（频率依赖）</p>
+                <p class="code">IF，范围：-1.5-32.5dB</p>
+                <p><a href="tvrx.html">TVRX测试文档</a></p>
+                
+                
+                <p></p>
+                <p></p>
+                <p class="min_title">TVRX2</p>
+                <p>TVRX2板有2实模式的前端。这是在低IF操作</p>
+                <p>频率范围：50 MHz至860 MHz</p>
+                <p>接收前端：</p>
+                <p class="code">前端RX1：从天线J100实模式基带</p>
+                <p class="code">前端RX2：从天线J140实模式基带</p>
+                <p>
+                <div>注：TVRX2具有永远在线AGC;该软件可控制增益是控制的AGC设定点以输出到ADC的最终增益级。</div>
+                <div>接收增益：</div>
+                </p>
+                <p class="code">IF，范围：0.0-30.0dB</p>
+                <p>带宽：1.7MHz，6 MHz，7 MHz，8 MHz，10 MHz</p>
+                <p>传感器：</p>
+                <p class="code">lo_locked：布尔为LO锁定状态</p>
+                <p class="code">RSSI：为浮动RSSI测量以dBm</p>
+                <p class="code">温度：浮子为摄氏度温度测量</p>
+                <p><a href="tvrx2.html">TVRX2测试文档</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

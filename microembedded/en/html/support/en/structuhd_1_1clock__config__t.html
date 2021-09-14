@@ -1,0 +1,491 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::clock_config_t Struct Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::clock_config_t Struct Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::clock_config_t Struct Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="clock__config_8hpp_source.html">uhd/types/clock_config.hpp</a>&gt;</code></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:ae6775dddf416a20c462a723bc88f55d8"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8">ref_source_t</a> { <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8a0cd1a6af945efe76261cfd65205d19ea">REF_AUTO</a> = int('a'), <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8a9ad0997c6d416fecf103d9dda252c531">REF_INT</a> = int('i'), <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8a03906cbc61ffb609f69c726241f0014d">REF_SMA</a> = int('s'), <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8a29f14a026c34003ed410ef189d4b8a4e">REF_MIMO</a> = int('m') }</td> 
+          </tr> 
+          <tr class="separator:ae6775dddf416a20c462a723bc88f55d8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ada8c944753b43d9e96f1483095f304a7"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7">pps_source_t</a> { <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7a50b119aa73567aa4afb6f063f5defde8">PPS_INT</a> = int('i'), <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7af0024ec53e8af09abb6f03eba7bcc2e5">PPS_SMA</a> = int('s'), <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7afd90c1346a698370a35e8467606c95f1">PPS_MIMO</a> = int('m') }</td> 
+          </tr> 
+          <tr class="separator:ada8c944753b43d9e96f1483095f304a7"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aaaebc21578470764e3a1a5dda370ad41"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41">pps_polarity_t</a> { <a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41ae7116a104751fed3f0550bbe39ffe54b">PPS_NEG</a> = int('n'), <a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41aeada90db008ac0f26bffc3d57cde241c">PPS_POS</a> = int('p') }</td> 
+          </tr> 
+          <tr class="separator:aaaebc21578470764e3a1a5dda370ad41"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:aa219f6c9abc1a98b0f30f276eb678407"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#aa219f6c9abc1a98b0f30f276eb678407">clock_config_t</a> (void)</td> 
+          </tr> 
+          <tr class="separator:aa219f6c9abc1a98b0f30f276eb678407"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a> Static Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a13aad54f67d950afcb42e0bdf3cb7284"> 
+           <td class="memItemLeft" align="right" valign="top">static <a class="el" href="structuhd_1_1clock__config__t.html">clock_config_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#a13aad54f67d950afcb42e0bdf3cb7284">external</a> (void)</td> 
+          </tr> 
+          <tr class="memdesc:a13aad54f67d950afcb42e0bdf3cb7284"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">A convenience function to create an external clock configuration. <a href="#a13aad54f67d950afcb42e0bdf3cb7284">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a13aad54f67d950afcb42e0bdf3cb7284"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a089d8b5b456bba684a9fc977894c7b7c"> 
+           <td class="memItemLeft" align="right" valign="top">static <a class="el" href="structuhd_1_1clock__config__t.html">clock_config_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#a089d8b5b456bba684a9fc977894c7b7c">internal</a> (void)</td> 
+          </tr> 
+          <tr class="memdesc:a089d8b5b456bba684a9fc977894c7b7c"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">A convenience function to create an internal clock configuration. <a href="#a089d8b5b456bba684a9fc977894c7b7c">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a089d8b5b456bba684a9fc977894c7b7c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a> Public Attributes</h2></td> 
+          </tr> 
+          <tr class="memitem:abb02daff4e4a3a270f86ec5182ff4b2a"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8">uhd::clock_config_t::ref_source_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#abb02daff4e4a3a270f86ec5182ff4b2a">ref_source</a></td> 
+          </tr> 
+          <tr class="separator:abb02daff4e4a3a270f86ec5182ff4b2a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a934e98b48a62dba3b02d277812452674"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7">uhd::clock_config_t::pps_source_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#a934e98b48a62dba3b02d277812452674">pps_source</a></td> 
+          </tr> 
+          <tr class="separator:a934e98b48a62dba3b02d277812452674"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a3bbd5a2a58634d023fa99a9af991ba63"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41">uhd::clock_config_t::pps_polarity_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1clock__config__t.html#a3bbd5a2a58634d023fa99a9af991ba63">pps_polarity</a></td> 
+          </tr> 
+          <tr class="separator:a3bbd5a2a58634d023fa99a9af991ba63"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>The DEPRECATED Clock configuration settings: The source for the 10MHz reference clock. The source and polarity for the PPS clock.</p> 
+         <p>Deprecated in favor of set time/clock source calls. Its still in this file for the sake of gr-uhd swig.</p> 
+         <p>Use the convenience functions <a class="el" href="structuhd_1_1clock__config__t.html#a13aad54f67d950afcb42e0bdf3cb7284" title="A convenience function to create an external clock configuration. ">external()</a> and <a class="el" href="structuhd_1_1clock__config__t.html#a089d8b5b456bba684a9fc977894c7b7c" title="A convenience function to create an internal clock configuration. ">internal()</a>, unless you have a special purpose and cannot use them. </p> 
+        </div> 
+        <h2 class="groupheader">Member Enumeration Documentation</h2> 
+        <a class="anchor" id="aaaebc21578470764e3a1a5dda370ad41"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41">uhd::clock_config_t::pps_polarity_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="aaaebc21578470764e3a1a5dda370ad41ae7116a104751fed3f0550bbe39ffe54b"></a>PPS_NEG</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="aaaebc21578470764e3a1a5dda370ad41aeada90db008ac0f26bffc3d57cde241c"></a>PPS_POS</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ada8c944753b43d9e96f1483095f304a7"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7">uhd::clock_config_t::pps_source_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ada8c944753b43d9e96f1483095f304a7a50b119aa73567aa4afb6f063f5defde8"></a>PPS_INT</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ada8c944753b43d9e96f1483095f304a7af0024ec53e8af09abb6f03eba7bcc2e5"></a>PPS_SMA</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ada8c944753b43d9e96f1483095f304a7afd90c1346a698370a35e8467606c95f1"></a>PPS_MIMO</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ae6775dddf416a20c462a723bc88f55d8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8">uhd::clock_config_t::ref_source_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae6775dddf416a20c462a723bc88f55d8a0cd1a6af945efe76261cfd65205d19ea"></a>REF_AUTO</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae6775dddf416a20c462a723bc88f55d8a9ad0997c6d416fecf103d9dda252c531"></a>REF_INT</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae6775dddf416a20c462a723bc88f55d8a03906cbc61ffb609f69c726241f0014d"></a>REF_SMA</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae6775dddf416a20c462a723bc88f55d8a29f14a026c34003ed410ef189d4b8a4e"></a>REF_MIMO</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="aa219f6c9abc1a98b0f30f276eb678407"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">uhd::clock_config_t::clock_config_t </td> 
+             <td>(</td> 
+             <td class="paramtype">void&nbsp;</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Function Documentation</h2> 
+        <a class="anchor" id="a13aad54f67d950afcb42e0bdf3cb7284"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static <a class="el" href="structuhd_1_1clock__config__t.html">clock_config_t</a> uhd::clock_config_t::external </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>A convenience function to create an external clock configuration. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a089d8b5b456bba684a9fc977894c7b7c"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static <a class="el" href="structuhd_1_1clock__config__t.html">clock_config_t</a> uhd::clock_config_t::internal </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>A convenience function to create an internal clock configuration. </p> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Data Documentation</h2> 
+        <a class="anchor" id="a3bbd5a2a58634d023fa99a9af991ba63"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#aaaebc21578470764e3a1a5dda370ad41">uhd::clock_config_t::pps_polarity_t</a> uhd::clock_config_t::pps_polarity</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a934e98b48a62dba3b02d277812452674"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#ada8c944753b43d9e96f1483095f304a7">uhd::clock_config_t::pps_source_t</a> uhd::clock_config_t::pps_source</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="abb02daff4e4a3a270f86ec5182ff4b2a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1clock__config__t.html#ae6775dddf416a20c462a723bc88f55d8">uhd::clock_config_t::ref_source_t</a> uhd::clock_config_t::ref_source</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <hr />The documentation for this struct was generated from the following file: 
+        <ul> 
+         <li>include/uhd/types/<a class="el" href="clock__config_8hpp_source.html">clock_config.hpp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

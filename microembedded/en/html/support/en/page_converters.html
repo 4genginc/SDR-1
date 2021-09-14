@@ -1,0 +1,183 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Converters</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Converters</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Converters</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="converters_overview"></a> Overview</h1> 
+         <p>When streaming from device to host, the converter has a central role: It converts the sample (or streaming) data from a format the device understands to a format the user can deal with. During conversion, data is copied from the transport buffer to the buffer provided by the user (or vice versa). For zero-copy architectures, this means there are the fewest possible copies between the device transport and the user application.</p> 
+         <p>The conversion encompasses several elements. The most obvious is that of the data type: Most FPGAs use integer data types, the most common being complex 16-bit integers (16 bit for I and Q, respectively). If the user wants his data in float, the converter casts the data type, and also scales the data, typically such that the full dynamic range of the 16-Bit integers is mapped onto the float range of -1 to 1. The converter also handles the endianness: On the network, data is usually stored as big-endian, whereas most platforms store data internally as little-endian.</p> 
+         <p>The format used by the user application is coined the 'CPU Format', whereas the format used between the device and UHD is called the 'OTW Format' (<em>Over-the-wire</em> format).</p> 
+         <p>The most common combinations of OTW and CPU formats are shipped with UHD. If your application requires a more exotic CPU format, there is an API to register your own converters.</p> 
+         <h1><a class="anchor" id="converters_formats"></a> Formats and Converter Choice</h1> 
+         <p>To obtain a list of names of data formats, see <a class="el" href="structuhd_1_1stream__args__t.html">uhd::stream_args_t</a>. This also provides an example for how to instantiate a streamer that uses <code>sc16</code> over the wire, and <code>fc32</code> as CPU format.</p> 
+         <p>Any pair of OTW and CPU formats can only be used if a converter was registered for that specific pair.</p> 
+         <h2><a class="anchor" id="converters_formats_internal"></a> Internal format strings</h2> 
+         <p>The CPU format is always as defined by the host system, so for example <code>fc32</code> is always a <code>std::complex&lt;float&gt;</code>, whatever that is.</p> 
+         <p>For the OTW format, there are more subtleties to observe: On top of the actual data format, there are device-specific components to the OTW format, such as the endianness and the data encapsulation. Internally, the OTW format strings are thus more descriptive than the formats listed at <a class="el" href="structuhd_1_1stream__args__t.html#a0ba0e946d2f83f7ac085f4f4e2ce9578">uhd::stream_args_t::otw_format</a> (i.e., the format types you can specify in the stream args).</p> 
+         <p>As an example, the N2x0 series encapsulates all data in 32-bit chunks, and always uses big-endian transport type. When using <code>sc16</code> over the wire, the internal format description would be <code>sc16_item32_be</code>, which describes all those elements. During a receive operation, UHD would instantiate a converter from <code>sc16_item32_be</code> to <code>fc32</code>. The same converter could not be used for the B2x0 series, for example, which uses little-endian transport format and would require a <code>sc16_item32_le</code> converter.</p> 
+         <h1><a class="anchor" id="converters_accel"></a> Hardware-specific Converters</h1> 
+         <p>Given enough knowledge about the platform architecture, it is possible to have converters that use mechanisms to accelerate the conversion (e.g. chipset intrinsics). It is possible to register multiple converters for the same OTW/CPU format pair, and have UHD choose one depending on the current platform.</p> 
+         <h1><a class="anchor" id="converters_register"></a> Registering converters</h1> 
+         <p>The converter architecture was designed to be dynamically extendable. If your application requires converters not shipped with UHD, they can be added from your application without having to modify UHD. Modifying UHD may be required, e.g. when adding new devices or functionality to UHD.</p> 
+         <h2><a class="anchor" id="converters_register_extra"></a> Outside of UHD</h2> 
+         <p>Registering a converter from your application requires deriving from <a class="el" href="classuhd_1_1convert_1_1converter.html" title="A conversion class that implements a conversion from inputs -&gt; outputs. ">uhd::convert::converter</a> and overriding all the pure virtual functions.</p> 
+         <p>Before any UHD operations are performed, this converter class needs to be registered by calling uhd::convert::converter::register_converter.</p> 
+         <h2><a class="anchor" id="converters_register_internal"></a> Inside UHD</h2> 
+         <p>If the converters shipped with UHD need to be amended, new converter classes should be added to <code>lib/convert</code>. Use the DECLARE_CONVERTER convenience macro where possible. See this directory for examples. </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

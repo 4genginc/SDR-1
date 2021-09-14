@@ -1,0 +1,190 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>Dynamic Ionosphere CubeSat Experiment – High-Speed Satellite Ground Station</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,SDR,Openbts">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css" />
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../support/faq.html">Documents</a></li>
+				<li><a class="menu_son" href="applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="application">
+            <div class="middle">
+                <div class="tab">
+                    <a href="applications.html">Applications</a> » <span>Dynamic Ionosphere CubeSat Experiment – High-Speed Satellite Ground Station</span>
+                </div>
+                <div class="content box_shadow">
+                    <p class="content_title">Dynamic Ionosphere CubeSat Experiment – High-Speed Satellite Ground Station</p>
+                    <hr />
+                    <p><b>Authors</b>：Dr. Jacob Gunther</p>
+                    <p><b>Ettus Research Products Used</b>：USRP N210，WBX</p>
+                    <p><b>Institution</b>：Utah State University in partnership with Level 3 Communications</p>
+                    <p><b>Application Area</b>：Satellite Communications</p>
+                    <p class="xiao-title">Challenge:</p>
+                    <p class="mingxi">Implement a low-cost, high-performance spacecraft communications system for an Earth-science mission.</p>
+                    <p class="xiao-title">Solution:</p>
+                    <p class="mingxi">The team needed an affordable, re-configurable communications solution to support the spacecraft-to-ground communications link.  The USRP N210 was used to implement the ground-segment and allowed the team to adapt to changing interference conditions.</p>
+                    <p class="xiao-title">Introduction：</p>
+                    <p class="mingxi">Utah State University was awarded a grant from the National Science Foundation to design, build, test and launch a Cubesat that would circle the Earth in a low-earth orbit and take measurements related to solar storms.  This satellite is called The Dynamic Ionosphere Cubesat Experiment, or DICE.  The satellite used a suite of instruments, including an electric field, plasma, and magnetic probes.  The fusion of measurements made with these instruments provided unique insight into the way particles from solar flares interact with Earth's upper atmosphere.  This information will help scientists gain a better understanding of how solar flares effect Earth's environment.</p>
+                    <p class="mingxi">Most Cubesats use low-rate packet radios that operate between 1200 and 19200 bits per second.  This constrains on the amount of scientific data that can be downlinked from the spacecraft.  The requirements of the DICE scientific mission mandated a much higher data rate to retrieve all of the information required for complete analysis.   The DICE team was faced with the challenge of designing a communications solution to increase the data throughput above 1 Mbps.  This is a thousand-fold increase compared most existing communications systems used for Cubesat missions. </p>
+                    <img src="../../images/applications/cubesat/1.jpg" width="292" height="173">
+                    <p class="xiao-title">The Challenges</p>
+                    <p class="mingxi">Developing this high-speed communications system does not come without a long list of challenges.  From a technical standpoint, it is difficult to close a link at these higher data rates given the power limitation of a Cubesat power bus.  Nominal operations require a high-gain dish at the ground station, and careful planning of downlink sessions over the ground station.   The spacecraft radio also had to fit within the confined spaces of the Cubesat, and meet thermal dissipation requirements to assure reliable operation. </p>
+                    <p class="mingxi">Additionally, there were also regulatory challenges posed by the project.  Currently, there is no spectrum reserved for small scientific satellites so the DICE team was required to operate as a secondary user in a high-traffic radio band between 460 and 470 MHz with a high potential for radio interference.  This secondary assignment mandated low-flux density of the transmitter signal at the Earth's surface, virtually guaranteeing that any terrestrial interferers would have significantly higher power ratios.</p>
+                    <p class="mingxi">Last, but not least, there were few off-the-shelf solutions that could serve as the ground-station transceiver components while meeting the function and flexibility requirements of the system.  Many of the solutions that could meet the requirements for this system cost upwards of $100,000, which was unacceptable for a program intended to prove space science can be performed in a cost-effective manner.</p>
+                    <p class="xiao-title">The Final System</p>
+                    <p class="mingxi">Any spacecraft communications system, involves several components operating in harmony.  The DICE spacecraft used the Cadet radio for Level 3 Communicatoins (L-3). This was a thoroughly tested piece of hardware that could operate reliably in space environments while fitting within the constraints set by the Cubesat bus.  This unit transmitted data with Offset Quadrature Phase Shift Keying (O-QPSK) to minimize distortions caused by transmit amplifier non-linearity.  The over-the-air datarate was 2.69 Mbps, which included frame overhead, forward-error correction, etc.  The ultimate user data rate was 1.5 Mbps. </p>
+                    <p class="mingxi">During the operational phase of the DICE mission, two ground stations were used.  A facility at NASA Wallops field was used as the primary ground-station.  This included an 18.29 meter dish.  The other facility was located at the Stanford Research International 18.3 meter dish in Menlo Park, Calif.  The ground-station used an Ettus Research USRP™ (Universal Software Radio Peripheral) to implement the uplink and downlink transceiver.  The USRP hardware was connected to a PC that also provided a means to record all downlink data for post-processing.</p>
+                    <img src="../../images/applications/cubesat/2.jpg" width="275" height="184">
+                    <img src="../../images/applications/cubesat/3.jpg" width="280" height="180">
+                    <p style="text-align:center">Figure 2 - DICE Communications System</p>
+                    <p class="xiao-title">The USRP and Satellite-Ground Communication</p>
+                    <p class="mingxi">The USRP N210 was chosen to meet the demanding requirements for the mission's ground-station.  Interfaced to a PC, the USRP device allowed the team to access the RF signals, demodulate, and decode the signals.  During a downlink session, the USRP, PC, and a storage device was used to record RF samples, which would be post-processed using GNU Radio and C++.  A block diagram of the receiver system can be seen in Figure 4.</p>
+                    <img src="../../images/applications/cubesat/4.jpg" width="444" height="114">
+                    <p>Figure 3 - DICE Receiver Subsystem</p>
+                    <p class="mingxi">During initial operations at Wallops field, the DICE team also encountered significant challenges associated with radio frequency interferers (RFI).  The band of operation exposed the radios to a significant amount of push-to-talk (PTT) radio traffic.  Due to the proximity of these interferes versus that of the distant satellite, the signal-to-interferer (SIR) ratio was very low, leading to poor downlink performance.  The effect on the received spectrum is shown with spectral and waterfall plots.</p>
+                    <img src="../../images/applications/cubesat/5.jpg" width="260" height="194">
+                    <p>Figure 5 - Interference at Ground Station</p>
+                    <p class="mingxi">The software defined implementation using the USRP allowed the team to apply adaptive, narrow-band notching to reduce the effect of this interference.  The resulting spectrum after interference mitigation was applied can be seen in the waterfall plot below. As such, the decision to implement the ground component using the USRP N210 software defined radio technology enabled the team to do more than save money on a tight budget. </p>
+                    <p class="xiao-title">Conclusion and Future Development</p>
+                    <p class="mingxi">The DICE team was able to field a fully functional ground-component to operate the satellite and successfully downlink a significant amount of data, and established a new performance standard for Cubesat missions in doing so.  With the help of the flexible USRP hardware, the team was able to deploy an affordable ground-station component.  The re-configurability of the USRP-based system allowed the team to make adjustments during the operational phase of the mission, and adapt to a challenging RF environment.  Without the USRP N210 SDR technology it may have taken significantly more effort and investment to achieve this success.</p>
+                    <p class="mingxi">In the future, this ground-station concept will be re-used by a number of Cubesat communications teams, including the RAX team at the University of Michigan.  This system offers significant advantages because a single radio can be used to implement several communications standards, negating the need for each team to develop its own radio implementation.</p>
+                    <img src="../../images/applications/cubesat/6.jpg" width="331" height="152">
+                    <p>Figure 7 - DICE Cubesat Development Team</p>
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

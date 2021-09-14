@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UbuntuInstall</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div><h2><a name="TOC-1"></a>
+</h2><h1><a name="TOC-Ubuntu-GNU-Radio"></a><font size="3">在 Ubuntu 上构建 GNU Radio </font><br></h1><h1><a name="TOC-Building-GNU-Radio-on-Ubuntu-Linux"></a><font size="3"><span style="font-family:simsun,serif">Building GNU Radio on Ubuntu Linux</span></font></h1><h2 style="font-family:simsun,serif"><a name="TOC-GNU-Radio-3.2"></a><font size="3">GNU Radio 发行版
+ 3.2 </font></h2><div style="margin-left:40px"><font size="2"><span style="font-family:simsun,serif">GNU
+ Radio 最新发行版 3.2， 
+已经对 Ubuntu 9.04 (Jaunty) 有二进制的安装包（</span>binary package<span style="font-family:simsun,serif">）。再也不需预先手动安装构建工具和进行从繁琐的源码安装了。而且 USRP 和
+ USRP2 的安装和配置是自动完成的。这是最快和最简洁的方法让 GNU Radio 平台运行在你的系统上。</span></font><br style="font-family:simsun,serif"></div><font size="2"><br style="font-family:simsun,serif"></font><div style="margin-left:40px"><font size="2" style="color:rgb(166,77,121)"><span style="font-family:simsun,serif">以下的篇幅有点过时而且布局也需做些调整。</span></font><br></div><h3 style="font-family:simsun,serif"><a name="TOC-2"></a><font size="2">安
+装选项 </font></h3><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">这儿提供的信息和脚本用于编译和安装 GNU Radio 及所需的后台程序、库，其可用于 </font><font size="2" style="font-family:simsun,serif">Ubuntu Linux 6.10 ("Edgy") 或其后的版本；也可能适用于此前的版本但这些没有被测试过。</font><br><font size="2" style="font-family:simsun,serif">在 </font><font size="2" style="font-family:simsun,serif">Ubuntu 6.10 ("Edgy") 上安装 GNU Radio 可以</font><font size="2" style="font-family:simsun,serif">由</font><font size="2" style="font-family:simsun,serif">二进制的安装包（binary
+
+ package）和软件包管理器基本上完成，但是也有部分软件包需要下载源码以及从源码编译。</font><br><font size="2" style="font-family:simsun,serif">在 </font><font size="2" style="font-family:simsun,serif">Ubuntu 7.04 ("Feisty") 
+及其后的版本上安装 GNU Radio 可以完全</font><font size="2" style="font-family:simsun,serif">由</font><font size="2" style="font-family:simsun,serif">二进制的安
+装包（binary
+
+ package）和软件包管理器完成，或者由下载源码再编译也可。</font><br><font size="2" style="font-family:simsun,serif"><b><br>备注:</b> GNU Radio 版本 3.0.3 及更早的版本安装在 </font><font size="2" style="font-family:simsun,serif">Ubuntu 7.04 ("Feisty") 上时使用
+ USRP 功能不稳定； USRP 工作一阵子便死机，需 USRP 或 Ubuntu 重新启动。 在 SVN 可以找到对此的修补。</font><br></div><font size="2" style="font-family:simsun,serif"><br></font></div><div><h3 style="font-family:simsun,serif"><a name="TOC-3"></a><font size="2">基于源码构建时的先决条件</font></h3><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">以下软件包是安装 GNU Radio 到 Ubuntu 上为编译源码所需。 这些软件包可以通过 </font><font size="2" style="font-family:simsun,serif">"synaptic"、 "dselect"、 或 
+"apt-get"</font><font size="2"> 来安装。除非有明确的强调，在此便认为各个软件包都应该安装最新的版本。</font><br></div><ul style="font-family:simsun,serif"><li><font size="2">开发用工具 (编译时所需) 
+</font><ul><li><font size="2">g++</font></li><li><font size="2">subversion</font></li><li><font size="2">make</font></li><li><font size="2">autoconf, automake, libtool</font></li><li><font size="2">sdcc (从 "universe"; 2.4 或 更新的)</font></li><li><font size="2">guile
+
+ (1.6 或更新的)</font></li><li><font size="2">ccache (不是必须的, 如果频繁编译的话建议安装)</font></li></ul></li></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">库 (实时运行和编译所需) 
+</font><ul><li><font size="2">python-dev</font></li><li><font size="2">FFTW
+
+ 3.X (fftw3, fftw3-dev)</font></li><li><font size="2">cppunit 
+(libcppunit 和 libcppunit-dev)</font></li><li><font size="2">Boost 1.35 
+(或更新的) </font></li><li><font size="2">libusb and libusb-dev</font></li><li><font size="2">wxWidgets (wx-common) 和 wxPython (python-wxgtk2.8)</font></li><li><font size="2">python-numpy (籍借 python-numpy-ext) (for SVN on or after 
+2007-May-28</font><font size="2">)</font></li><li><font size="2">ALSA 
+(alsa-base, libasound2 和 libasound2-dev)</font></li><li><font size="2">Qt
+
+ (libqt3-mt-dev 用于比 8.04 更早的版本; version 4 用于 8.04 和以后的 )</font></li><li><font size="2">SDL (libsdl-dev)</font></li><li><font size="2">GSL GNU 
+Scientific Library (libgsl0-dev &gt;= 1.10 required for SVN trunk, 
+not in binary repositories for 7.10 and earlier)</font></li></ul></li></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">SWIG (1.3.31 或
+ 更新的) 
+</font><ul><li><font size="2">Edgy 及以前版本: 基于源码安装时所需</font></li><li><font size="2">Feisty 或更新的版本: 使用标准软件包安装(swig)</font></li></ul></li></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">QWT (可选项) 
+(5.0.0 或更新的版本) 
+</font><ul><li><font size="2">必须由源码安装 (注：当下 2008-01-15).</font></li><li><font size="2">8.04 和 8.10 应当使用 </font><font size="2">qt4</font><font size="2">. 键入如下命令 : <br></font></li></ul></li></ul><div style="margin-left:120px;font-family:simsun,serif"><font size="2">sudo
+
+ apt-get update&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 便可升级为合适的 qt4.</font></div>
+<ul style="font-family:simsun,serif"><li><font size="2">QWT Plot3d Lib
+ 
+</font><ul><li><font size="2">必须安装从而使 gr-qtgui 能够工作。 Ubuntu 
+8.04 和 8.10 最好使用</font><font size="2"> qt4。 </font></li></ul></li></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">例程（Polyphase 
+Filter Bank examples）</font><ul><li><font size="2">以便使 
+gnuradio-examples/python/pfb 下的例程能够工作，需要安装 
+python-scipy, python-matplotlib, 和 python-tk</font></li></ul></li></ul>
+<ul style="font-family:simsun,serif"><li><font size="2">其它 
+</font><ul><li><font size="2">doxygen (以便能够从源码生成文档)</font></li><li><font size="2">octave (from "universe")</font></li></ul></li></ul>
+<h3 style="font-family:simsun,serif"><a name="TOC-4"></a><font size="2">安装脚本</font></h3>
+<p style="font-family:simsun,serif;color:rgb(0,0,0);margin-left:40px"><font size="2">籍希望能提供足够多的指导来将 GNU Radio 设置并运行于 Ubuntu 上，如下脚本的目的是用来“牵手”大多数的用户将 
+GNU Radio 安装在一个典型的 Ubuntu 上。<br></font></p><ul style="font-family:simsun,serif;color:rgb(0,0,0)"><li><b><font size="2">Edgy&nbsp;</font></b></li></ul><div style="margin-left:40px"><font size="2">此部分仅针对 Edgy 或更早的版本(除非是想去除 
+CDROM 功能，对于 Feisty 或新于它的版本而言，不需做任何更改）：</font></div><div style="margin-left:40px;font-family:simsun,serif;color:rgb(0,0,255)"><font size="2"><span style="color:rgb(0,0,0)">通过如下两种方法之一手动注释所
+有的库使得包含 "universe" 和 "multiverse" </span><br></font></div><pre style="font-family:simsun,serif;margin-left:80px;color:rgb(0,0,0)"><font size="2">sudo &lt;EDITOR&gt; /etc/apt/sources.list &nbsp;（方法之一）<br></font></pre><div style="margin-left:40px;font-family:simsun,serif;color:rgb(0,0,0)"><div style="margin-left:40px">或<br></div></div><div style="margin-left:40px;font-family:simsun,serif;color:rgb(0,0,0)"><br><div style="margin-left:40px">通过图形界面 GUI：沿着 System -&gt; Administration -&gt; Software 
+Sources。然后键入 admin 的密码进入。在 "Ubuntu" tab 上，确认所有的 "main restricted 
+universe multiverse" 的选项被选中而其它部分没有被选中（或者做认为对设置合适的工作）。顺序点击"Close" 和 
+"Reload" 来更新软件包的列单。文件 "/etc/apt/sources.list" 内被注释的行列将会如下一般读入 (DIST 
+是其具体的发行版本名，诸如：edgy, feisty, gusty, 等等):<br></div><br></div><div style="margin-left:40px;font-family:simsun,serif;color:rgb(0,0,0)"><div style="margin-left:40px"><font size="2">deb 
+http://us.archive.ubuntu.com/ubuntu/ DIST main restricted universe 
+multiverse<br>deb http://us.archive.ubuntu.com/ubuntu/ DIST-updates main
+ restricted universe multiverse<br>deb 
+http://security.ubuntu.com/ubuntu/ DIST-security main restricted 
+universe multiverse<br><br></font></div></div><div style="margin-left:40px;font-family:simsun,serif"><font size="2">更新
+本地 dpkg 缓存：<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get update<br></font></pre>
+<p style="font-family:simsun,serif;margin-left:40px"><font size="2">安装所需的包（有些似乎已经被 Ubuntu 缺省的安装上了；有一些似乎同其它的相重叠；无论如何这些包含了除 Edgy 之外所需的所有软件包）</font></p><ul><li><b>Lucid
+
+ (10.04):</b><br>
+</li></ul><pre style="margin-left:80px">sudo apt-get -y install libfontconfig1-dev libxrender-dev libpulse-dev swig g++ automake libtool python-dev libfftw3-dev \<br>libcppunit-dev libboost-all-dev libusb-dev fort77 sdcc sdcc-libraries \<br>libsdl1.2-dev python-wxgtk2.8 subversion git-core guile-1.8-dev \<br>libqt4-dev python-numpy ccache python-opengl libgsl0-dev \<br>python-cheetah python-lxml doxygen qt4-dev-tools \<br>libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools<br></pre><ul style="font-family:simsun,serif"><li><b><font size="2">Karmic (9.10):</font></b></li></ul><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install swig g++ automake libtool python-dev libfftw3-dev \<br>libcppunit-dev libboost1.38-dev libusb-dev fort77 sdcc sdcc-libraries \<br>libsdl1.2-dev python-wxgtk2.8 subversion git-core guile-1.8-dev \<br>libqt4-dev python-numpy ccache python-opengl libgsl0-dev \<br>python-cheetah python-lxml doxygen qt4-dev-tools \<br>libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools<br></font></pre><ul style="font-family:simsun,serif"><li><b><font size="2">Jaunty 
+(9.04):&nbsp;</font></b></li></ul><div style="margin-left:40px;font-family:simsun,serif"><b><font size="2"><i>需安装</i></font><font size="2"><i>软件包
+ sdcc-nf needs&nbsp; (而不是 
+sdcc)</i></font></b></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install swig g++ automake1.9 libtool python2.5-dev fftw3-dev \<br>libcppunit-dev libboost1.35-dev sdcc-nf libusb-dev \<br>libsdl1.2-dev python-wxgtk2.8 subversion git guile-1.8-dev \<br>libqt4-dev python-numpy ccache python-opengl libgsl0-dev \<br>python-cheetah python-lxml doxygen qt4-dev-tools \<br>libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools<br></font></pre><div style="margin-left:40px;font-family:simsun,serif"><font size="2">如果
+安装是来自对旧版本的升级，那就是说安装了python-wxgtk2.6。其原因是 python-wxgtk2.6 比 
+python-wxgtk2.8 有更高的优先级被安装，它必须使用如下指令被去除： <i><br><br></i></font></div><div style="margin-left:40px;font-family:simsun,serif"><div style="margin-left:40px"><font size="2"><i>sudo apt-get remove 
+python-wxgtk2.6</i> <br></font></div></div><ul style="font-family:simsun,serif"><li><b><font size="2">Intrepid (8.10):&nbsp;</font></b></li></ul><div style="font-family:simsun,serif"><div style="margin-left:40px;font-family:simsun,serif"><b><font size="2"><i>需安装</i></font><font size="2"><i>软件包 sdcc-nf needs&nbsp; (而不是 
+sdcc)</i></font></b></div></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install swig g++ automake1.9 libtool python-dev fftw3-dev \<br>libcppunit-dev libboost1.35-dev sdcc-nf libusb-dev \<br>libsdl1.2-dev python-wxgtk2.8 subversion git guile-1.8-dev \<br>libqt4-dev python-numpy ccache python-opengl libgsl0-dev \<br>python-cheetah python-lxml doxygen qt4-dev-tools \<br>libqwt5-qt4-dev libqwtplot3d-qt4-dev  pyqt4-dev-tools<br></font></pre><ul style="font-family:simsun,serif"><li><font size="2"><b>Hardy (8.04):</b>&nbsp;</font></li></ul><div style="margin-left:40px;font-family:simsun,serif"><font size="2"><i>如
+ </i></font><font size="2"><i>
+README.building-boost 所阐述的一样</i></font><font size="2"><i>应当安装 </i></font><font size="2"><i>Boost。</i></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install swig g++ automake1.9 libtool python-dev fftw3-dev \<br>libcppunit-dev sdcc libusb-dev libasound2-dev libsdl1.2-dev \<br>python-wxgtk2.8 subversion guile-1.8-dev libqt4-dev python-numpy-ext \<br>ccache python-opengl libgsl0-dev python-cheetah python-lxml doxygen \<br>libqwt5-qt4-dev libqwtplot3d-qt4-dev qt4-dev-tools<br></font></pre><ul style="font-family:simsun,serif"><li><b><font size="2">Gutsy (7.10):&nbsp;</font></b></li></ul><div style="font-family:simsun,serif"><div style="margin-left:40px;font-family:simsun,serif"><font size="2"><i>如 </i></font><font size="2"><i>
+README.building-boost 文档所阐述的一样</i></font><font size="2"><i>应当安装 </i></font><font size="2"><i>Boost。也需要 GSL 。<br></i></font></div></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install g++ automake libtool python-dev fftw3-dev \<br>libcppunit-dev sdcc libusb-dev libasound2-dev \<br>libsdl1.2-dev python-wxgtk2.8 subversion guile-1.8-dev libgsl0-dev \<br>libqt3-mt-dev python-numpy-ext swig ccache<br></font></pre><ul style="font-family:simsun,serif"><li><b><font size="2">Feisty 
+(7.04):&nbsp;</font></b></li></ul><div style="margin-left:40px;font-family:simsun,serif"><font size="2"><i>如 </i></font><font size="2"><i>
+README.building-boost 文档所阐述的一样</i></font><font size="2"><i>应当安装 </i></font><font size="2"><i>Boost。也需要 GSL 。</i></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install g++ automake1.9 libtool python-dev fftw3-dev \<br>libcppunit-dev sdcc libusb-dev libasound2-dev \<br>libsdl1.2-dev python-wxgtk2.8 subversion guile-1.6-dev\<br>libqt3-mt-dev python-numpy-ext swig ccache<br></font></pre><ul style="font-family:simsun,serif"><li><b><font size="2">Edgy (6.10):&nbsp;</font></b></li></ul><div style="margin-left:40px;font-family:simsun,serif"><font size="2"><i>强
+烈建议使用上面的新发行版之一</i></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install g++ automake1.9 libtool python-dev fftw3-dev \<br>libcppunit-dev libboost-dev sdcc libusb-dev libasound2-dev \<br>libsdl1.2-dev python-wxgtk2.6 subversion guile-1.6-dev \<br>libqt3-mt-dev python-numpy-ext ccache<br></font></pre><div style="margin-left:40px"><b><font size="2" style="font-family:simsun,serif">备注：</font></b>如上的 Edgy 安装 <font size="2" style="font-family:simsun,serif">python-wxgtk-2.6。这对于 GNURadio 以前的版本的用户是没问题，但对于最新
+ GNURadio 的 </font><font size="2" style="font-family:simsun,serif">svn
+ 
+snapshots</font><font size="2" style="font-family:simsun,serif"> （svn 
+快照技术）</font>显得过于古老。若想基于最新的 <span style="border-collapse:separate;color:rgb(0,0,0);font-family:Simsun;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;font-size:medium"><span style="font-family:arial;font-size:14px;line-height:24px">svn 快照技术</span></span>
+ （svn snapshot）构建 GNURadio，便需 <font size="2" style="font-family:simsun,serif">wxgtk 
+version 2.8 或更新。</font><br>可以到 <font size="2" style="font-family:simsun,serif"> 
+wxwidgets debian 和 ubuntu 的知识栈库安装最新的版本的 </font><font size="2" style="font-family:simsun,serif"> 
+wxwidgets。</font><br>查阅&nbsp;<font size="2" style="font-family:simsun,serif"> <a href="http://wiki.wxpython.org/InstallingOnUbuntuOrDebian" rel="nofollow">Installing latest 
+wxgtk-2.8 packages on debian or Ubuntu</a> 
+进行选项安装；有些也许已经在以前的命令中已经被成功地安装到系统中。<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y install gkrellm wx-common libwxgtk2.8-dev alsa-base autoconf xorg-dev g77 gawk bison openssh-server emacs cvs usbview octave<br></font></pre><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">（以下）仅适于 Edgy :&nbsp; 获取、编译、然后安装 SWIG </font><br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">wget http://prdownloads.sourceforge.net/swig/swig-1.3.33.tar.gz<br>tar zxf swig-1.3.33.tar.gz<br>cd swig-1.3.33<br>./configure<br>make<br>sudo make install<br>cd ..<br></font></pre><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">可选项<b>：</b></font><font size="2" style="font-family:simsun,serif">获取、编译、然后安装</font><font size="2" style="font-family:simsun,serif"> QWT 5.0.0 (或 更新)： <b><br></b></font></div><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif"><b>备注</b>： 不必设置诸如&nbsp; "QTDIR" 或 "QWT_CFLAGS" 
+的环境变量，</font><font size="2" style="font-family:simsun,serif"> (在此)</font><font size="2" style="font-family:simsun,serif">不必理睬这些</font>。<br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">wget http://superb-east.dl.sourceforge.net/sourceforge/qwt/qwt-5.0.2.tar.bz2<br>tar jxf qwt-5.0.2.tar.bz2<br>cd qwt-5.0.2<br></font></pre><ul><li><font size="2" style="font-family:simsun,serif">现在编辑 <i>qwtconfig.pri</i>:
+ </font></li></ul><div style="margin-left:40px"><i><font size="2">将&nbsp; UNIX 版本的&nbsp; </font><font size="2" style="font-family:simsun,serif">"INSTALLBASE”置换为 “</font><font size="2" style="font-family:simsun,serif">/usr/local</font></i><font size="2" style="font-family:simsun,serif"><i>”（原为 </i></font><font size="2" style="font-family:simsun,serif">"/usr/local/qwt-5.0.2"</font><font size="2" style="font-family:simsun,serif"><i>）；</i><br><i>将原来的 </i></font><i><font size="2" style="font-family:simsun,serif">"doc.path" 变换为 
+"$$INSTALLBASE/doc/qwt" </font>；<br><font size="2" style="font-family:simsun,serif">Save, exit（</font>保存，推出）。</i><i><br></i></div><div><div style="margin-left:40px"><font size="2"><br>"doc" 是由 HTML 和 man 
+格式构建，这些都位于</font><font size="2" style="font-family:simsun,serif"> 
+/usr/local/doc/{html,man}。它不是标准路径，但分离出这些似乎也不是一件容易的事情，所以对它弃之不予理睬：<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">qmake<br>make<br>sudo make install<br>cd ..<br></font></pre>
+<h3 style="font-family:simsun,serif"><a name="TOC-Install-Boost"></a><font size="2">安装 Boost</font></h3>
+<p style="font-family:simsun,serif;margin-left:40px"><font size="2">对于 </font><font size="2">Ubuntu 8.04 或更早的版本，下载并安装 Boost 1.35 或更新版本如下（参阅文档 </font><font size="2">README.building-boost）：</font></p>
+<p style="font-family:simsun,serif;margin-left:80px"><font size="2">1)
+
+在 </font><font size="2">boost.sourceforge.net 下载最新的 boost 的版本 
+(在写此文时 boost_1_37_0.tar.bz2 是最新的版本)。</font></p><div style="margin-left:80px;font-family:simsun,serif"><font size="2">2)
+ 就地解压缩并进入该目录<br></font></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">$ cd boost_1_37_0<br></font></pre>
+<p style="font-family:simsun,serif;margin-left:80px"><font size="2">3)
+
+ 选择前缀来安装。比如使用 /opt/boost_1_37_0</font></p><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">$ BOOST_PREFIX=/opt/boost_1_37_0<br></font></pre><div style="margin-left:80px;font-family:simsun,serif"><font size="2">4)
+ 配置<br></font></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">$ ./configure --prefix=$BOOST_PREFIX --with-libraries=thread,date_time,program_options<br></font></pre><div style="margin-left:80px;font-family:simsun,serif"><font size="2">5)
+ 编译<br></font></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">$ make<br></font></pre><div style="margin-left:80px;font-family:simsun,serif"><font size="2">6)
+ 安装<br></font></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">$ sudo make install<br><br>$ cd ..<br></font></pre>
+<h2 style="font-family:simsun,serif"><a name="TOC-Installing-GNU-Radio"></a><font size="2">安装 GNU Radio</font></h2><ul><li><font size="2" style="font-family:simsun,serif">下载、bootstrap、配置，和编译 GNU Radio 软件包：</font></li></ul></div><div><ul><ul><li>使
+用 git 来安装 GNU Radio<br></li></ul></ul><pre style="margin-left:80px">git clone http://gnuradio.org/git/gnuradio.git<br><br>cd gnuradio<br>export LD_LIBRARY_PATH=$BOOST_PREFIX/lib     # As per the instructions for installing Boost<br><br>./bootstrap<br>./configure --with-boost=$BOOST_PREFIX   # As per the instructions for installing Boost<br>make</pre><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif"><b>可选项：</b>运行 GNU Radio 的自检程序；这并不需 USRP。<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">make check<br></font></pre><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">即使有一个甚至一些测试没能通过，但 GNU Radio 
+也有可能功能性正常工作。尽管如此，到邮件列表寻求解决的方案或者将解决的方案贡献到列表是比较理智的做法。有此善举之时，不要忘记附带如下信息：OS 
+类型、OS 版本、CPU 类型（诸如，使用</font><font size="2" style="font-family:simsun,serif">"uname -a"获得的）、任何有关硬件的特别之处、软件的版本</font><font size="2" style="font-family:simsun,serif">(诸如：gcc, g++, swig, sdcc, 
+等）以及如何安装（标准或非标软件包，源代码）。<br></font></div><ul><li><font size="2" style="font-family:simsun,serif">下面，就一般用途安装 GNU Radio （缺省安装到</font><font size="2" style="font-family:simsun,serif"> 
+/usr/local</font><font size="2" style="font-family:simsun,serif">）：</font></li></ul><div style="margin-left:40px"></div><div style="margin-left:40px"><div style="margin-left:40px"><font size="2">sudo make install</font><br></div></div><ul><li><font size="2" style="font-family:simsun,serif">Ubuntu 使用 udev 来处理设备的热插拔问题，</font>而且缺省地不给 <font size="2" style="font-family:simsun,serif">non-root 用户提供读取 USRP 的权限。</font>以
+下脚本摘自 <font size="2" style="font-family:simsun,serif"><a href="http://gnuradio.microembedded.com/udevconfig" target="_blank">directions</a></font>，它赋予群在无论在在线或热插拔状态下，都能够通过 USB 掌控 
+USRP。</li></ul></div><div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo addgroup usrp<br>sudo usermod -G usrp -a &lt;YOUR_USERNAME&gt;<br>echo 'ACTION=="add", BUS=="usb", SYSFS{idVendor}=="fffe", SYSFS{idProduct}=="0002", GROUP:="usrp", MODE:="0660"' &gt; tmpfile<br>sudo chown root.root tmpfile<br>sudo mv tmpfile /etc/udev/rules.d/10-usrp.rules<br></font></pre><ul><li>至此，配置后的 Ubuntu 知道如何处置在 USB 上检测到的 USRP，除非该“udev”需要重载更新，以便包含刚产生的新规约。如下可能如此，
+如果异常的话，重启计算机将肯定如愿。<br>
+</li></ul><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo udevadm control --reload-rules<br></font></pre><div style="margin-left:80px"><font size="2" style="font-family:simsun,serif">或</font><br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo /etc/init.d/udev stop<br>sudo /etc/init.d/udev start<br></font></pre><div style="margin-left:80px"><font size="2" style="font-family:simsun,serif">或</font><br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo killall -HUP udevd<br></font></pre><div style="margin-left:40px"><font size="2" style="font-family:simsun,serif">当 USRP 被插入系统后，可以使用如下命令通过检查 </font><font size="2" style="font-family:simsun,serif">/dev/bus/usb 来查看是否被认知：</font><br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">ls -lR /dev/bus/usb | grep usrp<br></font></pre><div style="margin-left:40px">结果会显示一、两行信息（每个USRP 占据一行）如下：<br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">crw-rw---- 1 root usrp 189, 514 Mar 24 09:46 003<br></font></pre><div style="margin-left:40px">每个设备文件的列表将以‘usrp' 作为群（<font size="2" style="font-family:simsun,serif">group</font><font size="2">）</font>、<font size="2" style="font-family:simsun,serif"> 
+'crw-rw----' 作为</font>状态（<font size="2" style="font-family:simsun,serif">mode</font>）。<br></div><ul style="font-family:simsun,serif"><ul><li><b>备注：</b>如果系统是 Feisty 或更新的，或许需要重启计算机以便使得 GNU Radio 正常接口 USRP。但对于 Edgy 这似乎是多余的。<br></li></ul></ul>
+<ul><li><font size="2">USRP 一旦被 Ubuntu 确认，接下来便是确认 GNU Radio 同 USRP 是否配合得当（没有安装 USRP，</font><font size="2">当然可以</font><font size="2">略过这一步）。</font><font size="2">或许 </font><font size="2">"usrp_benchmark_usb" 检测表明无法达到满负荷的 </font><font size="2">32 MB/s，但是先保证脚本至少可以运行正常；如果有问题（脚本无法运行正常），要么可能是 GNU Radio 系统出问题，要么可能是 USRP 无法读取。在目录 </font><font size="2">"gnuradio" 下，确认以下步骤</font><font size="2">工作</font><font size="2">正常：<br></font></li></ul><ul style="font-family:simsun,serif"><ul><li><font size="2">Python 和 USRP 的接口；<br></font></li></ul></ul><div style="margin-left:80px"><font size="2">测试宿主机和 USRP 之间一个大致的最大数据吞吐量（以 2 的幂来表示）。<br></font></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">cd gnuradio-examples/python/usrp<br>./usrp_benchmark_usb.py<br></font></pre><ul style="font-family:simsun,serif"><ul><li><font size="2">C++ 和 USRP 的接口；<br></font></li></ul></ul><div style="margin-left:80px"><font size="2">测试宿主机和 USRP 之间一个大致的最大数据吞吐量（非量化）</font><br></div><pre style="font-family:simsun,serif;margin-left:120px"><font size="2">cd usrp/host/apps<br>./test_usrp_standard_tx<br>./test_usrp_standard_rx<br></font></pre><ul><li>升级系统，操作完成后或许需要重启系统：<br></li></ul></div><div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y upgrade<br></font></pre><ul><li><font size="2" style="font-family:simsun,serif">升级 Linux 的发布版本信息库，完成后需重启系统：</font></li></ul></div><div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo apt-get -y dist-upgrade<br></font></pre>
+<h3 style="font-family:simsun,serif"><a name="TOC-Broken-libtool-on-Debian-and-Ubuntu"></a><font size="2"> Debian 和 Ubuntu 系统的的</font><font><font><font><font size="2">
+ libtool 故障</font></font></font></font></h3>
+<h3 style="font-family:simsun,serif;margin-left:40px;font-weight:normal"><a name="TOC-Debian-Ubuntu-libtool-upstream-version-PREFIX-lib-64-PREFIX-lib64-etc-ld.so.conf-"></a><font size="2">Debian 和 Ubuntu 系统在完善 libtool 的</font><font size="2"> <span style="color:rgb(255,0,0)">upstream version</span></font><font size="2"> 不尽人意，它们在安装<font size="2">代码和库</font>之前会失去测试的这些<font size="2"><font size="2">代码和库</font></font>能力。但是安装之前的测试不失是个好主意。为了解决这个问题，请将把 </font><font size="2">$PREFIX/lib (和 64 位机器的 $PREFIX/lib64) 包含在 </font><font size="2"> 
+/etc/ld.so.conf 之中。</font></h3><br><div style="margin-left:40px">如果没有这样做的话（<font size="2">把 </font><font size="2">$PREFIX/lib包含在 </font><font size="2"> 
+/etc/ld.so.conf 之中），在构建的链接阶段便会看见出错信息。这现象将会在多处出现。最有可能是在构建 </font><font size="2">mblocks 第一次出现。这不是 </font><font size="2">mblocks 的问题，是</font><font size="2"> Debian/Ubuntu 自身的问题。<br></font></div>
+<p style="font-family:simsun,serif;margin-left:40px"><font size="2">如下步骤便可解决这些“问题”：</font></p><div style="margin-left:40px;font-family:simsun,serif"><font size="2">1) 将当前的 </font><font size="2"> 
+ld.so.conf 文件拷贝并保存到 temp 目录下如下：</font><br></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">cp /etc/ld.so.conf /tmp/ld.so.conf<br></font></pre><div style="margin-left:40px;font-family:simsun,serif"><font size="2">2) 添加路径 /usr/local/lib：<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">echo /usr/local/lib &gt;&gt; /tmp/ld.so.conf<br></font></pre><div style="margin-left:40px;font-family:simsun,serif"><font size="2">3)如果手动安装 Boost （比如：</font><font size="2">version 1_37_0</font><font size="2">），添加它的库函数路径如下：&nbsp;</font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">echo /opt/boost_1_37_0/lib &gt;&gt; /tmp/ld.so.conf<br></font></pre><div style="margin-left:40px;font-family:simsun,serif"><font size="2">4)
+ 删除原 ld.so.conf 文件，用如上编辑后的文件替代它：<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo mv /tmp/ld.so.conf /etc/ld.so.conf<br></font></pre><div style="margin-left:40px;font-family:simsun,serif"><font size="2">5) 运行 ldconfig：<br></font></div><pre style="font-family:simsun,serif;margin-left:80px"><font size="2">sudo ldconfig<br></font></pre><pre style="font-family:simsun,serif"><font size="2"><br><br><br><b><br></b></font></pre><div style="font-family:simsun,serif"><pre><font size="2"> &nbsp;</font></pre><p><font size="2"><b><font><font>注：<a href="http://vps.gnuradio.org/redmine/wiki/gnuradio/UbuntuInstall" rel="nofollow" target="_blank">GNU Radio Release 3.2</a></font></font>（原文出处，翻译整理仅供参考!）</b></font></p></div>
+</div></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

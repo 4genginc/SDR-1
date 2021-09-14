@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: 
+Disallow: /Templates
+Disallow: /js
+Disallow: /images
+Disallow: /iconfont
+Disallow: /css
+Disallow: /down

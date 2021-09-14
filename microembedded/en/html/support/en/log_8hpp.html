@@ -1,0 +1,387 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>log.hpp File Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>log.hpp File Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">log.hpp File Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <code>#include &lt;<a class="el" href="config_8hpp_source.html">uhd/config.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="pimpl_8hpp_source.html">uhd/utils/pimpl.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/current_function.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/format.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;ostream&gt;</code> 
+         <br /> 
+         <code>#include &lt;string&gt;</code> 
+         <br /> 
+         <code>#include &lt;sstream&gt;</code> 
+         <br /> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           Include dependency graph for log.hpp: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="log_8hpp__incl.png" border="0" usemap="#include_2uhd_2utils_2log_8hpp" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2log_8hpp" id="include_2uhd_2utils_2log_8hpp"> <area shape="rect" id="node2" href="config_8hpp.html" title="uhd/config.hpp" alt="" coords="11,155,117,181"></area><area shape="rect" id="node4" href="pimpl_8hpp.html" title="uhd/utils/pimpl.hpp" alt="" coords="101,80,231,107"></area></map> 
+         </div> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           This graph shows which files directly or indirectly include this file: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="log_8hpp__dep__incl.png" border="0" usemap="#include_2uhd_2utils_2log_8hppdep" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2log_8hppdep" id="include_2uhd_2utils_2log_8hppdep"> <area shape="rect" id="node2" href="filters_8hpp.html" title="include/uhd/types/filters.hpp" alt="" coords="5,88,189,115"></area><area shape="rect" id="node4" href="safe__call_8hpp.html" title="include/uhd/utils/safe\l_call.hpp" alt="" coords="214,81,359,122"></area><area shape="rect" id="node3" href="multi__usrp_8hpp.html" title="include/uhd/usrp/multi\l_usrp.hpp" alt="" coords="23,171,171,213"></area></map> 
+         </div> 
+        </div> 
+        <p><a href="log_8hpp_source.html">Go to the source code of this file.</a></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a> Classes</h2></td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1__log_1_1log.html">uhd::_log::log</a></td> 
+          </tr> 
+          <tr class="memdesc:"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Internal logging object (called by UHD_LOG macros) <a href="classuhd_1_1__log_1_1log.html#details">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="namespaces"></a> Namespaces</h2></td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html">uhd</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1__log"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1__log.html">uhd::_log</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="define-members"></a> Macros</h2></td> 
+          </tr> 
+          <tr class="memitem:a8991fb84b1de5fb137e40a8074a3d0a0"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a8991fb84b1de5fb137e40a8074a3d0a0">UHD_LOGV</a>(verbosity)&nbsp;&nbsp;&nbsp;<a class="el" href="classuhd_1_1__log_1_1log.html">uhd::_log::log</a>(uhd::_log::verbosity, __FILE__, __LINE__, BOOST_CURRENT_FUNCTION)</td> 
+          </tr> 
+          <tr class="separator:a8991fb84b1de5fb137e40a8074a3d0a0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a59b713f074ecaff20738b3b4aad2c21b"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a59b713f074ecaff20738b3b4aad2c21b">UHD_LOG</a>&nbsp;&nbsp;&nbsp;<a class="el" href="log_8hpp.html#a8991fb84b1de5fb137e40a8074a3d0a0">UHD_LOGV</a>(regularly)</td> 
+          </tr> 
+          <tr class="separator:a59b713f074ecaff20738b3b4aad2c21b"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a38bc05b10aa00462f5a772586f5d964e"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="log_8hpp.html#a38bc05b10aa00462f5a772586f5d964e">INSERTION_OVERLOAD</a>(x)</td> 
+          </tr> 
+          <tr class="separator:a38bc05b10aa00462f5a772586f5d964e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="enum-members"></a> Enumerations</h2></td> 
+          </tr> 
+          <tr class="memitem:a8f054e8b8a286e1f5393c2b89dbbe152"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152">uhd::_log::verbosity_t</a> { <br /> &nbsp;&nbsp;<a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152a1d75866c938e0f6af59e84b4592f5632">uhd::_log::always</a> = 1, <a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152ab1f6c4fa1130442b882d7924191f5955">uhd::_log::often</a> = 2, <a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152add9505c0a595fe73f0dd7e2d9045bd28">uhd::_log::regularly</a> = 3, <a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152a694de2de72a61547a379640daa680073">uhd::_log::rarely</a> = 4, <br /> &nbsp;&nbsp;<a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152a00827db86a757c988bd01f9ccba19b53">uhd::_log::very_rarely</a> = 5, <a class="el" href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152a88f48c8cc4858df4cb2719f47b1d11a7">uhd::_log::never</a> = 6 <br /> }</td> 
+          </tr> 
+          <tr class="memdesc:a8f054e8b8a286e1f5393c2b89dbbe152"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Verbosity levels for the logger. <a href="namespaceuhd_1_1__log.html#a8f054e8b8a286e1f5393c2b89dbbe152">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a8f054e8b8a286e1f5393c2b89dbbe152"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>The UHD logging facility.</p> 
+         <p>The logger enables UHD library code to easily log events into a file. Log entries are time-stamped and stored with file, line, and function. Each call to the UHD_LOG macros is synchronous and thread-safe.</p> 
+         <p>The log file can be found in the path &lt;temp-directory&gt;/uhd.log, where &lt;temp-directory&gt; is the user or system's temporary directory. To override &lt;temp-directory&gt;, set the UHD_TEMP_PATH environment variable.</p> 
+         <p>All log messages with verbosity greater than or equal to the log level (in other words, as often or less often than the current log level) are recorded into the log file. All other messages are sent to null.</p> 
+         <p>The default log level is &quot;never&quot;, but can be overridden:</p> 
+         <ul> 
+          <li>at compile time by setting the pre-processor define UHD_LOG_LEVEL.</li> 
+          <li>at runtime by setting the environment variable UHD_LOG_LEVEL.</li> 
+         </ul> 
+         <p>UHD_LOG_LEVEL can be the name of a verbosity enum or integer value:</p> 
+         <ul> 
+          <li>Example pre-processor define: -DUHD_LOG_LEVEL=3</li> 
+          <li>Example pre-processor define: -DUHD_LOG_LEVEL=regularly</li> 
+          <li>Example environment variable: export UHD_LOG_LEVEL=3</li> 
+          <li>Example environment variable: export UHD_LOG_LEVEL=regularly </li> 
+         </ul> 
+        </div> 
+        <h2 class="groupheader">Macro Definition Documentation</h2> 
+        <a class="anchor" id="a38bc05b10aa00462f5a772586f5d964e"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define INSERTION_OVERLOAD</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">x</td> 
+             <td>)</td> 
+             <td></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <b>Value:</b> 
+          <div class="fragment"> 
+           <div class="line">
+             log&amp; 
+            <a class="code" href="namespaceuhd.html#a032535328b3dc2313a3b95af0b028149">operator&lt;&lt; </a>(x) \ 
+           </div> 
+           <div class="line">
+             { \ 
+           </div> 
+           <div class="line">
+             if(_log_it) _ss &lt;&lt; val; \ 
+           </div> 
+           <div class="line">
+             return *this; \ 
+           </div> 
+           <div class="line">
+             } 
+           </div> 
+           <div class="ttc" id="namespaceuhd_html_a032535328b3dc2313a3b95af0b028149"> 
+            <div class="ttname"> 
+             <a href="namespaceuhd.html#a032535328b3dc2313a3b95af0b028149">uhd::operator&lt;&lt;</a> 
+            </div> 
+            <div class="ttdeci">
+              UHD_API std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, filter_info_base &amp;f) 
+            </div> 
+           </div> 
+          </div> 
+          <!-- fragment --> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a59b713f074ecaff20738b3b4aad2c21b"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_LOG&nbsp;&nbsp;&nbsp;<a class="el" href="log_8hpp.html#a8991fb84b1de5fb137e40a8074a3d0a0">UHD_LOGV</a>(regularly)</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>A UHD logger macro with default verbosity. Usage: UHD_LOG &lt;&lt; &quot;the log message&quot; &lt;&lt; std::endl; </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8991fb84b1de5fb137e40a8074a3d0a0"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_LOGV</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">verbosity</td> 
+             <td>)</td> 
+             <td>&nbsp;&nbsp;&nbsp;<a class="el" href="classuhd_1_1__log_1_1log.html">uhd::_log::log</a>(uhd::_log::verbosity, __FILE__, __LINE__, BOOST_CURRENT_FUNCTION)</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>A UHD logger macro with configurable verbosity. Usage: <a class="el" href="log_8hpp.html#a8991fb84b1de5fb137e40a8074a3d0a0">UHD_LOGV(very_rarely)</a> &lt;&lt; &quot;the log message&quot; &lt;&lt; std::endl; </p> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

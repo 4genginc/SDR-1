@@ -1,0 +1,291 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="faq.html">返回 常见问题</a></p>
+				<hr />
+				<p class="content_title">USRP2 使用常见问题</p>
+				<hr />
+				<p class="faq_title">SD 卡的用途？</p>
+				<p class="faq_mingxi">SD 卡存有 FPGA 的配置和微处理器的固件程序。也可以把数据存放在剩余的空间中，然而这在目前的（微处理器的）固件中还没有没有涉及。</p>
+				
+				<p class="faq_title">SD 卡必需有吗? </p>
+				<p class="faq_mingxi">USRP2 在运行时需要先把 SD 卡插上。 而且 SD 也必须配置有有效的 FPGA 和固件程序。 没有 SD 卡的 USRP2 其行为如同一堆废物。 SD 卡不是可选件。 把它插入插槽并对 USRP2 上电， 所观察的是所有的六个 LED 先闪烁然后有两个保持点亮状态。 如果情况不是这样，表明其内装的程序有问题。</p>
+				
+				<p class="faq_title">SD Card 已经编好程序了吗? </p>
+				<p class="faq_mingxi">随同 USRP2 一起的 SD 卡是在发货时被编写的最新版本的程序。 在如下网站便会发现最新的发行版： </p>
+				<p class="faq_mingxi2"><a href="http://gnuradio.org/releases/usrp2-bin/trunk/" target="_blank">To build your own firmware you will need to install the Microblaze tools</a></p>
+				<p class="faq_mingxi2"><a href="http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using" target="_blank">http://gnuradio.org/tools</a></p>
+				<p class="faq_mingxi">要自己构建 FPGA， 你需付费版的 Xilinx ISE 10.1.03.</p>
+				<p class="faq_mingxi">很多人收到的 USRP2 的 SD 卡被标注 "9/22/08"。 SNV 上的最新代码已经停止同该构建的兼容，因此必须对卡内代码升级。 </p>
+				
+				<p class="faq_title">如何改变 SD 卡内的（微处理器）固件和 FPGA 的代码?</p>
+				<p class="faq_mingxi">*** 注意 *** SD 卡上没有文件系统， 因此你无法使用传统的工具读写它。 </p>
+				<p class="faq_mingxi">需要 SD 编程器来做这些事情。 它可以从 Ettus Research  或当地的电器店得到。 以下是一些升级固件需要的步骤： </p>
+				<ul>
+					<li>在 gnuradio/usrp2 目录下运行 make 来构建固件 </li>
+					<li>把 SD 卡插入读卡器，读卡器通过 USB 同计算机相连</li>
+					<li>运行 sudo u2_flash_tool --dev=/dev/XXXX -t s/w usrp2/firmware/txrx.bin -w</li>
+				</ul>
+				<p class="faq_mingxi2">** /dev/XXXX 必须由设备 SD 读卡器的来替代。 千万请注意如果做错了，可能招致整个卡被重写。 如果你不清楚，那就不要做任何事。 在我的机器上， 设备是 /dev/sdb， 但这极有可能不同你的设备。在做这些工作之前，一个好的习惯是运行 "df" 来确保你将要操作的设备没有被安装上（mounted）。</p>
+				<p class="faq_mingxi">这里是升级 SD 卡里的 FPGA 代码的一些步骤： </p>
+				<ul>
+					<li>构建（requires proprietary tools) 或下载 FPGA 的代码流。 眼前，2008-12-01 的版本是 u2_rev3.bin。它可以在<a href="http://gnuradio.org/releases/usrp2-bin/trunk/" target="_blank">http://gnuradio.org/releases/usrp2-bin/trunk/</a>上被下载。 </li>
+					<li>插入 SD 卡到读卡器上。 </li>
+					<li>运行 sudo u2_flash_tool --dev=/dev/XXXX -t fpga u2_rev3.bin -w</li>
+				</ul>
+				<p class="faq_mingxi">想找出 XXX 是什么， 可以到 http://vic.gedris.org/linux-UsbMassStorage/ 哪儿会告诉你下面的步骤来确认在什么设备闪存。</p>
+				<p class="faq_mingxi">1.安装 sg3-utils 套件</p>
+				<p class="faq_mingxi2">$sudo apt-get update</p>
+				<p class="faq_mingxi2">$sudo apt-get install sg3-utils</p>
+				<p class="faq_mingxi">2.列表你系统上的 raw scsi- 设备</p>
+				<p class="faq_mingxi2">$sudo sg_scan -i</p>
+				<p class="faq_mingxi">3.仔细的查看列表清单， 确认那个 SCSI- 类的设备可能是你的 USB- 卡的读写器. </p>
+				<p class="faq_mingxi">4.运行 sg_map 来查看 SCSI- 类的什么设备同 USB SD 卡的 r/w- 设备关联。 </p>
+				<p class="faq_mingxi2">$sudo sg_map</p>
+				
+				<p class="faq_title">USRP2 需要专用的网口吗？它必须是千兆级的吗？</p>
+				<p class="faq_mingxi">这儿需强调一下， 建议把 USRP2 通过千兆级网卡直接同宿主机相连。 你可以使用交换机， 但是同系统的主网络应该分开。 而且，运行在 10 或 100 mbps 而非 1 Gbps 在目前还不被支持。 硬件上是没问题，但目前的 FPGA Verilog 代码由于种种原因还不支持它。 </p>
+				
+				<p class="faq_title">有任何推荐的千兆级网络接口吗？</p>
+				<p class="faq_mingxi">首先要回答的问题是你如何想把千兆级的网络接口添加到计算机上： </p>
+				<br />
+				<p class="faq_mingxi2"><b>PCI Express (也就是 PCIe)::</b></p>
+				<p class="faq_mingxi2">这是最佳的选择, 因为它是最常用、最快速的接口。</p>
+				<br />
+				<p class="faq_mingxi2"><b>PCI::</b></p>
+				<p class="faq_mingxi2">32 位、33MHz 的古老的普通 PCI。 对于处理 USRP2 的完全功能而言它不是足够快， 但可满足大多数用户的要求。</p>
+				<p class="faq_mingxi2">64 微、66MHz 的 PCI 变种则会好些，但它不常用。</p>
+				<br />
+				<p class="faq_mingxi2"><b>PCI-X::</b></p>
+				<p class="faq_mingxi2">它同 PCI Express 不是一回事。 被普通的 PCI 快， 也是推荐的选择，问题也是不常见。</p>
+				<br />
+				<p class="faq_mingxi2"><b>USB 2.0::</b></p>
+				<p class="faq_mingxi2">这是一个根本无法满足我们对速度的要求的，并被完全否定的选择。 如果你想选择 USB2.0，那建议使用 USRP。</p>
+				<br />
+				<p class="faq_mingxi2"><b>PCMCIA/CardBUS::</b></p>
+				<p class="faq_mingxi2">CardBUS 是一个 PCMCIA 形式的简单古老的 PCI 总线。参见上面的 PCI.</p>
+				<br />
+				<p class="faq_mingxi2"><b>ExpressCard::</b></p>
+				<p class="faq_mingxi2">ExpressCard 是 PCIExpress 的 Card 形式。 只要有驱动这便没问题。 有些这种板卡（也许所有）会造成内核 "oops"（卡壳），会崩溃你的系统， （这种情况下也）小心带点插拔。</p>
+				<br />
+				<p class="faq_mingxi">大多数主板或笔记本内置千兆级的接口可能是 PCI Express (大多数新系统）或 普通 PCI (老系统)。</p>
+				<p class="faq_mingxi">更多信息, 参阅 <a href="u2_shiyongwenti/u2_gigereports.html">USRP2GigEReports</a></p>
+				
+				
+				<p class="faq_title">在传输中， USRP2 运行了一小会儿然后死机。 这该如何解释?</p>
+				<p class="faq_mingxi">网络接口没有很好地自动交涉（数据）流控制。 运行一下目录可以强置准确的设置：</p>
+				<p class="faq_mingxi2">ethtool -A eth0 rx on</p>
+				<p class="faq_mingxi">用正在工作的网络接口替换"eth0"， 它们通常是 eth0 或 eth1。 大概在每次启动时，都必须作为 root 用户来运行这个命令。</p>
+				
+				<p class="faq_title">有任何启动的要点？ 有任何特别的需求通过网络同 USRP2 握手的吗？ </p>
+				<p class="faq_mingxi">首先通过 SVN 把整个系统升级到最新的版本并把它们全部安装好，然后在 usrp2/host/apps 目录下运行：</p>
+				<p class="faq_mingxi2">find_usrps</p>
+				<p class="faq_mingxi">如果 USRP2 没在 eth0 上，还应当告诉使用哪个网络端口。 一旦发现 USRP2 程序将会告诉你。 </p>
+				
+				<p class="faq_title">任何好的基本应用用来测试 USRP2 的吗？ </p>
+				<p class="faq_mingxi">运行 </p>
+				<p class="faq_mingxi2">usrp2_fft.py</p>
+				<p class="faq_mingxi">如果安装全部的系统，便可以在 gr-utils 内找到并已经设置好路径。 它提供一个基本的频谱分析表现。</p>
+				<p class="faq_mingxi">运行 </p>
+				<p class="faq_mingxi2">usrp2_fft.py -h</p>
+				<p class="faq_mingxi">用于查看选项清单（ -h for Help).  </p>
+				
+				<p class="faq_title">当试图查看比计算机能够处理的多的数据时， 终端窗口显示"S" 字符. 它所表示的含义? 如同 USRP 中的 O 或 U 的含义还有效吗?</p>
+				<p class="faq_mingxi">S 在此含义是 PC 收到 2 个连续的数据包但没有 2 个连续的顺序号。 也就是说宿主机在每个环节掉失数据包。 它同 overrun 在本质上是相同的。 USRP2 就其本质而言没有 overrun， 因为问题不是宿主机造成其过程窒息的。</p>
+				
+				<p class="faq_title">如何为 aeMB RISC processor 编译固件？</p>
+				<p class="faq_mingxi">首先需要下载或构建 gcc 工具组。 如果使用 x86 或 x86_64 linux， 直接下载并解压缩二进制运行包（binary tarball）到 /opt 即可。</p>
+				
+				<p class="faq_title">下载并安装预构的 x86 二进制代码</p>
+				<p class="faq_mingxi2">$ wget http://gnuradio.org/tools/mb-gcc-4.1.1.gr2.i386.tar.gz</p>
+				<p class="faq_mingxi">一旦下载完二进制代码包, </p>
+				<p class="faq_mingxi2">$ sudo bash</p>
+				<p class="faq_mingxi2"># cd /opt</p>
+				<p class="faq_mingxi2"># tar xzvf  &lt;path-to-tarball&gt;</p>
+				<p class="faq_mingxi">把 /opt/microblaze/bin 添加到 PATH 便可. </p>
+				<p class="faq_mingxi">注 -- 这有可能同 Fedora 10 x64_64 不工作。 参看如下。 </p>
+				
+				<p class="faq_title">从代码构建工作包（toolchain ）</p>
+				<p class="faq_mingxi">如果打算从源代码构建，需要下载 EDK 源代码和我们的补丁，然后编译这些。 注：用 gcc 4.3 可能招致编译过程的编译错误。 我们还没有规划区补正这些。</p>
+				<p class="faq_mingxi2">$ svn export http://gnuradio.org/svn/gnuradio/trunk/dtools/microblaze/mb-gcc-4.1.1-gr-1.patch</p>
+				<p class="faq_mingxi2">$ wget http://gnuradio.org/tools/EDK101_GPL_GNU_src.tar.gz</p>
+				<p class="faq_mingxi2">$ tar -xzvf EDK101_GPL_GNU_src.tar.gz</p>
+				<p class="faq_mingxi2">$ patch -p1 &lt;mb-gcc-4.1.1-gr-1.patch</p>
+				<p class="faq_mingxi2">$ cd Xilinx_EDK_GNU_10.1i/mb</p>
+				<p class="faq_mingxi2">$ /bin/bash ./build_binutils.sh</p>
+				<p class="faq_mingxi2">$ /bin/bash ./build_gcc.sh</p>
+				<p class="faq_mingxi2">$ cp -r release/lin/mb /opt/microblaze</p>
+				<p class="faq_mingxi">(旧目录在<a href="http://www.aeste.net/index.php?q=node/16" target="_blank">http://www.aeste.net/index.php?q=node/16</a>. 它没有包括补丁用于压缩 libgcc 64-bit 的过程支持.) </p>
+				<p class="faq_mingxi">对于 Fedora 10, 需要安装 compat-gcc-34-3.4.6-9.x86_64 然后运行如下构建命令: </p>
+				<p class="faq_mingxi2">$ CC=/usr/bin/x86_64-redhat-linux-gcc34 /bin/bash ./build_binutils.sh</p>
+				<p class="faq_mingxi2">$ CC=/usr/bin/x86_64-redhat-linux-gcc34 /bin/bash ./build_gcc.sh</p>
+				
+				<p class="faq_title">能提供详细的诊断端口思虑吗？</p>
+				<p class="faq_mingxi">诊断端口是标准的 Mictor 连接器，它常常用于同 Agilent and Tektronix 公司的逻辑分析仪相连接。它有 2 个时钟管脚和 32 个数据管脚。 所有这些的 34 个管脚同 FPGA 直接相连， 这样你可以做你想做的事。</p>
+				<p class="faq_mingxi">如果插入 BasicRX (或 LFRX) 和 BasicTX (或 LFTX)， 将会得到额外的 32 位 IO 也可用于诊断目的。 这样一来总共 64 个数据管脚和 2 个时钟管脚。</p>
+				
+				<p class="faq_title">有 JTAG 端口吗? </p>
+				<p class="faq_mingxi">有， 板子上有一个标准的 JTAG 端头同 FPGA 和 CPLD 相连， 你有可能用不到它。 因为 FPGA 是通过 CPLD 的 bootstrapping 用 SD 卡来对它编程的。 JTAG 端口的主要功用是对 CPLD 重新编程。 也有可能使用 JTAG 端口使用 ChipScope （在线调试软件）。</p>
+				
+				<p class="faq_title">试图接口到扩展端口，并且把 USRP2 同 Virtex 5 SXT eval 板相连接。 寻求任何关联此端口的文档，尤其是它如何同 FPGA 关联，能提供任何帮助吗？</p>
+				<p class="faq_mingxi">扩展接口的概念是比较直观的。 它使用串行 SCSI (mini-SAS) 电缆。 它有四个通道，每个通道是由一对差分输入和一对差分输出构成。 所有通道是 AC (电容) 耦合的。四个通道分工如下：</p>
+				<p class="faq_mingxi2">1.高速 SERDES, 2 gbps 8B10B 编码. 由 TI 的 TLK2701 来实现的并同 FPGA 相连。应当能够同  virtex 5 上的 RocketIO GTP/GTX 收发机相连。 同时到 SVN 的 usrp2/fpga/serdes 目录下查看如何处理接口、协议、构架和流程控制。 </p>
+				<p class="faq_mingxi2">2.10 MHz 时钟参考。 </p>
+				<p class="faq_mingxi2">3. 数字 IO, 直接同 FPGA 的 LVDS IOs 相连。 目前使用它来配置时间同步，但是你可以使用它做任何能够做的事情。 </p>
+				<p class="faq_mingxi2">4.没有使用。</p>
+				
+				<p class="faq_title">USRP2 可用于 non-root 用户吗?</p>
+				<p class="faq_mingxi">通过以太网端口同 USRP2 交流的代码使用 raw socket access (SOCK_RAW)。 这遵循了以太网化（a custom ethertype）的习惯，而不是如同构建一个高层的协议诸如：IP 或 UDP 一样。 内核除 root 之外不许任何其它人使用 raw sockets。 目前看来这（习惯）似乎不可能会被随时改变。 其它涉及使用 raw sockets 的工具也同样不准许除 root 之外的任何其它人使用，或者添加 suid (像 ping)。</p>
+				<p class="faq_mingxi">可以通过配置 usrp2_socket_opener suid root 允许 suid 访问 USRP2。 这使得可以使用最低的权限来访问所有其它程序， usrp2_socket_opener 是一个可以被侦听的短小优秀的程序。比如：</p>
+				<p class="faq_mingxi2">sudo chmod u+s /usr/local/bin/usrp2_socket_opener</p>
+				<p class="faq_mingxi">注意：如果重新安装便会把 usrp2_socket_opener 重写， 这样一来设置的许可权限便有消失。可以把 suid 拷贝到 ~/bin 目录下，以防这类事情发生。</p>
+				<p class="faq_mingxi">为了使 non-root 用户能够实时日程安排， 编辑 /etc/security/limits.conf 并把下一行添加进去：</p>
+				<p class="faq_mingxi2">@usrp  - rtprio 50</p>
+				<p class="faq_mingxi">确信你的用户处于 usrp 组之下， 然后 logout and back in. </p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

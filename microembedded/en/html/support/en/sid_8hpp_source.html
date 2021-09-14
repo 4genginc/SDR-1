@@ -1,0 +1,1244 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>sid.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>sid.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">sid.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="sid_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2014 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_TYPES_SID_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_TYPES_SID_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/cstdint.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#include &lt;iostream&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+          <span class="keyword">namespace </span>uhd { 
+         </div> 
+         <div class="line"> 
+          <a name="l00079"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html"> 79</a></span>&nbsp; 
+          <span class="keyword">class </span> 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> 
+         </div> 
+         <div class="line"> 
+          <a name="l00080"></a> 
+          <span class="lineno"> 80</span>&nbsp; { 
+         </div> 
+         <div class="line"> 
+          <a name="l00081"></a> 
+          <span class="lineno"> 81</span>&nbsp; 
+          <span class="keyword">public</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00083"></a> 
+          <span class="lineno"> 83</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a>(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00085"></a> 
+          <span class="lineno"> 85</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a>(boost::uint32_t sid); 
+         </div> 
+         <div class="line"> 
+          <a name="l00087"></a> 
+          <span class="lineno"> 87</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a>(boost::uint8_t src_addr, boost::uint8_t src_ep, boost::uint8_t dst_addr, boost::uint8_t dst_ep); 
+         </div> 
+         <div class="line"> 
+          <a name="l00089"></a> 
+          <span class="lineno"> 89</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a>( 
+          <span class="keyword">const</span> std::string &amp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00090"></a> 
+          <span class="lineno"> 90</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00092"></a> 
+          <span class="lineno"> 92</span>&nbsp; std::string to_pp_string() 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00094"></a> 
+          <span class="lineno"> 94</span>&nbsp; std::string to_pp_string_hex() 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00095"></a> 
+          <span class="lineno"> 95</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00097"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#ad738bb2d806d2c33ccc3a992e8205c5a"> 97</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="classuhd_1_1sid__t.html#ad738bb2d806d2c33ccc3a992e8205c5a">is_set</a>() 
+          <span class="keyword"> const </span>{ 
+          <span class="keywordflow">return</span> _set; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00098"></a> 
+          <span class="lineno"> 98</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00099"></a> 
+          <span class="lineno"> 99</span>&nbsp; 
+          <span class="comment">// Getters</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00100"></a> 
+          <span class="lineno"> 100</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00102"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#acb03c0a5ab00fc91b07a963f3ae8faa5"> 102</a></span>&nbsp; 
+          <span class="comment"></span> 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <span class="keyword">get</span>() 
+          <span class="keyword">const</span> { 
+          <span class="keywordflow">return</span> get_sid(); }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00104"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#ad7dd4f9366968e29a2c0e417e796cbb8"> 104</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#ad7dd4f9366968e29a2c0e417e796cbb8">get_sid</a>() 
+          <span class="keyword"> const </span>{ 
+          <span class="keywordflow">return</span> _set ? _sid : 0; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00106"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a5434bcc3387269c0dd9dd7dda5df989e"> 106</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a5434bcc3387269c0dd9dd7dda5df989e">get_src</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00107"></a> 
+          <span class="lineno"> 107</span>&nbsp; 
+          <span class="keywordflow">return</span> (_sid &gt;&gt; 16) &amp; 0xFFFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00108"></a> 
+          <span class="lineno"> 108</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00110"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#affcc49cad7690b05733330a37495c4a3"> 110</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#affcc49cad7690b05733330a37495c4a3">get_dst</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00111"></a> 
+          <span class="lineno"> 111</span>&nbsp; 
+          <span class="keywordflow">return</span> _sid &amp; 0xFFFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00112"></a> 
+          <span class="lineno"> 112</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00114"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a7d660e2b0d313c65e0b35874cff54987"> 114</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a7d660e2b0d313c65e0b35874cff54987">get_src_addr</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00115"></a> 
+          <span class="lineno"> 115</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_src() &gt;&gt; 8) &amp; 0xFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00116"></a> 
+          <span class="lineno"> 116</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00118"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a0c0b42d4eccc0ca4bf051d165b9b028c"> 118</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a0c0b42d4eccc0ca4bf051d165b9b028c">get_src_endpoint</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00119"></a> 
+          <span class="lineno"> 119</span>&nbsp; 
+          <span class="keywordflow">return</span> get_src() &amp; 0xFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00120"></a> 
+          <span class="lineno"> 120</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00122"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a56d5f4e079a7101cbabe33ae68c21743"> 122</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a56d5f4e079a7101cbabe33ae68c21743">get_src_xbarport</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00123"></a> 
+          <span class="lineno"> 123</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_src_endpoint() &gt;&gt; 4) &amp; 0xF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00124"></a> 
+          <span class="lineno"> 124</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00126"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a4de9a3fdcc7e1d578cf53f5465975151"> 126</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a4de9a3fdcc7e1d578cf53f5465975151">get_src_blockport</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00127"></a> 
+          <span class="lineno"> 127</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_src_endpoint()) &amp; 0xF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00128"></a> 
+          <span class="lineno"> 128</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00130"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a2cde5a64da79ced7a15cb0f3c315ce46"> 130</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a2cde5a64da79ced7a15cb0f3c315ce46">get_dst_addr</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00131"></a> 
+          <span class="lineno"> 131</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_dst() &gt;&gt; 8) &amp; 0xFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00132"></a> 
+          <span class="lineno"> 132</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00134"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a1c50a3e054d6abd3a5ae00dce6677753"> 134</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a1c50a3e054d6abd3a5ae00dce6677753">get_dst_endpoint</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00135"></a> 
+          <span class="lineno"> 135</span>&nbsp; 
+          <span class="keywordflow">return</span> get_dst() &amp; 0xFF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00136"></a> 
+          <span class="lineno"> 136</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00138"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#abbcc099f3bb8293c1f6bf9b2f2480c70"> 138</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#abbcc099f3bb8293c1f6bf9b2f2480c70">get_dst_xbarport</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00139"></a> 
+          <span class="lineno"> 139</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_dst_endpoint() &gt;&gt; 4) &amp; 0xF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00140"></a> 
+          <span class="lineno"> 140</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00142"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a29d8a66cc5900650a2e02f0a06345f2b"> 142</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> boost::uint32_t 
+          <a class="code" href="classuhd_1_1sid__t.html#a29d8a66cc5900650a2e02f0a06345f2b">get_dst_blockport</a>() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00143"></a> 
+          <span class="lineno"> 143</span>&nbsp; 
+          <span class="keywordflow">return</span> (get_dst_endpoint()) &amp; 0xF; 
+         </div> 
+         <div class="line"> 
+          <a name="l00144"></a> 
+          <span class="lineno"> 144</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00145"></a> 
+          <span class="lineno"> 145</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00146"></a> 
+          <span class="lineno"> 146</span>&nbsp; 
+          <span class="comment">// Setters</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00147"></a> 
+          <span class="lineno"> 147</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00149"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a33dfdf895b5491bdbf392cb0240eb043"> 149</a></span>&nbsp; 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="classuhd_1_1sid__t.html#a33dfdf895b5491bdbf392cb0240eb043">set</a>(boost::uint32_t new_sid) { set_sid(new_sid); }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00151"></a> 
+          <span class="lineno"> 151</span>&nbsp; 
+          <span class="comment">// Throws uhd::value_error if the string is not a valid SID</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00152"></a> 
+          <span class="lineno"> 152</span>&nbsp; 
+          <span class="comment">// representation.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00153"></a> 
+          <span class="lineno"> 153</span>&nbsp; 
+          <span class="keywordtype">void</span> set_from_str( 
+          <span class="keyword">const</span> std::string &amp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00154"></a> 
+          <span class="lineno"> 154</span>&nbsp; 
+          <span class="keywordtype">void</span> set_sid(boost::uint32_t new_sid); 
+         </div> 
+         <div class="line"> 
+          <a name="l00156"></a> 
+          <span class="lineno"> 156</span>&nbsp; 
+          <span class="comment">// (the first 16 Bits)</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00157"></a> 
+          <span class="lineno"> 157</span>&nbsp; 
+          <span class="keywordtype">void</span> set_src(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00159"></a> 
+          <span class="lineno"> 159</span>&nbsp; 
+          <span class="comment">// (the last 16 Bits)</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00160"></a> 
+          <span class="lineno"> 160</span>&nbsp; 
+          <span class="keywordtype">void</span> set_dst(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00161"></a> 
+          <span class="lineno"> 161</span>&nbsp; 
+          <span class="keywordtype">void</span> set_src_addr(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00162"></a> 
+          <span class="lineno"> 162</span>&nbsp; 
+          <span class="keywordtype">void</span> set_src_endpoint(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00163"></a> 
+          <span class="lineno"> 163</span>&nbsp; 
+          <span class="keywordtype">void</span> set_dst_addr(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00164"></a> 
+          <span class="lineno"> 164</span>&nbsp; 
+          <span class="keywordtype">void</span> set_dst_endpoint(boost::uint32_t new_addr); 
+         </div> 
+         <div class="line"> 
+          <a name="l00165"></a> 
+          <span class="lineno"> 165</span>&nbsp; 
+          <span class="keywordtype">void</span> set_dst_xbarport(boost::uint32_t new_xbarport); 
+         </div> 
+         <div class="line"> 
+          <a name="l00166"></a> 
+          <span class="lineno"> 166</span>&nbsp; 
+          <span class="keywordtype">void</span> set_dst_blockport(boost::uint32_t new_blockport); 
+         </div> 
+         <div class="line"> 
+          <a name="l00167"></a> 
+          <span class="lineno"> 167</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00168"></a> 
+          <span class="lineno"> 168</span>&nbsp; 
+          <span class="comment">// Manipulators</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00169"></a> 
+          <span class="lineno"> 169</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00171"></a> 
+          <span class="lineno"> 171</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> 
+          <a class="code" href="namespaceuhd.html#aa3e347e55ac33ef685fb9d89a9932099">reversed</a>(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00172"></a> 
+          <span class="lineno"> 172</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00174"></a> 
+          <span class="lineno"> 174</span>&nbsp; 
+          <span class="keywordtype">void</span> reverse(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00175"></a> 
+          <span class="lineno"> 175</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00176"></a> 
+          <span class="lineno"> 176</span>&nbsp; 
+          <span class="comment">// Overloaded operators</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00177"></a> 
+          <span class="lineno"> 177</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00178"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#ad30cee38ac733d4d415893bc7348ed3f"> 178</a></span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> operator = (boost::uint32_t new_sid) { 
+         </div> 
+         <div class="line"> 
+          <a name="l00179"></a> 
+          <span class="lineno"> 179</span>&nbsp; set_sid(new_sid); 
+         </div> 
+         <div class="line"> 
+          <a name="l00180"></a> 
+          <span class="lineno"> 180</span>&nbsp; 
+          <span class="keywordflow">return</span> * 
+          <span class="keyword">this</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00181"></a> 
+          <span class="lineno"> 181</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00182"></a> 
+          <span class="lineno"> 182</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00183"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#af96e0b1da5cfa254ae648e515a4d3a39"> 183</a></span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> operator = ( 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> &amp;sid) { 
+         </div> 
+         <div class="line"> 
+          <a name="l00184"></a> 
+          <span class="lineno"> 184</span>&nbsp; set_sid(sid. 
+          <a class="code" href="classuhd_1_1sid__t.html#ad7dd4f9366968e29a2c0e417e796cbb8">get_sid</a>()); 
+         </div> 
+         <div class="line"> 
+          <a name="l00185"></a> 
+          <span class="lineno"> 185</span>&nbsp; 
+          <span class="keywordflow">return</span> * 
+          <span class="keyword">this</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00186"></a> 
+          <span class="lineno"> 186</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00187"></a> 
+          <span class="lineno"> 187</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00188"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#abf0057df97b1c9bbf24ac52730cb7631"> 188</a></span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> operator = ( 
+          <span class="keyword">const</span> std::string &amp;sid_str) { 
+         </div> 
+         <div class="line"> 
+          <a name="l00189"></a> 
+          <span class="lineno"> 189</span>&nbsp; set_from_str(sid_str); 
+         </div> 
+         <div class="line"> 
+          <a name="l00190"></a> 
+          <span class="lineno"> 190</span>&nbsp; 
+          <span class="keywordflow">return</span> * 
+          <span class="keyword">this</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00191"></a> 
+          <span class="lineno"> 191</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00192"></a> 
+          <span class="lineno"> 192</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00193"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#aec684a44d3384f662586f534936398d2"> 193</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="namespaceuhd.html#a493a9edc85b83ed91c909670a259a6bd">operator == </a>( 
+          <span class="keyword">const</span> 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> &amp;sid) 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00194"></a> 
+          <span class="lineno"> 194</span>&nbsp; 
+          <span class="keywordflow">return</span> (not _set and not sid. 
+          <a class="code" href="classuhd_1_1sid__t.html#ad738bb2d806d2c33ccc3a992e8205c5a">is_set</a>()) or (_sid == sid. 
+          <a class="code" href="classuhd_1_1sid__t.html#ad7dd4f9366968e29a2c0e417e796cbb8">get_sid</a>()); 
+         </div> 
+         <div class="line"> 
+          <a name="l00195"></a> 
+          <span class="lineno"> 195</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00196"></a> 
+          <span class="lineno"> 196</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00197"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#acbd1d6f5fa000f443a2f15090dd0377f"> 197</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="namespaceuhd.html#a493a9edc85b83ed91c909670a259a6bd">operator == </a>(boost::uint32_t sid) 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00198"></a> 
+          <span class="lineno"> 198</span>&nbsp; 
+          <span class="keywordflow">return</span> _set and _sid == sid; 
+         </div> 
+         <div class="line"> 
+          <a name="l00199"></a> 
+          <span class="lineno"> 199</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00200"></a> 
+          <span class="lineno"> 200</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00201"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a5061a5041dceb8d4e19b955a0b70dd69"> 201</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="namespaceuhd.html#a493a9edc85b83ed91c909670a259a6bd">operator == </a>( 
+          <span class="keyword">const</span> std::string &amp;sid_str) 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00202"></a> 
+          <span class="lineno"> 202</span>&nbsp; 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> rhs(sid_str); 
+         </div> 
+         <div class="line"> 
+          <a name="l00203"></a> 
+          <span class="lineno"> 203</span>&nbsp; 
+          <span class="keywordflow">return</span> * 
+          <span class="keyword">this</span> == rhs; 
+         </div> 
+         <div class="line"> 
+          <a name="l00204"></a> 
+          <span class="lineno"> 204</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00205"></a> 
+          <span class="lineno"> 205</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00206"></a> 
+          <span class="lineno"> 206</span>&nbsp; 
+          <span class="comment">// overloaded type casts are tricky, but for now we'll need them</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00207"></a> 
+          <span class="lineno"> 207</span>&nbsp; 
+          <span class="comment">// for backward compatibility. consider them deprecated.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00208"></a> 
+          <span class="lineno"> 208</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00210"></a> 
+          <span class="lineno"> 210</span>&nbsp; 
+          <span class="comment">// Use is_set() to check if the return value is valid.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00211"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a1ce21f72fa9087c736c99ba9ccf5a9b4"> 211</a></span>&nbsp; 
+          <span class="keyword">operator</span> boost::uint32_t() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00212"></a> 
+          <span class="lineno"> 212</span>&nbsp; 
+          <span class="keywordflow">return</span> 
+          <span class="keyword">get</span>(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00213"></a> 
+          <span class="lineno"> 213</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00214"></a> 
+          <span class="lineno"> 214</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00215"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1sid__t.html#a8d70c9cd97aae6c30f3bb08510d8f53c"> 215</a></span>&nbsp; 
+          <span class="keyword">operator</span> bool() 
+          <span class="keyword"> const </span>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00216"></a> 
+          <span class="lineno"> 216</span>&nbsp; 
+          <span class="keywordflow">return</span> _set; 
+         </div> 
+         <div class="line"> 
+          <a name="l00217"></a> 
+          <span class="lineno"> 217</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00218"></a> 
+          <span class="lineno"> 218</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00219"></a> 
+          <span class="lineno"> 219</span>&nbsp; 
+          <span class="keyword">private</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00220"></a> 
+          <span class="lineno"> 220</span>&nbsp; boost::uint32_t _sid; 
+         </div> 
+         <div class="line"> 
+          <a name="l00221"></a> 
+          <span class="lineno"> 221</span>&nbsp; 
+          <span class="keywordtype">bool</span> _set; 
+         </div> 
+         <div class="line"> 
+          <a name="l00222"></a> 
+          <span class="lineno"> 222</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00223"></a> 
+          <span class="lineno"> 223</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00225"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd.html#a52ac34c83c8d427147b73ec21482751a"> 225</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> std::ostream&amp; 
+          <a class="code" href="namespaceuhd.html#a032535328b3dc2313a3b95af0b028149">operator&lt;&lt; </a>(std::ostream&amp; out, 
+          <span class="keyword">const</span> 
+          <a class="code" href="classuhd_1_1sid__t.html">sid_t</a> &amp;sid) { 
+         </div> 
+         <div class="line"> 
+          <a name="l00226"></a> 
+          <span class="lineno"> 226</span>&nbsp; std::ios_base::fmtflags ff = out.flags(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00227"></a> 
+          <span class="lineno"> 227</span>&nbsp; 
+          <span class="keywordflow">if</span> (ff &amp; std::ios::hex) { 
+         </div> 
+         <div class="line"> 
+          <a name="l00228"></a> 
+          <span class="lineno"> 228</span>&nbsp; out &lt;&lt; sid. 
+          <a class="code" href="classuhd_1_1sid__t.html#a90b4e33e05c8a3c99ba570b05ed5e6d6">to_pp_string_hex</a>(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00229"></a> 
+          <span class="lineno"> 229</span>&nbsp; } 
+          <span class="keywordflow">else</span> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00230"></a> 
+          <span class="lineno"> 230</span>&nbsp; out &lt;&lt; sid. 
+          <a class="code" href="classuhd_1_1sid__t.html#ab66fc22042e94c2e96d9c169c6c3cdfb">to_pp_string</a>(); 
+         </div> 
+         <div class="line"> 
+          <a name="l00231"></a> 
+          <span class="lineno"> 231</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00232"></a> 
+          <span class="lineno"> 232</span>&nbsp; 
+          <span class="keywordflow">return</span> out; 
+         </div> 
+         <div class="line"> 
+          <a name="l00233"></a> 
+          <span class="lineno"> 233</span>&nbsp; } 
+         </div> 
+         <div class="line"> 
+          <a name="l00234"></a> 
+          <span class="lineno"> 234</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00235"></a> 
+          <span class="lineno"> 235</span>&nbsp;} 
+          <span class="comment">//namespace uhd</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00236"></a> 
+          <span class="lineno"> 236</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00237"></a> 
+          <span class="lineno"> 237</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_TYPES_SID_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00238"></a> 
+          <span class="lineno"> 238</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="comment">// vim: sw=4 et:</span> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_aa3e347e55ac33ef685fb9d89a9932099"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#aa3e347e55ac33ef685fb9d89a9932099">uhd::reversed</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE Range reversed(const Range &amp;range) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> algorithm.hpp:56 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a56d5f4e079a7101cbabe33ae68c21743"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a56d5f4e079a7101cbabe33ae68c21743">uhd::sid_t::get_src_xbarport</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_src_xbarport() const 
+          </div> 
+          <div class="ttdoc">
+            Return crossbar port of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:122 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a4de9a3fdcc7e1d578cf53f5465975151"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a4de9a3fdcc7e1d578cf53f5465975151">uhd::sid_t::get_src_blockport</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_src_blockport() const 
+          </div> 
+          <div class="ttdoc">
+            Return block port of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:126 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_ad738bb2d806d2c33ccc3a992e8205c5a"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#ad738bb2d806d2c33ccc3a992e8205c5a">uhd::sid_t::is_set</a> 
+          </div> 
+          <div class="ttdeci">
+            bool is_set() const 
+          </div> 
+          <div class="ttdoc">
+            Returns true if this actually holds a valid SID. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:97 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_affcc49cad7690b05733330a37495c4a3"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#affcc49cad7690b05733330a37495c4a3">uhd::sid_t::get_dst</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_dst() const 
+          </div> 
+          <div class="ttdoc">
+            Return the 16-bit destination address of this SID. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:110 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a5434bcc3387269c0dd9dd7dda5df989e"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a5434bcc3387269c0dd9dd7dda5df989e">uhd::sid_t::get_src</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_src() const 
+          </div> 
+          <div class="ttdoc">
+            Return the 16-bit source address of this SID. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:106 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_ab66fc22042e94c2e96d9c169c6c3cdfb"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#ab66fc22042e94c2e96d9c169c6c3cdfb">uhd::sid_t::to_pp_string</a> 
+          </div> 
+          <div class="ttdeci">
+            std::string to_pp_string() const 
+          </div> 
+          <div class="ttdoc">
+            Return a decimal string representation of the SID. 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a29d8a66cc5900650a2e02f0a06345f2b"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a29d8a66cc5900650a2e02f0a06345f2b">uhd::sid_t::get_dst_blockport</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_dst_blockport() const 
+          </div> 
+          <div class="ttdoc">
+            Return block port of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:142 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a33dfdf895b5491bdbf392cb0240eb043"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a33dfdf895b5491bdbf392cb0240eb043">uhd::sid_t::set</a> 
+          </div> 
+          <div class="ttdeci">
+            void set(boost::uint32_t new_sid) 
+          </div> 
+          <div class="ttdoc">
+            Alias for set_sid() 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:149 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a90b4e33e05c8a3c99ba570b05ed5e6d6"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a90b4e33e05c8a3c99ba570b05ed5e6d6">uhd::sid_t::to_pp_string_hex</a> 
+          </div> 
+          <div class="ttdeci">
+            std::string to_pp_string_hex() const 
+          </div> 
+          <div class="ttdoc">
+            Return a hexadecimal string representation of the SID. 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a1c50a3e054d6abd3a5ae00dce6677753"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a1c50a3e054d6abd3a5ae00dce6677753">uhd::sid_t::get_dst_endpoint</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_dst_endpoint() const 
+          </div> 
+          <div class="ttdoc">
+            Return endpoint of the destination. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:134 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_ad7dd4f9366968e29a2c0e417e796cbb8"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#ad7dd4f9366968e29a2c0e417e796cbb8">uhd::sid_t::get_sid</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_sid() const 
+          </div> 
+          <div class="ttdoc">
+            Returns a 32-Bit representation of the SID if set, or zero otherwise. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:104 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a2cde5a64da79ced7a15cb0f3c315ce46"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a2cde5a64da79ced7a15cb0f3c315ce46">uhd::sid_t::get_dst_addr</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_dst_addr() const 
+          </div> 
+          <div class="ttdoc">
+            Return 8-bit address of the destination. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:130 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html">uhd::sid_t</a> 
+          </div> 
+          <div class="ttdoc">
+            Represents a stream ID (SID). 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:79 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a7d660e2b0d313c65e0b35874cff54987"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a7d660e2b0d313c65e0b35874cff54987">uhd::sid_t::get_src_addr</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_src_addr() const 
+          </div> 
+          <div class="ttdoc">
+            Return 8-bit address of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:114 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_a8b9b549161081d54c2161046649a0323"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_INLINE 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:63 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_abbcc099f3bb8293c1f6bf9b2f2480c70"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#abbcc099f3bb8293c1f6bf9b2f2480c70">uhd::sid_t::get_dst_xbarport</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_dst_xbarport() const 
+          </div> 
+          <div class="ttdoc">
+            Return crossbar port of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:138 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_a032535328b3dc2313a3b95af0b028149"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#a032535328b3dc2313a3b95af0b028149">uhd::operator&lt;&lt;</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, filter_info_base &amp;f) 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1sid__t_html_a0c0b42d4eccc0ca4bf051d165b9b028c"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1sid__t.html#a0c0b42d4eccc0ca4bf051d165b9b028c">uhd::sid_t::get_src_endpoint</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE boost::uint32_t get_src_endpoint() const 
+          </div> 
+          <div class="ttdoc">
+            Return endpoint of the source. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sid.hpp:118 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_a493a9edc85b83ed91c909670a259a6bd"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#a493a9edc85b83ed91c909670a259a6bd">uhd::operator==</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API bool operator==(const time_spec_t &amp;, const time_spec_t &amp;) 
+          </div> 
+          <div class="ttdoc">
+            Implement equality_comparable interface. 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

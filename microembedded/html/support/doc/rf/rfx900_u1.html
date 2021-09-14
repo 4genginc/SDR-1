@@ -1,0 +1,170 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>RFX900测试文档_微嵌</title>
+<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <a href="rf.html">RF子板</a> » <span>RFX900测试文档（主板使用USRP1）</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">RFX900测试文档（主板使用USRP1）</p><hr><p class="min_title">软件要求：</p><p>OpenBTS_2.6(52M)镜像（或者OpenBTS_2.6(64M)镜像）</p><p class="min_title">硬件要求：</p><p>一台PC机，一个USRP1主板，一块RFX900子板,两个900~1800MHz的天线</p><p>两根馈线，一个6V电源，一根usb线。</p><p class="min_title">测试步骤：</p><p>1、烧写wbx子板（使用USRP1+wbx与PC机相连v）</p><p class="code">注意：如果rfx900子板原来以前烧写过，这步就不用操作了</p><p class="code">打开终端root用户下:</p><p class="code">将wbx_usrp1_burn.sh复制到任意目录下</p><p class="code">&nbsp; &nbsp; chmod 777 wbx_usrp1_burn.sh(更改权限)</p><p class="code">&nbsp; &nbsp; ./rfx900_usrp1_burn.sh(运行脚本文件)</p><p>2、查看电脑是否识别RFX900子板</p><p class="code">root用户下输入命令：lsusrp</p><p class="img"><img src="images/rfx900_u1_1.png"></p><p>3、测试 RFX900程序是否烧写好</p><p class="code">打开终端root用户下输入命令：</p><p class="code">&nbsp; &nbsp; usrp_probe</p><p class="code">出现图-1表示RFX900程序烧写好了</p><p class="img"><img src="images/rfx900_u1_2.png"></p><p class="imgNum">图-1</p><p>4、测试信号的发射与接收(以900MHz的信号为实例)</p><p class="code">&nbsp;1） 测试发射900M信号</p><p class="code">打开终端root用户下输入命令：</p><p class="code">&nbsp; &nbsp; cd /usr/local/share/gnuradio/examples/digital/</p><p class="code">&nbsp; &nbsp; ./benchmark_tx.py –f 900M –T A &nbsp;</p><p class="code">出现图-3表示是成功发射,使用频谱仪接收所发射的信号</p><p class="img"><img src="images/rfx900_u1_3.png"></p><p class="imgNum">图-3</p><p class="code">2）测试接收900MHz的信号（另一台电脑发射一个900MHz的信号）</p><p class="code">打开终端超级用户下输入命令：</p><p class="code">&nbsp; &nbsp; usrp_fft.py –f 900M –R A (任意目录下)&nbsp;</p><p class="code">出现图-4表示接收到信号</p><p class="img"><img src="images/rfx900_u1_4.png"></p><p class="imgNum">图-4</p><p>5、基站测试（选用USRP1+RFX900）</p><p class="code">打开终端超级用户下输入命令：</p><p class="code">注意：基站号是07，所以使用07的sim卡。</p><p class="code">&nbsp; &nbsp; asterisk</p><p class="code">&nbsp; &nbsp; cd /usr/local/src/openbts-2.6.0Mamou/apps/</p><p class="code">&nbsp; &nbsp; ./OpenBTS</p><p class="code">出现图-5，用两部测试手机测试通话</p><p class="img"><img src="images/rfx900_u1_5.png"></p><p class="imgNum">图-5</p>
+                
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,607 @@
+/* CSS Document */
+
+/* Copyright 2016 Google Inc. All Rights Reserved. */
+
+#sites-canvas-main { overflow: hidden }
+#sites-canvas-main .sites-embed .line-divider { margin-bottom: 5px; padding-bottom: 3px; padding-right: 3px }
+#sites-header-title { padding-left: 5px; overflow: visible }
+#title-crumbs { padding: 5px 0 0 10px }
+.sites-layout-searchbox { text-align: right; padding-right: 6px }
+.goog-tree-row .goog-tree-icon { background-image: url(../../html/images/tree_ltr.gif); height: 16px; width: 16px }
+#sites-chrome-header td.header-component { margin: 0; padding: 0 }
+#sites-chrome-header .sites-header-nav { overflow: hidden; margin-left: 1px; padding: 5px 5px 0px; text-align: left }
+#sites-chrome-header .sites-header-nav ul { margin: 0; padding: 0 }
+#sites-chrome-header .sites-header-nav li { display: inline-block; list-style-type: none; list-style-image: none }
+#sites-chrome-header .sites-header-nav a { display: block; width: 100%; text-decoration: none }
+#sites-chrome-header .sites-header-nav a:hover { text-decoration: underline; background-color: transparent }
+.sites-header-nav-container-links li { padding: 5px 10px 5px 10px }
+.sites-header-nav-container-links li.current { font-weight: bold!important }
+.sites-header-nav-container-tabs li { padding: 4px 7px; margin: 0 0 0 6px; border-top-right-radius: 3px; border-top-left-radius: 3px; border-bottom-right-radius: 0px; box-shadow: 0 0 4px #777 }
+.sites-header-nav-container-tabs li.current { font-weight: bold!important }
+.sites-header-nav-container-boxes li { padding: 2px 7px; margin: 5px 3px; border-radius: 2px; box-shadow: 0 0 1px #555 }
+.sites-header-nav-container-boxes li.current { font-weight: bold!important }
+#sites-chrome-header .sites-header-nav li { }
+.sites-header-nav-dropdown-menu { border: 1px #ddd solid; min-width: 200px; z-index: 300; overflow-x: hidden; overflow-y: auto; cursor: default; font: 13px Arial, sans-serif; margin: 0; outline: medium none; padding: 4px 0; position: absolute }
+.sites-header-nav-dropdown-menuitem { float: none; line-height: 22px; padding: 2px 1.5em 2px 15px; text-align: left; list-style: none outside none; margin: 0; white-space: nowrap }
+.sites-header-nav-container-links .sites-header-nav-dropdown-menu, .sites-header-nav-container-tabs .sites-header-nav-dropdown-menu { margin-top: 0px }
+.sites-header-nav-container-boxes .sites-header-nav-dropdown-menu { margin-top: 2px }
+#sites-searchbox-select-button { margin: 0; padding-right: 5px }
+#sites-searchbox-select-button-wrapper { padding-right: 0 }
+#sites-searchbox-select-button-menu { border: none; border-left: 1px solid #aaa; margin: 0; padding: 0 }
+#sites-searchbox-select-button-menu-inner { border: none; border-left: 1px solid #fff; padding: 0 5px; margin: 0; height: 20px; width: 10px }
+#sites-chrome-everything .sites-layout-sidebar-left { padding-left: 5px }
+#sites-chrome-everything .sites-layout-sidebar-right { padding-right: 5px }
+.sites-sidebar-nav li { list-style: none; list-style-image: none; padding: 2px 0 0; margin: 1px 0 0 0 }
+.sites-sidebar-nav .expander { float: left; width: 11px; height: 11px; padding: 0 2px; margin: 1px 0 0 4px; background: url(../../html/images/tree_ltr.gif) no-repeat -194px -27px    }
+.sites-sidebar-nav .current-bg { font-weight: bold }
+.sites-sidebar-recent-activity li { list-style: none; margin: 0; padding: 4px 0 4px 5px; line-height: 1.33em; zoom: 1 }
+.sites-sidebar-plusone-wrapper { margin: 15px auto; text-align: center }
+.sites-attachment-icon, .sites-comment-icon { background: url(../../html/images/icon_sprites.gif) no-repeat; display: block; float: left; height: 11px; margin: 2px 5px 0 0; width: 11px; background-position: -84px -1px }
+#sites-canvas-bottom-panel .sites-attach-icon-doc { background: url(../../html/images/attach_icons/icon_word.gif) no-repeat left 4px; padding-left: 19px }
+#sites-canvas-bottom-panel .sites-attach-icon-img { background: url(../../html/images/attach_icons/icon_img.gif) no-repeat left 4px; padding-left: 19px }
+#sites-canvas-bottom-panel .sites-attach-icon-page { background: url(../../html/images/attach_icons/icon_page.gif) no-repeat left 4px; padding-left: 19px }
+#sites-canvas-bottom-panel .sites-attach-icon-spread { background: url(../../html/images/attach_icons/icon_xls.gif) no-repeat left 4px; padding-left: 19px }
+#sites-canvas-bottom-panel .sites-attach-icon-presentation { background: url(../../html/images/attach_icons/icon_ppt.gif) no-repeat left 4px; padding-left: 19px }
+#sites-canvas-bottom-panel .sites-attach-icon-pdf { background: url(../../html/images/attach_icons/icon_pdf.gif) no-repeat left 4px; padding-left: 19px }
+#sites-attachment-form p { margin: 7px 10px 0 0 }
+#sites-comment-textarea { height: 65px; margin: 0 10px 10px 0; width: 75% }
+.sites-comment p { margin: 3px 0 15px; padding-left: 10px }
+.sites-embed-title { font-size: 13px; margin: 0; padding: 3px 5px; text-align: left }
+.sites-embed-content { text-align: left }
+.sites-embed-content-textbox { padding: 5px; text-align: left }
+.sites-sidebar-plus-badge { text-align: center }
+.sites-plus-badge-link { text-decoration: none }
+.sites-plus-badge-link img { border: 0 }
+.sites-embed-countdown-daysapart { display: block; font-size: 56px; line-height: 52px }
+#sites-chrome-sidebar-left .sites-embed-countdown p, #sites-chrome-sidebar-right .sites-embed-countdown p { margin: 0; padding: 5px; min-height: 1% }
+ol.goog-toc { margin-left: 10px; padding-left: 0 }
+.goog-toc { text-align: left; line-height: 1.5em; list-style: none }
+div.goog-toc h4 { margin: 1em 0; padding: 2px 6px; font-weight: bold; text-align: left }
+div.goog-toc>ul, .sites-embed>ul { margin: 1em 0 }
+.sites-announcement-embed-post-title { font-size: 14px; font-weight: bold }
+.sites-announcements-embed-post { bottom: 5px; font-size: 13px; position: absolute; right: 5px }
+.sites-embed-background { background-position: left top; background-repeat: no-repeat; padding-left: 20px; margin-left: 4px }
+.sites-list-table td { border-bottom: 1px solid #d7dee5; padding-left: 3px }
+.sites-announcement-snippet { list-style-image: none; list-style-position: outside; list-style-type: none; margin: 5px 0 0 0; padding: 0 }
+#sites-chrome-everything .sites-embed .announce-intro { padding-top: 5px; padding-bottom: 10px }
+.sites-announcement-snippet li { padding: 0 5px; list-style-type: none }
+.sites-announcement-snippet-thumbnail { margin: 5px 10px 0pt 0pt; float: left; text-align: center; width: 96px; height: 96px }
+.sites-embed-showing-results { font-size: 11px; padding: 3px 5px }
+.sites-search-footer { border-top: 1px solid #eee; margin-top: 10px; padding-top: 6px; padding-right: 10px; text-align: right }
+.sites-sitemap-subnav { clear: left; padding: 10px 2px 2px 15px }
+.sites-sitemap .sites-sitemap-subnav { padding-left: 10px }
+.sites-pagination-top { float: right; padding-top: 12px; padding-right: 8px; font-size: 12px }
+.sites-pagination-bottom { float: right; padding-top: 8px; padding-right: 8px; font-size: 12px }
+.sites-subpages span { margin-right: 6px }
+.sites-error-wrapper { padding: 10px 0 0 12px; height: 150px }
+body .goog-menu .goog-ws-list-sortAsc, body .goog-menu .goog-ws-list-sortDesc { text-align: left; padding: 3px 1.5em 3px 15px!important }
+.site-template-createbtn { background-color: #0066cc; border-color: #8cb1fa #003d89 #003d89 #8cb1fa; border-style: solid; border-width: 1px 2px 2px 1px }
+div.site-template-createbtn span { color: #ffffff }
+#sites-chrome-everything .sites-fields-table th { border-bottom: none; padding-right: 2em }
+#sites-chrome-header .sites-header-secondary-row td { padding: 0px 4px!important }
+#sites-sidebar-expander { width: 14px; height: 100px; box-shadow: 0 0 4px #777; cursor: pointer }
+#mobile-sidebar-expander { min-width: 30px }
+#sites-sidebar-expander.left { border-top-right-radius: 4px; border-bottom-right-radius: 4px }
+#sites-sidebar-expander.right { border-top-left-radius: 4px; border-bottom-left-radius: 4px }
+.sidebar-expander-arrow { width: 11px; height: 14px }
+
+#sites-horiz-expander { margin: 0; min-width: 30px }
+.horiz-expander { display: inline-block; background-position: -808px 0; width: 16px; height: 16px; margin: 7px 0; background-image: url(../../html/images/camelot.png) }
+#sites-sidebar-expander.left.collapsed .sidebar-expander-arrow, #sites-sidebar-expander.right .sidebar-expander-arrow { background: url(../../html/images/tree_ltr.gif) no-repeat -194px 0    }
+#sites-sidebar-expander.left .sidebar-expander-arrow, #sites-sidebar-expander.right.collapsed .sidebar-expander-arrow { background: url(../../html/images/tree_rtl.gif) no-repeat -194px 0    }
+#sites-chrome-sidebar-right.collapsed, #sites-chrome-sidebar-left.collapsed, .sites-header-nav.collapsed { display: none }
+
+@media only screen and (orientation:portrait) {
+.sites-mobile #sites-chrome-sidebar-right.initial, .sites-mobile #sites-chrome-sidebar-left.initial { display: none }
+}
+.sites-system-link { margin-left: .5em; margin-right: .5em }
+.sites-cookie-notice, .sites-cookie-notice-fit { background-color: rgb(63,63,63); background-color: rgba(63,63,63,0.8); color: white; left: 0; margin: auto; padding: 20px; position: absolute; right: 0; top: 72px; width: 730px; z-index: 3 }
+.sites-cookie-notice-fit { box-sizing: border-box; max-width: 100% }
+#sites-chrome-everything #sites-chrome-header .sites-layout-hbox-mobile .sites-logo, #sites-chrome-everything #sites-chrome-header .sites-layout-hbox-mobile-centered .sites-logo { clear: both; float: none }
+.sites-layout-hbox-mobile #sites-header-title h2, .sites-layout-hbox-mobile-centered #sites-header-title h2 { clear: both }
+.sites-layout-hbox-mobile .sites-layout-searchbox, .sites-layout-hbox-mobile-centered .sites-layout-searchbox { text-align: left }
+.sites-layout-hbox-mobile #jot-ui-searchInput, .sites-layout-hbox-mobile-centered #jot-ui-searchInput { width: 185px }
+.sites-layout-hbox { width: 100%; table-layout: fixed }
+.sites-layout-hbox-centered, .sites-layout-hbox-mobile-centered { width: 100% }
+.sites-layout-hbox-flexible { table-layout: auto }
+.sites-layout-hbox td.sites-layout-tile { vertical-align: top }
+.sites-layout-tile { padding: 3px }
+div.sites-layout-empty-tile { display: none }
+.sites-layout-button-margin-wrapper { display: block; margin: 1em 0px }
+@font-face { font-family: ie-sites-symbol-font; src: url(../../html/images/sites.eot) }
+@font-face { font-family: non-ie-sites-symbol-font; src: url(../../html/images/sites.ttf) }
+.sites-symbol { font-family: ie-sites-symbol-font, non-ie-sites-symbol-font; font-size: 25px; text-transform: none }
+.sites-translucent { -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: alpha(opacity=50); opacity: 0.5; display: inline-block }
+.sites-color-adobe-pdf { color: #fb4c2f }
+.sites-color-google-doc { color: #4986e7 }
+.sites-color-google-drawing { color: #f4b400 }
+.sites-color-google-form { color: #16a765 }
+.sites-color-google-presentation { color: #e04a3f }
+.sites-color-google-spreadsheet { color: #16a765 }
+.sites-color-ms-excel { color: #16a764 }
+.sites-color-ms-powerpoint { color: #ff7537 }
+.sites-color-ms-word { color: #4986e7 }
+
+
+.sites-header-divider { border-bottom: 1px solid #c9d7f1; zoom: 1 }
+.sites-account { color: #000; float: right; padding: 5px 5px 4px 0 }
+.sites-account a, .sites-account a:visited { color: #00c }
+.sites-account span { font-size: 10px }
+#page-btns { background-color: #fff; padding: 4px 6px 4px 0 }
+#page-btns .goog-button { margin-left: 4px }
+#sites-collaborator-buttons { text-align: right; padding: 0; clear: none; position: absolute; right: 0px }
+#sites-collaborator-bar-borg-info { color: hsl(0,0%,73%)!important; font-size: 10px; margin: 0 16px 0 0 }
+#sites-collaborator-bar-release-label { margin-right: 5px }
+#sites-collaborator-bar-borg-info a { color: hsl(0,0%,73%)!important }
+#sites-page-info-bar { font-size: 17px; color: #666; position: relative; font-family: Arial, san-serif!important; background-color: #fff; border-bottom: 1px solid #ccc }
+body.sites-edit-in-progress #sites-page-info-bar { border-bottom: 0 }
+#sites-page-info-bar img { vertical-align: middle; margin-top: 4px; padding: 0 0 2px }
+#sites-revision-info { font-size: 11px; color: #666; letter-spacing: 0 }
+#sites-revision-info a, #sites-revision-info a:visited { color: #03c }
+#sites-survey-link { font-size: 13px; padding: 0 10px; text-decoration: none }
+#sites-survey-link:hover { text-decoration: underline }
+.sites-app-title { color: #03c; letter-spacing: .5px; padding: 0; background-color: #fff; float: left; margin-left: 7px; position: absolute; left: 0px }
+.sites-app-title a { text-decoration: none; float: left }
+.sites-site-name { color: #666; letter-spacing: 0 }
+.sites-site-template-name { color: #000; letter-spacing: 0; font-size: 16px }
+.sites-site-template-desc { color: #000; letter-spacing: 0; font-size: 13px }
+.sites-site-template-last-updated { color: #666; letter-spacing: 0; font-size: 11px }
+#sites-page-toolbar .goog-scrollfloater { padding-bottom: 0 }
+#back-to-template-listing { background: #fff; padding: 3px 10px 4px 10px; font-family: Arial }
+#back-to-template-listing a, #back-to-template-listing a:visited { color: #00c; font-weight: bold }
+.sites-appbar-gradient { height: 5px; margin-bottom: -5px; background: transparent url(../../html/images/bargrad.png) top left repeat-x; position: relative; z-index: 100 }
+.sites-edit-in-progress .sites-appbar-gradient { height: 0; background: none; margin-bottom: 0; position: relative; z-index: 100 }
+.sites-viewer-site-template-bar { width: 100%; padding-top: 5px }
+.collaborator-bar-container { min-height: 36px; width: 100%; overflow: hidden; padding-top: 3px }
+#sites-gears-button.goog-flat-menu-button-hover { border: 1px solid #c6c6c6!important }
+#sites-gears-button.goog-flat-menu-button-hover .sites-gears-button-icon { opacity: 0.9 }
+#sites-gears-button { margin-right: 0; padding: 0 8px; width: 54px }
+#sites-gears-button .goog-flat-menu-button-caption { padding: 0 }
+#sites-gears-button .goog-flat-menu-button-dropdown { position: absolute; right: 18px }
+#sites-gears-button .sites-gears-button-icon { background-position: -78px 0; width: 17px; height: 17px; margin-top: 4px; margin-left: -8px }
+#more-actions-btn.goog-flat-menu-button-hover { border: 1px solid #c6c6c6!important }
+#more-actions-btn.goog-flat-menu-button-hover .sites-gears-button-icon { opacity: 0.9 }
+#more-actions-btn { padding: 0 8px; width: 54px }
+#more-actions-btn .goog-flat-menu-button-caption { padding: 0 }
+#more-actions-btn .goog-flat-menu-button-dropdown { position: absolute; right: 18px }
+#more-actions-btn .sites-gears-button-icon { background-image: url(../../html/images/icon_gear.png); width: 17px; height: 17px; margin-top: 4px; margin-left: -8px }
+#sites-collaborator-bar-smart-preview-beta { color: red; font-style: italic; font-weight: normal; line-height: initial; position: absolute; right: -5px; text-shadow: 0 1px 1px rgba(0,0,0,.3); text-transform: uppercase; top: 0; transform: rotate(30deg) }
+
+.sites-chrome-externalurl-input { direction: ltr; width: 200px }
+.sites-chrome-navigationdialog-action { color: #15c; text-decoration: none }
+.sites-chrome-navigationdialog-action:hover { cursor: pointer; text-decoration: underline }
+.sites-chrome-navigationdialog-addpage { float: left }
+.sites-chrome-navigationdialog-addlink { float: right; padding-right: 7px }
+
+#sites-theme-var-list li.var-category:hover { cursor: inherit; background-color: inherit }
+#sites-theme-var-list .var-category h4 { font-size: 14px; margin-top: 7px; margin-bottom: 5px }
+.sites-theme-var-icon { margin-bottom: -4px; margin-right: 3px }
+.goog-ws-logo { float: left; margin: 0 10px 0 0; vertical-align: top }
+html, body { padding: 0; margin: 0; direction: ltr }
+body { font: normal 10pt Arial, sans-serif }
+body.ar { font-size: 14px }
+a img { border: 0; padding: 0 }
+th { text-align: left }
+td { vertical-align: top }
+code { color: #006000 }
+.sites-codeblock { background-color: #efefef; border: 1px solid #d3d3d3; display: block; padding: 0.5em 0 0.5em 1em; line-height: 1 }
+.sites-clear:after { content: "."; display: block; height: 0; clear: both; visibility: hidden }
+.disabled { text-decoration: none; color: #666 }
+#sites-chrome-everything #sites-chrome-header .sites-logo { float: left; padding: 0 10px 0 0; background-color: transparent }
+.sites-domain-logo { max-width: 144px; max-height: 60px }
+#sites-chrome-everything { margin: 0 auto }
+#sites-canvas-main { min-height: 150px; _height: 150px; padding-bottom: 5px; padding-top: 15px }
+#sites-canvas-main table { margin: 0 }
+#title-crumbs, body #sites-page-title-header, .sites-tile-name-header, #sites-canvas-main .sites-tile-name-content-1, .sites-tile-name-footer, .sites-subpages, .sites-kix-editor-wrapper, #sites-editor-wrapper { padding-left: 10px; padding-right: 10px }
+.sites-menu { font-family: Arial, Helvetica, sans-serif }
+#sites-canvas-main .sites-tile-name-header { padding-top: 10px; padding-bottom: 0 }
+#sites-canvas-main .sites-tile-name-content-1, #sites-canvas-main .sites-tile-name-content-2, #sites-canvas-main .sites-tile-name-content-3 { padding-top: 10px; padding-bottom: 10px }
+#sites-canvas-main .sites-tile-name-content-2 { padding-left: 0; padding-right: 10px }
+#sites-canvas-main .sites-tile-name-content-3 { padding-left: 0; padding-right: 10px }
+.sites-edit-in-progress .sites-tile-name-header, .sites-edit-in-progress .sites-tile-name-footer { min-height: 30px; _height: 30px }
+#sites-chrome-everything #sites-chrome-header img { padding: 0; border: 0 }
+.jfk-button { margin: 0 16px 0 0 }
+.goog-button { cursor: pointer }
+.sites-button-icon { vertical-align: middle; background-repeat: no-repeat; height: 16px; margin: 0 1px 0 0 }
+.sites-toolbar-icon-new { background: url(../../html/images/icon_sprites.gif) no-repeat; background-position: 0 0; width: 11px; font-weight: bold }
+.sites-sitemap-hierarchy-icon { background-image: url(../../html/images/toolbar2.gif); background-position: -825px 0; width: 16px }
+.sites-sitemap-list-icon { background-image: url(../../html/images/toolbar2.gif); background-position: -855px 0; width: 16px }
+.sites-toolbar-icon-edit { background: url(../../html/images/icon_sprites.gif) no-repeat; background-position: -13px 0; width: 13px; font-weight: bold }
+.sites-toolbar-icon-more-actions { margin: 0 }
+a.sites-button-link { text-decoration: none }
+a.sites-sitemap-tools-link { text-decoration: none!important }
+a.sites-sitemap-tools-link:hover { text-decoration: underline!important }
+
+.sites-zippy-icon { background-repeat: no-repeat; margin-right: 6px; opacity: 0.7; position: relative }
+.goog-zippy-expanded .sites-zippy-icon { background-position: -95px 0; height: 4px; width: 7px; top: -3px }
+.goog-zippy-collapsed .sites-zippy-icon { background-position: -95px -5px; height: 7px; width: 4px; top: -2px }
+.user-rtl .goog-zippy-collapsed .sites-zippy-icon { background-position: -98px -5px }
+
+.sites-ccc-nav #gbar { padding-top: 4px!important; color: #000 }
+.sites-ccc-nav #gbar a { color: #00c }
+#sites-status { position: fixed; top: 0; width: 100%; z-index: 1010; text-align: center }
+.sites-notice { background: #fc3; color: #000; display: inline; font: bold 13px Arial, sans-serif; padding: 2px 10px 3px; z-index: 199 }
+#sites-header-title h2 { margin: 0 }
+#sites-header-title h2 a { text-decoration: none }
+.sites-chrome-header h2 a:hover { text-decoration: underline }
+.sites-chrome-header-table { width: 100% }
+.goog-ws-movepage { background: #fff }
+.goog-ws-movepage p { margin: 0 7px 5px; padding: 5px 0 0 }
+.goog-ws-movepage-inside { background: #fff; overflow-y: scroll; height: 200px }
+.sites-header-divider { font-size: 13px; background: #fff; border-bottom: none; font-family: arial, sans-serif!important }
+.sites-account { background: #fff; font: 100% arial, sans-serif; padding: 4px 8px 5px 2px; text-align: right }
+.sites-account a, .sites-account a:focus, .sites-account a:visited { color: #00c }
+.sites-account a:active { color: #f00 }
+.goog-ws-movepage-table { width: 100% }
+.goog-ws-movepage-table td { border-bottom: 1px solid #efefef; padding: 4px 5px }
+#sites-page-title-header { font-size: 22px; font-weight: bold; margin: 0 }
+div.sites-sidebar-nav { border-bottom: 0; padding-bottom: 0; overflow: hidden }
+.sites-sidebar-nav a { display: block; text-decoration: none }
+.sites-sidebar-nav a:hover { text-decoration: underline }
+#body .sites-sidebar-nav ul { line-height: 1.33em; margin: 0; padding: 0; overflow: hidden }
+.sites-canvas-main-content .sites-sidebar-nav>ul { margin: 0.5em 0 }
+.sites-sidebar-nav a, .sites-sidebar-nav .current-bg { text-overflow: ellipsis; overflow: hidden }
+.sites-sidebar-nav li.closed .expander { background-position: -192px -3px }
+.sites-sidebar-nav li.closed ul { height: 0 }
+.animate { -webkit-transition: height .2s; -moz-transition: height .2s; -ms-transition: height .2s; -o-transition: height .2s; transition: height .2s }
+.sites-sidebar-nav a.topLevel { font-weight: bold }
+.sites-sidebar-nav li.topLevel { border-top: 1px solid transparent; margin-top: 1px; margin-bottom: 1px }
+.sites-sidebar-nav li.nav-first { border-top-width: 0px; margin-top: 0px }
+.sites-sidebar-nav li ul .current-bg { outline-width: 1px }
+.sites-sidebar-recent-activity ul { margin: 0; padding: 0; overflow: hidden }
+.sites-sidebar-recent-activity ul .sites-sidebar-recent-activity-viewall { border-top: 1px solid #eee }
+.sites-sidebar-recent-activity a { display: block; overflow: hidden; text-overflow: ellipsis }
+.sites-canvas-bottom-panel-wrapper { padding: 0 0 5px }
+#sites-canvas-bottom-panel h3 { margin: 0 0 5px }
+#sites-canvas-bottom-panel ul { padding: 0; margin: 0 }
+#sites-canvas-bottom-panel li { list-style: none; padding: 5px 0 }
+#sites-canvas-bottom-panel form { margin: 0 }
+#sites-attachment-wrapper, #sites-comment-wrapper { padding: 10px 10px 1px 10px }
+.sites-attachment-inner, .sites-comment-inner { padding: 0 0 7px 0 }
+.sites-attachment-inner { position: relative }
+#sites-attachment-wrapper h3 a, #sites-comment-wrapper h3 a { text-decoration: none }
+.sites-text-secondary { color: #666 }
+.sites-comments { padding: 5px 0 0 0 }
+#sites-comment-submit { padding: 10px 0 }
+.sites-attachments-separator { background: #ebebeb; height: 1px }
+.sites-attachments-row { position: relative; height: 40px }
+.sites-attachments-row a { text-decoration: none!important; border-bottom: none!important }
+.sites-attachments-icon { position: absolute; width: 30px; height: 40px; text-align: center; line-height: 40px; top: 0 }
+.sites-attachments-version { position: absolute; width: 80px; height: 40px; right: 90px; line-height: 40px; text-align: center; top: 0 }
+.sites-attachments-inner-div { padding-left: 40px; padding-right: 160px; height: 40px; line-height: 40px }
+.sites-attachments-name { display: inline-block; width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.sites-attachments-author { display: inline-block; width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.sites-attachments-button { float: left; height: 40px; margin-left: 10px }
+.sites-attachments-button-element { float: left; height: 40px; line-height: 40px }
+.sites-attachments-button a { text-decoration: none!important; border-bottom: none!important }
+.sites-attachments-update-text { display: inline-block; width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 28px }
+.sites-attachments-update-icon { position: absolute; width: 30px; height: 40px; text-align: center; line-height: 40px; padding-top: 12px }
+.sites-comment-docos-wrapper { padding: 10px }
+.sites-comment-docos { position: relative }
+.sites-comment-docos-header { position: relative; z-index: 2 }
+.sites-comment-docos-header-title { float: left; padding: 10px 0 10px 20px; color: #000; font-weight: bold; font-size: 17px; font-family: 'Trebuchet MS', arial, sans-serif }
+.sites-comment-docos-background { position: absolute; background-color: #fff; filter: alpha(opacity=75); -moz-opacity: .75; opacity: .75; height: 100%; width: 100%; z-index: 1 }
+.sites-comment-docos-pane { padding: 0 10px 7px 10px; position: relative; z-index: 2; clear: both }
+.sites-subfooter { font-size: 11px; padding: 5px 0 5px; text-align: center }
+.sites-subfooter p { margin: 0; padding: 5px }
+.sites-subfooter p span { font-size: 10px }
+.sites-subfooter .sites-subfooter-buffer { margin: 0; padding: 5px 5px 0 5px; text-align: left }
+.sites-adminfooter { font-size: 11px; text-align: center }
+.sites-adminfooter p { margin: 0; padding: 5px }
+.sites-adminfooter p span { font-size: 10px }
+.sites-version-history { color: #666; font-size: 12px; padding: 7px 5px 9px 0; text-align: right; position: absolute; bottom: 0; right: 0 }
+.goog-menuitem .sites-moreactions-icon { background: url(../../html/images/camelot.png) no-repeat; position: absolute; left: 4px; top: 9px }
+.goog-menuitem .sites-moreactions-icon-subscribe { background-position: -182px 0; width: 14px; height: 10px }
+.goog-menuitem .sites-moreactions-icon-print { background-position: -168px 0; width: 14px; height: 15px }
+.goog-menuitem .sites-moreactions-icon-delete { background-position: -441px 0; width: 15px; height: 17px; margin-top: -2px }
+.goog-menuitem .sites-moreactions-icon-copy { background-position: -715px 0; width: 15px; height: 17px; margin-top: -3px }
+.sites-chrome-navigationdialog-btn { background: url(../../html/images/camelot.png) no-repeat; display: inline-block; left: 4px; opacity: 0.5; top: 9px; vertical-align: text-bottom }
+.sites-chrome-navigationdialog-icon-up { background-position: -730px 0; width: 11px; height: 15px; margin-top: -2px }
+.sites-chrome-navigationdialog-icon-down { background-position: -742px 0; width: 11px; height: 15px; margin-top: -2px }
+.sites-chrome-navigationdialog-icon-left { background-position: -754px 0; width: 12px; height: 15px; margin-top: -2px }
+.sites-chrome-navigationdialog-icon-right { background-position: -767px 0; width: 12px; height: 15px; margin-top: -2px }
+.sites-chrome-navigationdialog-icon-remove { background-position: -441px 0; width: 15px; height: 16px; margin-top: -2px }
+.sites-chrome-navigationdialog-icon-popout { background-position: -796px 0; width: 12px; height: 16px; margin: -3px 4px -1px }
+.user-rtl .sites-chrome-navigationdialog-icon-popout { -ms-filter: "FlipH"; filter: FlipH; -moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1) }
+.goog-menuitem .sites-moreactions-icon-share { background-position: -149px 0; width: 19px; height: 15px }
+.goog-menuitem .sites-moreactions-icon-adsense { background-position: -129px 0; width: 0; height: 15px }
+.goog-ws-create-page { margin-top: 2.5px }
+a.goog-ws-create-page, a.goog-ws-create-page:hover { text-decoration: none; color: #333!important; font-weight: bold }
+.sites-lp-page-type-select { z-index: 1000!important }
+.goog-ws-dash-site-text h3 { font-size: 12px }
+#edit-start-btn, #create-new-btn, #smart-preview-btn { font-weight: bold }
+.goog-ws-siteinfo-siteslogo { color: #36c; font-size: 14px; font-weight: bold; padding: 0 5px 0 5px }
+.sites-embed { margin: 0 0 6px }
+body .goog-ws-list-oobe .goog-ws-list-oobe-box { padding: 0 }
+.sites-embed .sites-embed-content-notitle p { margin: 0; padding: 5px; min-height: 1% }
+.sites-embed-content, .sites-embed-content-notitle { overflow: hidden }
+.sites-embed-content.sites-embed-type-toc, .sites-embed-content-notitle.sites-embed-type-toc { overflow: visible }
+.sites-embed-noborder { border: none!important }
+.sites-embed-noborder li { list-style: none }
+.sites-embed-align-left-wrapping-off { display: block; clear: both; text-align: left; margin: 5px auto 5px 0 }
+.sites-embed-align-left-wrapping-on { display: inline; float: left; margin: 5px 20px 5px 0 }
+.sites-embed-align-left-wrapping-off .sites-embed { margin: 0 auto 5px 0 }
+.sites-embed-align-left-wrapping-on .sites-embed { display: table-cell }
+.sites-embed-align-center-wrapping-off { display: block; clear: both; text-align: center; margin: 5px auto }
+.sites-embed-align-center-wrapping-on { display: block; text-align: center; margin: 5px 0 }
+.sites-embed-align-center-wrapping-off .sites-embed, .sites-embed-align-center-wrapping-on .sites-embed { margin: 5px auto 0pt }
+.sites-embed-align-right-wrapping-off { display: block; clear: both; text-align: right; margin-left: auto }
+.sites-embed-align-right-wrapping-on { display: inline; float: right; margin: 5px 0 5px 20px }
+.sites-embed-align-right-wrapping-off .sites-embed { margin: 0pt 0pt 5px auto }
+.sites-embed-align-right-wrapping-on .sites-embed { display: table-cell }
+.sites-embed-full-width { display: block!important; clear: both; width: auto!important }
+.sites-embed-border-on { }
+.sites-embed-border-off { border: none!important }
+.sites-embed-url { float: left; margin-right: 10px; margin-top: 3px }
+.sites-embed-type-spreadsheet-form { padding: 2px 2px 2px 10px; direction: ltr }
+.sites-embed-type-gadget-error { padding: 10px; text-align: center; font-size: 14px; font-weight: bold; height: 200px }
+.sites-embed-copy-warning { padding: 5px 0px; margin: 0px; width: 100%; text-align: center; font-size: 12px; font-weight: bold; background-color: #fc3 }
+.sites-embed-footer { border-top: 1px solid #ccc; padding: 3px 5px 0 0 }
+.sites-embed-footer-icon { display: inline-block; margin: 0px 3px; background-image: url(../../html/images/toolbar2.gif); background-repeat: no-repeat; width: 16px; height: 16px; zoom: 1; *display:inline
+}
+.sites-writely-icon { background-position: -411px 0 }
+.sites-spreadsheet-icon { background-position: -564px 0 }
+.sites-spreadsheet-form-icon { background-position: -581px 0 }
+.sites-presently-icon { background-position: -496px 0 }
+.sites-punch-icon { background-position: -496px 0 }
+.sites-sketchy-icon { background-position: -496px 0 }
+.sites-pdf-icon { background-position: -1064px 0 }
+.sites-maestro-icon { background-position: -1080px 0 }
+.sites-docs-video-icon { background-position: -1118px 0 }
+.sites-folder-icon { background: no-repeat url(../../html/images/command.png) 0 -1173px; height: 20px; opacity: .55; width: 21px }
+div.goog-toc { margin-bottom: 5px; overflow: hidden; width: auto }
+.goog-toc a { text-decoration: none }
+div.goog-toc .expander, #sites-canvas-main .sites-embed .expander { margin-top: 3px }
+div.goog-toc ul, #sites-canvas-main .sites-embed ul { line-height: 1.5em }
+div.nav-toc-content { margin: 5px 0 }
+#sites-chrome-everything .goog-toc h4, div.goog-toc p { padding: 4px 5px 0; margin: 0; font-weight: bold }
+#sites-canvas-main .sites-embed li.line-divider { list-style-image: none }
+.goog-ws-dialog { z-index: 200 }
+.modal-dialog-bg { z-index: 199 }
+.goog-ws-dialog .goog-ws-button { margin: 0 5px 0 0 }
+.goog-ws-editing-toolbar { background-color: #f0f0f0; border-style: solid; border-width: 0; border-color: #666 }
+.sites-table { border-collapse: collapse; font-size: 12px; margin: 0 0 10px; width: 100% }
+.sites-table td { padding: 5px; vertical-align: top; border-bottom: 1px solid #eee }
+.sites-list-table { border: 0; border-collapse: collapse; width: 100% }
+.sites-list-table th { border: 0 }
+.sites-list-embed-col-checkboxes { list-style: none; padding: 2px; margin: 4px; list-style-type: none }
+.sites-list-embed-col-checkboxes li { list-style-type: none }
+.sites-list-embed-sort { border-bottom: 1px dotted; padding-bottom: 5px }
+#sites-chrome-everything .td-icon img, #sites-chrome-everything .filecabinet-header th img, #sites-chrome-everything .goog-menuitem-content img, #sites-chrome-everything .goog-tree-icon, #sites-chrome-everything .sites-search-result img { padding: 0; background-color: transparent; border: none }
+
+.sites-pagination, .sites-pagination-info { display: inline }
+.sites-pagination-info { font-size: 13px; color: #666; margin: 8px 16px 0 0; position: relative; vertical-align: top }
+#sites-pagination-prev-link, #sites-pagination-prev-link-top, #sites-pagination-prev-link-bottom { margin-right: 0 }
+#sites-pagination-next-link, #sites-pagination-next-link-top, #sites-pagination-next-link-bottom { margin-right: 8px }
+.sites-pagination-icon-prev, .sites-pagination-icon-next { height: 12px; margin-top: 8px; width: 8px }
+.sites-pagination-icon-prev { background-position: -63px 0 }
+.sites-pagination-icon-next { background-position: -70px 0 }
+.jfk-button-standard.jfk-button-disabled .sites-pagination-icon-prev, .jfk-button-standard.jfk-button-disabled .sites-pagination-icon-next { filter: alpha(opacity=33); opacity: .333 }
+#sites-recent-activity-wrapper { padding: 8px }
+.sites-subpage-dialog { height: 350px }
+.sites-subpage-dialog .goog-ws-tree-wrapper { height: 250px; overflow-x: hidden; overflow-y: auto }
+.sites-page-settings-divider { border-top: 1px solid #ccc; padding-top: 10px }
+#page-description-field { resize: none }
+.sites-page-settings-error { font-weight: bold; color: red }
+#sites-chrome-everything { width: 100% }
+#sites-chrome-sidebar-left, #sites-chrome-sidebar-right, .sites-canvas-sidebar { width: 150px }
+body #sites-chrome-everything a[imageanchor] { background: none; border-bottom: none }
+ol { list-style-type: decimal }
+.tr_bubble td { padding: 0; color: #000 }
+.sites-table th { background-color: #e3e9ff; border-bottom: 1px solid #bcf; font-weight: bold; padding: 5px; text-align: left; vertical-align: top; color: #798a9a }
+.sites-site-template-bar { background-color: #4d90f0; background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed); background-image: -moz-linear-gradient(top, #4d90fe, #4787ed); background-image: -ms-linear-gradient(top, #4d90fe, #4787ed); background-image: -o-linear-gradient(top, #4d90fe, #4787ed); background-image: linear-gradient(top, #4d90fe, #4787ed); border-bottom: 1px solid #3079ed; width: 100%; color: white; padding: 7px 0 }
+.sites-site-template-bar span { padding-left: 44px }
+.sites-site-template-bar a, .sites-site-template-bar a:focus, .sites-site-template-bar a:hover { padding-left: 0; color: #fff; text-decoration: underline }
+.sites-site-template-bar-close { background: url(../../html/images/icon_close.gif) no-repeat; cursor: pointer; height: 15px; position: absolute; right: 15px; width: 15px }
+.sites-site-template-highlighted-popup { visibility: hidden; background-color: white; border: 1px solid #dddddd; color: black; padding: 10px; position: absolute; text-align: left; -moz-box-shadow: gray 3px 3px 3px; -webkit-box-shadow: gray 3px 3px 3px }
+.sites-site-template-highlighted-popup span { color: gray }
+.goog-ws-list-dialog-table .goog-ws-list-up { right: 45px }
+.goog-ws-list-dialog-table .goog-ws-list-down { right: 25px }
+.goog-ws-list-dialog-table .goog-ws-list-close { right: 5px }
+#title-data-wrapper .share-pill { vertical-align: baseline }
+#title-data-wrapper .goog-inline-block.apps-share-sprite { vertical-align: text-bottom }
+#body .share-client-dialog .modal-dialog-content { padding: 0!important }
+
+.sites-plp-help-text { font-size: 11px; font-style: italic; margin: 0 5px; line-height: 1.5 }
+.goog-adsense-promo-popup { visibility: hidden; background-color: white; border: 1px solid #dddddd; padding: 10px; position: absolute; width: 320px; height: 155px; text-align: left; -moz-box-shadow: gray 3px 3px 3px; -webkit-box-shadow: gray 3px 3px 3px }
+.goog-adsense-promo-up-arrow { background-image: url(../../html/images/promos.png); background-position: -37px -4px; width: 60px; height: 30px; position: absolute; top: -30px; right: 20px; z-index: 105 }
+.goog-adsense-promo-dismiss { position: absolute; top: 5px; right: 5px }
+.goog-adsense-promo-content { float: left; display: inline }
+.goog-adsense-promo-img { background-image: url(../../html/images/promos.png); background-position: -135px 0; background-repeat: no-repeat; margin: 16px 0; width: 150px; height: 80px; float: left }
+.goog-adsense-promo-text { margin-left: 160px }
+.goog-adsense-promo-monetize-btn { position: absolute; bottom: 10px }
+.sites-adsense-dep-msg { text-align: center }
+.sites-adsense-dep-msg-text { background: #dd4b39; border: 1px solid #602019; border-radius: 2px; box-shadow: 0px 2px 4px rgba(0,0,0,0.2); color: #fff; padding: 6px 16px }
+.sites-adsense-dep-msg-link { color: #000; padding-left: 0.5em }
+.sites-adsense-dep-msg-signup { width: 750px; margin-top: 10px }
+.sites-adsense-dep-msg-config { width: 75% }
+
+
+.sites-adminfooter { font-size: 11px }
+.sites-adminfooter p span { font-size: 10px }
+#sites-status { top: 2px }
+#sites-notice { text-align: center; bottom: 0; background: #f9edbe; border: 1px solid #f0c36d; margin-bottom: -15px; z-index: 199; font: bold 13px Arial, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.2); -webkit-border-radius: 2px; -webkit-box-shadow: 0px 2px 4px rgba(0,0,0,0.2); -webkit-transform: scale(1.00); -webkit-transition: all 0.130s, left 0 linear 0; font: normal 11px Arial, Helvetica, sans-serif }
+#sites-notice a { font: normal 11px Arial, Helvetica, sans-serif }
+.modal-dialog { z-index: 200 }
+.sites-camelot-icon { background-image: url(../../html/images/camelot.png); height: 10px; display: inline-block }
+.sites-icon-dropdown-arrow { vertical-align: middle; background-position: -95px 0; width: 7px; height: 4px; margin: 12px 0 12px 8px }
+.sites-icon-admin-tree { background-position: -31px 0; margin-top: 8px; width: 16px }
+.sites-icon-admin-list { background-position: -46px 0; margin-top: 8px; width: 16px }
+.sites-icon-redirect { background-position: -535px 0; width: 15px; height: 14px; opacity: 0.5 }
+.legacy-jot-dialog { width: 475px }
+#gb input[type=text] { line-height: normal }
+#gb input[type=text]:hover, #gb input[type=text]:focus { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none }
+.sites-search-scope-selector { right: 50px; top: 0; width: 8px }
+.sites-search-scope-selector .goog-flat-menu-button-caption { visibility: hidden; width: 0 }
+.sites-search-scope-selector .goog-flat-menu-button { background: none; border: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; width: 0 }
+.sites-search-scope-selector .goog-flat-menu-button-dropdown { opacity: 0.4; position: absolute }
+.sites-search-scope-selector .goog-flat-menu-button-dropdown:hover, .sites-search-scope-selector .goog-flat-menu-button-focused .goog-flat-menu-button-dropdown { cursor: default; opacity: 1 }
+#jot-ui-searchInput { height: 27px; line-height: 100%; vertical-align: middle }
+#sites-searchbox-button-set { margin-left: 6px }
+#sites-searchbox-search-button, #sites-searchbox-select-button { height: 27px; margin: 0; vertical-align: middle }
+#sites-searchbox-select-button { -webkit-border-radius: 2px 0 0 2px; -moz-border-radius: 2px 0 0 2px; border-radius: 2px 0 0 2px; border-right-color: #c6c6c6 }
+#sites-searchbox-select-button.jfk-button-clear-outline:focus { border-right-color: #c6c6c6 }
+#sites-searchbox-select-button:focus { border-right-color: #4d90fe }
+#sites-searchbox-select-dropdown .goog-flat-menu-button-caption { display: none }
+#sites-searchbox-select-dropdown { height: 27px; padding: 0; min-width: 0; vertical-align: top; width: 20px; border-left-color: transparent; -webkit-border-radius: 0 2px 2px 0; -moz-border-radius: 0 2px 2px 0; border-radius: 0 2px 2px 0 }
+#sites-searchbox-select-dropdown.goog-flat-menu-button-open:focus { border-left-color: transparent }
+#sites-searchbox-select-dropdown:focus { border-left-color: #4d90fe }
+#sites-searchbox-select-dropdown .goog-flat-menu-button-dropdown { position: static; margin-top: 12px }
+#filecabinet-toolbar .jfk-button .sites-camelot-icon { vertical-align: middle; margin-right: 6px }
+#filecabinet-toolbar .jfk-button .sites-icon-dropdown-arrow { margin-left: 6px; margin-right: 0 }
+#filecabinet-toolbar .sites-filecab-icon-new { background-position: -430px 0; width: 11px; height: 14px }
+#filecabinet-toolbar .sites-filecab-icon-drive { background-image: url(../../html/images/command.png); background-position: -2px -1219px; width: 17px; height: 17px }
+#filecabinet-toolbar .sites-filecab-icon-folder { background-position: -414px 0; width: 16px; height: 14px }
+#filecabinet-toolbar .sites-filecab-icon-delete { background-position: -441px 0; width: 15px; height: 17px }
+#filecabinet-toolbar .sites-filecab-icon-subscribe { background-position: -182px 0; width: 14px; height: 10px }
+.filecabinet-checkbox { margin-top: 3px!important }
+.CSS_SHORTCUTS_HELP_POPUP { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px }
+body .CSS_SHORTCUTS_HELP_POPUP_CONTENT_ELEMENT, body .CSS_SHORTCUTS_HELP_POPUP_HEADER_TABLE_ELEMENT { color: #fff }
+#more-actions-menu a, #sites-gears-menu a { text-decoration: none }
+#more-actions-menu a .goog-menuitem:hover, #sites-gears-menu a .goog-menuitem:hover { color: #333!important }
+#googleadmin-enabled-link { background-color: #ff8080!important }
+#googleadmin-enabled-link:hover { background-color: #ff0000!important }
+#googleadmin-disabled-link { background-color: #a8e1ad!important }
+#googleadmin-disabled-link:hover { background-color: #50c25b!important }
+.jfk-select .goog-flat-menu-button-caption { width: auto; padding-right: 15px }
+.jfk-select .goog-flat-menu-button-dropdown { top: 12px; right: 5px }
+.goog-menu, .goog-menu-vertical { z-index: 1001!important }
+.sitelayout-dlg-section { margin: 0; padding: 2px 0 10px }
+.sitelayout-dlg-section table { border-spacing: 0 }
+.sitelayout-dlg-section { padding: 2px 0 0 0 }
+.sitelayout-dlg-section-border { border-bottom: 1px solid #ccc }
+.sitelayout-dlg-section-border, .sitelayout-dlg-section-border .sitelayout-dlg-section { padding-bottom: 7px }
+.sitelayout-dlg-section h4, .sitelayout-dlg-section h3, .sitelayout-dlg-section div { margin: 0 auto 3px auto }
+.sitelayout-dlg-section .sitelayout-dlg-horizontal { margin-left: 18px; margin-right: 18px }
+.sitelayout-dlg-section .sitelayout-dlg-horizontal select { width: 150px }
+.sitelayout-dlg-section .sitelayout-dlg-horizontal>tbody>tr>td { width: 238px }
+.sitelayout-dlg-section .text-input { margin: 0 5px 0 0; width: 45px }
+.sitelayout-dlg-img-container { position: relative }
+.sitelayout-dlg-layoutimg { position: absolute; right: 5px; top: 5px }
+.sites-header-divider .goog-ws-ccc-nav #gbi { border: 1px solid #b0bdcc }
+.sites-chrome-dialog-launcher { min-height: 10px }
+.sites-chrome-dialog-launcher:hover, .sites-chrome-dialog-launcher:focus { background: #ebeffa!important; outline: none; cursor: pointer }
+.goog-menuitem .sites-moreactions-icon, .jfk-button .sites-camelot-icon { opacity: .55; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)"; filter: alpha(opacity=55) }
+.goog-menuitem-highlight .sites-moreactions-icon, .jfk-button-hover .sites-camelot-icon, .jfk-button-checked .sites-camelot-icon { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100) }
+.jfk-button-disabled .sites-camelot-icon { opacity: .55; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)"; filter: alpha(opacity=55) }
+.sites-embed-content-sidebar-textbox { padding: 5px }
+.sites-camelot-delete-icon { background-position: -623px 0; float: right; height: 15px; margin-top: 2px; vertical-align: text-top; width: 15px }
+.sites-camelot-delete-icon:hover { background-color: gray }
+.sites-sitelayout-toggle-button-icon { height: 14px; margin-right: 5px; vertical-align: text-bottom; width: 15px }
+.sites-sitelayout-icon-header { background-position: -550px 0 }
+.sites-sitelayout-icon-horizontal-nav { background-position: -565px 0 }
+.sites-sitelayout-icon-sidebar { background-position: -580px 0 }
+.sites-sitelayout-icon-custom-footer { background-position: -595px 0 }
+.sites-sidebar-icon-add-widget { background-position: -611px 0; float: right; height: 15px; margin-top: 3px; vertical-align: text-top; width: 14px }
+.sites-sidebar-icon-edit { background-position: -638px 0; float: right; height: 15px; margin-top: 3px; vertical-align: text-top; width: 14px }
+.sites-sidebar-icon-add-widget:hover { background-color: gray }
+.sites-sidebar-icon-edit:hover { background-color: gray }
+.sidebar-widget-render-error { text-align: center }
+.exported-values { background-repeat: no-repeat; background-repeat: no-repeat; width: 90%; height: 100px; color: #000; color: #000; background-color: #fff; font-family: "Verdana", "Helvetica", "Arial", sans-serif; color: #000; color: #666; color: #00c; background-color: #fff; color: #ccc; font-family: "Verdana", "Helvetica", "Arial", sans-serif; color: #000; color: #666; color: #00c; background-color: transparent; font-family: "Verdana", "Helvetica", "Arial", sans-serif; color: #000; color: #666; color: #00c; color: #000; color: #000; background-color: #ccc }
+body { background-color: #eee }
+#sites-chrome-everything caption { border-bottom-color: #ccc }
+#sites-chrome-everything h2 { color: #333; font: bold 1.5em "Verdana", "Helvetica", "Arial", sans-serif; margin: 7px 0 }
+#sites-chrome-everything h3 { color: #333; font: bold 1.2em "Verdana", "Helvetica", "Arial", sans-serif; margin: 5px 0 }
+#sites-chrome-everything h4 { color: #333; font: bold 1.1em "Verdana", "Helvetica", "Arial", sans-serif; margin: 5px 0 }
+td { vertical-align: top }
+#sites-chrome-everything a, #sites-chrome-everything .goog-tree-item-label a { color: #00c; text-decoration: none }
+#sites-chrome-everything a:visited, #sites-chrome-everything .goog-tree-item-label a:visited { color: #551a8b }
+#sites-chrome-everything a:hover, #sites-chrome-everything a:active, #sites-chrome-everything .goog-tree-item-label a:hover { text-decoration: underline }
+#sites-chrome-everything a img { border-left: 1px solid #ccc; border-right: 1px solid #999; border-top: 1px solid #ccc; border-bottom: 1px solid #999; padding: 7px; background-color: #fff }
+#sites-chrome-everything th { background: #fff; color: #000; text-align: left; border-top: 1px solid #ccc }
+#sites-chrome-everything hr { border: 0; background-color: #ccc; height: 1px }
+#sites-chrome-everything { color: #000; line-height: 1.25; padding-top: 20px; padding-bottom: 20px; font-family: "Verdana", "Helvetica", "Arial", sans-serif }
+#sites-chrome-page-wrapper { width: 90%; margin: auto; background: #fff }
+#sites-chrome-header-wrapper { border-width: 1px 1px 0 1px; border-style: solid; border-color: #ccc; padding: 2px 15px 0 15px }
+#sites-chrome-main-wrapper { border-width: 0 1px 0 1px; border-style: solid; border-color: #ccc; padding: 0 15px }
+#sites-chrome-footer-wrapper { border-width: 0 1px 1px 1px; border-style: solid; border-color: #ccc; padding: 0 15px 15px 15px }
+#sites-chrome-main { text-align: left; padding: 0; border-bottom: 1px solid #ccc }
+#sites-chrome-header { border-bottom: 1px solid #ccc }
+.sites-header-primary-row #sites-header-title { height: 100px; padding-left: 5px }
+body #sites-header-title h2 { font: normal 2.2em "Verdana", "Helvetica", "Arial", sans-serif; margin: 0; padding: 0 }
+#sites-header-title h2 a, #sites-header-title h2 a:visited { color: #000 }
+#sites-header-title h2 a:hover, #sites-header-title h2 a:active { text-decoration: underline }
+.sites-header-primary-row td { vertical-align: bottom }
+.sites-header-primary-row .sites-header-cell-buffer-wrapper { padding-bottom: 15px }
+body #sites-page-title-header { color: #333; font: normal 1.8em "Verdana", "Helvetica", "Arial", sans-serif; margin: 0 }
+.sites-canvas-main { background-color: transparent; padding-top: 10px }
+#title-crumbs { padding-bottom: 0 }
+body #sites-chrome-everything #sites-chrome-sidebar-left { padding: 10px 0 0 0; width: 150px; border-right: 1px solid #ccc; margin: 0 }
+body #sites-chrome-everything #sites-chrome-sidebar-right { padding: 10px 0 0 0; width: 150px; border-left: 1px solid #ccc; margin: 0 }
+.goog-ws-sidebar-content { padding: 0 }
+#sites-chrome-sidebar-left .sites-sidebar-nav, #sites-chrome-sidebar-right .sites-sidebar-nav { color: #222; line-height: 1.5 }
+#sites-chrome-sidebar-left .sites-sidebar-nav a, #sites-chrome-sidebar-right .sites-sidebar-nav a, #sites-chrome-sidebar-left .sites-sidebar-nav a:visited, #sites-chrome-sidebar-right .sites-sidebar-nav a:visited { color: #444; border-bottom: 1px solid transparent }
+.sites-sidebar-recent-activity ul .sites-sidebar-recent-activity-viewall, .sites-sidebar-nav li.topLevel { border-top-color: none }
+.sites-sidebar-nav .current-bg { color: #000; background-color: #ccc; font-weight: bold }
+.sites-sidebar-nav a:hover { text-decoration: underline; background-color: none }
+#sites-showing-results p, .sites-search-subhead { border-bottom: 1px solid #ccc }
+.sites-search-footer, p.sites-search-noresults { border-top: 1px solid #ccc }
+.sites-search-crumbs { color: #333; font-weight: bold }
+.sites-search-result h3 span, .sites-search-result .sites-search-result-fileinfo { color: #666 }
+.sites-embed { color: #333; font-size: 12px; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 5px }
+.sites-embed-content, .sites-embed-content-notitle { background-color: none; background-image: none; margin: 0 }
+body #sites-chrome-sidebar-left .sites-embed-content, body #sites-chrome-sidebar-left .sites-embed-content-notitle, body #sites-chrome-sidebar-right .sites-embed-content, body #sites-chrome-sidebar-right .sites-embed-content-notitle { background-color: none; background-image: none; margin: 0 }
+body #sites-chrome-sidebar-left .sites-embed-title, body #sites-chrome-sidebar-right .sites-embed-title { color: #000; background: none; font: bold 1.1em "Verdana", "Helvetica", "Arial", sans-serif; margin: 0; padding: 2px 0 8px }
+.sites-canvas-main .sites-embed { color: #000; font-size: 12px; border-right: 1px solid #999; border-bottom: 1px solid #999; border-top: 1px solid #ccc; border-left: 1px solid #ccc; background: none; padding: 0; margin-bottom: 0 }
+#sites-chrome-everything .sites-canvas-main .sites-embed-title { color: #000; font: bold 1.1em "Verdana", "Helvetica", "Arial", sans-serif; background: none; margin: 0; padding: 5px }
+.sites-canvas-main .sites-embed .line-divider { border-bottom: 1px solid #ccc; margin-bottom: 5px; padding-bottom: 3px }
+.sites-text-secondary { font-size: 11px; color: #666 }
+div.goog-toc { background: #eee; border: 1px solid #ccc }
+div.goog-toc a:visited { color: #00c }
+#sites-chrome-everything .goog-toc h4 { font-size: 1.2em; padding: 5px 5px 0 }
+#sitemap-tree .goog-tree-root .selected span { color: #000 }
+.sites-table td { border-bottom: 1px solid #ccc; padding-left: 5px }
+.sites-table th { border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; color: #222; background-color: #efefef }
+.sites-list-table td { border-bottom: 1px solid #ccc }
+#sites-canvas-bottom-panel { background-color: transparent; font-size: 12px }
+#sites-canvas-bottom-panel a, #sites-canvas-bottom-panel a:active, #sites-canvas-bottom-panel a:visited { color: #00c }
+#sites-canvas-bottom-panel a:hover { color: #00c; text-decoration: underline }
+#sites-canvas-bottom-panel h3 { color: #333; font: normal 13px "Verdana", "Helvetica", "Arial", sans-serif; margin: 0; padding-bottom: 3px }
+.sites-subpages { padding: 5px 10px 0 }
+#sites-attachment-wrapper h3 a, #sites-comment-wrapper h3 a, #sites-attachment-wrapper h3 a:visited, #sites-comment-wrapper h3 a:visited, #sites-attachment-wrapper h3 a:hover, #sites-comment-wrapper h3 a:hover, #sites-canvas-bottom-panel h3 span { color: #333 }
+#sites-attachment-wrapper, #sites-comment-wrapper { color: #333 }
+.sites-subfooter { color: #333; text-align: left; font-style: normal }
+.sites-subfooter p span { color: #333 }
+#sites-chrome-footer a, #sites-chrome-footer a:visited { color: #00c }
+#sites-chrome-footer a:hover { color: #00c; text-decoration: underline }
+.filecabinet-table .filecabinet-empty { border-top: 1px solid #eee; border-bottom: 1px solid #eee }
+.filecabinet td { border-top: 1px solid #eee }
+.filecabinet-desc-mouseover { background-color: #ffc }
+div.gadgets-column-chrome { color: #000; font-size: 12px; border-right: 1px solid #999; border-bottom: 1px solid #999; border-top: 1px solid #ccc; border-left: 1px solid #ccc; background-color: #fff }
+div.gadgets-column-header { background-color: transparent; border-bottom: none; color: #000 }
+div.gadgets-column-prefs { background: none; border-top: none; border-bottom: 1px solid #eee }
+.gadgets-column-title { color: #000 }
+.gadgets-column-close-button { background: url(../../html/images/icon_gadget_tools_dark.gif) }
+.gadgets-column-minimize-button { background: url(../../html/images/icon_gadget_tools_dark.gif) -16px 0    }
+.gadgets-column-restore-button { background: url(../../html/images/icon_gadget_tools_dark.gif) -32px 0    }
+.gadgets-column-prefs-button { background: url(../../html/images/icon_gadget_tools_dark.gif) -48px 0    }
+td.gadget-pref-label { color: #666 }
+.announcement { border-bottom: 1px solid #ccc }
+.announcements .announcement .timestamp, .announcementsPostTimestamp { color: #666 }
+.announcement>h4>a { color: #00c; font: normal 18px "Verdana", "Helvetica", "Arial", sans-serif }
+.announcement a:visited { color: #551a8b }
+.announcement .postfooter a { font-size: 12px }
+.goog-ws-list-sortbg-grey { background-color: #eee; color: #666 }
+#sites-chrome-everything .goog-ws-list-sort-row td { border-bottom: 1px solid #eee; border-top: 1px solid #eee; font-size: 10px }
+#sites-chrome-everything .goog-ws-list-row-hover { background-color: #ffffcc }
+#sites-chrome-everything .goog-ws-list-sort-selected { background: #ffffcc; font-weight: bold }
+#goog-ws-list-floatingBar { background-color: #fff }
+.goog-ws-list-oobe-wrapper { background: transparent }
+body .goog-ws-list-oobe .goog-ws-list-oobe-box { color: #000; font-size: 12px; border-right: 1px solid #999; border-bottom: 1px solid #999; border-top: 1px solid #ccc; border-left: 1px solid #ccc; background-color: #eee }
+body #sites-chrome-everything .goog-ws-list-oobe .goog-ws-list-oobe-box h4 { border: none; font: bold 13px "Verdana", "Helvetica", "Arial", sans-serif; margin: 0 }
+body .goog-ws-list-oobe-box .goog-ws-list-oobe-box-inside { background-color: transparent }
+.goog-ws-list-oobe-box .goog-ws-list-oobe-box-inside p { font-size: 12px }
+.goog-ws-list-header th { background-color: #fff; color: #4e6466 }
+#sites-chrome-header .sites-header-nav li { color: #00c; background-color: transparent }
+#sites-chrome-header .sites-header-nav a { color: #00c }
+#sites-chrome-header .sites-header-nav li:hover { background-color: #ccc }
+#sites-chrome-header .sites-header-nav a:hover { color: #000 }
+#sites-chrome-header .sites-header-nav li.current { color: #000; background-color: #ccc }
+#sites-chrome-header .sites-header-nav li.current:hover { color: #000; background-color: #ccc }
+#sites-chrome-header .sites-header-nav-container-links li { background-color: transparent }
+#sites-chrome-header .sites-header-nav-container-links li.current { background-color: transparent }
+#sites-chrome-header .sites-header-nav-container-links li:hover { background-color: transparent }
+#sites-chrome-header .sites-header-nav-container-links li.current:hover { background-color: transparent }
+#sites-chrome-header .sites-header-nav-container-tabs li.current, #sites-chrome-header .sites-header-nav-container-boxes li.current { background-color: #fff }
+.sites-header-nav-dropdown-menu { background-color: #fff }
+#sites-chrome-header .sites-header-nav-dropdown-menuitem-content a { color: #00c }

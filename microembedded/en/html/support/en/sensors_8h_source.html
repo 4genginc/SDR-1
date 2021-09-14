@@ -1,0 +1,1147 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>sensors.h</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>sensors.h</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">sensors.h</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="sensors_8h.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2015 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_TYPES_SENSORS_H</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_TYPES_SENSORS_H</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">uhd/config.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="error_8h.html">uhd/error.h</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#ifdef __cplusplus</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#include &lt;<a class="code" href="sensors_8hpp.html">uhd/types/sensors.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+          <span class="preprocessor">#include &lt;string&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00027"></a> 
+          <span class="lineno"> 27</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00028"></a> 
+          <span class="lineno"> 28</span>&nbsp; 
+          <span class="keyword">struct </span>uhd_sensor_value_t { 
+         </div> 
+         <div class="line"> 
+          <a name="l00029"></a> 
+          <span class="lineno"> 29</span>&nbsp; 
+          <span class="comment">// No default constructor, so we need a pointer</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00030"></a> 
+          <span class="lineno"> 30</span>&nbsp; 
+          <a class="code" href="structuhd_1_1sensor__value__t.html">uhd::sensor_value_t</a>* sensor_value_cpp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"> 31</span>&nbsp; std::string last_error; 
+         </div> 
+         <div class="line"> 
+          <a name="l00032"></a> 
+          <span class="lineno"> 32</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp; 
+          <span class="keyword">extern</span> 
+          <span class="stringliteral">&quot;C&quot;</span> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00034"></a> 
+          <span class="lineno"> 34</span>&nbsp; 
+          <span class="preprocessor">#else</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00035"></a> 
+          <span class="lineno"> 35</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="keyword">struct </span>uhd_sensor_value_t; 
+         </div> 
+         <div class="line"> 
+          <a name="l00036"></a> 
+          <span class="lineno"> 36</span>&nbsp; 
+          <span class="preprocessor">#endif</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00037"></a> 
+          <span class="lineno"> 37</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00039"></a> 
+          <span class="lineno"> 39</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00044"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#aeb03cca2394aaacbb1766e42ced78b13"> 44</a></span>&nbsp; 
+          <span class="keyword">typedef</span> 
+          <span class="keyword">struct </span>uhd_sensor_value_t* 
+          <a class="code" href="sensors_8h.html#aeb03cca2394aaacbb1766e42ced78b13">uhd_sensor_value_handle</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00045"></a> 
+          <span class="lineno"> 45</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00047"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74"> 47</a></span>&nbsp; 
+          <span class="keyword">typedef</span> 
+          <span class="keyword">enum</span> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00048"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a78c5d2b691a8eacae0bfdd0f44b992a2"> 48</a></span>&nbsp; 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a78c5d2b691a8eacae0bfdd0f44b992a2">UHD_SENSOR_VALUE_BOOLEAN</a> = 98, 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74af4c33fa917ca6254d14ad93e3fcabf1e"> 49</a></span>&nbsp; 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74af4c33fa917ca6254d14ad93e3fcabf1e">UHD_SENSOR_VALUE_INTEGER</a> = 105, 
+         </div> 
+         <div class="line"> 
+          <a name="l00050"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74ad773d06c7a24b908f5043130ceeb0954"> 50</a></span>&nbsp; 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74ad773d06c7a24b908f5043130ceeb0954">UHD_SENSOR_VALUE_REALNUM</a> = 114, 
+         </div> 
+         <div class="line"> 
+          <a name="l00051"></a> 
+          <span class="lineno"><a class="line" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a8067db89d3f2a057b81a837f63155d04"> 51</a></span>&nbsp; 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a8067db89d3f2a057b81a837f63155d04">UHD_SENSOR_VALUE_STRING</a> = 115 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"> 52</span>&nbsp;} 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74">uhd_sensor_value_data_type_t</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00053"></a> 
+          <span class="lineno"> 53</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"> 55</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00063"></a> 
+          <span class="lineno"> 63</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a68458d1a20811ff57ce393ba09a4b081">uhd_sensor_value_make_from_bool</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00064"></a> 
+          <span class="lineno"> 64</span>&nbsp; uhd_sensor_value_handle* h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"> 65</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* name, 
+         </div> 
+         <div class="line"> 
+          <a name="l00066"></a> 
+          <span class="lineno"> 66</span>&nbsp; 
+          <span class="keywordtype">bool</span> value, 
+         </div> 
+         <div class="line"> 
+          <a name="l00067"></a> 
+          <span class="lineno"> 67</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* utrue, 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"> 68</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* ufalse 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00070"></a> 
+          <span class="lineno"> 70</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00072"></a> 
+          <span class="lineno"> 72</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00080"></a> 
+          <span class="lineno"> 80</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a9079d2f3746af1a114c93df84bb27b95">uhd_sensor_value_make_from_int</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00081"></a> 
+          <span class="lineno"> 81</span>&nbsp; uhd_sensor_value_handle* h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00082"></a> 
+          <span class="lineno"> 82</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* name, 
+         </div> 
+         <div class="line"> 
+          <a name="l00083"></a> 
+          <span class="lineno"> 83</span>&nbsp; 
+          <span class="keywordtype">int</span> value, 
+         </div> 
+         <div class="line"> 
+          <a name="l00084"></a> 
+          <span class="lineno"> 84</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* unit, 
+         </div> 
+         <div class="line"> 
+          <a name="l00085"></a> 
+          <span class="lineno"> 85</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* formatter 
+         </div> 
+         <div class="line"> 
+          <a name="l00086"></a> 
+          <span class="lineno"> 86</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00087"></a> 
+          <span class="lineno"> 87</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00089"></a> 
+          <span class="lineno"> 89</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00097"></a> 
+          <span class="lineno"> 97</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a33fc3f7797205d72b2f821c10e49271c">uhd_sensor_value_make_from_realnum</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00098"></a> 
+          <span class="lineno"> 98</span>&nbsp; uhd_sensor_value_handle* h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00099"></a> 
+          <span class="lineno"> 99</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* name, 
+         </div> 
+         <div class="line"> 
+          <a name="l00100"></a> 
+          <span class="lineno"> 100</span>&nbsp; 
+          <span class="keywordtype">double</span> value, 
+         </div> 
+         <div class="line"> 
+          <a name="l00101"></a> 
+          <span class="lineno"> 101</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* unit, 
+         </div> 
+         <div class="line"> 
+          <a name="l00102"></a> 
+          <span class="lineno"> 102</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* formatter 
+         </div> 
+         <div class="line"> 
+          <a name="l00103"></a> 
+          <span class="lineno"> 103</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00104"></a> 
+          <span class="lineno"> 104</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00106"></a> 
+          <span class="lineno"> 106</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00113"></a> 
+          <span class="lineno"> 113</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a9b5025c5f24f3218c2313cac86918411">uhd_sensor_value_make_from_string</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00114"></a> 
+          <span class="lineno"> 114</span>&nbsp; uhd_sensor_value_handle* h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00115"></a> 
+          <span class="lineno"> 115</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* name, 
+         </div> 
+         <div class="line"> 
+          <a name="l00116"></a> 
+          <span class="lineno"> 116</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* value, 
+         </div> 
+         <div class="line"> 
+          <a name="l00117"></a> 
+          <span class="lineno"> 117</span>&nbsp; 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">char</span>* unit 
+         </div> 
+         <div class="line"> 
+          <a name="l00118"></a> 
+          <span class="lineno"> 118</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00119"></a> 
+          <span class="lineno"> 119</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00121"></a> 
+          <span class="lineno"> 121</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00125"></a> 
+          <span class="lineno"> 125</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#acda87bc16f52769f8c0d077d1639cc74">uhd_sensor_value_free</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00126"></a> 
+          <span class="lineno"> 126</span>&nbsp; uhd_sensor_value_handle* h 
+         </div> 
+         <div class="line"> 
+          <a name="l00127"></a> 
+          <span class="lineno"> 127</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00128"></a> 
+          <span class="lineno"> 128</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00130"></a> 
+          <span class="lineno"> 130</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#ae6569e55bba10a5308ca6f9e53282684">uhd_sensor_value_to_bool</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00131"></a> 
+          <span class="lineno"> 131</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00132"></a> 
+          <span class="lineno"> 132</span>&nbsp; 
+          <span class="keywordtype">bool</span> *value_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00133"></a> 
+          <span class="lineno"> 133</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00134"></a> 
+          <span class="lineno"> 134</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00136"></a> 
+          <span class="lineno"> 136</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#aa5849ff3965fa007277e0d47d2584710">uhd_sensor_value_to_int</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00137"></a> 
+          <span class="lineno"> 137</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00138"></a> 
+          <span class="lineno"> 138</span>&nbsp; 
+          <span class="keywordtype">int</span> *value_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00139"></a> 
+          <span class="lineno"> 139</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00140"></a> 
+          <span class="lineno"> 140</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00142"></a> 
+          <span class="lineno"> 142</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#aaa4e467ee5e4c0d423c476e8c70c8ffa">uhd_sensor_value_to_realnum</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00143"></a> 
+          <span class="lineno"> 143</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00144"></a> 
+          <span class="lineno"> 144</span>&nbsp; 
+          <span class="keywordtype">double</span> *value_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00145"></a> 
+          <span class="lineno"> 145</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00146"></a> 
+          <span class="lineno"> 146</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00148"></a> 
+          <span class="lineno"> 148</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00156"></a> 
+          <span class="lineno"> 156</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#ad641011c37720c7ec99a719717140e20">uhd_sensor_value_name</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00157"></a> 
+          <span class="lineno"> 157</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00158"></a> 
+          <span class="lineno"> 158</span>&nbsp; 
+          <span class="keywordtype">char</span>* name_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00159"></a> 
+          <span class="lineno"> 159</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00160"></a> 
+          <span class="lineno"> 160</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00161"></a> 
+          <span class="lineno"> 161</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00163"></a> 
+          <span class="lineno"> 163</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00171"></a> 
+          <span class="lineno"> 171</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a5f6ac5429b73d26224e9483f564f5fd2">uhd_sensor_value_value</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00172"></a> 
+          <span class="lineno"> 172</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00173"></a> 
+          <span class="lineno"> 173</span>&nbsp; 
+          <span class="keywordtype">char</span>* value_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00174"></a> 
+          <span class="lineno"> 174</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00175"></a> 
+          <span class="lineno"> 175</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00176"></a> 
+          <span class="lineno"> 176</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00178"></a> 
+          <span class="lineno"> 178</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00186"></a> 
+          <span class="lineno"> 186</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#af326947e74fdb79453d801c3efec0e57">uhd_sensor_value_unit</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00187"></a> 
+          <span class="lineno"> 187</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00188"></a> 
+          <span class="lineno"> 188</span>&nbsp; 
+          <span class="keywordtype">char</span>* unit_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00189"></a> 
+          <span class="lineno"> 189</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00190"></a> 
+          <span class="lineno"> 190</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00191"></a> 
+          <span class="lineno"> 191</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00192"></a> 
+          <span class="lineno"> 192</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a23a8d12786d020e5d20d71a22f44d6bc">uhd_sensor_value_data_type</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00193"></a> 
+          <span class="lineno"> 193</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00194"></a> 
+          <span class="lineno"> 194</span>&nbsp; 
+          <a class="code" href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74">uhd_sensor_value_data_type_t</a> *data_type_out 
+         </div> 
+         <div class="line"> 
+          <a name="l00195"></a> 
+          <span class="lineno"> 195</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00196"></a> 
+          <span class="lineno"> 196</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00198"></a> 
+          <span class="lineno"> 198</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00206"></a> 
+          <span class="lineno"> 206</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a516410ccb2e6b76e2f1855ddf8ff36f3">uhd_sensor_value_to_pp_string</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00207"></a> 
+          <span class="lineno"> 207</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00208"></a> 
+          <span class="lineno"> 208</span>&nbsp; 
+          <span class="keywordtype">char</span>* pp_string_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00209"></a> 
+          <span class="lineno"> 209</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00210"></a> 
+          <span class="lineno"> 210</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00211"></a> 
+          <span class="lineno"> 211</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00213"></a> 
+          <span class="lineno"> 213</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00221"></a> 
+          <span class="lineno"> 221</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          <a class="code" href="sensors_8h.html#a296bc75338059445a2a2598fe8aba305">uhd_sensor_value_last_error</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00222"></a> 
+          <span class="lineno"> 222</span>&nbsp; uhd_sensor_value_handle h, 
+         </div> 
+         <div class="line"> 
+          <a name="l00223"></a> 
+          <span class="lineno"> 223</span>&nbsp; 
+          <span class="keywordtype">char</span>* error_out, 
+         </div> 
+         <div class="line"> 
+          <a name="l00224"></a> 
+          <span class="lineno"> 224</span>&nbsp; 
+          <span class="keywordtype">size_t</span> strbuffer_len 
+         </div> 
+         <div class="line"> 
+          <a name="l00225"></a> 
+          <span class="lineno"> 225</span>&nbsp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00226"></a> 
+          <span class="lineno"> 226</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00227"></a> 
+          <span class="lineno"> 227</span>&nbsp; 
+          <span class="preprocessor">#ifdef __cplusplus</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00228"></a> 
+          <span class="lineno"> 228</span>&nbsp; 
+          <span class="preprocessor"></span>} 
+         </div> 
+         <div class="line"> 
+          <a name="l00229"></a> 
+          <span class="lineno"> 229</span>&nbsp; 
+          <span class="preprocessor">#endif</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00230"></a> 
+          <span class="lineno"> 230</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00231"></a> 
+          <span class="lineno"> 231</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_TYPES_SENSORS_H */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_aaa4e467ee5e4c0d423c476e8c70c8ffa"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#aaa4e467ee5e4c0d423c476e8c70c8ffa">uhd_sensor_value_to_realnum</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_to_realnum(uhd_sensor_value_handle h, double *value_out) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's value as a real number. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a9079d2f3746af1a114c93df84bb27b95"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a9079d2f3746af1a114c93df84bb27b95">uhd_sensor_value_make_from_int</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_make_from_int(uhd_sensor_value_handle *h, const char *name, int value, const char *unit, const char *formatter) 
+          </div> 
+          <div class="ttdoc">
+            Make a UHD sensor from an integer. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a296bc75338059445a2a2598fe8aba305"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a296bc75338059445a2a2598fe8aba305">uhd_sensor_value_last_error</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_last_error(uhd_sensor_value_handle h, char *error_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get the last error logged by the sensor handle. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acc485fe487df83f53d5646640b3a5b74a8067db89d3f2a057b81a837f63155d04"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a8067db89d3f2a057b81a837f63155d04">UHD_SENSOR_VALUE_STRING</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:51 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_af326947e74fdb79453d801c3efec0e57"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#af326947e74fdb79453d801c3efec0e57">uhd_sensor_value_unit</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_unit(uhd_sensor_value_handle h, char *unit_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's unit. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a5f6ac5429b73d26224e9483f564f5fd2"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a5f6ac5429b73d26224e9483f564f5fd2">uhd_sensor_value_value</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_value(uhd_sensor_value_handle h, char *value_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's value. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a9b5025c5f24f3218c2313cac86918411"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a9b5025c5f24f3218c2313cac86918411">uhd_sensor_value_make_from_string</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_make_from_string(uhd_sensor_value_handle *h, const char *name, const char *value, const char *unit) 
+          </div> 
+          <div class="ttdoc">
+            Make a UHD sensor from a string. 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html"> 
+          <div class="ttname"> 
+           <a href="config_8h.html">config.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="sensors_8hpp.html">sensors.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acc485fe487df83f53d5646640b3a5b74ad773d06c7a24b908f5043130ceeb0954"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74ad773d06c7a24b908f5043130ceeb0954">UHD_SENSOR_VALUE_REALNUM</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:50 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acda87bc16f52769f8c0d077d1639cc74"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acda87bc16f52769f8c0d077d1639cc74">uhd_sensor_value_free</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_free(uhd_sensor_value_handle *h) 
+          </div> 
+          <div class="ttdoc">
+            Free the given sensor handle. 
+          </div> 
+         </div> 
+         <div class="ttc" id="error_8h_html"> 
+          <div class="ttname"> 
+           <a href="error_8h.html">error.h</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a68458d1a20811ff57ce393ba09a4b081"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a68458d1a20811ff57ce393ba09a4b081">uhd_sensor_value_make_from_bool</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_make_from_bool(uhd_sensor_value_handle *h, const char *name, bool value, const char *utrue, const char *ufalse) 
+          </div> 
+          <div class="ttdoc">
+            Make a UHD sensor from a boolean. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acc485fe487df83f53d5646640b3a5b74"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74">uhd_sensor_value_data_type_t</a> 
+          </div> 
+          <div class="ttdeci">
+            uhd_sensor_value_data_type_t 
+          </div> 
+          <div class="ttdoc">
+            Sensor value types. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:47 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a23a8d12786d020e5d20d71a22f44d6bc"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a23a8d12786d020e5d20d71a22f44d6bc">uhd_sensor_value_data_type</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_data_type(uhd_sensor_value_handle h, uhd_sensor_value_data_type_t *data_type_out) 
+          </div> 
+         </div> 
+         <div class="ttc" id="error_8h_html_a7fbc3f872dadd2c73cd656b2e5acdd2b"> 
+          <div class="ttname"> 
+           <a href="error_8h.html#a7fbc3f872dadd2c73cd656b2e5acdd2b">uhd_error</a> 
+          </div> 
+          <div class="ttdeci">
+            uhd_error 
+          </div> 
+          <div class="ttdoc">
+            UHD error codes. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> error.h:31 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1sensor__value__t_html"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1sensor__value__t.html">uhd::sensor_value_t</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.hpp:38 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acc485fe487df83f53d5646640b3a5b74a78c5d2b691a8eacae0bfdd0f44b992a2"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74a78c5d2b691a8eacae0bfdd0f44b992a2">UHD_SENSOR_VALUE_BOOLEAN</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:48 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a516410ccb2e6b76e2f1855ddf8ff36f3"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a516410ccb2e6b76e2f1855ddf8ff36f3">uhd_sensor_value_to_pp_string</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_to_pp_string(uhd_sensor_value_handle h, char *pp_string_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get a pretty-print representation of the given sensor. 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_a33fc3f7797205d72b2f821c10e49271c"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#a33fc3f7797205d72b2f821c10e49271c">uhd_sensor_value_make_from_realnum</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_make_from_realnum(uhd_sensor_value_handle *h, const char *name, double value, const char *unit, const char *formatter) 
+          </div> 
+          <div class="ttdoc">
+            Make a UHD sensor from a real number. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_aeb03cca2394aaacbb1766e42ced78b13"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#aeb03cca2394aaacbb1766e42ced78b13">uhd_sensor_value_handle</a> 
+          </div> 
+          <div class="ttdeci">
+            struct uhd_sensor_value_t * uhd_sensor_value_handle 
+          </div> 
+          <div class="ttdoc">
+            C-level interface for a UHD sensor. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:44 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_acc485fe487df83f53d5646640b3a5b74af4c33fa917ca6254d14ad93e3fcabf1e"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#acc485fe487df83f53d5646640b3a5b74af4c33fa917ca6254d14ad93e3fcabf1e">UHD_SENSOR_VALUE_INTEGER</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> sensors.h:49 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_ad641011c37720c7ec99a719717140e20"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#ad641011c37720c7ec99a719717140e20">uhd_sensor_value_name</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_name(uhd_sensor_value_handle h, char *name_out, size_t strbuffer_len) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's name. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_aa5849ff3965fa007277e0d47d2584710"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#aa5849ff3965fa007277e0d47d2584710">uhd_sensor_value_to_int</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_to_int(uhd_sensor_value_handle h, int *value_out) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's value as an integer. 
+          </div> 
+         </div> 
+         <div class="ttc" id="sensors_8h_html_ae6569e55bba10a5308ca6f9e53282684"> 
+          <div class="ttname"> 
+           <a href="sensors_8h.html#ae6569e55bba10a5308ca6f9e53282684">uhd_sensor_value_to_bool</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API uhd_error uhd_sensor_value_to_bool(uhd_sensor_value_handle h, bool *value_out) 
+          </div> 
+          <div class="ttdoc">
+            Get the sensor's value as a boolean. 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

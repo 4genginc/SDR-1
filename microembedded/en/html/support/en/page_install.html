@@ -1,0 +1,262 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Binary Installation</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Binary Installation</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Binary Installation</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#install_win">Installation on Windows</a> 
+           <ul> 
+            <li class="level2"><a href="#install_win_libusb">LibUSBx</a></li> 
+            <li class="level2"><a href="#install_win_installer">Installer Packages</a></li> 
+            <li class="level2"><a href="#install_win_post">Post-Install Tasks</a></li> 
+            <li class="level2"><a href="#install_win_source">Building from source</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#install_linux">Installation on Linux</a> 
+           <ul> 
+            <li class="level2"><a href="#install_linux_pkgmgr">Using your package manager</a></li> 
+            <li class="level2"><a href="#install_linux_ourbins">Using binaries provided by Ettus Research</a> 
+             <ul> 
+              <li class="level3"><a href="#install_linux_ourbins_ubuntu">Ubuntu</a></li> 
+              <li class="level3"><a href="#install_linux_ourbins_fedora">Fedora</a></li> 
+             </ul> </li> 
+            <li class="level2"><a href="#install_linux_pybombs">Using PyBOMBS</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#install_osx">Installation on Mac OS X</a></li> 
+          <li class="level1"><a href="#install_osx_macports">Via MacPorts</a></li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="install_win"></a> Installation on Windows</h1> 
+         <p>We provide UHD software installers for Windows users who do not wish to install UHD from source.</p> 
+         <h2><a class="anchor" id="install_win_libusb"></a> LibUSBx</h2> 
+         <p>All Windows installers are built with LibUSBx to enable USB3 support.</p> 
+         <h2><a class="anchor" id="install_win_installer"></a> Installer Packages</h2> 
+         <p>Installer packages are built from release tags of the maint branch.</p> 
+         <p>Please find the latest installer here: <a href="http://files.ettus.com/binaries/uhd/latest_release">http://files.ettus.com/binaries/uhd/latest_release</a></p> 
+         <p>Older installers of all previous releases can be downloaded from: <a href="http://files.ettus.com/binaries/uhd/">http://files.ettus.com/binaries/uhd/</a> (browse to the desired release).</p> 
+         <h2><a class="anchor" id="install_win_post"></a> Post-Install Tasks</h2> 
+         <p>Using a USB-based device?</p> 
+         <ul> 
+          <li>Download and install Windows UHD USB Drivers: <a href="http://files.ettus.com/binaries/misc/erllc_uhd_winusb_driver.zip">http://files.ettus.com/binaries/misc/erllc_uhd_winusb_driver.zip</a></li> 
+          <li><a class="el" href="page_transport.html#transport_usb_installwin">Install USB driver (Windows)</a></li> 
+         </ul> 
+         <p>Install the MSVC Redistributable Package:</p> 
+         <ul> 
+          <li>Download <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=a7b7a05e-6de6-4d3a-a423-37bf0912db84
+">MSVC Redistributable Package</a></li> 
+         </ul> 
+         <h2><a class="anchor" id="install_win_source"></a> Building from source</h2> 
+         <p>You can build UHD software from source. There are two choices of compilers for Windows users:</p> 
+         <ul> 
+          <li>Microsoft Visual Studio Express. 
+           <ul> 
+            <li>Users can develop with the free version.</li> 
+           </ul> </li> 
+          <li>MinGW 
+           <ul> 
+            <li>An alternative to using a Microsoft compiler.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Refer to <a class="el" href="page_build_guide.html#build_instructions_windows">Build Instructions (Windows)</a></p> 
+         <h1><a class="anchor" id="install_linux"></a> Installation on Linux</h1> 
+         <h2><a class="anchor" id="install_linux_pkgmgr"></a> Using your package manager</h2> 
+         <p>Most distributions provide UHD as part of their package management. On Debian and Ubuntu systems, this will install the base UHD library, all headers and build-specific files, as well as utilities: </p> 
+         <pre class="fragment">sudo apt-get install libuhd-dev libuhd003 uhd-host
+</pre> 
+         <p>On Fedora systems, an equivalent command would be: </p> 
+         <pre class="fragment">sudo yum install uhd uhd-devel
+</pre> 
+         <p>On other distributions, please refer to your package manager's documentation.</p> 
+         <h2><a class="anchor" id="install_linux_ourbins"></a> Using binaries provided by Ettus Research</h2> 
+         <p>We provide UHD binary installers for Ubuntu and Fedora users for every stable release. Typically, we will provide binaries for latest two LTS versions of Ubuntu, and for the latest two versions of Fedora.</p> 
+         <p>The latest versions of these binaries can be downloaded from here: <a href="http://files.ettus.com/binaries/uhd_stable/latest_release/">http://files.ettus.com/binaries/uhd_stable/latest_release/</a></p> 
+         <h3><a class="anchor" id="install_linux_ourbins_ubuntu"></a> Ubuntu</h3> 
+         <p>Copy and paste these commands into your terminal. This will install UHD software as well as allow you to receive package updates. </p> 
+         <pre class="fragment">sudo add-apt-repository ppa:ettusresearch/uhd
+sudo apt-get update
+sudo apt-get install libuhd-dev libuhd003 uhd-host
+</pre> 
+         <h3><a class="anchor" id="install_linux_ourbins_fedora"></a> Fedora</h3> 
+         <p><b>Note:</b> You might want to run the following command if you're updating repositories: </p> 
+         <pre class="fragment">yum clean metadata all
+</pre> 
+         <p>Create the file /etc/yum.repos.d/ettus.repo. Copy this into the file: </p> 
+         <pre class="fragment">[ettus-uhd-stable-repo]
+name=Ettus Research - UHD Stable $releasever-$basearchthon serial timeout
+baseurl=http://files.ettus.com/binaries/uhd/repo/uhd/fedora/$releasever/$basearch
+gpgcheck=0
+</pre> 
+         <p>Run the following commands: </p> 
+         <pre class="fragment">sudo yum --enablerepo='ettus-uhd-stable-repo' install uhd
+</pre> 
+         <h2><a class="anchor" id="install_linux_pybombs"></a> Using PyBOMBS</h2> 
+         <p>This is an automated way of installing UHD from source. See also <a class="el" href="page_build_guide.html#build_pybombs">Using PyBOMBS</a>.</p> 
+         <h1><a class="anchor" id="install_osx"></a> Installation on Mac OS X</h1> 
+         <h1><a class="anchor" id="install_osx_macports"></a> Via MacPorts</h1> 
+         <p>We recommend using MacPorts and actively support UHD development on OS X via this method. Using MacPorts, the correct hardware device images are automatically installed for you, and there are no post install tasks. With a single command, you can be up and running in short order.</p> 
+         <p>If you do not already have MacPorts installed, you will need to install it first. Make sure to follow the MacPorts shell environment changes needed such that MacPorts installed executables are found before all others. These are the only changes to the shell environment needed to execute any MacPorts-installed executable. Setting any DYLD environment variable (e.g., DYLD_LIBRARY_PATH) for general use is highly discouraged, because doing so, in our experience, leads to problems down the road that are very difficult to diagnose. OSX provides robust means for correcting DYLD-based issues even after dependencies are installed.</p> 
+         <p>Once MacPorts is installed, UHD and all of its dependencies can be installed by executing </p> 
+         <pre class="fragment">sudo port install uhd
+</pre> 
+         <p>The latest developments in UHD can be installed via </p> 
+         <pre class="fragment">sudo port install uhd-devel
+</pre> 
+         <p>Please note that the uhd-devel port, while tested for basic compilation and functionality, is not a formal release and hence should be considered beta software which might contain bugs or major issues. </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

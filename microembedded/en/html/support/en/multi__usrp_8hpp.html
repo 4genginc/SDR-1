@@ -1,0 +1,529 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>multi_usrp.hpp File Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>multi_usrp.hpp File Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">multi_usrp.hpp File Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <code>#include &lt;<a class="el" href="config_8hpp_source.html">uhd/config.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="device_8hpp_source.html">uhd/device.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="deprecated_8hpp_source.html">uhd/deprecated.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="ranges_8hpp_source.html">uhd/types/ranges.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="stream__cmd_8hpp_source.html">uhd/types/stream_cmd.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="tune__request_8hpp_source.html">uhd/types/tune_request.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="tune__result_8hpp_source.html">uhd/types/tune_result.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="sensors_8hpp_source.html">uhd/types/sensors.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="filters_8hpp_source.html">uhd/types/filters.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="subdev__spec_8hpp_source.html">uhd/usrp/subdev_spec.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="dboard__iface_8hpp_source.html">uhd/usrp/dboard_iface.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/shared_ptr.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;boost/utility.hpp&gt;</code> 
+         <br /> 
+         <code>#include &lt;complex&gt;</code> 
+         <br /> 
+         <code>#include &lt;string&gt;</code> 
+         <br /> 
+         <code>#include &lt;vector&gt;</code> 
+         <br /> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           Include dependency graph for multi_usrp.hpp: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="multi__usrp_8hpp__incl.png" width="900" border="0" usemap="#include_2uhd_2usrp_2multi__usrp_8hpp" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2usrp_2multi__usrp_8hpp" id="include_2uhd_2usrp_2multi__usrp_8hpp"> <area shape="rect" id="node2" href="config_8hpp.html" title="uhd/config.hpp" alt="" coords="1719,395,1825,421"></area><area shape="rect" id="node4" href="device_8hpp.html" title="uhd/device.hpp" alt="" coords="1362,96,1472,123"></area><area shape="rect" id="node17" href="stream__cmd_8hpp.html" title="uhd/types/stream_cmd.hpp" alt="" coords="819,245,999,272"></area><area shape="rect" id="node22" href="deprecated_8hpp.html" title="uhd/deprecated.hpp" alt="" coords="213,245,348,272"></area><area shape="rect" id="node29" href="ranges_8hpp.html" title="uhd/types/ranges.hpp" alt="" coords="2397,245,2544,272"></area><area shape="rect" id="node30" href="tune__request_8hpp.html" title="uhd/types/tune_request.hpp" alt="" coords="1305,171,1487,197"></area><area shape="rect" id="node31" href="tune__result_8hpp.html" title="uhd/types/tune_result.hpp" alt="" coords="1921,245,2092,272"></area><area shape="rect" id="node32" href="sensors_8hpp.html" title="uhd/types/sensors.hpp" alt="" coords="2117,245,2271,272"></area><area shape="rect" id="node33" href="filters_8hpp.html" title="uhd/types/filters.hpp" alt="" coords="4106,171,4245,197"></area><area shape="rect" id="node44" href="subdev__spec_8hpp.html" title="uhd/usrp/subdev_spec.hpp" alt="" coords="3163,245,3341,272"></area><area shape="rect" id="node45" href="dboard__iface_8hpp.html" title="uhd/usrp/dboard_iface.hpp" alt="" coords="2837,171,3011,197"></area><area shape="rect" id="node5" href="stream_8hpp.html" title="uhd/stream.hpp" alt="" coords="1512,171,1623,197"></area><area shape="rect" id="node12" href="device__addr_8hpp.html" title="uhd/types/device_addr.hpp" alt="" coords="1307,245,1485,272"></area><area shape="rect" id="node25" href="property__tree_8hpp.html" title="uhd/property_tree.hpp" alt="" coords="1561,245,1708,272"></area><area shape="rect" id="node28" href="device__deprecated_8ipp.html" title="uhd/device_deprecated.ipp" alt="" coords="1051,171,1228,197"></area><area shape="rect" id="node6" href="metadata_8hpp.html" title="uhd/types/metadata.hpp" alt="" coords="1733,245,1896,272"></area><area shape="rect" id="node18" href="ref__vector_8hpp.html" title="uhd/types/ref_vector.hpp" alt="" coords="425,245,591,272"></area><area shape="rect" id="node7" href="time__spec_8hpp.html" title="uhd/types/time_spec.hpp" alt="" coords="1541,320,1709,347"></area><area shape="rect" id="node13" href="dict_8hpp.html" title="uhd/types/dict.hpp" alt="" coords="1835,320,1964,347"></area><area shape="rect" id="node23" href="io__type_8hpp.html" title="uhd/types/io_type.hpp" alt="" coords="94,320,244,347"></area><area shape="rect" id="node24" href="clock__config_8hpp.html" title="uhd/types/clock_config.hpp" alt="" coords="269,320,451,347"></area><area shape="rect" id="node27" href="property__tree_8ipp.html" title="uhd/property_tree.ipp" alt="" coords="2243,320,2387,347"></area><area shape="rect" id="node34" href="log_8hpp.html" title="uhd/utils/log.hpp" alt="" coords="4517,245,4633,272"></area><area shape="rect" id="node40" href="msg_8hpp.html" title="uhd/utils/msg.hpp" alt="" coords="3680,245,3805,272"></area><area shape="rect" id="node35" href="pimpl_8hpp.html" title="uhd/utils/pimpl.hpp" alt="" coords="3725,320,3855,347"></area><area shape="rect" id="node46" href="serial_8hpp.html" title="uhd/types/serial.hpp" alt="" coords="3517,245,3656,272"></area><area shape="rect" id="node47" href="fe__connection_8hpp.html" title="uhd/usrp/fe_connection.hpp" alt="" coords="2955,245,3137,272"></area><area shape="rect" id="node48" href="gpio__defs_8hpp.html" title="uhd/usrp/gpio_defs.hpp" alt="" coords="1075,245,1232,272"></area></map> 
+         </div> 
+        </div> 
+        <p><a href="multi__usrp_8hpp_source.html">Go to the source code of this file.</a></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a> Classes</h2></td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1usrp_1_1multi__usrp.html">uhd::usrp::multi_usrp</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">struct &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1usrp_1_1multi__usrp_1_1register__info__t.html">uhd::usrp::multi_usrp::register_info_t</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="namespaces"></a> Namespaces</h2></td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html">uhd</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1usrp"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1usrp.html">uhd::usrp</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="define-members"></a> Macros</h2></td> 
+          </tr> 
+          <tr class="memitem:aa774cf37976e5575b1d4e7d2316d28be"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#aa774cf37976e5575b1d4e7d2316d28be">UHD_USRP_MULTI_USRP_REF_SOURCES_API</a></td> 
+          </tr> 
+          <tr class="separator:aa774cf37976e5575b1d4e7d2316d28be"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8968eebf62a087adda496f1d56f1cda6"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#a8968eebf62a087adda496f1d56f1cda6">UHD_USRP_MULTI_USRP_GET_RATES_API</a></td> 
+          </tr> 
+          <tr class="separator:a8968eebf62a087adda496f1d56f1cda6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:adb4fa94d92b9f24fa473a21b4a7c3771"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#adb4fa94d92b9f24fa473a21b4a7c3771">UHD_USRP_MULTI_USRP_FRONTEND_CAL_API</a></td> 
+          </tr> 
+          <tr class="separator:adb4fa94d92b9f24fa473a21b4a7c3771"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aa3d003ceec2a76aaf8fb8074fb9ffca8"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#aa3d003ceec2a76aaf8fb8074fb9ffca8">UHD_USRP_MULTI_USRP_FRONTEND_IQ_AUTO_API</a></td> 
+          </tr> 
+          <tr class="separator:aa3d003ceec2a76aaf8fb8074fb9ffca8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a73ae0292d4437dc2c8143f950ea5716f"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#a73ae0292d4437dc2c8143f950ea5716f">UHD_USRP_MULTI_USRP_COMMAND_TIME_API</a></td> 
+          </tr> 
+          <tr class="separator:a73ae0292d4437dc2c8143f950ea5716f"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aeb2028584c683a07f04fc75237ebd162"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#aeb2028584c683a07f04fc75237ebd162">UHD_USRP_MULTI_USRP_BW_RANGE_API</a></td> 
+          </tr> 
+          <tr class="separator:aeb2028584c683a07f04fc75237ebd162"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a929cd3a4207e9ee6cc9a1a77aebdb21c"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#a929cd3a4207e9ee6cc9a1a77aebdb21c">UHD_USRP_MULTI_USRP_USER_REGS_API</a></td> 
+          </tr> 
+          <tr class="separator:a929cd3a4207e9ee6cc9a1a77aebdb21c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ae14f42e4db6d05629844264612c59ae8"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#ae14f42e4db6d05629844264612c59ae8">UHD_USRP_MULTI_USRP_GET_USRP_INFO_API</a></td> 
+          </tr> 
+          <tr class="separator:ae14f42e4db6d05629844264612c59ae8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:afd8af1ea85f27ef0275e07daccf0e3a8"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#afd8af1ea85f27ef0275e07daccf0e3a8">UHD_USRP_MULTI_USRP_NORMALIZED_GAIN</a></td> 
+          </tr> 
+          <tr class="separator:afd8af1ea85f27ef0275e07daccf0e3a8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ab2ae519ba467a0548797bea602135060"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#ab2ae519ba467a0548797bea602135060">UHD_USRP_MULTI_USRP_GPIO_API</a></td> 
+          </tr> 
+          <tr class="separator:ab2ae519ba467a0548797bea602135060"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ae614d0d160eaa9c582939c02a6296d61"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#ae614d0d160eaa9c582939c02a6296d61">UHD_USRP_MULTI_USRP_REGISTER_API</a></td> 
+          </tr> 
+          <tr class="separator:ae614d0d160eaa9c582939c02a6296d61"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a4acaf678be1ec665880ab800dafba6a1"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#a4acaf678be1ec665880ab800dafba6a1">UHD_USRP_MULTI_USRP_FILTER_API</a></td> 
+          </tr> 
+          <tr class="separator:a4acaf678be1ec665880ab800dafba6a1"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a86a8d7f81bdf45200291a600a5222d1a"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="multi__usrp_8hpp.html#a86a8d7f81bdf45200291a600a5222d1a">UHD_USRP_MULTI_USRP_LO_CONFIG_API</a></td> 
+          </tr> 
+          <tr class="separator:a86a8d7f81bdf45200291a600a5222d1a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <h2 class="groupheader">Macro Definition Documentation</h2> 
+        <a class="anchor" id="aeb2028584c683a07f04fc75237ebd162"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_BW_RANGE_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a73ae0292d4437dc2c8143f950ea5716f"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_COMMAND_TIME_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a4acaf678be1ec665880ab800dafba6a1"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_FILTER_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="adb4fa94d92b9f24fa473a21b4a7c3771"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_FRONTEND_CAL_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aa3d003ceec2a76aaf8fb8074fb9ffca8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_FRONTEND_IQ_AUTO_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8968eebf62a087adda496f1d56f1cda6"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_GET_RATES_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ae14f42e4db6d05629844264612c59ae8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_GET_USRP_INFO_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ab2ae519ba467a0548797bea602135060"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_GPIO_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a86a8d7f81bdf45200291a600a5222d1a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_LO_CONFIG_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="afd8af1ea85f27ef0275e07daccf0e3a8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_NORMALIZED_GAIN</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aa774cf37976e5575b1d4e7d2316d28be"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_REF_SOURCES_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ae614d0d160eaa9c582939c02a6296d61"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_REGISTER_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a929cd3a4207e9ee6cc9a1a77aebdb21c"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_USRP_MULTI_USRP_USER_REGS_API</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

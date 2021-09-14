@@ -1,0 +1,590 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::property_tree Class Reference abstract</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::property_tree Class Reference abstract</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::property_tree Class Reference abstract</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="property__tree_8hpp_source.html">uhd/property_tree.hpp</a>&gt;</code></p> 
+        <div class="dynheader">
+          Inheritance diagram for uhd::property_tree: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1property__tree__inherit__graph.png" border="0" usemap="#uhd_1_1property__tree_inherit__map" alt="Inheritance graph" /> 
+         </div> 
+         <map name="uhd_1_1property__tree_inherit__map" id="uhd_1_1property__tree_inherit__map"> </map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <div class="dynheader">
+          Collaboration diagram for uhd::property_tree: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1property__tree__coll__graph.png" border="0" usemap="#uhd_1_1property__tree_coll__map" alt="Collaboration graph" /> 
+         </div> 
+         <map name="uhd_1_1property__tree_coll__map" id="uhd_1_1property__tree_coll__map"> </map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:ae509cb2b5e06df9926ab2c0e7e2c76bc"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bc">coerce_mode_t</a> { <a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bca5522ce5e197ad2af3a228e2f2b3a80e1">AUTO_COERCE</a>, <a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bca740ade71d6e76ec6e81af54412ecd857">MANUAL_COERCE</a> }</td> 
+          </tr> 
+          <tr class="separator:ae509cb2b5e06df9926ab2c0e7e2c76bc"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aebbee624be5b4c8cd5c590aa60ccbd10"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak" /> &lt; <a class="el" href="classuhd_1_1property__tree.html">property_tree</a> &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">sptr</a></td> 
+          </tr> 
+          <tr class="separator:aebbee624be5b4c8cd5c590aa60ccbd10"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a7a1624d69da606fc05bc7fba7f0f6026"> 
+           <td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#a7a1624d69da606fc05bc7fba7f0f6026">~property_tree</a> (void)=0</td> 
+          </tr> 
+          <tr class="separator:a7a1624d69da606fc05bc7fba7f0f6026"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ad369a07c498fb949bc65f91f151d8901"> 
+           <td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#ad369a07c498fb949bc65f91f151d8901">subtree</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path) const =0</td> 
+          </tr> 
+          <tr class="memdesc:ad369a07c498fb949bc65f91f151d8901"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Get a subtree with a new root starting at path. <a href="#ad369a07c498fb949bc65f91f151d8901">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:ad369a07c498fb949bc65f91f151d8901"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aaa810db6efd763cdec797f32dacb9dbb"> 
+           <td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#aaa810db6efd763cdec797f32dacb9dbb">remove</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path)=0</td> 
+          </tr> 
+          <tr class="memdesc:aaa810db6efd763cdec797f32dacb9dbb"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Remove a property or directory (recursive) <a href="#aaa810db6efd763cdec797f32dacb9dbb">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:aaa810db6efd763cdec797f32dacb9dbb"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:adc86bc93ee29257873291879cd905dc4"> 
+           <td class="memItemLeft" align="right" valign="top">virtual bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#adc86bc93ee29257873291879cd905dc4">exists</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path) const =0</td> 
+          </tr> 
+          <tr class="memdesc:adc86bc93ee29257873291879cd905dc4"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">True if the path exists in the tree. <a href="#adc86bc93ee29257873291879cd905dc4">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:adc86bc93ee29257873291879cd905dc4"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a740cb283e9e65b7ba655a6b010e35d6b"> 
+           <td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#a740cb283e9e65b7ba655a6b010e35d6b">list</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path) const =0</td> 
+          </tr> 
+          <tr class="memdesc:a740cb283e9e65b7ba655a6b010e35d6b"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Get an iterable to all things in the given path. <a href="#a740cb283e9e65b7ba655a6b010e35d6b">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a740cb283e9e65b7ba655a6b010e35d6b"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1ee12fe8189f208863ebaa8d02954437"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td> 
+          </tr> 
+          <tr class="memitem:a1ee12fe8189f208863ebaa8d02954437"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1property.html">property</a>&lt; T &gt; &amp;&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#a1ee12fe8189f208863ebaa8d02954437">create</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path, <a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bc">coerce_mode_t</a> coerce_mode=<a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bca5522ce5e197ad2af3a228e2f2b3a80e1">AUTO_COERCE</a>)</td> 
+          </tr> 
+          <tr class="memdesc:a1ee12fe8189f208863ebaa8d02954437"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Create a new property entry in the tree. <a href="#a1ee12fe8189f208863ebaa8d02954437">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a1ee12fe8189f208863ebaa8d02954437"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ac9bb57d70cdefe58468b208f250059e4"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td> 
+          </tr> 
+          <tr class="memitem:ac9bb57d70cdefe58468b208f250059e4"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1property.html">property</a>&lt; T &gt; &amp;&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#ac9bb57d70cdefe58468b208f250059e4">access</a> (const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;path)</td> 
+          </tr> 
+          <tr class="memdesc:ac9bb57d70cdefe58468b208f250059e4"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Get access to a property in the tree. <a href="#ac9bb57d70cdefe58468b208f250059e4">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:ac9bb57d70cdefe58468b208f250059e4"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a> Static Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:ad943cf979bc17c8a520ff8dae7ca582c"> 
+           <td class="memItemLeft" align="right" valign="top">static <a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1property__tree.html#ad943cf979bc17c8a520ff8dae7ca582c">make</a> (void)</td> 
+          </tr> 
+          <tr class="memdesc:ad943cf979bc17c8a520ff8dae7ca582c"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Create a new + empty property tree. <a href="#ad943cf979bc17c8a520ff8dae7ca582c">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:ad943cf979bc17c8a520ff8dae7ca582c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>The property tree provides a file system structure for accessing properties. </p> 
+        </div> 
+        <h2 class="groupheader">Member Typedef Documentation</h2> 
+        <a class="anchor" id="aebbee624be5b4c8cd5c590aa60ccbd10"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="classuhd_1_1property__tree.html">property_tree</a>&gt; <a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">uhd::property_tree::sptr</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Enumeration Documentation</h2> 
+        <a class="anchor" id="ae509cb2b5e06df9926ab2c0e7e2c76bc"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bc">uhd::property_tree::coerce_mode_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae509cb2b5e06df9926ab2c0e7e2c76bca5522ce5e197ad2af3a228e2f2b3a80e1"></a>AUTO_COERCE</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae509cb2b5e06df9926ab2c0e7e2c76bca740ade71d6e76ec6e81af54412ecd857"></a>MANUAL_COERCE</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="a7a1624d69da606fc05bc7fba7f0f6026"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual uhd::property_tree::~property_tree </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Function Documentation</h2> 
+        <a class="anchor" id="ac9bb57d70cdefe58468b208f250059e4"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <div class="memtemplate">
+            template&lt;typename T &gt; 
+          </div> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="classuhd_1_1property.html">property</a>&lt; T &gt; &amp; uhd::property_tree::access </td> 
+             <td>(</td> 
+             <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+             <td class="paramname"><em>path</em></td> 
+             <td>)</td> 
+             <td></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Get access to a property in the tree. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a1ee12fe8189f208863ebaa8d02954437"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <div class="memtemplate">
+            template&lt;typename T &gt; 
+          </div> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="classuhd_1_1property.html">property</a>&lt; T &gt; &amp; uhd::property_tree::create </td> 
+             <td>(</td> 
+             <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+             <td class="paramname"><em>path</em>, </td> 
+            </tr> 
+            <tr> 
+             <td class="paramkey"></td> 
+             <td></td> 
+             <td class="paramtype"><a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bc">coerce_mode_t</a>&nbsp;</td> 
+             <td class="paramname"><em>coerce_mode</em> = <code><a class="el" href="classuhd_1_1property__tree.html#ae509cb2b5e06df9926ab2c0e7e2c76bca5522ce5e197ad2af3a228e2f2b3a80e1">AUTO_COERCE</a></code>&nbsp;</td> 
+            </tr> 
+            <tr> 
+             <td></td> 
+             <td>)</td> 
+             <td></td> 
+             <td></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Create a new property entry in the tree. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="adc86bc93ee29257873291879cd905dc4"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual bool uhd::property_tree::exists </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>path</em></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>True if the path exists in the tree. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a740cb283e9e65b7ba655a6b010e35d6b"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual std::vector&lt;std::string&gt; uhd::property_tree::list </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>path</em></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Get an iterable to all things in the given path. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ad943cf979bc17c8a520ff8dae7ca582c"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static <a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">sptr</a> uhd::property_tree::make </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Create a new + empty property tree. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aaa810db6efd763cdec797f32dacb9dbb"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual void uhd::property_tree::remove </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>path</em></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Remove a property or directory (recursive) </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ad369a07c498fb949bc65f91f151d8901"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual <a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">sptr</a> uhd::property_tree::subtree </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1fs__path.html">fs_path</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>path</em></td> 
+                 <td>)</td> 
+                 <td> const</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Get a subtree with a new root starting at path. </p> 
+         </div> 
+        </div> 
+        <hr />The documentation for this class was generated from the following files: 
+        <ul> 
+         <li>include/uhd/<a class="el" href="property__tree_8hpp_source.html">property_tree.hpp</a></li> 
+         <li>include/uhd/<a class="el" href="property__tree_8ipp.html">property_tree.ipp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

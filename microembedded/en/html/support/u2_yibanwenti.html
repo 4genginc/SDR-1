@@ -1,0 +1,368 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="faq.html">返回 常见问题</a></p>
+				<hr />
+				<p class="content_title">USRP2 一般常见问题</p>
+				<hr />
+				<p class="faq_title">USRP1 和 USRP2 的区别？ </p>
+				<table cellspacing="0" >
+					<thead>
+						<tr>
+							<td></td>
+							<td>USRP1</td>
+							<td>USRP2</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>接口</td>
+							<td>USB2.0</td>
+							<td>千兆级以太网</td>
+						</tr>
+						<tr>
+							<td>FPGA</td>
+							<td>Altera EP1C12</td>
+							<td>Xilinx Spartan 3 2000</td>
+						</tr>
+						<tr>
+							<td>RF 入出（主机）带宽</td>
+							<td>8 MHz @ 16 bits</td>
+							<td>25 MHz @ 16 Bits</td>
+						</tr>
+						<tr>
+							<td>价格</td>
+							<td>$700</td>
+							<td>$1400</td>
+						</tr>
+						<tr>
+							<td>ADC 采样</td>
+							<td>12-bit, 64 MS/s</td>
+							<td>14-bit, 100 MS/s	</td>
+						</tr>
+						<tr>
+							<td>DAC 采样</td>
+							<td>14-bit, 128 MS/s</td>
+							<td>16-bit, 400 MS/s</td>
+						</tr>
+						<tr>
+							<td>子板容量</td>
+							<td>2 TX， 2 RX</td>
+							<td>1 TX， 1 RX</td>
+						</tr>
+						<tr>
+							<td>SRAM</td>
+							<td>None</td>
+							<td>1 Megabyte</td>
+						</tr>
+						<tr>
+							<td>电源</td>
+							<td>6V， 3A</td>
+							<td>6V， 3A</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<p class="faq_title">USRP 用什么 FPGA?</p>
+				<p class="faq_mingxi">XC3S2000-5FGG456, 这是 Spartan 3 2000, 高速(-5), 456 针 BGA 封装. </p>
+				
+				<p class="faq_title">USRP2 不支持两路收发子板。但它支持两路相干接收机？    </p>
+				<p class="faq_mingxi">是的，一个 USRP2 仅支持一下两种方案之一</p>
+				<p class="faq_mingxi2">1 个 RX 和 TX 子板&nbsp;&nbsp;或&nbsp;&nbsp;1 个收发子板</p>
+				<p class="faq_mingxi">想要两路相干接收机，你需要通过 MIMO 把两个 USRP2 相连在一起。例外是用自制的外部射频下变频（RF downconverters）。 这种情况下，你可以把这两路连到同一  BasicRX 子板上。  </p>
+				
+				<p class="faq_title">我可以用免费版的 Xilinx 工具编译 FPGA 设计文件吗？ </p>
+				<p class="faq_mingxi">请注意 USRP2 使用的是  Spartan 3-2000.   其含义是如果想自己设计自己的FPGA，你必须使用正式版全版本的 Xilinix 工具来产生映像文件。用免费的网络版无法做这些。但有下面一些选择：</p>
+				<ul>
+					<li>使用我们提供的预编译的 FPGA 映像文件</li>
+					<li>从 Xilinx 购买全版本的 ISE。</li>
+					<li>从 Xilinx 网站下载 60 天的演示版。</li>
+					<li>试图从 Xilinx 的代理工程师哪儿得到一个免费拷贝。</li>
+					<li>大学经常会得到免费版。</li>
+					<li>把你的改动发布到社区我们可以想法帮你编译（如果有人想利用脚本自动做这项工作的话，请让我知道）。</li>
+				</ul>
+				
+				<p class="faq_title">有哪些不同的方法可以把两台以上的USRP2通过MIMO连接起来？    </p>
+				<p class="faq_mingxi">要使 MIMO 工作，必须先做好以下三件事。</p>
+				<p class="faq_mingxi2">1.所有的系统必须锁定在同一的时钟（这儿：10 MHz ）</p>
+				<p class="faq_mingxi2">2.所有的系统具有同一的时钟参考（1pps ) 这样便可知道那个系统的那个采样同另外系统的那个采样相关联</p>
+				<p class="faq_mingxi2">3.所有的数据需要来自/发往相同的地方 </p>
+				<p class="faq_mingxi">USRP2 的 MIMO 扩展不外乎以下三种情景：</p>
+				<br />
+				<p class="faq_mingxi">情景1 - 两个 USRP2 通过 MIMO 电缆相连： </p>
+				<p class="faq_mingxi">USRP2服务器是同以太网和MIMO都相连的USRP2。客户端是仅同 MIMO 相连的USRP2。服务器端通过 MIMO电缆向客户端提供时钟信号。服务器端通过 MIMO电缆向客户端提供时间参考信号。在发射时，计算机通过以太网向服务器发送数据。服务器接收为服务器的数据，通过 MIMO 电缆给客户端传递数据。在接收时，客户端通过 MIMO 电缆把所有数据传递给服务器，服务器通过以太网传给计算机。同时它还通过以太网传送自己的数据。相关固件和计算机的驱动代码还没有完善，但一切都在进行中。（2008-11-04）</p>
+				<br />
+				<p class="faq_mingxi">情景2 - 多达 4 台 USRP2  通过 MIMO 电缆同 HUB （还没问世）相连：</p>
+				<p class="faq_mingxi">HUB 上有一个很大的 FPGA。 HUB 向所有的 USRP2 提供时钟和时间参考信号。HUB 同计算机通过以太网、PCI 高速卡相连或者自己独立运行。所有的 USRP2 同HUB双向交换数据。HUB 还没有问世，但是设计正在进行中。希望在 9 - 12 月内问世 （2008-11-04）</p>
+				<br />
+				<p class="faq_mingxi">情景3 - 任意数量的 USRP2, 没有 MIMO 电缆，没有 HUB。</p>
+				<p class="faq_mingxi">某种方法给所有的USRP2系统提供一个相同的 10 MHz 的时钟参考。典型的，10 MHz 最好是某种实验室性质的参考诸如 GPS 锁相参考的输出。这种参考最好通过某种分配器，通过前面板的SMA 接头传送给所有的 USRP2。还需要有给所有的USRP2 提供一个相同时间参考的方法。它是由同一参考源产生的 1  pps 信号。它也需通过某种分配器，通过前面板的PPS 接头传送给所有的 USRP2。所有的 USRP 通过千兆级以太网同计算机相连。你可以网络交换机，但是带宽共享还是有些问题。这种构架的固件已经完成，但计算机部分的代码还没完成。（2008-11-04） </p>
+				
+				<p class="faq_title">使用1 PPS 和10 MHz 输入的含义是什么？它们都是标准的GPS 单元的输出。它们是外部参考还是用于以太网的时间戳？             </p>
+				<p class="faq_mingxi">USRP2 内部使用100MHz 作为时钟。这个时钟将被锁定到你提供 10 MHz 参考。
+采样可以被时间戳，这个时间可以被校准到 1 PPS。 在一般情况下，这个 1 PPS 输入只是直接送到 FPGA，在那里，你可以随意的使用它。</p>
+				
+				<p class="faq_title">时间戳仅仅关联（ t = 0 到）1 PPS  - 脉冲？我希望使用更快的同步脉冲诸如 1 - 10 KHz，使用它作为时间戳。可行吗？</p>
+				<p class="faq_mingxi">1 PPS 输入直接进入 FPGA 的针脚，所以你可以随意的编写 FPGA 程序。这可涉及诸如：接收更快的同步脉冲、时间戳编、摩尔斯电码（Morse code）等。</p>
+				
+				<p class="faq_title">10 MHz 参考信号的电气特性如何？              </p>
+				<p class="faq_mingxi">该输入参考信号可以接纳方形或 Sine 函数的波形，直流完全隔离，匹配阻抗 50 欧姆。其输入pk-pk 电压小于 3V。</p>
+				
+				<p class="faq_title">PPS 参考信号的电气特性如何？       </p>
+				<p class="faq_mingxi">该 PPS 输入信号不必直流完全隔离。它的 AC 匹配阻抗 50 欧姆，DC 匹配阻抗 1K 欧姆。其输入的数字信号介于 0 - 5 V。绝不能小于0V或大于6V。</p>
+				
+				<p class="faq_title">介于 10 MHZ 和 1PPS 你的相位希望值如何？         </p>
+				<p class="faq_mingxi">PPS 信号应当同 10 MHz 的参考信号同步。几乎任何 GPS 的频率参考都适合。参看 http://jackson-labs.com 足以.</p>
+				
+				<p class="faq_title">1 Megabyte SRAM 的功用如何?                    </p>
+				<p class="faq_mingxi">这是标准的 FPGA 构建提供的（功能），尽管不太常用，它还是被用作如下的功用的：</p>
+				<ul>
+					<li>诸如在 ACK 包，它用来充当大容量的缓存来存放预先调制好的数据包。</li>
+					<li>（充当）一个大容量 FIFO 去承放在高频率下突发采样值，以太网一般无法应付这些。</li>
+					<li>（充当）RISC 处理器的数据或指令或两种的辅助 RAM 用。</li>
+				</ul>
+				<p class="faq_mingxi">所有以上功用还需借助你的 Verilog 代码来实现。</p>
+				
+				<p class="faq_title">USRP2 是如何连接在一起工作的？MIMO 连接器和参考频率输入（的功用如何？）               </p>
+				<p class="faq_mingxi">MIMO 的功用是把参考频率从一个 USRP2 传递到另一个。如果你想借助外界的参考频率来锁定两个 USRP，你应当先把信号传入其中之一，这样 MIMO  便会把它传递到另一个。</p>
+				
+				<p class="faq_title">可以通过 MIMO 连接器连接更多的USRP2 吗？                    </p>
+				<p class="faq_mingxi">不，不可直接相连。实际上，我们将出售另外一个设备来连接两台以上的 USRP2（最多四台），目前最多只能连接两个。</p>
+				
+				<p class="faq_title">为何datasheet 描述天线被限制为 8 个呢？                </p>
+				<p class="faq_mingxi">当 4 路 USRP2 如上讨论被相连在一起，每个 USRP2 通过 BasicRX 和 BasicTX 用到两路独立的射频链路，这样你便一共得到 8 路。</p>
+				
+				<p class="faq_title">我如何在 USRP2 上同时使用两路 A/D 转换器？                      </p>
+				<p class="faq_mingxi">一般地两路 A/D 转换器用于来自下变频的 I 和 Q 。但是在使用 BasicRX 时你可以独立地使用它们。</p>
+				
+				<p class="faq_title">外部时钟参考必须使用 10 MHz 吗？ 我可以使用 100 MHz 吗？                  </p>
+				<p class="faq_mingxi">实际上，你可以使用 100 MHz，你只需把固件一行改一下，它是设置锁相环（PLL ）的 R-divider。你可以使用满足如下关系的频率。</p>
+				<p class="faq_mingxi2">100 MHz / N = Ref / R</p>
+				<p class="faq_mingxi">其中 N 和 R 是小于 32,768 送往任何整数。</p>
+				
+				<p class="faq_title">外部时钟可被用来替代内部100 MHz VCXO？                     </p>
+				<p class="faq_mingxi">内部时钟（准确的 VCXO）被锁定到需要使用外部参考时钟。你有很多的选择余地（见前一问题），但你决不能动 VCXO 的频率，即使是几个KHz，你不能使用外部频率作为内部主频。绝无可能，也就是说输入一个120MHz的频率，整个系统运行在其之上。系统被固定在 100 MHz，除非你想动电烙铁。</p>
+				<p class="faq_mingxi">如果你确实想动电烙铁，只要兼容VCXO 的管脚便给你其它的频率选择性。部件是Crystek的CVHD950，你可以从 Mouser 买到它。注意，任何高于 100 MHz 可能会招致 FPGA 无法满足频率的要求。而且，ADC 的频率特性是 105 MHz，频率为 125MHz （的ADC）存在管脚兼容问题。</p>
+				
+				<p class="faq_title">10 MHz 的参考时钟的职责如何？            </p>
+				<p class="faq_mingxi">面板上的10MHz 的参考输入是可选项。如果你选择并锁定它，100 MHz 的主频将同它锁定。不然的或它将随机而定。FPGA内部将（一直）运行于 100 MHz （DSP）或 50 MHz（处理器）。</p>
+				<p class="faq_mingxi">将会有一个 10 MHz 的时钟参考由 MIMO 连接器输出。当它需要工作是，它将是把主频 100MHz 除 10 即可。</p>
+				
+				<p class="faq_title">USRP2 使用什么芯片来管理千兆级以太接口？             </p>
+				<p class="faq_mingxi">在FPGA中使用开源的MAC 和国家半导体的 National Semicondutor PHY, DP83856 来实现的。</p>
+				
+				<p class="faq_title">USRP2 是如何启动（boot）的？如何装载 FPGA 的固件？                    </p>
+				<p class="faq_mingxi">CPLD (a Xilinx XC9572) 从SD卡中读入第一个 megabyte 在 slave-serial 模式下把它写入 FPGA的配置脚中。一旦 FPGA被配置，它便从 SD 卡为 aeMB 处理器寻求固件。之后，CPLD 切换到  passthru 模式，在程序的控制下 FPGA 直接访问 SD 卡。</p>
+				
+				<p class="faq_title">USRP2 的ADC 芯片是什么？有辅助ADC 吗？            </p>
+				<p class="faq_mingxi">主 ADC 是双通道 14 位 LTC2284，用于 100 MS/ s. 有两个辅助通道，12 位 ADC （AD7922）用于子板连接器。</p>
+				
+				<p class="faq_title">USRP2 的DAC芯片是什么？有辅助DAC吗？          </p>
+				<p class="faq_mingxi">主 DAC 是双通道 16 位 AD9777 输入 100 MS/s 输出基于 400 Ms/s 的模拟输出。有两个辅助 DACs  通道是 双通道的 12 位 AD5623。</p>
+				
+				<p class="faq_title">有辅助数字输入/输出吗？            </p>
+				<p class="faq_mingxi">同 USRP1 相同，有16 位的数字IO，SPI，和I2C 到每个子板连接器。同子板相连的接口部分同USRP1也相同，除 (USRP1) 全靠 AD9862实现的功能由（USRP2）由以下芯片来实现： </p>
+				<p class="faq_mingxi2"> LTC2284, AD9777, 2x AD5623, 2x AD7922</p>
+				
+				<p class="faq_title">USRP2 是如何实现DDC 的？ 有多少 CIC 阶段？                   </p>
+				<p class="faq_mingxi">DDC 同 USRP1 十分相似，包含4 个CIC 和（但是）2 个HBF滤波器。 CIC 可以在 [1..128] 范围内抽取。最高速的HBF有7个抽头，其抽取系数为2.最低HBF有31个抽头其抽取系数为2.</p>
+				
+				<p class="faq_title">USRP2 是如何实现DUC 的？ 有多少 CIC 阶段？                 </p>
+				<p class="faq_mingxi">再强调一下，十分相似。有4 个CIC 和2 个HBF滤波器都处于插入模式。</p>
+				
+				<p class="faq_title">USRP2 的HBF 在TX和RX端如何实现？     </p>
+				<p class="faq_mingxi">我将阐述 RX 端，TX 端基本上是相同的。
+small_hb_dec 是滤波器工作在高采样速率下。它有两个实例化，一是用于I 另一个是Q。 它有7个抽头。这些抽头中有一个是中心抽头它只需要移位从不要求相乘，有两个抽头是零，剩下4个抽头。这些抽头是对称的，这样便剩下2乘以每个输出。因为我们至少两个周期产生每个输出，我们可以使用一个乘法。</p>
+				<p class="faq_mingxi">hb_dec 是第二个半带滤波器工作较低的采样频率。它也有两个实例化，一是用于I 另一个是Q。它有31个抽头。这些抽头中有一个是中心抽头它只需要移位从不要求相乘，剩下的一般抽头是零，这便剩下16个抽头。这些都是对称的，这也就是说我们需要用8相乘去产生每个输出。我们至少需要4个周期产生每个输出，因此我们在这儿需要用2个乘法。 </p>
+				<p class="faq_mingxi">这些乘法之一是产生外部系数，也就是说，在刚开始和结束起作用，另一个产生内部系数，也就是说在围绕中心内起作用。这个除法仅仅是实现中的选择，不影响输出。我应当把奇数在乘法，偶数在另一边，或者你可以想象的其它形式的分离。这些都无关紧要。</p>
+				
+				<p class="faq_title">USRP2 的最低/最高抽取/插值值如何？奇数抽取/插值可能吗？                 </p>
+				<p class="faq_mingxi">最小抽取/插值值是4，最大512, 如果你使用奇数,你将只会得到 CIC 没有 HBF。如果使用偶数但不是4的倍数。你只会得到1个HBF（最低速率采样）。如果是4的倍数，你会用到两种HBF的。</p>
+				
+				<p class="faq_title">数据是如何进入USRP2的DACs？       </p>
+				<p class="faq_mingxi">FPGA 以100MS/s的速率应付DAC，相同地正如它以100MS/s应付ADC。在DAC内部，插值速率从100 MS/s变化到400MS/s.  除非你想做些出格的事情，你应当认为DAC工作在 100 MS/s。</p>
+				<p class="faq_mingxi">对于X4插值到　400MS/s 的主要原因是为了简化模拟重构滤波器。同时也是为了初略调制高达 150 MHz，但是我不用预料这将会频繁出现。</p>
+				
+				<p class="faq_title">USRP2 缺省的 IP 地址和掩码地址?   </p>
+				<p class="faq_mingxi">标准USRP2 FPGA 映像不用IP，仅仅只是用raw 网络协议。 </p>
+				
+				<p class="faq_title">USRP2 对于网络的 ping 命令有反应吗？    </p>
+				<p class="faq_mingxi">没，但是我们有我们自己的，find_usrps 命令</p>
+				
+				<p class="faq_title">什么是 USRP2 的参考时钟稳定度？    </p>
+				<p class="faq_mingxi">大概 20 ppm 除非你锁定到外部参考。</p>
+				
+				<p class="faq_title">同 BasicTX 相配合，USRP1可以产生一个最大 44 MHz 的频率。USRP2 呢？      </p>
+				<p class="faq_mingxi">44 NHz 是 USRP1 在第一 Nyquis 区域的最高频率。</p>
+				<p class="faq_mingxi">在更高的区域可以使用更高的频率。USRP2 以 100 MS/s 的采样率和高达 400 MS/s 插值速率。直接可用频率高达 ～170MHz。 有关DAC的初始化代码可在 u2_init.c 发现。</p>
+				
+				<p class="faq_title">什么是 USRP2 （Overrun）太慢的信息？                </p>
+				<p class="faq_mingxi">当前，太慢一般是表现 UART 端口而不是主机。它被表示为“O”。 现实是你将永远无法看到这些。如果计算机太慢，你将会看到“S"信息显示在主机的终端上。它表示序列编号错误。</p>
+				
+				<p class="faq_title">什么是 USRP2 （underrun）太快信息？  </p>
+				<p class="faq_mingxi">太快 （Under Run) 是表现在 UART 端口，被表示为“U"。  </p>
+				
+				<p class="faq_title">什么是 USRP2 的重要的核心代码，它被用来理解 USRP2 的结构、配置和运行？           </p>
+				<p class="faq_mingxi">对于 FPGA 代码，tx_control.v 和 rx_control.v 用来表现带内信号（ inband signalling），dsp_core_rx 和 dsp_core_tx 用来表现 DSP， u2_core.v 是顶层代码。在固件中，txrx.c 表示开始。</p>
+				
+				<p class="faq_title">FPGA 固件对 USRP2 的FPGA的资源的需求是多大？</p>
+				<p class="faq_mingxi">对于RAM而言是40里的37, 对于乘法器是40内的16或18, 在逻辑方面是35到40% .</p>
+				
+				<p class="faq_title">USRP2 的UART  串行设置（波特率、奇偶校验、等等）如何？</p>
+				<p class="faq_mingxi">TTL 电平，波特率 230400， 8N1 格式。</p>
+				
+				<p class="faq_title">set_scale_iq 过程是在 FPGA 还是计算机内完成的？    </p>
+				<p class="faq_mingxi">量程化是在FPGA 的DSP 流水管道过程中完成的。</p>
+				
+				<p class="faq_title">AeMB 处理器的功用？它的时钟频率如何？    </p>
+				<p class="faq_mingxi">AeMB 处理器是合成的完全的CPU，它是构成 USRP2 FPGA 核心的片上系统设计（SOPC）。它执行对FPGA的所有外设的配置、和状态报告，管理和控制 GbE 的传输链路以及 RF 射频子板。它并不是在做任何 DSP 工作。它在做DSP RX和TX流水管道的逻辑工作。它的时钟是50MHz，系统时钟的一半。</p>
+				
+				<p class="faq_title">USRP2 的MAC地址保存在哪儿？  </p>
+				<p class="faq_mingxi">USRP2 的 MAC 地址保存在 USRP的主板的EEPROM 里。</p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Configuring Devices and Streamers</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Configuring Devices and Streamers</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Configuring Devices and Streamers</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="config_devaddr"></a> Device Configuration through address string</h1> 
+         <p>The address string for a device is mainly used to identify a device (see also <a class="el" href="page_identification.html">Device Identification</a>), but it can also be used to propagate settings to the device.</p> 
+         <p>As an example, say you run <code>rx_samples_to_file</code> with the following settings: </p> 
+         <pre class="fragment">$ rx_samples_to_file --args type=b200,master_clock_rate=16e6
+</pre> 
+         <p>This will first use the <code>type</code> flag to search your system for connected B200 or B210 devices, as described on <a class="el" href="page_identification.html">Device Identification</a>. Once it has found one of these, it will connect to it and pass the <code>master_clock_rate=16e6</code> option to the device initialization (in this case, it will set the master clock rate to 16 MHz as described on <a class="el" href="page_usrp_b200.html#b200_mcr">Changing the Master Clock Rate</a>).</p> 
+         <p>The following table lists the configuration options you can pass as device arguments. Also check out the individual device manuals for more information and possible more options.</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Key </th> 
+            <th>Description </th> 
+            <th>Supported Devices </th> 
+            <th>Example Value </th> 
+           </tr> 
+           <tr> 
+            <td>blank_eeprom </td> 
+            <td><em>Caution!</em> Having this key will erase the EEPROM and can damage your device! </td> 
+            <td>X3x0 </td> 
+            <td>blank_eeprom=1 </td> 
+           </tr> 
+           <tr> 
+            <td>fpga </td> 
+            <td>Provide alternative FPGA bitfile </td> 
+            <td>All USB Devices, X3x0 (PCIe only), All embedded devices </td> 
+            <td>fpga=/path/to/bitfile.bit </td> 
+           </tr> 
+           <tr> 
+            <td>fw </td> 
+            <td>Provide alternative firmware </td> 
+            <td>All USB Devices, X3x0 </td> 
+            <td>fw=/path/to/fw.bin </td> 
+           </tr> 
+           <tr> 
+            <td>ignore-cal-file </td> 
+            <td>Ignores existing device calibration files </td> 
+            <td>All Devices with cal-file support</td> 
+            <td>See <a class="el" href="page_calibration.html#ignore_cal_file">Ignoring Calibration Files</a> </td> 
+           </tr> 
+           <tr> 
+            <td>master_clock_rate </td> 
+            <td>Master Clock Rate in Hz </td> 
+            <td>X3x0, B2x0, B1x0, E3x0, E1x0 </td> 
+            <td>master_clock_rate=16e6 </td> 
+           </tr> 
+           <tr> 
+            <td>dboard_clock_rate </td> 
+            <td>Daughterboard clock rate in Hz </td> 
+            <td>X3x0 </td> 
+            <td>dboard_clock_rate=50e6 </td> 
+           </tr> 
+           <tr> 
+            <td>mcr </td> 
+            <td>Override master clock rate settings (see <a class="el" href="page_usrp1.html#usrp1_hw_extclk">External clock modification</a>) </td> 
+            <td>USRP1 </td> 
+            <td>mcr=52e6 </td> 
+           </tr> 
+           <tr> 
+            <td>niusrprpc_port </td> 
+            <td>RPC Port for NI USRP RIO </td> 
+            <td>X3x0 </td> 
+            <td>niusrprpc_port=5445 </td> 
+           </tr> 
+           <tr> 
+            <td>system_ref_rate </td> 
+            <td>Reference Clock Rate in Hz </td> 
+            <td>X3x0 </td> 
+            <td>system_ref_rate=10e6 </td> 
+           </tr> 
+           <tr> 
+            <td>self_cal_adc_delay </td> 
+            <td>Run ADC transfer delay self-calibration. </td> 
+            <td>X3x0 </td> 
+            <td>self_cal_adc_delay=1 </td> 
+           </tr> 
+           <tr> 
+            <td>ext_adc_self_test </td> 
+            <td>Run an extended ADC self test (more than the usual) </td> 
+            <td>X3x0 </td> 
+            <td>ext_adc_self_test=1 </td> 
+           </tr> 
+           <tr> 
+            <td>recover_mb_eeprom </td> 
+            <td>Disable version checks. Can damage hardware. Only recommended for recovering devices with corrupted EEPROMs. </td> 
+            <td>X3x0, N230 </td> 
+            <td>recover_mb_eeprom=1 </td> 
+           </tr> 
+           <tr> 
+            <td>skip_dram </td> 
+            <td>Ignore DRAM FIFO block. Connect Tx streamers straight into DUC or radio. </td> 
+            <td>X3x0 </td> 
+            <td>skip_dram=1 </td> 
+           </tr> 
+           <tr> 
+            <td>skip_ddc </td> 
+            <td>Ignore DDC block. Connect Rx streamers straight into radio. </td> 
+            <td>X3x0 </td> 
+            <td>skip_ddc=1 </td> 
+           </tr> 
+           <tr> 
+            <td>skip_duc </td> 
+            <td>Ignore DUC block. Connect Rx streamers or DRAM straight into radio. </td> 
+            <td>X3x0 </td> 
+            <td>skip_duc=1 </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>In addition, many of the streaming-related options can be set per-device at configuration time. See <a class="el" href="page_configuration.html#config_stream_args">Streaming Arguments (Stream Args)</a> and <a class="el" href="page_transport.html">Transport Notes</a> for more details.</p> 
+         <h1><a class="anchor" id="config_subdev"></a> Specifying the Subdevice</h1> 
+         <p>A subdevice specification (or &quot;subdev spec&quot;) string for USRP family devices is composed of: </p> 
+         <pre class="fragment">&lt;motherboard slot name&gt;:&lt;daughterboard frontend name&gt;
+</pre> 
+         <p>Ex: The subdev spec markup string to select a WBX on slot B. </p> 
+         <pre class="fragment">B:0
+</pre> 
+         <p>Ex: The subdev spec markup string to select a BasicRX on slot B. </p> 
+         <pre class="fragment">B:AB
+
+-- OR --
+
+B:A
+
+-- OR --
+
+B:B
+</pre> 
+         <p>A subdev spec can consist of multiple strings if a motherboard has the option for more than one radio device. In the X300, you may have an SBX in slot A and a CBX in slot B. Both of these daughterboards have one frontend (&quot;0&quot;), so the subdev spec to configure both these radio channels would look like this: </p> 
+         <pre class="fragment">A:0 B:0
+</pre> 
+         <p>The individual subdev specs are separated by spaces. On some devices, such as the X300 or the B200, it is possible to swap these to hint that slot B should be the first radio (&quot;channel 0&quot;) and slot A should be the second radio (&quot;channel 1&quot;): </p> 
+         <pre class="fragment">B:0 A:0
+</pre> 
+         <p>On devices with more than one radio, setting the subdev spec to a single value declares that the other radio is not used. In a configuration with multiple USRPs, this means that this device will only be assigned a single channel.</p> 
+         <p>Note that a subdev spec string always only pertains to a <em>single</em> USRP, even if multiple USRPs are configured to run together. For such a configuration, you set a subdev spec string for every device individually.</p> 
+         <h2><a class="anchor" id="config_subdev_slotnames"></a> USRP Family Motherboard Slot Names</h2> 
+         <p>All USRP family motherboards have a first slot named <b>A:</b>. The USRP1 and X3x0 have two daughterboard subdevice slots, known as <b>A:</b> and <b>B:</b>.</p> 
+         <p>The B210 and E310 series have a different configuration, since their two radios are logically connected to the same &quot;daughterboard&quot; (which is in reality the integrated AD9361), but different frontends. To select both radios on a B200 or an E300, use this string: </p> 
+         <pre class="fragment">A:A A:B
+</pre> 
+         <h2><a class="anchor" id="config_subdev_default"></a> USRP Family Motherboard Slot Names</h2> 
+         <h2><a class="anchor" id="config_subdev_dbnames"></a> Daughterboard Frontend Names</h2> 
+         <p>Daughterboard frontend names can be used to specify which signal path is used from a daughterboard. Most daughterboards have only one frontend <code>:0</code>. A few daughterboards (Basic, LF and TVRX2) have multiple frontend names available. The frontend names are documented in <a class="el" href="page_dboards.html">Daughterboards</a>.</p> 
+         <h1><a class="anchor" id="config_stream_args"></a> Streaming Arguments (Stream Args)</h1> 
+         <p>When initializing a streamer using <a class="el" href="classuhd_1_1device.html#a66d1bf289dd03a03df3860f3eee578c0" title="Make a new transmit streamer from the streamer arguments. ">uhd::device::get_tx_stream()</a> and/or <a class="el" href="classuhd_1_1device.html#a0a9e36f353dcce36b4dd8d394c8813e3" title="Make a new receive streamer from the streamer arguments. ">uhd::device::get_rx_stream()</a>, you must specify a <a class="el" href="structuhd_1_1stream__args__t.html">uhd::stream_args_t</a> object (see the manual for this struct and an in-depth explanation of the individual components). </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

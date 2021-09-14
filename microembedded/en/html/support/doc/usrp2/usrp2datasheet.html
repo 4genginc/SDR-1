@@ -1,0 +1,151 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>USRP2数据手册_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <span><a href="usrp2.html">USRP2使用手册</a></span> » <span>USRP2数据手册</span></div>
+            <div class="content box_shadow">
+                <p class="content_title">USRP2数据手册</p><hr><p class="min_title">特征：</p><p>可以使用GNU RADIO，LabVIEW和Similink操作平台</p><p>模块化结构：DC~6GHz</p><p>Dual ADCs: 14-位 100 MS/s&nbsp;</p><p>Dual DACs: 16-位 400 MS/s</p><p>DDC/DUC:25MHz</p><p>高达50 MS / s的千兆以太网数据流</p><p>支持MIMO-- - 基于每台 USRP2 上 只有单路收发链路，MIMO 的构建必须由两台或两台以上 USRP2 来构建</p><p>千兆以太网接口与主机连接</p><p>2 Gbps的扩展接口</p><p>FPGA: Xilinx Spartan XC3S2000&nbsp;</p><p>1 MB高速SRAM</p><p>辅助模拟和数字I / O</p><p>2.5ppm的TCXO频率参考</p><p>0.01 ppm w/ GPSDO Option</p><p>能够锁定一个外部 5 或 10 MHz 的参考时钟</p><p>仅可以使用付费的 Xilinx® ISE® Design Suite 工具修改 FPGA 代码</p><p class="min_title">USRP2产品概述：</p><p>USRP2是高性能的（通用软件无线电外设）系列硬件产品，它使工程师能够迅速地设计和实施功能强大，灵活的软件无线电系统。USRP2硬件适合那些对射频性能比较高的和带宽要求比较大的应用。这些应用包括物理层样机，动态频谱接入和认知无线电频谱监测，记录和回放，甚至是联网的传感器部署。</p><p>网络化系列产品提供MIMO功能的高带宽和动态范围。千兆以太网接口作为USRP2和主机之间的连接。使用户能够同时实现（全双工）发射和接收50MS/s的实时带宽。网络化系列的MIMO连接位于每个单元的前面板上。两个联网系列设备可被连接到实现使用可选的MIMO电缆的完整的2×2MIMO结构。外部PPS和参考输入也可以用于创建更大的多通道系统。USRP2很大程度上是同样，除了USRP2拥有为客户提供更大的FPGA是打算集成定制FPGA功能。</p><p>USRP2的驱动是UHD，支持LINUX，Mac OSX，Windows</p><p class="min_title">规格</p><p class="img"><img src="images/d1.png" width="900"></p><p class="img"><img src="images/d2.png"></p><p class="imgNum">USRP2结构图</p><p class="min_title">硬件概览</p><p>USRP2硬件拥有一种常见的软件定义无线电架构，运行直接通信模拟前端和高速模数转换器（ADC）与数模转换器（DAC），且配备具有固有属性的FPGA，用于实现数字下变频（DDC）和数字上变频（DUC）的步骤。 接收器链从高度敏感、可接受微小信号的模拟前端开始，，然后使用直接下变频将它们数字化为同相（I）和正交（Q）基带信号。 下变频后有高速模数转换器和一个DDC，用以降低采样率并将I和Q打包传输到主机，再使用千兆以太网做进一步处理。发射器链从主机开始，生成I和Q并通过以太网电缆传输到USRP硬件。DUC为DAC准备信号，然后I-Q进行混合，直接上变频信号以产生一个RF频率信号，然后进行信号放大与传输。</p><p class="img"><img src="images/d3.png"></p><p class="imgNum">USRP2系统层级框图</p>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UsrpFPGA</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div>
+<h2><a name="TOC-USRP-FPGA"></a><font size="3" style="font-family:simsun,serif">USRP FPGA</font></h2>
+<p><font size="2"><a href="usrp.html" rel="nofollow" target="_blank">USRP</a> 所用到的FPGA是 <a href="http://www.altera.com/" rel="nofollow" target="_blank"><span>Altera</span></a> 公司的 <a href="http://www.altera.com/products/devices/cyclone/cyc-index.jsp" rel="nofollow" target="_blank"><span>Cyclone EP1C12Q240C8</span></a>. 
+<br></font></p>
+<p><font size="2">EP1C12 的特性:</font></p>
+<table border="1" bordercolor="#888888" cellspacing="0" style="border-width:1px;border-color:rgb(136,136,136);border-collapse:collapse">
+<tbody>
+<tr style="font-family:arial,sans-serif">
+<td style="width:232px;height:18px;text-align:left"><font size="2">&nbsp;LEs</font></td>
+<td style="width:171px;height:18px;text-align:left"><font size="2">&nbsp;12,060</font></td></tr>
+<tr>
+<td style="width:232px;font-family:arial,sans-serif;height:18px;text-align:left"><font size="2">&nbsp;M4k RAM blocks (128 x 36 bits)</font></td>
+<td style="width:171px;height:18px;text-align:left"><font size="2">&nbsp;52</font></td></tr>
+<tr>
+<td style="width:232px;height:17px;text-align:left"><font size="2">&nbsp;Total RAM 
+bits </font></td>
+<td style="width:171px;height:17px;text-align:left"><font size="2">&nbsp;239,616 
+</font></td></tr>
+<tr>
+<td style="width:232px;height:17px;text-align:left"><font size="2">&nbsp;PLLs 
+</font></td>
+<td style="width:171px;height:17px;text-align:left"><font size="2">&nbsp;2</font></td></tr>
+<tr>
+<td style="width:232px;height:23px;text-align:left"><font size="2">Maximum 
+user I/O pins </font></td>
+<td style="width:171px;height:23px;text-align:left"><font size="2">173<br></font></td></tr></tbody></table>
+<p><font size="2">用硬件语言 <a href="http://en.wikipedia.org/wiki/Verilog" rel="nofollow" target="_blank"><span>Verilog</span></a> 描述FPGA内部功能，用Altera's免费网络版 
+<span><a href="http://www.altera.com/products/software/products/quartus2/qts-index.html" rel="nofollow" target="_blank" title="Quartus II">Quartus II</a> 工具对它</span>进行综合。Quartus II 的免费版只有用于 
+Windows 环境，也有一些办法让它运行在Linux 环境下 <a href="quartusunderlinux.html" target="_blank">run Quartus II under Linux</a> 而不需 Windows - YMMV.<br></font></p>
+<p><font size="2">FPGA 运行在 64MHz 
+时钟下，其所有内部部件同全球时钟同步。由于其极高的时钟，所以FPGA内部部件都被极高的流水线规划以求达到极高速度效果。 </font></p>
+<h3><a name="TOC-1"></a><font size="2">接收链路</font></h3>
+<p style="margin-left:40px"><font size="2">见图 <a href="usrprfxdiagrams.html" target="_blank" title="UsrpRfxDiagrams">UsrpRfxDiagrams</a>.<br></font></p>
+<p><font size="2">AD9862 -&gt; CORDIC -&gt; CIC 抽取滤波器 (4阶的, 可编程抽取速率 [4,128]) -&gt; 半带数字抽取滤波器 (固定抽头系数 2) -&gt; RX 
+FIFO.<br></font></p>
+<p><font size="2">这提供了所有在 [8,256]范围内所有可能的偶数抽取速率。</font></p>
+<h3><a name="TOC-2"></a><font size="2">发射链路</font></h3>
+<p><font size="2">这里是一个发射链路的大概原理</font><font size="2">框图：&nbsp;</font></p><div style="display:block;text-align:left"><font size="2"><a href="../images/tx2ph9_max.png" target="_blank" imageanchor="1"><img border="0" height="132" src="../images/tx2ph9.png" width="320"></a></font></div>
+<p><a href="http://img213.imageshack.us/img213/8275/tx2ph9.png"><font size="2"><span>http://img213.imageshack.us/img213/8275/tx2ph9.png</span></font></a></p><p style="margin-left:40px"><font size="2">详细框图参看 <a href="usrprfxdiagrams.html" target="_blank">UsrpRfxDiagrams</a>.</font></p>
+<p><font size="2">有两路时钟：一个用于USB总线(上达 FIFO) 一个用于发射链路自身。 频道0具有本地环回功能。级联积分梳状滤波器(CIC) 
+速率由寄存器 FR_INTERP_RATE控制。CORDIC 变换在svn HEAD中被禁止.<br></font></p>
+<p style="margin-left:40px"><font size="2"><a href="usrptxmodifications.html" target="_blank">Tx Modifications</a><br></font></p>
+<p><font size="2">到 <span><a href="http://www.analog.com/en/prod/0,,AD9862,00.html" target="_blank">AD9862</a> MxFE</span> 
+去了解它是如何被控制以及其中滤波器是如何被控制的。 </font></p>
+<h2><a name="TOC-USB-"></a><font size="2"><span style="font-family:simsun,serif">USB 接口</span><a href="http://gnuradio.org/trac/wiki/UsrpFPGA#USBInterface" rel="nofollow" title="Link to this section">
+<br></a></font></h2>
+<p><font size="2">描述主机（计算机）如何同 <a href="usrp.html" target="_blank">USRP</a> 通信。 </font></p>
+<h2 style="font-family:simsun,serif"><a name="TOC-FPGA-"></a><font size="2">FPGA 
+寄存器</font></h2>
+<p><font size="2">寄存器被分为三类 - 公用（common）, 标准（standard）, 
+及自定义（custom）。寄存器，除三个可读标准寄存器外，仅仅是把数据映射到计算机用于读取目的用的。&nbsp; </font></p>
+<h3><a name="TOC-Common-Registers-"></a><font size="2"><a href="http://gnuradio.org/trac/browser/gnuradio/trunk/usrp/firmware/include/fpga_regs_common.h" rel="nofollow" style="font-family:simsun,serif" target="_blank" title="Common Registers">Common Registers</a><span style="font-family:simsun,serif">&nbsp; （公用寄存器）</span><br></font></h3>
+<p><font size="2"><span>Writable Address Range</span>: 0 - 31 （可写地址范围：0 
+-31）<br></font></p>
+<table height="760" width="1348">
+<tbody>
+<tr>
+<td><font size="2"><b>Address<br>地址<br></b></font></td>
+<td><font size="2"><b>Register<br>寄存器<br></b></font></td>
+<td><font size="2"><b>Brief Description<br>简述<br></b></font></td></tr>
+<tr>
+<td><font size="2">0 </font></td>
+<td><font size="2">FR_TX_SAMPLE_RATE_DIV </font></td>
+<td><font size="2">Transmit sample rate divisor （发送采样速率除法器）<br></font></td></tr>
+<tr>
+<td><font size="2">1 </font></td>
+<td><font size="2">FR_RX_SAMPLE_RATE_DIV </font></td>
+<td><font size="2">Receive sample rate divisor （接收采样速率除法器）</font></td></tr>
+<tr>
+<td><font size="2">2 </font></td>
+<td><font size="2">UNUSED </font></td>
+<td><font size="2">Unused Register&nbsp; （没有用到的寄存器）<br></font></td></tr>
+<tr>
+<td><font size="2">3 </font></td>
+<td><font size="2">UNUSED </font></td>
+<td><font size="2">Unused Register&nbsp; （没有用到的寄存器）</font></td></tr>
+<tr>
+<td><font size="2">4 </font></td>
+<td><font size="2">FR_MASTER_CTRL </font></td>
+<td><font size="2">Master Reset and Enable controls 
+（主复位及使能控制）<br></font></td></tr>
+<tr>
+<td><font size="2">5 </font></td>
+<td><font size="2">FR_OE_0 </font></td>
+<td><font size="2">IO Buffer direction settings for pins that go to daugherboards 
+（指向子板的管脚的IO缓存流向设置）<br></font></td></tr>
+<tr>
+<td><font size="2">6 </font></td>
+<td><font size="2">FR_OE_1 </font></td>
+<td><font size="2">IO Buffer direction settings for pins that go to daugherboards 
+（指向子板的管脚的IO缓存流向设置）</font></td></tr>
+<tr>
+<td><font size="2">7 </font></td>
+<td><font size="2">FR_OE_2 </font></td>
+<td><font size="2">IO Buffer direction settings for pins that go to daugherboards 
+（指向子板的管脚的IO缓存流向设置）</font></td></tr>
+<tr>
+<td><font size="2">8 </font></td>
+<td><font size="2">FR_OE_3 </font></td>
+<td><font size="2">IO Buffer direction settings for pins that go to daugherboards 
+（指向子板的管脚的IO缓存流向设置）</font></td></tr>
+<tr>
+<td><font size="2">9 </font></td>
+<td><font size="2">FR_IO_0 </font></td>
+<td><font size="2">IO Registers for pins that go to daugherboards 
+（指向子板的管脚的IO寄存器）</font></td></tr>
+<tr>
+<td><font size="2">10 </font></td>
+<td><font size="2">FR_IO_1 </font></td>
+<td><font size="2">IO Registers for pins that go to daugherboards 
+（指向子板的管脚的IO寄存器）</font></td></tr>
+<tr>
+<td><font size="2">11 </font></td>
+<td><font size="2">FR_IO_2 </font></td>
+<td><font size="2">IO Registers for pins that go to daugherboards 
+（指向子板的管脚的IO寄存器）</font></td></tr>
+<tr>
+<td><font size="2">12 </font></td>
+<td><font size="2">FR_IO_3 </font></td>
+<td><font size="2">IO Registers for pins that go to daugherboards 
+（指向子板的管脚的IO寄存器）</font></td></tr>
+<tr>
+<td><font size="2">13 </font></td>
+<td><font size="2">FR_MODE </font></td>
+<td><font size="2">Sets RX Mode [NORMAL,LOOPBACK,RX_COUNTING,RX_COUNTING_32BIT]（RX 
+方式设置）</font></td></tr>
+<tr>
+<td><font size="2">14 </font></td>
+<td><font size="2">FR_DEBUG_EN </font></td>
+<td>Enables debug settings for debugging FPGA designs<font size="2">&nbsp;&nbsp; 
+（FPGA 使能诊断设置）</font></td></tr>
+<tr>
+<td><font size="2">15 </font></td>
+<td><font size="2">FR_DC_OFFSET_CL_EN </font></td>
+<td><font size="2">DC offset control loop 
+enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （DC 补偿控制环路使能）</font></td></tr>
+<tr>
+<td><font size="2">16 </font></td>
+<td><font size="2">FR_ADC_OFFSET_0 </font></td>
+<td>
+<p><font size="2">ADC/DAC DC correction offset value (2's compliment) （ADC/DAC 
+纠错补偿值)</font></p></td></tr>
+<tr>
+<td><font size="2">17 </font></td>
+<td><font size="2">FR_ADC_OFFSET_1 </font></td>
+<td><font size="2">ADC/DAC DC correction offset value (2's compliment) （ADC/DAC 
+纠错补偿值)</font></td></tr>
+<tr>
+<td><font size="2">18 </font></td>
+<td><font size="2">FR_ADC_OFFSET_2 </font></td>
+<td><font size="2">ADC/DAC DC correction offset value (2's compliment) （ADC/DAC 
+纠错补偿值)</font></td></tr>
+<tr>
+<td><font size="2">19 </font></td>
+<td><font size="2">FR_ADC_OFFSET_3 </font></td>
+<td><font size="2">ADC/DAC DC correction offset value (2's compliment) （ADC/DAC 
+纠错补偿值)</font></td></tr>
+<tr>
+<td><font size="2">20 </font></td>
+<td><font size="2">FR_ATR_MASK_0 </font></td>
+<td><font size="2">Automatic Transmit/Receive Enable (Slot 0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
+（自动发射/接收使能）</font></td></tr>
+<tr>
+<td><font size="2">&nbsp;21 </font></td>
+<td><font size="2">FR_ATR_TXVAL_0 </font></td>
+<td><font size="2">Automatic Transmit/Receive TX Pin Values (Slot 0)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+TX 管脚值）<br></font></td></tr>
+<tr>
+<td><font size="2">22 </font></td>
+<td><font size="2">FR_ATR_RXVAL_0 </font></td>
+<td><font size="2">Automatic Transmit/Receive RX Pin Values (Slot 0) &nbsp; &nbsp; （自动发射/接收 
+RX 管脚值）</font></td></tr>
+<tr>
+<td><font size="2">23 </font></td>
+<td><font size="2">FR_ATR_MASK_1 </font></td>
+<td><font size="2">Automatic Transmit/Receive Enable (Slot 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 
+（自动发射/接收使能）</font></td></tr>
+<tr>
+<td><font size="2">&nbsp;24 </font></td>
+<td><font size="2">FR_ATR_TXVAL_1 </font></td>
+<td>
+<p><font size="2">Automatic Transmit/Receive TX Pin Values (Slot 1)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+TX 管脚值）</font></p></td></tr>
+<tr>
+<td><font size="2">25 </font></td>
+<td><font size="2">FR_ATR_RXVAL_1 </font></td>
+<td><font size="2">Automatic Transmit/Receive RX Pin Values (Slot 1)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+RX 管脚值）</font></td></tr>
+<tr>
+<td><font size="2">26 </font></td>
+<td><font size="2">FR_ATR_MASK_2 </font></td>
+<td><font size="2">Automatic Transmit/Receive Enable (Slot 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+（自动发射/接收使能）</font></td></tr>
+<tr>
+<td><font size="2">27 </font></td>
+<td><font size="2">FR_ATR_TXVAL_2 </font></td>
+<td><font size="2">Automatic Transmit/Receive TX Pin Values (Slot 2)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+TX 管脚值）</font></td></tr>
+<tr>
+<td><font size="2">28 </font></td>
+<td><font size="2">FR_ATR_RXVAL_2 </font></td>
+<td><font size="2">Automatic Transmit/Receive RX Pin Values (Slot 2)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+RX 管脚值）</font></td></tr>
+<tr>
+<td><font size="2">29 </font></td>
+<td><font size="2">FR_ATR_MASK_3 </font></td>
+<td><font size="2">Automatic Transmit/Receive Enable (Slot 3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+（自动发射/接收使能）</font></td></tr>
+<tr>
+<td><font size="2">30 </font></td>
+<td><font size="2">FR_ATR_TXVAL_3 </font></td>
+<td><font size="2">Automatic Transmit/Receive TX Pin Values (Slot 3)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+TX 管脚值）</font></td></tr>
+<tr>
+<td><font size="2">31 </font></td>
+<td><font size="2">FR_ATR_RXVAL_3 </font></td>
+<td><font size="2">Automatic Transmit/Receive RX Pin Values (Slot 3)&nbsp;&nbsp;&nbsp;&nbsp; （自动发射/接收 
+RX 管脚值）</font></td></tr></tbody></table>
+<h3><a name="TOC-Standard-Registers-"></a><font size="2"><a href="http://gnuradio.org/trac/browser/gnuradio/trunk/usrp/firmware/include/fpga_regs_standard.h" rel="nofollow" style="font-family:simsun,serif" target="_blank" title="Standard Registers">Standard Registers</a><span style="font-family:simsun,serif"> （标准寄存器）</span><br></font></h3>
+<p><font size="2"><span>Writable Address Range</span>: 32 - 63 （可写地址范围：32 
+-63）</font></p>
+<table height="762" width="1343">
+<tbody>
+<tr>
+<td><font size="2"><b>Address<br>地址<br></b></font></td>
+<td><font size="2"><b>Register<br>寄存器<br></b></font></td>
+<td><font size="2"><b>Brief Description<br>简述<br></b></font></td></tr>
+<tr>
+<td><font size="2">32 </font></td>
+<td><font size="2">FR_INTERP_RATE </font></td>
+<td><font size="2">Transmit interpolation rate [1,1024]&nbsp;&nbsp; 
+（发射查补速率[1,1024]）</font></td></tr>
+<tr>
+<td><font size="2">33 </font></td>
+<td><font size="2">FR_DECIM_RATE </font></td>
+<td><font size="2">Receive decimation rate [1,256] 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （接收抽取速率 [1,256])<br></font></td></tr>
+<tr>
+<td><font size="2">34 </font></td>
+<td><font size="2">FR_RX_FREQ_0 </font></td>
+<td><font size="2">DDC Center Frequency (word 0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （DDC 
+中心频率）<br></font></td></tr>
+<tr>
+<td><font size="2">35 </font></td>
+<td><font size="2">FR_RX_FREQ_1 </font></td>
+<td><font size="2">DDC Center Frequency (word 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （DDC 
+中心频率）</font></td></tr>
+<tr>
+<td><font size="2">36 </font></td>
+<td><font size="2">FR_RX_FREQ_2 </font></td>
+<td><font size="2">DDC Center Frequency (word 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （DDC 
+中心频率）</font></td></tr>
+<tr>
+<td><font size="2">37 </font></td>
+<td><font size="2">FR_RX_FREQ_3 </font></td>
+<td><font size="2">DDC Center Frequency (word 3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （DDC 
+中心频率）</font></td></tr>
+<tr>
+<td><font size="2">38 </font></td>
+<td><font size="2">FR_RX_MUX </font></td>
+<td><font size="2">Configure the RX muxing stream of I/Q data&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+（配置RX链路复接I/Q数据流）<br></font></td></tr>
+<tr>
+<td><font size="2">39 </font></td>
+<td><font size="2">FR_TX_MUX </font></td>
+<td><font size="2">Configure the TX muxing stream of I/Q data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+（配置TX链路复接I/Q数据流）</font></td></tr>
+<tr>
+<td><font size="2">40 </font></td>
+<td><font size="2">FR_TX_A_REFCLK </font></td>
+<td><font size="2">Configures a reference clock sent to daughterboard A (TX)&nbsp;&nbsp; &nbsp;&nbsp; 
+（配置发往子板的参考时钟）<br></font></td></tr>
+<tr>
+<td><font size="2">41 </font></td>
+<td><font size="2">FR_RX_A_REFCLK </font></td>
+<td><font size="2">Configures a reference clock sent to daughterboard A (RX) &nbsp;&nbsp;&nbsp;&nbsp; 
+（配置发往子板的参考时钟）</font></td></tr>
+<tr>
+<td><font size="2">42 </font></td>
+<td><font size="2">FR_TX_B_REFCLK </font></td>
+<td><font size="2">Configures a reference clock sent to daughterboard B (TX) &nbsp;&nbsp; &nbsp; 
+（配置发往子板的参考时钟）</font></td></tr>
+<tr>
+<td><font size="2">43 </font></td>
+<td><font size="2">FR_RX_B_REFCLK </font></td>
+<td><font size="2">Configures a reference clock sent to daughterboard B (RX)&nbsp; &nbsp; &nbsp; 
+（配置发往子板的参考时钟）</font></td></tr>
+<tr>
+<td><font size="2">44 </font></td>
+<td><font size="2">FR_RX_PHASE_0 </font></td>
+<td><font size="2">RX DDC Starting Phase (word 0)&nbsp; （RX DDC 
+启动阶段）<br></font></td></tr>
+<tr>
+<td><font size="2">45 </font></td>
+<td><font size="2">FR_RX_PHASE_1 </font></td>
+<td><font size="2">RX DDC Starting Phase (word 1)&nbsp; （RX DDC 启动阶段）</font></td></tr>
+<tr>
+<td><font size="2">46 </font></td>
+<td><font size="2">FR_RX_PHASE_2 </font></td>
+<td><font size="2">RX DDC Starting Phase (word 2)&nbsp; （RX DDC 启动阶段）</font></td></tr>
+<tr>
+<td><font size="2">47 </font></td>
+<td><font size="2">FR_RX_PHASE_3 </font></td>
+<td><font size="2">RX DDC Starting Phase (word 3)&nbsp; （RX DDC 启动阶段）</font></td></tr>
+<tr>
+<td><font size="2">48 </font></td>
+<td><font size="2">FR_TX_FORMAT </font></td>
+<td><font size="2">Configures TX Format&nbsp;&nbsp;&nbsp;&nbsp; （配置TX格式）<br></font></td></tr>
+<tr>
+<td><font size="2">49 </font></td>
+<td><font size="2">FR_RX_FORMAT </font></td>
+<td><font size="2">Configures RX Format&nbsp;&nbsp;&nbsp;&nbsp; （配置TX格式）</font></td></tr>
+<tr>
+<td><font size="2">50 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）<br></font></td></tr>
+<tr>
+<td><font size="2">51 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">52 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">53 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">54 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">55 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">56 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">57 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">58 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">59 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">60 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">61 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">62 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use （将来备用）</font></td></tr>
+<tr>
+<td><font size="2">63 </font></td>
+<td><font size="2">AVAILABLE </font></td>
+<td><font size="2">Available for future use 
+（将来备用）</font></td></tr></tbody></table>
+<p><font size="2"><span>Readable Address Range</span>: 1 - 3 （可读地址范围：1 - 
+3）</font></p>
+<p><font size="2">仅仅只有三个可读寄存器，它们不和可写寄存器在一起，代码 <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/usrp/firmware/include/fpga_regs_standard.h" rel="nofollow" target="_blank">fpga_regs_standard.h</a> 在末尾部分定义它们。(所寻 READBACK 寄存器。) 
+</font></p>
+<table height="94" width="1337">
+<tbody>
+<tr>
+<td><font size="2"><b>Address</b></font> </td>
+<td><font size="2"><b>Register</b></font> </td>
+<td><font size="2"><b>Brief Description</b></font> </td></tr>
+<tr>
+<td><font size="2">1 </font></td>
+<td><font size="2">FR_RB_IO_RX_A_IO_TX_A </font></td>
+<td><font size="2">Readback A-Side I/O pins&nbsp;&nbsp; （可读取A端I/O管脚）<br></font></td></tr>
+<tr>
+<td><font size="2">2 </font></td>
+<td><font size="2">FR_RB_IO_RX_B_IO_TX_B </font></td>
+<td><font size="2">Readback B-Side I/O pins&nbsp;&nbsp; （可读取B端I/O管脚）</font></td></tr>
+<tr>
+<td><font size="2">3 </font></td>
+<td><font size="2">FR_RB_CAPS </font></td>
+<td><font size="2">Readback FPGA capabilities 
+（FPGA可读取使能）</font></td></tr></tbody></table>
+<h3><a name="TOC-Custom-Registers-"></a><font size="2">Custom Registers 
+（自定义寄存器）<br></font></h3>
+<p><font size="2"><span>Writable Address Range</span>: 64 - 79 （可写地址范围：64 
+-79）</font></p>
+<p><font size="2">这些寄存器地址确保没被定义为公用（common）和 
+标准（standard）寄存器，专用于用户自定义的寄存器。</font></p>
+<h2><a name="TOC-3"></a><font size="2">子板</font></h2>
+<p><font size="2">如何去写USB接口用来控制诸如频率调制，滤波。 
+时序图或者子板的特定锁相时间，合成锁相时间等是很有意思的工作，下面是</font><font size="2">到子板清单的</font><font size="2">链接。</font></p>
+<h3><a name="TOC-4"></a><font size="2">子板清单</font></h3>
+<p><font size="2">参见 <a href="list_of_usrp_daughterboards.html" target="_blank" title="List of USRP daughterboards">List of USRP daughterboards</a></font> </p>
+<h2><a name="TOC-Message-Block"></a><font size="2">Message Block <br></font></h2>
+<p><font size="2">链接 FPGA 的 <a href="messageblocks.html" target="_blank">MessageBlocks</a> 探讨高效地发送和接收功用。 <br></font></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<div>
+<p><b><font size="2"><font style="color:rgb(0,0,0)">注：</font></font><font size="2"><a href="http://gnuradio.org/redmine/wiki/gnuradio/UsrpFPGA" rel="nofollow" target="_blank">UsrpFPGA</a>（原文出处，翻译整理仅供参考!</font><font size="2">）</font></b><br></p></div></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

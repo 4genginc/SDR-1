@@ -1,0 +1,187 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="faq.html">返回 常见问题</a></p>
+				<hr />
+				<p class="content_title">如何对 GNURadio 进行Octave分析？</p>
+				<hr />
+				<p class="faq_title">如何对 GNU Radio 进行 Octave 分析？</p>
+				<p class="faq_mingxi"><a href="http://www.gnu.org/software/octave/" target="_blank">Octave</a> 是 GNU Radio 的最流行的分析工具，鉴于此 GNU Radio 软件包也包含它自身的一组脚本（ <a href="http://gnuradio.org/trac/browser/gnuradio/trunk/gnuradio-core/src/utils" target="_blank">scripts</a> ）用于读取和语法分析输出。 </p>
+				
+				<p class="faq_title">安装指导 - Installing</p>
+				<p class="faq_mingxi">可以从源码（ <a href="http://www.gnu.org/software/octave/download.html" target="_blank">source</a>）来安装 Octave，或者在 Ubuntu 内使用如下命令： </p>
+				<p class="faq_mingxi2">sudo apt-get install octave</p>
+				<p class="faq_mingxi">以便 GNU Radio 的 Octave 脚本能够被直接使用，必须在 Octave 的路径变量中添加 GNU Radio 的路径。 这通过操作 Octave 的配置文件 ~/.octaverc 很容易被做到。查看清楚 GNU Radio 的路径 /home/username/gnuradio/。然后把如下内容添加到 ~/.octaverc：</p>
+				<p class="faq_mingxi2">addpath("/home/username/gnuradio/gnuradio-core/src/utils/")</p>
+				
+				<p class="faq_title">数据的语法分析 - Parsing Data </p>
+				<p class="faq_mingxi">从语法上分析 GNU Radio 的数据输出，最便捷的方法便是使用 GNU Radio 提供的脚本。如上安装指导所示，确保把 GNU Radio  的脚本的路径已经添加到 Octave 的路径中。这便可帮助读取那些被使用 gr.file_sink (大小、文件名) 顷倒到磁盘的数据。</p>
+				<p class="faq_mingxi">下面的方法函数是基于参数 size 的用在 gr.file_sink() 内的，它把文件名作为第一个参数、第二个参数是可选项，它表示了从文件中要读取的数量。</p>
+				<ul>
+					<li>read_complex_binary(): gr.sizeof_gr_complex </li>
+					<li>read_float_binary(): gr.sizeof_float </li>
+					<li>read_int_binary(): gr.sizeof_int </li>
+					<li>read_short_binary(): gr.sizeof_short </li>
+					<li>read_char_binary(): gr.sizeof_char </li>
+				</ul>
+				<p class="faq_mingxi">比如：在 Python 脚本中，使用 gr.file_sink(gr.sizeof_gr_complex, "capture.dat") 获取了 64 位的复合数据如下：</p>
+				<p class="faq_mingxi2">c=read_complex_binary('capture.dat');</p>
+				<p class="faq_mingxi">从 USRP 直接能获取的数据是以 32 位复合数据形式存储的，而不是 64 位复合型 (gr.sizeof_gr_complex)。为了能读取此数据，首先，使用 read_short_binary() 然后将其分离进入 - a two dimensional vector 如下： </p>
+				<p class="faq_mingxi2">d=read_short_binary(data);</p>
+				<p class="faq_mingxi2">c=split_vect(d,2);</p>
+				
+				
+				<p class="faq_title">图形绘制 - Plotting </p>
+				<p class="faq_mingxi">使用 Octave 来绘制数据，最简便的方法是使用 <a href="http://www.gnuplot.info" target="_blank">gnuplot</a>。可以从源码（<a href="http://www.gnuplot.info/download.html" target="_blank">source</a>）来安装或者在 Ubuntu 上键入如下命令：</p>
+				<p class="faq_mingxi2">sudo apt-get install gnuplot</p>
+				<p class="faq_mingxi">在时间轴上的 I 和 Q，可如下分别地绘制各个元素：</p>
+				<p class="faq_mingxi2">plot([real(c), imag(c)])</p>
+				<p class="faq_mingxi">如下可生成一个 I/Q 曲线（x 表示 I ,y 表示 Q）：</p>
+				<p class="faq_mingxi2">plot(c)</p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

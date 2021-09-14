@@ -1,0 +1,703 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>gpio_defs.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>gpio_defs.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">gpio_defs.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="gpio__defs_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2011,2014,2015 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_LIBUHD_USRP_GPIO_DEFS_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_LIBUHD_USRP_GPIO_DEFS_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/assign.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/utility.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#include &lt;map&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html"> 26</a></span>&nbsp; 
+          <span class="keyword">namespace </span>uhd { 
+          <span class="keyword">namespace </span>usrp { 
+          <span class="keyword">namespace </span>gpio_atr { 
+         </div> 
+         <div class="line"> 
+          <a name="l00027"></a> 
+          <span class="lineno"> 27</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00028"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8"> 28</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8">gpio_atr_reg_t</a> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00029"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5a18a773dd259badc047444589523451"> 29</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5a18a773dd259badc047444589523451">ATR_REG_IDLE</a> = int( 
+          <span class="charliteral">'i'</span>), 
+         </div> 
+         <div class="line"> 
+          <a name="l00030"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5bad24b72d24b79ea8d634aade9e90f7"> 30</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5bad24b72d24b79ea8d634aade9e90f7">ATR_REG_TX_ONLY</a> = int( 
+          <span class="charliteral">'t'</span>), 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a9f5b7d2c213c9a0ac3fa55b2135169e0"> 31</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a9f5b7d2c213c9a0ac3fa55b2135169e0">ATR_REG_RX_ONLY</a> = int( 
+          <span class="charliteral">'r'</span>), 
+         </div> 
+         <div class="line"> 
+          <a name="l00032"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a6263e174094a5c8228522ef3f4a63a4d"> 32</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a6263e174094a5c8228522ef3f4a63a4d">ATR_REG_FULL_DUPLEX</a> = int( 
+          <span class="charliteral">'f'</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00034"></a> 
+          <span class="lineno"> 34</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00035"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5de"> 35</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5de">gpio_atr_mode_t</a> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00036"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea377ebc5ee1f8b38a871ca607f2574687"> 36</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea377ebc5ee1f8b38a871ca607f2574687">MODE_ATR</a> = 0, 
+          <span class="comment">//Output driven by the auto-transmit-receive engine</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00037"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea4be2eb1816c959a4970d6a747ff3aab0"> 37</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea4be2eb1816c959a4970d6a747ff3aab0">MODE_GPIO</a> = 1 
+          <span class="comment">//Output value is static</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00038"></a> 
+          <span class="lineno"> 38</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00039"></a> 
+          <span class="lineno"> 39</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00040"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099"> 40</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099">gpio_ddr_t</a> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00041"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099acc544b55f4349086710ca4752c9fcdf1"> 41</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099acc544b55f4349086710ca4752c9fcdf1">DDR_INPUT</a> = 0, 
+         </div> 
+         <div class="line"> 
+          <a name="l00042"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099ae6a4751f4e04c9f4daeb8d9eb2643d88"> 42</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099ae6a4751f4e04c9f4daeb8d9eb2643d88">DDR_OUTPUT</a> = 1 
+         </div> 
+         <div class="line"> 
+          <a name="l00043"></a> 
+          <span class="lineno"> 43</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00044"></a> 
+          <span class="lineno"> 44</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00045"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8a"> 45</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8a">gpio_attr_t</a> { 
+         </div> 
+         <div class="line"> 
+          <a name="l00046"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aaa180c8416e660151b595608434505530"> 46</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aaa180c8416e660151b595608434505530">GPIO_CTRL</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00047"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0a15517a29a573f62075a668a280a904"> 47</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0a15517a29a573f62075a668a280a904">GPIO_DDR</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00048"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa53b270ea594d37377d1b611a46010099"> 48</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa53b270ea594d37377d1b611a46010099">GPIO_OUT</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa20bfe05d05d6e292b08cf1c2ef4175d0"> 49</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa20bfe05d05d6e292b08cf1c2ef4175d0">GPIO_ATR_0X</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00050"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0bf239070fc92d7ea5d650b3e1881ad9"> 50</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0bf239070fc92d7ea5d650b3e1881ad9">GPIO_ATR_RX</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00051"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa05f639a41843fb7150227be1ae8a7571"> 51</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa05f639a41843fb7150227be1ae8a7571">GPIO_ATR_TX</a>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa8d4d71dad9a1fea42042bb00a11d42fb"> 52</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa8d4d71dad9a1fea42042bb00a11d42fb">GPIO_ATR_XX</a> 
+         </div> 
+         <div class="line"> 
+          <a name="l00053"></a> 
+          <span class="lineno"> 53</span>&nbsp;}; 
+         </div> 
+         <div class="line"> 
+          <a name="l00054"></a> 
+          <span class="lineno"> 54</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a4eb2f4ebeb8999d71a70c4b1cd0325a5"> 55</a></span>&nbsp; 
+          <span class="keyword">typedef</span> std::map&lt;gpio_attr_t, std::string&gt; 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a4eb2f4ebeb8999d71a70c4b1cd0325a5">gpio_attr_map_t</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00056"></a> 
+          <span class="lineno"> 56</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00057"></a> 
+          <span class="lineno"> 57</span>&nbsp; 
+          <span class="keyword">static</span> 
+          <span class="keyword">const</span> 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a4eb2f4ebeb8999d71a70c4b1cd0325a5">gpio_attr_map_t</a> gpio_attr_map = 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"> 58</span>&nbsp; boost::assign::map_list_of 
+         </div> 
+         <div class="line"> 
+          <a name="l00059"></a> 
+          <span class="lineno"> 59</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aaa180c8416e660151b595608434505530">GPIO_CTRL</a>, 
+          <span class="stringliteral">&quot;CTRL&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00060"></a> 
+          <span class="lineno"> 60</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0a15517a29a573f62075a668a280a904">GPIO_DDR</a>, 
+          <span class="stringliteral">&quot;DDR&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00061"></a> 
+          <span class="lineno"> 61</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa53b270ea594d37377d1b611a46010099">GPIO_OUT</a>, 
+          <span class="stringliteral">&quot;OUT&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00062"></a> 
+          <span class="lineno"> 62</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa20bfe05d05d6e292b08cf1c2ef4175d0">GPIO_ATR_0X</a>, 
+          <span class="stringliteral">&quot;ATR_0X&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00063"></a> 
+          <span class="lineno"> 63</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0bf239070fc92d7ea5d650b3e1881ad9">GPIO_ATR_RX</a>, 
+          <span class="stringliteral">&quot;ATR_RX&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00064"></a> 
+          <span class="lineno"> 64</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa05f639a41843fb7150227be1ae8a7571">GPIO_ATR_TX</a>, 
+          <span class="stringliteral">&quot;ATR_TX&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"> 65</span>&nbsp; ( 
+          <a class="code" href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa8d4d71dad9a1fea42042bb00a11d42fb">GPIO_ATR_XX</a>, 
+          <span class="stringliteral">&quot;ATR_XX&quot;</span>) 
+         </div> 
+         <div class="line"> 
+          <a name="l00066"></a> 
+          <span class="lineno"> 66</span>&nbsp;; 
+         </div> 
+         <div class="line"> 
+          <a name="l00067"></a> 
+          <span class="lineno"> 67</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"> 68</span>&nbsp;}}} 
+          <span class="comment">//namespaces</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00070"></a> 
+          <span class="lineno"> 70</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_LIBUHD_USRP_GPIO_DEFS_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa8d4d71dad9a1fea42042bb00a11d42fb"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa8d4d71dad9a1fea42042bb00a11d42fb">uhd::usrp::gpio_atr::GPIO_ATR_XX</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:52 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a9efd88dc2e241f3237d5ec8986be8099"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099">uhd::usrp::gpio_atr::gpio_ddr_t</a> 
+          </div> 
+          <div class="ttdeci">
+            gpio_ddr_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:40 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa0bf239070fc92d7ea5d650b3e1881ad9"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0bf239070fc92d7ea5d650b3e1881ad9">uhd::usrp::gpio_atr::GPIO_ATR_RX</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:50 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a074cf434d51eb2ab90e8cdffe26b0de8a5a18a773dd259badc047444589523451"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5a18a773dd259badc047444589523451">uhd::usrp::gpio_atr::ATR_REG_IDLE</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:29 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa05f639a41843fb7150227be1ae8a7571"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa05f639a41843fb7150227be1ae8a7571">uhd::usrp::gpio_atr::GPIO_ATR_TX</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:51 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa0a15517a29a573f62075a668a280a904"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa0a15517a29a573f62075a668a280a904">uhd::usrp::gpio_atr::GPIO_DDR</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:47 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a7f7ef1d25eeb7435eb7aa8972744d5dea377ebc5ee1f8b38a871ca607f2574687"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea377ebc5ee1f8b38a871ca607f2574687">uhd::usrp::gpio_atr::MODE_ATR</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:36 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a074cf434d51eb2ab90e8cdffe26b0de8a6263e174094a5c8228522ef3f4a63a4d"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a6263e174094a5c8228522ef3f4a63a4d">uhd::usrp::gpio_atr::ATR_REG_FULL_DUPLEX</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:32 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a074cf434d51eb2ab90e8cdffe26b0de8a9f5b7d2c213c9a0ac3fa55b2135169e0"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a9f5b7d2c213c9a0ac3fa55b2135169e0">uhd::usrp::gpio_atr::ATR_REG_RX_ONLY</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:31 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aaa180c8416e660151b595608434505530"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aaa180c8416e660151b595608434505530">uhd::usrp::gpio_atr::GPIO_CTRL</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:46 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a4eb2f4ebeb8999d71a70c4b1cd0325a5"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a4eb2f4ebeb8999d71a70c4b1cd0325a5">uhd::usrp::gpio_atr::gpio_attr_map_t</a> 
+          </div> 
+          <div class="ttdeci">
+            std::map&lt; gpio_attr_t, std::string &gt; gpio_attr_map_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:55 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa20bfe05d05d6e292b08cf1c2ef4175d0"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa20bfe05d05d6e292b08cf1c2ef4175d0">uhd::usrp::gpio_atr::GPIO_ATR_0X</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:49 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a9efd88dc2e241f3237d5ec8986be8099acc544b55f4349086710ca4752c9fcdf1"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099acc544b55f4349086710ca4752c9fcdf1">uhd::usrp::gpio_atr::DDR_INPUT</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:41 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a074cf434d51eb2ab90e8cdffe26b0de8"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8">uhd::usrp::gpio_atr::gpio_atr_reg_t</a> 
+          </div> 
+          <div class="ttdeci">
+            gpio_atr_reg_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:28 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8aa53b270ea594d37377d1b611a46010099"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8aa53b270ea594d37377d1b611a46010099">uhd::usrp::gpio_atr::GPIO_OUT</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:48 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a074cf434d51eb2ab90e8cdffe26b0de8a5bad24b72d24b79ea8d634aade9e90f7"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a074cf434d51eb2ab90e8cdffe26b0de8a5bad24b72d24b79ea8d634aade9e90f7">uhd::usrp::gpio_atr::ATR_REG_TX_ONLY</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:30 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a7f7ef1d25eeb7435eb7aa8972744d5de"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5de">uhd::usrp::gpio_atr::gpio_atr_mode_t</a> 
+          </div> 
+          <div class="ttdeci">
+            gpio_atr_mode_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:35 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a9efd88dc2e241f3237d5ec8986be8099ae6a4751f4e04c9f4daeb8d9eb2643d88"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a9efd88dc2e241f3237d5ec8986be8099ae6a4751f4e04c9f4daeb8d9eb2643d88">uhd::usrp::gpio_atr::DDR_OUTPUT</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:42 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a7f7ef1d25eeb7435eb7aa8972744d5dea4be2eb1816c959a4970d6a747ff3aab0"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a7f7ef1d25eeb7435eb7aa8972744d5dea4be2eb1816c959a4970d6a747ff3aab0">uhd::usrp::gpio_atr::MODE_GPIO</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:37 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1usrp_1_1gpio__atr_html_a28a886bcfeb93cf79833ebcbedd0ca8a"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1usrp_1_1gpio__atr.html#a28a886bcfeb93cf79833ebcbedd0ca8a">uhd::usrp::gpio_atr::gpio_attr_t</a> 
+          </div> 
+          <div class="ttdeci">
+            gpio_attr_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> gpio_defs.hpp:45 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

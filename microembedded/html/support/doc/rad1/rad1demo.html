@@ -1,0 +1,169 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>OpenBTS的应用_微嵌</title>
+<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <a href="rad1.html">RAD1使用手册</a> » <span>OpenBTS的应用</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">USRP &nbsp;搭建的基站实例</p><hr><p>需要：装有 OpenBTS liveDVD 光盘 Ubuntu 系统的计算机、usrp 64M 母版及先关 子板、旧时手机两个、手机卡两张。</p><p>1、进入 Ubuntu &nbsp; 系统，在桌面上打开四个终端 Terminal 在 Terminal1 依次运行：</p><p class="code">[sudo su]</p><p class="code">[cd &nbsp; &nbsp;/usr/local/src/openbts_2.6Mamou/apps]</p><p class="code">[Tail –f TRX26.log]</p><p>在 Terminal2 中依次运行： [sudo su]</p><p class="code">[cd &nbsp; &nbsp;/usr/local/src/openbts_2.6Mamou/apps] [Tail –f openbts26.log]</p><p>在 Terminal3 中依次运行： [sudo su]</p><p class="code">[cd /usr/local/src/openbts_2.6Mamou/smqueue] [./smqueue]</p><p>在 Terminal4 中依次运行： [sudo su]</p><p class="code">[cd &nbsp; &nbsp;/usr/local/src/openbts_2.6Mamou/apps] [./OpenBTS]</p><p>如下图所示：</p><p class="img"><img src="images/demo1.png"></p><p>运行结果如下：</p><p class="img"><img src="images/demo2.png"></p><p>2、打开第 &nbsp;5 &nbsp;个终端，重载 &nbsp;asterisk &nbsp;关于 &nbsp;openbts &nbsp;的配置文件，依次运行：&nbsp;</p><p class="code">sudo su</p><p class="code">asterisk –rx ＂sip reload＂&nbsp;</p><p class="code">asterisk –rx ＂dialplan reload＂</p><p class="img"><img src="images/demo3.png"></p><p>3、将手机卡装入手机，打开手机手动搜索网络，搜索到 &nbsp;CHN &nbsp; 07（CHN &nbsp; 07 &nbsp;为本光 盘所设定的基站）并连接。</p><p class="img"><img src="images/demo4.png"></p><p>4、连接 CHN 07 会受到平台收到的短信，如下图所示：</p><p class="img"><img src="images/demo5.png"></p><p>短信中显示了手机卡的 IMSI 号码。</p><p>5、配置 asterisk 文件给手机卡定义号码；</p><p>例如：将 ISMI:460000243125431 定义为 2104；</p><p>将 ISMI:460027029239684 定义为 2105；</p><p>（定义号码时位数不限）</p><p>（1）在第 5 个终端中输入：vim<span class="Apple-tab-span">	</span>/etc/asterisk/extensions.conf &nbsp; 出现如下画面：</p><p class="img"><img src="images/demo6.png"></p><p>敲击键盘＂I＂键，将其中两行改为手机卡的信息，即：</p><p>exten =&gt; &nbsp;2104,1,Macro(dialSIP,IMSI460000243125431) exten =&gt; &nbsp;2105,1,Macro(dialSIP,IMSI460027029239684)</p><p>输入:wq 保存退出：</p><p class="img"><img src="images/demo7.png"></p><p>（2）在第 5 个终端中继续输入：vim<span class="Apple-tab-span">	</span>/etc/asterisk/sip.conf</p><p>在出现的窗口中继续修改相应信息，并保存退出：</p><p class="img"><img src="images/demo8.png"></p><p>（3）再次重载关于 asterisk 的配置文件：</p><p class="img"><img src="images/demo9.png"></p><p>（4）平台搭建完成，可以拨打电话了：</p><p class="img"><img src="images/demo10.png"></p><p class="min_title">TIPS:</p><p>1、当用户使用光驱启动模式下要注意，对系统及源代码的改动需要备份到移动 设备或本地硬盘，不然会在重启后消失，因为光盘不能保存数据。关于 linux 中 的的具体操作请参考相关文献。</p><p>2、在 linux 下对硬件的直接操作需要管理员权限，所以在运行所有指令之前，请 输入 sudo su，并输入密码获得 root 权限。&nbsp;</p><p>3、基站实例中由于实验平台的稳定性问题，在搜索基站信号和拨打电话时请多 次尝试，如需帮组请及时与我们联系 &nbsp;http://www.microembedded.com。</p>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

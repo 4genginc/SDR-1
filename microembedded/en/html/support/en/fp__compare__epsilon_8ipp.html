@@ -1,0 +1,434 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>fp_compare_epsilon.ipp File Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>fp_compare_epsilon.ipp File Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">fp_compare_epsilon.ipp File Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <code>#include &lt;<a class="el" href="msg_8hpp_source.html">uhd/utils/msg.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;cmath&gt;</code> 
+         <br /> 
+         <code>#include &lt;typeinfo&gt;</code> 
+         <br /> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           Include dependency graph for fp_compare_epsilon.ipp: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="fp__compare__epsilon_8ipp__incl.png" border="0" usemap="#include_2uhd_2utils_2fp__compare__epsilon_8ipp" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2fp__compare__epsilon_8ipp" id="include_2uhd_2utils_2fp__compare__epsilon_8ipp"> <area shape="rect" id="node2" href="msg_8hpp.html" title="uhd/utils/msg.hpp" alt="" coords="228,96,353,123"></area><area shape="rect" id="node3" href="config_8hpp.html" title="uhd/config.hpp" alt="" coords="11,245,117,272"></area><area shape="rect" id="node5" href="pimpl_8hpp.html" title="uhd/utils/pimpl.hpp" alt="" coords="101,171,231,197"></area></map> 
+         </div> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           This graph shows which files directly or indirectly include this file: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="fp__compare__epsilon_8ipp__dep__incl.png" border="0" usemap="#include_2uhd_2utils_2fp__compare__epsilon_8ippdep" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2fp__compare__epsilon_8ippdep" id="include_2uhd_2utils_2fp__compare__epsilon_8ippdep"> <area shape="rect" id="node2" href="math_8hpp.html" title="include/uhd/utils/math.hpp" alt="" coords="5,96,179,123"></area></map> 
+         </div> 
+        </div> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="namespaces"></a> Namespaces</h2></td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html">uhd</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1math"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math.html">uhd::math</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1math_1_1fp__compare"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html">uhd::math::fp_compare</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="define-members"></a> Macros</h2></td> 
+          </tr> 
+          <tr class="memitem:a146cbb9bb599b428e0b21d94e1756bdc"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="fp__compare__epsilon_8ipp.html#a146cbb9bb599b428e0b21d94e1756bdc">INCLUDED_UHD_UTILS_FP_COMPARE_EPSILON_IPP</a></td> 
+          </tr> 
+          <tr class="separator:a146cbb9bb599b428e0b21d94e1756bdc"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="func-members"></a> Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:aa0c6f30538b490b42283076b3508bf2f"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:aa0c6f30538b490b42283076b3508bf2f"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#aa0c6f30538b490b42283076b3508bf2f">uhd::math::fp_compare::operator==</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:aa0c6f30538b490b42283076b3508bf2f"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a31fc48de5dd4524a22ec34e114f3e7a6"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a31fc48de5dd4524a22ec34e114f3e7a6"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a31fc48de5dd4524a22ec34e114f3e7a6">uhd::math::fp_compare::operator!=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a31fc48de5dd4524a22ec34e114f3e7a6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a97e1c6961c2b07b91e97ab397f9f2fea"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a97e1c6961c2b07b91e97ab397f9f2fea"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a97e1c6961c2b07b91e97ab397f9f2fea">uhd::math::fp_compare::operator&lt;</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a97e1c6961c2b07b91e97ab397f9f2fea"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aab5202c04988187799ea495f6232ee6e"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:aab5202c04988187799ea495f6232ee6e"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#aab5202c04988187799ea495f6232ee6e">uhd::math::fp_compare::operator&lt;=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:aab5202c04988187799ea495f6232ee6e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a0cf47b4c817948803f6e7c1feea567fc"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a0cf47b4c817948803f6e7c1feea567fc"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a0cf47b4c817948803f6e7c1feea567fc">uhd::math::fp_compare::operator&gt;</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a0cf47b4c817948803f6e7c1feea567fc"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aaf1a535f362d7ef0eeb266c6904c678c"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:aaf1a535f362d7ef0eeb266c6904c678c"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#aaf1a535f362d7ef0eeb266c6904c678c">uhd::math::fp_compare::operator&gt;=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:aaf1a535f362d7ef0eeb266c6904c678c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a5303f778887c1fde0f43917071f4bcc6"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a5303f778887c1fde0f43917071f4bcc6"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a5303f778887c1fde0f43917071f4bcc6">uhd::math::fp_compare::operator==</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:a5303f778887c1fde0f43917071f4bcc6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a6b3d8e4a42bb6e5f3d2717313b1704fe"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a6b3d8e4a42bb6e5f3d2717313b1704fe"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a6b3d8e4a42bb6e5f3d2717313b1704fe">uhd::math::fp_compare::operator!=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:a6b3d8e4a42bb6e5f3d2717313b1704fe"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ab38971a7b2e68c8a49c447f61d1cca42"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:ab38971a7b2e68c8a49c447f61d1cca42"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#ab38971a7b2e68c8a49c447f61d1cca42">uhd::math::fp_compare::operator&lt;</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:ab38971a7b2e68c8a49c447f61d1cca42"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a403b901bf69d478ab0921a8acf0fa5d6"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a403b901bf69d478ab0921a8acf0fa5d6"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a403b901bf69d478ab0921a8acf0fa5d6">uhd::math::fp_compare::operator&lt;=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:a403b901bf69d478ab0921a8acf0fa5d6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aea7655a22788ca0c657d9324aa3c8210"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:aea7655a22788ca0c657d9324aa3c8210"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#aea7655a22788ca0c657d9324aa3c8210">uhd::math::fp_compare::operator&gt;</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:aea7655a22788ca0c657d9324aa3c8210"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:af22f661f116980741833058ede606eaa"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:af22f661f116980741833058ede606eaa"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#af22f661f116980741833058ede606eaa">uhd::math::fp_compare::operator&gt;=</a> (fp_compare_epsilon&lt; float_t &gt; lhs, double rhs)</td> 
+          </tr> 
+          <tr class="separator:af22f661f116980741833058ede606eaa"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1658185e1ac80d2a0ffdc77d170718a5"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a1658185e1ac80d2a0ffdc77d170718a5"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a1658185e1ac80d2a0ffdc77d170718a5">uhd::math::fp_compare::operator==</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a1658185e1ac80d2a0ffdc77d170718a5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a20a3cd8d181e605b4cc8429d9d152606"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a20a3cd8d181e605b4cc8429d9d152606"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a20a3cd8d181e605b4cc8429d9d152606">uhd::math::fp_compare::operator!=</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a20a3cd8d181e605b4cc8429d9d152606"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:abcac82a133f87d8970c8053a7fd75256"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:abcac82a133f87d8970c8053a7fd75256"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#abcac82a133f87d8970c8053a7fd75256">uhd::math::fp_compare::operator&lt;</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:abcac82a133f87d8970c8053a7fd75256"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ab343af77049ad3348c9fd1c1b85188bf"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:ab343af77049ad3348c9fd1c1b85188bf"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#ab343af77049ad3348c9fd1c1b85188bf">uhd::math::fp_compare::operator&lt;=</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:ab343af77049ad3348c9fd1c1b85188bf"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a17b53acd77759be1b7e2c111f0a7aaf8"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a17b53acd77759be1b7e2c111f0a7aaf8"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a17b53acd77759be1b7e2c111f0a7aaf8">uhd::math::fp_compare::operator&gt;</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a17b53acd77759be1b7e2c111f0a7aaf8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a70c0acc11dacb8f5ddeb1b5bcb7a14d8"> 
+           <td class="memTemplParams" colspan="2">template&lt;typename float_t &gt; </td> 
+          </tr> 
+          <tr class="memitem:a70c0acc11dacb8f5ddeb1b5bcb7a14d8"> 
+           <td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> bool&nbsp;</td> 
+           <td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1math_1_1fp__compare.html#a70c0acc11dacb8f5ddeb1b5bcb7a14d8">uhd::math::fp_compare::operator&gt;=</a> (double lhs, fp_compare_epsilon&lt; float_t &gt; rhs)</td> 
+          </tr> 
+          <tr class="separator:a70c0acc11dacb8f5ddeb1b5bcb7a14d8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <h2 class="groupheader">Macro Definition Documentation</h2> 
+        <a class="anchor" id="a146cbb9bb599b428e0b21d94e1756bdc"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define INCLUDED_UHD_UTILS_FP_COMPARE_EPSILON_IPP</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

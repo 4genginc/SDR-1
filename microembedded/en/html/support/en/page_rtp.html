@@ -1,0 +1,290 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Radio Transport Protocols</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Radio Transport Protocols</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Radio Transport Protocols</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#rtp_vrt">VRT</a></li> 
+          <li class="level1"><a href="#rtp_chdr">CVITA (CHDR)</a></li> 
+          <li class="level1"><a href="#vrt_tools">Tools</a></li> 
+          <li class="level1"><a href="#vrt_code">Code</a></li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <p>Radio transport protocols are used to exchange samples (or other items) between host and devices. If one were to sniff Ethernet traffic between a USRP and a PC, the packets would conform to a radio transport protocol.</p> 
+         <p>For USRP devices, two radio transport protocols are relevent: VRT (the VITA Radio Transport protocol) and CVITA (compressed VITA), also known as CHDR. Generation-3 devices and the B200 use CHDR, the rest use VRT.</p> 
+         <h1><a class="anchor" id="rtp_vrt"></a> VRT</h1> 
+         <p>VRT is an open protocol defined by the VITA-49 standard. It was designed for interoperability, and to allow different device types to work with different software stacks.</p> 
+         <p>VRT is a very verbose standard, and only a subset is implemented in UHD/USRPs. The full standard is available from the VITA website: <a href="http://www.vita.com">http://www.vita.com</a> .</p> 
+         <h1><a class="anchor" id="rtp_chdr"></a> CVITA (CHDR)</h1> 
+         <p>For the third generation of Ettus devices, a new type transport protocol was designed. It reduces the complexity of the original standard and uses a fixed-length 64-Bit header for everything except the timestamp. Because this is a &quot;compressed&quot; form of VITA, it was dubbed &quot;Compressed VITA&quot; (CVITA). The compressed header is called CHDR, which is why the protocol is often called CHDR itself (pronounced like the cheese &quot;cheddar&quot;).</p> 
+         <p>By compressing all information into a 64-bit line, the header can efficiently be parsed in newer FPGAs, where the common streaming protocol is 64-Bit AXI. The first line in a packet already provides all necessary information to proceed.</p> 
+         <p>Some CHDR-specific functions can be found in: <a class="el" href="namespaceuhd_1_1transport_1_1vrt_1_1chdr.html" title="CVITA/CHDR related function. ">uhd::transport::vrt::chdr</a>.</p> 
+         <p>The form of a CVITA packet is the following:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Address (Bytes) </th> 
+            <th>Length (Bytes) </th> 
+            <th>Payload </th> 
+           </tr> 
+           <tr> 
+            <td>0 </td> 
+            <td>8 </td> 
+            <td>Compressed Header (CHDR) </td> 
+           </tr> 
+           <tr> 
+            <td>8 </td> 
+            <td>8 </td> 
+            <td>Fractional Time (Optional!) </td> 
+           </tr> 
+           <tr> 
+            <td>8/16 </td> 
+            <td>- </td> 
+            <td>Data </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>If there is no timestamp present, the data starts at address 8, otherwise, it starts at 16.</p> 
+         <p>The 64 Bits in the compressed header have the following meaning:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Bits </th> 
+            <th>Meaning </th> 
+           </tr> 
+           <tr> 
+            <td>63:62 </td> 
+            <td>Packet Type </td> 
+           </tr> 
+           <tr> 
+            <td>61 </td> 
+            <td>Has fractional time stamp (1: Yes) </td> 
+           </tr> 
+           <tr> 
+            <td>60 </td> 
+            <td>End-of-burst or error flag </td> 
+           </tr> 
+           <tr> 
+            <td>59:48 </td> 
+            <td>12-bit sequence number </td> 
+           </tr> 
+           <tr> 
+            <td>47:32 </td> 
+            <td>Total packet length in Bytes </td> 
+           </tr> 
+           <tr> 
+            <td>31:0 </td> 
+            <td>Stream ID (SID) </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>The packet type is determined mainly by the first two bits, although the EOB or error flag are also taken into consideration:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Bit 63 </th> 
+            <th>Bit 62 </th> 
+            <th>Bit 60 </th> 
+            <th>Packet Type </th> 
+           </tr> 
+           <tr> 
+            <td>0 </td> 
+            <td>0 </td> 
+            <td>0 </td> 
+            <td>Data </td> 
+           </tr> 
+           <tr> 
+            <td>0 </td> 
+            <td>0 </td> 
+            <td>1 </td> 
+            <td>Data (End-of-burst) </td> 
+           </tr> 
+           <tr> 
+            <td>0 </td> 
+            <td>1 </td> 
+            <td>0 </td> 
+            <td>Flow Control </td> 
+           </tr> 
+           <tr> 
+            <td>1 </td> 
+            <td>0 </td> 
+            <td>0 </td> 
+            <td>Command Packet </td> 
+           </tr> 
+           <tr> 
+            <td>1 </td> 
+            <td>1 </td> 
+            <td>0 </td> 
+            <td>Command Response </td> 
+           </tr> 
+           <tr> 
+            <td>1 </td> 
+            <td>1 </td> 
+            <td>1 </td> 
+            <td>Command Response (Error) </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h1><a class="anchor" id="vrt_tools"></a> Tools</h1> 
+         <p>For CHDR, we provide a Wireshark dissector under tools/chdr_dissector. It can be used for Ethernet links as well as USB (e.g., for the B210).</p> 
+         <h1><a class="anchor" id="vrt_code"></a> Code</h1> 
+         <p>Relevent code sections for the radio transport layer are: <a class="el" href="namespaceuhd_1_1transport_1_1vrt.html">uhd::transport::vrt</a> - Namespace for radio transport protocol related functions and definitions <a class="el" href="namespaceuhd_1_1transport_1_1vrt_1_1chdr.html" title="CVITA/CHDR related function. ">uhd::transport::vrt::chdr</a> - Sub-namespace specifically for CVITA/CHDR <a class="el" href="classuhd_1_1sid__t.html" title="Represents a stream ID (SID). ">uhd::sid_t</a> - Datatype to represent SIDs </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

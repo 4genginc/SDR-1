@@ -1,0 +1,628 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::rx_metadata_t Struct Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::rx_metadata_t Struct Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::rx_metadata_t Struct Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="metadata_8hpp_source.html">uhd/types/metadata.hpp</a>&gt;</code></p> 
+        <div class="dynheader">
+          Collaboration diagram for uhd::rx_metadata_t: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="structuhd_1_1rx__metadata__t__coll__graph.png" border="0" usemap="#uhd_1_1rx__metadata__t_coll__map" alt="Collaboration graph" /> 
+         </div> 
+         <map name="uhd_1_1rx__metadata__t_coll__map" id="uhd_1_1rx__metadata__t_coll__map"> <area shape="rect" id="node2" href="classuhd_1_1time__spec__t.html" title="uhd::time_spec_t" alt="" coords="100,99,223,125"></area></map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:ae3a42ad2414c4f44119157693fe27639"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639">error_code_t</a> { <br /> &nbsp;&nbsp;<a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a30c16ffa6113fbbaca9246fb7e1e9175">ERROR_CODE_NONE</a> = 0x0, <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a64632eaf9b5ebdabe94f623bb4017c9b">ERROR_CODE_TIMEOUT</a> = 0x1, <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a117bc72e437060564a5f03b8a9856e88">ERROR_CODE_LATE_COMMAND</a> = 0x2, <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a1a0c6c210cac5dd454ff6eda10524969">ERROR_CODE_BROKEN_CHAIN</a> = 0x4, <br /> &nbsp;&nbsp;<a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639af52d18388ea782e474b134bb3bace485">ERROR_CODE_OVERFLOW</a> = 0x8, <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a1b2dd7d72f764f3071e362fe566e0011">ERROR_CODE_ALIGNMENT</a> = 0xc, <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639a56ed4063c6f6e1e23ddea5cadf2b807c">ERROR_CODE_BAD_PACKET</a> = 0xf <br /> }</td> 
+          </tr> 
+          <tr class="separator:ae3a42ad2414c4f44119157693fe27639"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a0e376e976185ad4deaf039a5dd9df6f5"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a0e376e976185ad4deaf039a5dd9df6f5">rx_metadata_t</a> ()</td> 
+          </tr> 
+          <tr class="memdesc:a0e376e976185ad4deaf039a5dd9df6f5"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Default constructor. <a href="#a0e376e976185ad4deaf039a5dd9df6f5">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a0e376e976185ad4deaf039a5dd9df6f5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a96dee4e7287c55c0b6c59217c6e4f2e4"> 
+           <td class="memItemLeft" align="right" valign="top">void&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a96dee4e7287c55c0b6c59217c6e4f2e4">reset</a> ()</td> 
+          </tr> 
+          <tr class="memdesc:a96dee4e7287c55c0b6c59217c6e4f2e4"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Reset values. <a href="#a96dee4e7287c55c0b6c59217c6e4f2e4">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a96dee4e7287c55c0b6c59217c6e4f2e4"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aec9a516f0a33bdd0743c6f049030456a"> 
+           <td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#aec9a516f0a33bdd0743c6f049030456a">to_pp_string</a> (bool compact=true) const </td> 
+          </tr> 
+          <tr class="separator:aec9a516f0a33bdd0743c6f049030456a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a0a033cef5cc266551cd719e2d233d9c2"> 
+           <td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a0a033cef5cc266551cd719e2d233d9c2">strerror</a> (void) const </td> 
+          </tr> 
+          <tr class="separator:a0a033cef5cc266551cd719e2d233d9c2"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a> Public Attributes</h2></td> 
+          </tr> 
+          <tr class="memitem:a7cd978c6290c12f3bb92072286109123"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a7cd978c6290c12f3bb92072286109123">has_time_spec</a></td> 
+          </tr> 
+          <tr class="memdesc:a7cd978c6290c12f3bb92072286109123"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Has time specification? <a href="#a7cd978c6290c12f3bb92072286109123">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a7cd978c6290c12f3bb92072286109123"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a14daac3e0c3a4d2b074962bf2d795b81"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1time__spec__t.html">time_spec_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a14daac3e0c3a4d2b074962bf2d795b81">time_spec</a></td> 
+          </tr> 
+          <tr class="memdesc:a14daac3e0c3a4d2b074962bf2d795b81"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Time of the first sample. <a href="#a14daac3e0c3a4d2b074962bf2d795b81">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a14daac3e0c3a4d2b074962bf2d795b81"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a10b3fe1655a605bac6b5a07e7c8fe4f4"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a10b3fe1655a605bac6b5a07e7c8fe4f4">more_fragments</a></td> 
+          </tr> 
+          <tr class="separator:a10b3fe1655a605bac6b5a07e7c8fe4f4"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aec8f2278ac684af1ca3ac22ddec668ca"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#aec8f2278ac684af1ca3ac22ddec668ca">fragment_offset</a></td> 
+          </tr> 
+          <tr class="separator:aec8f2278ac684af1ca3ac22ddec668ca"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ac36a6c9889ccbac4999496e3681eb088"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#ac36a6c9889ccbac4999496e3681eb088">start_of_burst</a></td> 
+          </tr> 
+          <tr class="memdesc:ac36a6c9889ccbac4999496e3681eb088"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Start of burst will be true for the first packet in the chain. <a href="#ac36a6c9889ccbac4999496e3681eb088">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:ac36a6c9889ccbac4999496e3681eb088"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a69e306add401a7e0a0caa5e30d6ee5ce"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a69e306add401a7e0a0caa5e30d6ee5ce">end_of_burst</a></td> 
+          </tr> 
+          <tr class="memdesc:a69e306add401a7e0a0caa5e30d6ee5ce"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">End of burst will be true for the last packet in the chain. <a href="#a69e306add401a7e0a0caa5e30d6ee5ce">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a69e306add401a7e0a0caa5e30d6ee5ce"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ab0a70db215d88d013c6b71e132ac3b54"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639">uhd::rx_metadata_t::error_code_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#ab0a70db215d88d013c6b71e132ac3b54">error_code</a></td> 
+          </tr> 
+          <tr class="separator:ab0a70db215d88d013c6b71e132ac3b54"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1bd09159cf5f2109cfa168758213ddee"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1rx__metadata__t.html#a1bd09159cf5f2109cfa168758213ddee">out_of_sequence</a></td> 
+          </tr> 
+          <tr class="memdesc:a1bd09159cf5f2109cfa168758213ddee"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Out of sequence. The transport has either dropped a packet or received data out of order. <a href="#a1bd09159cf5f2109cfa168758213ddee">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a1bd09159cf5f2109cfa168758213ddee"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>RX metadata structure for describing sent IF data. Includes time specification, fragmentation flags, burst flags, and error codes. The receive routines will convert IF data headers into metadata. </p> 
+        </div> 
+        <h2 class="groupheader">Member Enumeration Documentation</h2> 
+        <a class="anchor" id="ae3a42ad2414c4f44119157693fe27639"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639">uhd::rx_metadata_t::error_code_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>The error condition on a receive call.</p> 
+          <p>Note: When an overrun occurs in continuous streaming mode, the device will continue to send samples to the host. For other streaming modes, streaming will discontinue until the user issues a new stream command.</p> 
+          <p>The metadata fields have meaning for the following error codes:</p> 
+          <ul> 
+           <li>none</li> 
+           <li>late command</li> 
+           <li>broken chain</li> 
+           <li>overflow </li> 
+          </ul> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a30c16ffa6113fbbaca9246fb7e1e9175"></a>ERROR_CODE_NONE</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>No error associated with this metadata. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a64632eaf9b5ebdabe94f623bb4017c9b"></a>ERROR_CODE_TIMEOUT</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>No packet received, implementation timed-out. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a117bc72e437060564a5f03b8a9856e88"></a>ERROR_CODE_LATE_COMMAND</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>A stream command was issued in the past. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a1a0c6c210cac5dd454ff6eda10524969"></a>ERROR_CODE_BROKEN_CHAIN</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>Expected another stream command. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639af52d18388ea782e474b134bb3bace485"></a>ERROR_CODE_OVERFLOW</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>An internal receive buffer has filled or a sequence error has been detected. So, why is this overloaded? Simple: legacy support. It would have been much cleaner to create a separate error code for a sequence error, but that would have broken legacy applications. So, the out_of_sequence flag was added to differentiate between the two error cases. In either case, data is missing between this time_spec and the and the time_spec of the next successful receive. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a1b2dd7d72f764f3071e362fe566e0011"></a>ERROR_CODE_ALIGNMENT</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>Multi-channel alignment failed. </p> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae3a42ad2414c4f44119157693fe27639a56ed4063c6f6e1e23ddea5cadf2b807c"></a>ERROR_CODE_BAD_PACKET</em>&nbsp;</td> 
+             <td class="fielddoc"> <p>The packet could not be parsed. </p> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="a0e376e976185ad4deaf039a5dd9df6f5"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">uhd::rx_metadata_t::rx_metadata_t </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">inline</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Default constructor. </p> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Function Documentation</h2> 
+        <a class="anchor" id="a96dee4e7287c55c0b6c59217c6e4f2e4"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">void uhd::rx_metadata_t::reset </td> 
+                 <td>(</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">inline</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Reset values. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a0a033cef5cc266551cd719e2d233d9c2"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">std::string uhd::rx_metadata_t::strerror </td> 
+             <td>(</td> 
+             <td class="paramtype">void&nbsp;</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td> const</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Similar to C's <a class="el" href="structuhd_1_1rx__metadata__t.html#a0a033cef5cc266551cd719e2d233d9c2">strerror()</a> function, creates a std::string describing the error code. </p> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a printable string representing the error. 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aec9a516f0a33bdd0743c6f049030456a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">std::string uhd::rx_metadata_t::to_pp_string </td> 
+             <td>(</td> 
+             <td class="paramtype">bool&nbsp;</td> 
+             <td class="paramname"><em>compact</em> = <code>true</code></td> 
+             <td>)</td> 
+             <td> const</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Convert a <a class="el" href="structuhd_1_1rx__metadata__t.html">rx_metadata_t</a> into a pretty print string.</p> 
+          <dl class="params"> 
+           <dt>
+             Parameters 
+           </dt> 
+           <dd> 
+            <table class="params"> 
+             <tbody> 
+              <tr> 
+               <td class="paramname">compact</td> 
+               <td>Set to false for a more verbose output. </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </dd> 
+          </dl> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a printable string representing the metadata. 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Data Documentation</h2> 
+        <a class="anchor" id="a69e306add401a7e0a0caa5e30d6ee5ce"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::rx_metadata_t::end_of_burst</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>End of burst will be true for the last packet in the chain. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ab0a70db215d88d013c6b71e132ac3b54"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1rx__metadata__t.html#ae3a42ad2414c4f44119157693fe27639">uhd::rx_metadata_t::error_code_t</a> uhd::rx_metadata_t::error_code</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aec8f2278ac684af1ca3ac22ddec668ca"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::rx_metadata_t::fragment_offset</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Fragmentation offset: The fragment offset is the sample number at the start of the receive buffer. For non-fragmented receives, the fragment offset should always be zero. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a7cd978c6290c12f3bb92072286109123"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::rx_metadata_t::has_time_spec</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Has time specification? </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a10b3fe1655a605bac6b5a07e7c8fe4f4"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::rx_metadata_t::more_fragments</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Fragmentation flag: Similar to IPv4 fragmentation: <a href="http://en.wikipedia.org/wiki/IPv4#Fragmentation_and_reassembly">http://en.wikipedia.org/wiki/IPv4#Fragmentation_and_reassembly</a> More fragments is true when the input buffer has insufficient size to fit an entire received packet. More fragments will be false for the last fragment. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a1bd09159cf5f2109cfa168758213ddee"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::rx_metadata_t::out_of_sequence</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Out of sequence. The transport has either dropped a packet or received data out of order. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ac36a6c9889ccbac4999496e3681eb088"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::rx_metadata_t::start_of_burst</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Start of burst will be true for the first packet in the chain. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a14daac3e0c3a4d2b074962bf2d795b81"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="classuhd_1_1time__spec__t.html">time_spec_t</a> uhd::rx_metadata_t::time_spec</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Time of the first sample. </p> 
+         </div> 
+        </div> 
+        <hr />The documentation for this struct was generated from the following file: 
+        <ul> 
+         <li>include/uhd/types/<a class="el" href="metadata_8hpp_source.html">metadata.hpp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

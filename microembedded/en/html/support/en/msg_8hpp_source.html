@@ -1,0 +1,601 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>msg.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>msg.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">msg.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="msg_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2011-2013 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_UTILS_MSG_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_UTILS_MSG_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="pimpl_8hpp.html">uhd/utils/pimpl.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;ostream&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+          <span class="preprocessor">#include &lt;iomanip&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+          <span class="preprocessor">#include &lt;string&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"><a class="line" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15"> 31</a></span>&nbsp; 
+          <span class="preprocessor">#define UHD_MSG(type) \</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00032"></a> 
+          <span class="lineno"> 32</span>&nbsp; 
+          <span class="preprocessor"> uhd::msg::_msg(uhd::msg::type)()</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00035"></a> 
+          <span class="lineno"><a class="line" href="msg_8hpp.html#a0ec718025802d29e8ed78a66e9a1908a"> 35</a></span>&nbsp; 
+          <span class="preprocessor">#define UHD_HERE() \</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00036"></a> 
+          <span class="lineno"> 36</span>&nbsp; 
+          <span class="preprocessor"> UHD_MSG(status) &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00037"></a> 
+          <span class="lineno"> 37</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00039"></a> 
+          <span class="lineno"><a class="line" href="msg_8hpp.html#a8439acc29dcd403f77b8a021f5c64f07"> 39</a></span>&nbsp; 
+          <span class="preprocessor">#define UHD_VAR(var) \</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00040"></a> 
+          <span class="lineno"> 40</span>&nbsp; 
+          <span class="preprocessor"> UHD_MSG(status) &lt;&lt; #var &lt;&lt; &quot; = &quot; &lt;&lt; var &lt;&lt; std::endl;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00041"></a> 
+          <span class="lineno"> 41</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00043"></a> 
+          <span class="lineno"><a class="line" href="msg_8hpp.html#a98e566c4d02f4b4a6f7d4c7f5385b7de"> 43</a></span>&nbsp; 
+          <span class="preprocessor">#define UHD_HEX(var) \</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00044"></a> 
+          <span class="lineno"> 44</span>&nbsp; 
+          <span class="preprocessor"> UHD_MSG(status) &lt;&lt; #var &lt;&lt; &quot; = 0x&quot; &lt;&lt; std::hex &lt;&lt; std::setfill('0') &lt;&lt; std::setw(8) &lt;&lt; var &lt;&lt; std::dec &lt;&lt; std::endl;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00045"></a> 
+          <span class="lineno"> 45</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00046"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html"> 46</a></span>&nbsp; 
+          <span class="keyword">namespace </span>uhd{ 
+          <span class="keyword">namespace </span>msg{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00047"></a> 
+          <span class="lineno"> 47</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b"> 49</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">type_t</a>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00050"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba4a6791e1c064188a13d6a802e0fe073a"> 50</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba4a6791e1c064188a13d6a802e0fe073a">status</a> = 
+          <span class="charliteral">'s'</span>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00051"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139baeece253580978ed29753e248e36ca44b"> 51</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139baeece253580978ed29753e248e36ca44b">warning</a> = 
+          <span class="charliteral">'w'</span>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6"> 52</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6">error</a> = 
+          <span class="charliteral">'e'</span>, 
+         </div> 
+         <div class="line"> 
+          <a name="l00053"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba6747ccde4b852b6baf912a96e4c90f4c"> 53</a></span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba6747ccde4b852b6baf912a96e4c90f4c">fastpath</a>= 
+          <span class="charliteral">'f'</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00054"></a> 
+          <span class="lineno"> 54</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"> 55</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00057"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd_1_1msg.html#a45b6cdcb700a41c8f7020cc63a8bd1e3"> 57</a></span>&nbsp; 
+          <span class="keyword">typedef</span> void (* 
+          <a class="code" href="namespaceuhd_1_1msg.html#a45b6cdcb700a41c8f7020cc63a8bd1e3">handler_t</a>)( 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">type_t</a>, 
+          <span class="keyword">const</span> std::string &amp;); 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"> 58</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"> 65</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="namespaceuhd_1_1msg.html#aa5380a801e1ac6b8a35aa95543fc3e8e">register_handler</a>( 
+          <span class="keyword">const</span> 
+          <a class="code" href="namespaceuhd_1_1msg.html#a45b6cdcb700a41c8f7020cc63a8bd1e3">handler_t</a> &amp;handler); 
+         </div> 
+         <div class="line"> 
+          <a name="l00066"></a> 
+          <span class="lineno"> 66</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1msg_1_1__msg.html"> 68</a></span>&nbsp; 
+          <span class="keyword">class </span> 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="classuhd_1_1msg_1_1__msg.html">_msg</a>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+          <span class="keyword">public</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00070"></a> 
+          <span class="lineno"> 70</span>&nbsp; 
+          <a class="code" href="classuhd_1_1msg_1_1__msg.html">_msg</a>( 
+          <span class="keyword">const</span> 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">type_t</a> type); 
+         </div> 
+         <div class="line"> 
+          <a name="l00071"></a> 
+          <span class="lineno"> 71</span>&nbsp; ~ 
+          <a class="code" href="classuhd_1_1msg_1_1__msg.html">_msg</a>( 
+          <span class="keywordtype">void</span>); 
+         </div> 
+         <div class="line"> 
+          <a name="l00072"></a> 
+          <span class="lineno"> 72</span>&nbsp; std::ostream &amp;operator()( 
+          <span class="keywordtype">void</span>); 
+         </div> 
+         <div class="line"> 
+          <a name="l00073"></a> 
+          <span class="lineno"> 73</span>&nbsp; 
+          <span class="keyword">private</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00074"></a> 
+          <span class="lineno"> 74</span>&nbsp; 
+          <a class="code" href="pimpl_8hpp.html#ab8fecbb8670e0b9dbb186fc024edb2b9">UHD_PIMPL_DECL</a>(impl) _impl; 
+         </div> 
+         <div class="line"> 
+          <a name="l00075"></a> 
+          <span class="lineno"> 75</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00076"></a> 
+          <span class="lineno"> 76</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00077"></a> 
+          <span class="lineno"> 77</span>&nbsp;}} 
+          <span class="comment">//namespace uhd::msg</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00078"></a> 
+          <span class="lineno"> 78</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00079"></a> 
+          <span class="lineno"> 79</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_UTILS_MSG_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139baeece253580978ed29753e248e36ca44b"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139baeece253580978ed29753e248e36ca44b">uhd::msg::warning</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:51 
+          </div> 
+         </div> 
+         <div class="ttc" id="pimpl_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="pimpl_8hpp.html">pimpl.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a45b6cdcb700a41c8f7020cc63a8bd1e3"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a45b6cdcb700a41c8f7020cc63a8bd1e3">uhd::msg::handler_t</a> 
+          </div> 
+          <div class="ttdeci">
+            void(* handler_t)(type_t, const std::string &amp;) 
+          </div> 
+          <div class="ttdoc">
+            Typedef for a user-registered message handler. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:57 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_aa5380a801e1ac6b8a35aa95543fc3e8e"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#aa5380a801e1ac6b8a35aa95543fc3e8e">uhd::msg::register_handler</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API void register_handler(const handler_t &amp;handler) 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139b"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">uhd::msg::type_t</a> 
+          </div> 
+          <div class="ttdeci">
+            type_t 
+          </div> 
+          <div class="ttdoc">
+            Possible message types. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:49 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6">uhd::msg::error</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:52 
+          </div> 
+         </div> 
+         <div class="ttc" id="pimpl_8hpp_html_ab8fecbb8670e0b9dbb186fc024edb2b9"> 
+          <div class="ttname"> 
+           <a href="pimpl_8hpp.html#ab8fecbb8670e0b9dbb186fc024edb2b9">UHD_PIMPL_DECL</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_PIMPL_DECL(_name) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> pimpl.hpp:42 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1msg_1_1__msg_html"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1msg_1_1__msg.html">uhd::msg::_msg</a> 
+          </div> 
+          <div class="ttdoc">
+            Internal message object (called by UHD_MSG macro) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:68 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139ba6747ccde4b852b6baf912a96e4c90f4c"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba6747ccde4b852b6baf912a96e4c90f4c">uhd::msg::fastpath</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:53 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139ba4a6791e1c064188a13d6a802e0fe073a"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba4a6791e1c064188a13d6a802e0fe073a">uhd::msg::status</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:50 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,807 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::device Class Reference abstract</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::device Class Reference abstract</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::device Class Reference abstract</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="device_8hpp_source.html">uhd/device.hpp</a>&gt;</code></p> 
+        <div class="dynheader">
+          Inheritance diagram for uhd::device: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1device__inherit__graph.png" border="0" usemap="#uhd_1_1device_inherit__map" alt="Inheritance graph" /> 
+         </div> 
+         <map name="uhd_1_1device_inherit__map" id="uhd_1_1device_inherit__map"> <area shape="rect" id="node3" href="classuhd_1_1device3.html" title="Extends uhd::device for third-generation USRP devices. " alt="" coords="5,155,101,181"></area></map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <div class="dynheader">
+          Collaboration diagram for uhd::device: 
+        </div> 
+        <div class="dyncontent"> 
+         <div class="center"> 
+          <img src="classuhd_1_1device__coll__graph.png" border="0" usemap="#uhd_1_1device_coll__map" alt="Collaboration graph" /> 
+         </div> 
+         <map name="uhd_1_1device_coll__map" id="uhd_1_1device_coll__map"> </map> 
+         <center> 
+          <span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span> 
+         </center> 
+        </div> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:ae23e4e2a10b8ba796cc5fbe08c73d021"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> { <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940">ANY</a>, <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021ab78d2717191eace4bffae8b5142c1847">USRP</a>, <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021a0a8c15728e7ea099bbb4fe629be3ca44">CLOCK</a> }</td> 
+          </tr> 
+          <tr class="memdesc:ae23e4e2a10b8ba796cc5fbe08c73d021"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Device type, used as a filter in make. <a href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:ae23e4e2a10b8ba796cc5fbe08c73d021"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a439ff67bbcbe999d871a179467355ed0"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classuhd_1_1device.html">device</a> &gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">sptr</a></td> 
+          </tr> 
+          <tr class="separator:a439ff67bbcbe999d871a179467355ed0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a7cab70fce4219ff5910460724d09ee20"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::function<br class="typebreak" /> &lt; <a class="el" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">device_addrs_t</a>(const <br class="typebreak" /> <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;)&gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a7cab70fce4219ff5910460724d09ee20">find_t</a></td> 
+          </tr> 
+          <tr class="separator:a7cab70fce4219ff5910460724d09ee20"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aa57d1d2a3f5774df16fbdecacbe38d5d"> 
+           <td class="memItemLeft" align="right" valign="top">typedef boost::function&lt; <a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">sptr</a>(const <br class="typebreak" /> <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;)&gt;&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#aa57d1d2a3f5774df16fbdecacbe38d5d">make_t</a></td> 
+          </tr> 
+          <tr class="separator:aa57d1d2a3f5774df16fbdecacbe38d5d"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a9084070434687430284a9dc78b6940ac"> 
+           <td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a9084070434687430284a9dc78b6940ac">~device</a> (void)=0</td> 
+          </tr> 
+          <tr class="separator:a9084070434687430284a9dc78b6940ac"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a0a9e36f353dcce36b4dd8d394c8813e3"> 
+           <td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classuhd_1_1rx__streamer.html#a7e7fc83d61d3bb68efe296ebc0df9c6d">rx_streamer::sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a0a9e36f353dcce36b4dd8d394c8813e3">get_rx_stream</a> (const <a class="el" href="structuhd_1_1stream__args__t.html">stream_args_t</a> &amp;args)=0</td> 
+          </tr> 
+          <tr class="memdesc:a0a9e36f353dcce36b4dd8d394c8813e3"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Make a new receive streamer from the streamer arguments. <a href="#a0a9e36f353dcce36b4dd8d394c8813e3">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a0a9e36f353dcce36b4dd8d394c8813e3"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a66d1bf289dd03a03df3860f3eee578c0"> 
+           <td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classuhd_1_1tx__streamer.html#a137bfe67e240e3d73ef7708155fb9827">tx_streamer::sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a66d1bf289dd03a03df3860f3eee578c0">get_tx_stream</a> (const <a class="el" href="structuhd_1_1stream__args__t.html">stream_args_t</a> &amp;args)=0</td> 
+          </tr> 
+          <tr class="memdesc:a66d1bf289dd03a03df3860f3eee578c0"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Make a new transmit streamer from the streamer arguments. <a href="#a66d1bf289dd03a03df3860f3eee578c0">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a66d1bf289dd03a03df3860f3eee578c0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8d5efeafc7a7e14c91fd05362d43f7a1"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">uhd::property_tree::sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a8d5efeafc7a7e14c91fd05362d43f7a1">get_tree</a> (void) const </td> 
+          </tr> 
+          <tr class="memdesc:a8d5efeafc7a7e14c91fd05362d43f7a1"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Get access to the underlying property structure. <a href="#a8d5efeafc7a7e14c91fd05362d43f7a1">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a8d5efeafc7a7e14c91fd05362d43f7a1"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a6924e77bf23b4e03fe699fe2d0cecbf5"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a6924e77bf23b4e03fe699fe2d0cecbf5">get_device_type</a> () const </td> 
+          </tr> 
+          <tr class="memdesc:a6924e77bf23b4e03fe699fe2d0cecbf5"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Get device type. <a href="#a6924e77bf23b4e03fe699fe2d0cecbf5">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a6924e77bf23b4e03fe699fe2d0cecbf5"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a> Static Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:aa536682c8dfec19e5a0c66391f8ce02c"> 
+           <td class="memItemLeft" align="right" valign="top">static void&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#aa536682c8dfec19e5a0c66391f8ce02c">register_device</a> (const <a class="el" href="classuhd_1_1device.html#a7cab70fce4219ff5910460724d09ee20">find_t</a> &amp;<a class="el" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">find</a>, const <a class="el" href="classuhd_1_1device.html#aa57d1d2a3f5774df16fbdecacbe38d5d">make_t</a> &amp;<a class="el" href="classuhd_1_1device.html#a809df88506c7d04144f6fd8581618156">make</a>, const <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> filter)</td> 
+          </tr> 
+          <tr class="separator:aa536682c8dfec19e5a0c66391f8ce02c"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a1b103f9db343b8ef9439677c670d05de"> 
+           <td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">device_addrs_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">find</a> (const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;hint, <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> filter=<a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940">ANY</a>)</td> 
+          </tr> 
+          <tr class="memdesc:a1b103f9db343b8ef9439677c670d05de"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Find devices attached to the host. <a href="#a1b103f9db343b8ef9439677c670d05de">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a1b103f9db343b8ef9439677c670d05de"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a809df88506c7d04144f6fd8581618156"> 
+           <td class="memItemLeft" align="right" valign="top">static <a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a809df88506c7d04144f6fd8581618156">make</a> (const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;hint, <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> filter=<a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940">ANY</a>, size_t which=0)</td> 
+          </tr> 
+          <tr class="memdesc:a809df88506c7d04144f6fd8581618156"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Create a new device from the device address hint. <a href="#a809df88506c7d04144f6fd8581618156">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a809df88506c7d04144f6fd8581618156"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a> Protected Attributes</h2></td> 
+          </tr> 
+          <tr class="memitem:a4ed23809a07500539dd2e080888aee1f"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">uhd::property_tree::sptr</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a4ed23809a07500539dd2e080888aee1f">_tree</a></td> 
+          </tr> 
+          <tr class="separator:a4ed23809a07500539dd2e080888aee1f"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a052ffa670c40374e77c825a4998af32e"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1device.html#a052ffa670c40374e77c825a4998af32e">_type</a></td> 
+          </tr> 
+          <tr class="separator:a052ffa670c40374e77c825a4998af32e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>The device interface represents the hardware. The API allows for discovery, configuration, and streaming. </p> 
+        </div> 
+        <h2 class="groupheader">Member Typedef Documentation</h2> 
+        <a class="anchor" id="a7cab70fce4219ff5910460724d09ee20"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef boost::function&lt;<a class="el" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">device_addrs_t</a>(const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;)&gt; <a class="el" href="classuhd_1_1device.html#a7cab70fce4219ff5910460724d09ee20">uhd::device::find_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aa57d1d2a3f5774df16fbdecacbe38d5d"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef boost::function&lt;<a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">sptr</a>(const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;)&gt; <a class="el" href="classuhd_1_1device.html#aa57d1d2a3f5774df16fbdecacbe38d5d">uhd::device::make_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a439ff67bbcbe999d871a179467355ed0"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="classuhd_1_1device.html">device</a>&gt; <a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">uhd::device::sptr</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Enumeration Documentation</h2> 
+        <a class="anchor" id="ae23e4e2a10b8ba796cc5fbe08c73d021"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">uhd::device::device_filter_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Device type, used as a filter in make. </p> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940"></a>ANY</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae23e4e2a10b8ba796cc5fbe08c73d021ab78d2717191eace4bffae8b5142c1847"></a>USRP</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="ae23e4e2a10b8ba796cc5fbe08c73d021a0a8c15728e7ea099bbb4fe629be3ca44"></a>CLOCK</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="a9084070434687430284a9dc78b6940ac"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual uhd::device::~device </td> 
+                 <td>(</td> 
+                 <td class="paramtype">void&nbsp;</td> 
+                 <td class="paramname"></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Function Documentation</h2> 
+        <a class="anchor" id="a1b103f9db343b8ef9439677c670d05de"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static <a class="el" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">device_addrs_t</a> uhd::device::find </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>hint</em>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a>&nbsp;</td> 
+                 <td class="paramname"><em>filter</em> = <code><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940">ANY</a></code>&nbsp;</td> 
+                </tr> 
+                <tr> 
+                 <td></td> 
+                 <td>)</td> 
+                 <td></td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Find devices attached to the host. </p> 
+          <p>The hint device address should be used to narrow down the search to particular transport types and/or transport arguments.</p> 
+          <dl class="params"> 
+           <dt>
+             Parameters 
+           </dt> 
+           <dd> 
+            <table class="params"> 
+             <tbody> 
+              <tr> 
+               <td class="paramname">hint</td> 
+               <td>a partially (or fully) filled in device address </td> 
+              </tr> 
+              <tr> 
+               <td class="paramname">filter</td> 
+               <td>an optional filter to exclude USRP or clock devices </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </dd> 
+          </dl> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a vector of device addresses for all devices on the system 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a6924e77bf23b4e03fe699fe2d0cecbf5"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> uhd::device::get_device_type </td> 
+             <td>(</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td> const</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Get device type. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a0a9e36f353dcce36b4dd8d394c8813e3"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual <a class="el" href="classuhd_1_1rx__streamer.html#a7e7fc83d61d3bb68efe296ebc0df9c6d">rx_streamer::sptr</a> uhd::device::get_rx_stream </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1stream__args__t.html">stream_args_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>args</em></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Make a new receive streamer from the streamer arguments. </p> 
+          <p>Note: There can always only be one streamer. When calling <a class="el" href="classuhd_1_1device.html#a0a9e36f353dcce36b4dd8d394c8813e3" title="Make a new receive streamer from the streamer arguments. ">get_rx_stream()</a> a second time, the first streamer must be destroyed beforehand. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8d5efeafc7a7e14c91fd05362d43f7a1"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">uhd::property_tree::sptr</a> uhd::device::get_tree </td> 
+             <td>(</td> 
+             <td class="paramtype">void&nbsp;</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td> const</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Get access to the underlying property structure. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a66d1bf289dd03a03df3860f3eee578c0"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">virtual <a class="el" href="classuhd_1_1tx__streamer.html#a137bfe67e240e3d73ef7708155fb9827">tx_streamer::sptr</a> uhd::device::get_tx_stream </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="structuhd_1_1stream__args__t.html">stream_args_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>args</em></td> 
+                 <td>)</td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Make a new transmit streamer from the streamer arguments. </p> 
+          <p>Note: There can always only be one streamer. When calling <a class="el" href="classuhd_1_1device.html#a66d1bf289dd03a03df3860f3eee578c0" title="Make a new transmit streamer from the streamer arguments. ">get_tx_stream()</a> a second time, the first streamer must be destroyed beforehand. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a809df88506c7d04144f6fd8581618156"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static <a class="el" href="classuhd_1_1device.html#a439ff67bbcbe999d871a179467355ed0">sptr</a> uhd::device::make </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="classuhd_1_1device__addr__t.html">device_addr_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>hint</em>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a>&nbsp;</td> 
+                 <td class="paramname"><em>filter</em> = <code><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021acb9b3d7b943266ee999835fac9700940">ANY</a></code>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype">size_t&nbsp;</td> 
+                 <td class="paramname"><em>which</em> = <code>0</code>&nbsp;</td> 
+                </tr> 
+                <tr> 
+                 <td></td> 
+                 <td>)</td> 
+                 <td></td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Create a new device from the device address hint. </p> 
+          <p>The method will go through the registered device types and pick one of the discovered devices.</p> 
+          <p>By default, the first result will be used to create a new device. Use the which parameter as an index into the list of results.</p> 
+          <dl class="params"> 
+           <dt>
+             Parameters 
+           </dt> 
+           <dd> 
+            <table class="params"> 
+             <tbody> 
+              <tr> 
+               <td class="paramname">hint</td> 
+               <td>a partially (or fully) filled in device address </td> 
+              </tr> 
+              <tr> 
+               <td class="paramname">filter</td> 
+               <td>an optional filter to exclude USRP or clock devices </td> 
+              </tr> 
+              <tr> 
+               <td class="paramname">which</td> 
+               <td>which address to use when multiple are found </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </dd> 
+          </dl> 
+          <dl class="section return"> 
+           <dt>
+             Returns 
+           </dt> 
+           <dd>
+             a shared pointer to a new device instance 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aa536682c8dfec19e5a0c66391f8ce02c"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname">static void uhd::device::register_device </td> 
+                 <td>(</td> 
+                 <td class="paramtype">const <a class="el" href="classuhd_1_1device.html#a7cab70fce4219ff5910460724d09ee20">find_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>find</em>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype">const <a class="el" href="classuhd_1_1device.html#aa57d1d2a3f5774df16fbdecacbe38d5d">make_t</a> &amp;&nbsp;</td> 
+                 <td class="paramname"><em>make</em>, </td> 
+                </tr> 
+                <tr> 
+                 <td class="paramkey"></td> 
+                 <td></td> 
+                 <td class="paramtype">const <a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a>&nbsp;</td> 
+                 <td class="paramname"><em>filter</em>&nbsp;</td> 
+                </tr> 
+                <tr> 
+                 <td></td> 
+                 <td>)</td> 
+                 <td></td> 
+                 <td></td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">static</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Register a device into the discovery and factory system.</p> 
+          <dl class="params"> 
+           <dt>
+             Parameters 
+           </dt> 
+           <dd> 
+            <table class="params"> 
+             <tbody> 
+              <tr> 
+               <td class="paramname">find</td> 
+               <td>a function that discovers devices </td> 
+              </tr> 
+              <tr> 
+               <td class="paramname">make</td> 
+               <td>a factory function that makes a device </td> 
+              </tr> 
+              <tr> 
+               <td class="paramname">filter</td> 
+               <td>include only USRP devices, clock devices, or both </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </dd> 
+          </dl> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Data Documentation</h2> 
+        <a class="anchor" id="a4ed23809a07500539dd2e080888aee1f"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname"><a class="el" href="classuhd_1_1property__tree.html#aebbee624be5b4c8cd5c590aa60ccbd10">uhd::property_tree::sptr</a> uhd::device::_tree</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">protected</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a052ffa670c40374e77c825a4998af32e"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="mlabels"> 
+           <tbody> 
+            <tr> 
+             <td class="mlabels-left"> 
+              <table class="memname"> 
+               <tbody> 
+                <tr> 
+                 <td class="memname"><a class="el" href="classuhd_1_1device.html#ae23e4e2a10b8ba796cc5fbe08c73d021">device_filter_t</a> uhd::device::_type</td> 
+                </tr> 
+               </tbody> 
+              </table> </td> 
+             <td class="mlabels-right"> <span class="mlabels"><span class="mlabel">protected</span></span> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <hr />The documentation for this class was generated from the following file: 
+        <ul> 
+         <li>include/uhd/<a class="el" href="device_8hpp_source.html">device.hpp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

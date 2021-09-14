@@ -1,0 +1,392 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Device Synchronization</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Device Synchronization</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Device Synchronization</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#sync_commonref">Common Reference Signals</a> 
+           <ul> 
+            <li class="level2"><a href="#sync_commonref_pps">PPS and 10 MHz reference signals</a></li> 
+            <li class="level2"><a href="#sync_commonref_mimo">MIMO cable reference signals</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#sync_time">Synchronizing the Device Time</a> 
+           <ul> 
+            <li class="level2"><a href="#sync_time_reg">Method 1 - poll the USRP time registers</a></li> 
+            <li class="level2"><a href="#sync_time_gpsdo">Method 2 - query the GPSDO for seconds</a></li> 
+            <li class="level2"><a href="#sync_time_mimocable">Method 3 - MIMO cable</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#sync_phase">Synchronizing Channel Phase</a> 
+           <ul> 
+            <li class="level2"><a href="#sync_phase_cordics">Align CORDICs in the DSP</a></li> 
+            <li class="level2"><a href="#sync_phase_lo">Align LOs in the front-end (SBX, UBX)</a></li> 
+            <li class="level2"><a href="#sync_phase_lootherfe">Align LOs in the front-end (others)</a></li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <p>The following application notes explain how to synchronize multiple USRP devices with the goal of transmitting or receiving time-aligned samples for MIMO or other applications requiring multiple USRP devices operating synchronously.</p> 
+         <p><b>Note:</b> The following synchronization notes do not apply to USRP1, which does not support the advanced features available in newer products.</p> 
+         <h1><a class="anchor" id="sync_commonref"></a> Common Reference Signals</h1> 
+         <p>USRP devices take two reference signals in order to synchronize clocks and time:</p> 
+         <ul> 
+          <li>A 10 MHz reference to provide a single frequency reference for both devices.</li> 
+          <li>A pulse-per-second (PPS) to synchronize the sample time across devices.</li> 
+          <li>A MIMO cable transmits an encoded time message from one device to another.</li> 
+         </ul> 
+         <h2><a class="anchor" id="sync_commonref_pps"></a> PPS and 10 MHz reference signals</h2> 
+         <p>Connect the front panel SMA connectors to the reference sources. Typically, these signals are provided by an external GPSDO. However, some USRP models can provide these signals from an optional internal GPSDO.</p> 
+         <div class="fragment"> 
+          <div class="line">
+            usrp-&gt;set_clock_source( 
+           <span class="stringliteral">&quot;external&quot;</span>); 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_time_source( 
+           <span class="stringliteral">&quot;external&quot;</span>); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p><b>Note:</b> Sometimes the delay on the PPS signal will cause it to arrive inside the timing margin the FPGA sampling clock, causing PPS edges to be separated by less or more than 100 million cycles of the FPGA clock. If this is the case, you can change the edge reference of the PPS signal with this parameter:</p> 
+         <div class="fragment"> 
+          <div class="line">
+            usrp-&gt;set_time_source( 
+           <span class="stringliteral">&quot;_external_&quot;</span>); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p><b>Note2:</b> For users generating their own signals for the external SMA connectors, the PPS should be clocked from the 10 MHz reference. See the application notes for your device for specific signal requirements.</p> 
+         <h2><a class="anchor" id="sync_commonref_mimo"></a> MIMO cable reference signals</h2> 
+         <p>Use the MIMO expansion cable to share reference sources (USRP2 and N-Series). The MIMO cable can be used synchronize one device to another device. Users of the MIMO cable may use Method 1 (explained below) to synchronize multiple pairs of devices.</p> 
+         <div class="fragment"> 
+          <div class="line">
+            usrp-&gt;set_clock_source( 
+           <span class="stringliteral">&quot;mimo&quot;</span>); 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_time_source( 
+           <span class="stringliteral">&quot;mimo&quot;</span>); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h1><a class="anchor" id="sync_time"></a> Synchronizing the Device Time</h1> 
+         <p>The purpose of the PPS signal is to synchronously latch a time into the device. You can use the uhd::multi_usrp::set_time_next_pps() function to either initialize the sample time to 0 or an absolute time, such as GPS time or UTC time. For the purposes of synchronizing devices, it doesn't matter what time you initialize to when using uhd::multi_usrp::set_time_next_pps().</p> 
+         <h2><a class="anchor" id="sync_time_reg"></a> Method 1 - poll the USRP time registers</h2> 
+         <p>One way to initialize the PPS edge is to poll the &quot;last PPS&quot; time from the USRP device. When the last PPS time increments, the user can determine that a PPS has occurred:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <span class="keyword">const</span> 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a> last_pps_time = usrp-&gt;get_time_last_pps(); 
+          </div> 
+          <div class="line"> 
+           <span class="keywordflow">while</span> (last_pps_time == usrp-&gt;get_time_last_pps()){ 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//sleep 100 milliseconds (give or take)</span> 
+          </div> 
+          <div class="line">
+            } 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_time_next_pps( 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a>(0.0)); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h2><a class="anchor" id="sync_time_gpsdo"></a> Method 2 - query the GPSDO for seconds</h2> 
+         <p>Most GPSDOs can be configured to output a NMEA string over the serial port once every PPS. The user can wait for this string to determine the PPS edge, and the user can also parse this string to determine GPS time:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <span class="comment">//call user's function to wait for NMEA message...</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_time_next_pps( 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a>(0.0)); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line">
+            -- OR -- 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//call user's function to wait for NMEA message...</span> 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//call user's function to parse the NMEA message...</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_time_next_pps( 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a>(gps_time+1)); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h2><a class="anchor" id="sync_time_mimocable"></a> Method 3 - MIMO cable</h2> 
+         <p>Note: This only applies to USRP2 and N200/N210. This method does <em>not</em> require a separate PPS input to the devices, but it is limited to a total of 2 USRPs.</p> 
+         <p>A USRP2 device can synchronize its time to another USRP device via the MIMO cable. Unlike the other methods, this does not use a real &quot;pulse per second&quot;. Rather, the USRP device sends an encoded time message over the MIMO cable. The slave device will automatically synchronize to the time on the master device. See <a class="el" href="page_usrp2.html#usrp2_mimocable">Using the MIMO Cable</a> for more detail.</p> 
+         <h1><a class="anchor" id="sync_phase"></a> Synchronizing Channel Phase</h1> 
+         <h2><a class="anchor" id="sync_phase_cordics"></a> Align CORDICs in the DSP</h2> 
+         <p>In order to achieve phase alignment between USRP devices, the CORDICS in both devices must be aligned with respect to each other. This is easily achieved by issuing stream commands with a time spec property, which instructs the streaming to begin at a specified time. Since the devices are already synchronized via the 10 MHz and PPS inputs, the streaming will start at exactly the same time on both devices. The CORDICs are reset at each start-of-burst command, so users should ensure that every start-of-burst also has a time spec set.</p> 
+         <p>For receive, a burst is started when the user issues a stream command. This stream command should have a time spec set:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <a class="code" href="structuhd_1_1stream__cmd__t.html">uhd::stream_cmd_t</a> stream_cmd( 
+           <a class="code" href="structuhd_1_1stream__cmd__t.html#a4df1f2e22148b7e09ace0eca0dfbf904a0e293a4a7cab198a4f6cb0e196ca377d">uhd::stream_cmd_t::STREAM_MODE_NUM_SAMPS_AND_DONE</a>); 
+          </div> 
+          <div class="line">
+            stream_cmd.num_samps = samps_to_recv; 
+          </div> 
+          <div class="line">
+            stream_cmd.stream_now = 
+           <span class="keyword">false</span>; 
+          </div> 
+          <div class="line">
+            stream_cmd.time_spec = time_to_recv; 
+          </div> 
+          <div class="line">
+            usrp-&gt;issue_stream_cmd(stream_cmd); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p>For transmit, a burst is started when the user calls <a class="el" href="device__deprecated_8ipp.html#abae30e7593a958c3202d4d0afed42b58">send()</a>. The metadata should have a time spec set: :</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <a class="code" href="structuhd_1_1tx__metadata__t.html">uhd::tx_metadata_t</a> md; 
+          </div> 
+          <div class="line">
+            md. 
+           <a class="code" href="structuhd_1_1tx__metadata__t.html#ab5ffe812f8d3d1870253e98e6ff1718a">start_of_burst</a> = 
+           <span class="keyword">true</span>; 
+          </div> 
+          <div class="line">
+            md. 
+           <a class="code" href="structuhd_1_1tx__metadata__t.html#a00543aaaeb5a5d67b212778d6b5f1b53">end_of_burst</a> = 
+           <span class="keyword">false</span>; 
+          </div> 
+          <div class="line">
+            md. 
+           <a class="code" href="structuhd_1_1tx__metadata__t.html#af8f34976fc468381bfc662f57a398360">has_time_spec</a> = 
+           <span class="keyword">true</span>; 
+          </div> 
+          <div class="line">
+            md. 
+           <a class="code" href="structuhd_1_1tx__metadata__t.html#acf9881a671ba4651a2b4e3187ec23da7">time_spec</a> = time_to_send; 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//send a single packet</span> 
+          </div> 
+          <div class="line"> 
+           <span class="keywordtype">size_t</span> num_tx_samps = tx_streamer-&gt;send(buffs, samps_to_send, md); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h2><a class="anchor" id="sync_phase_lo"></a> Align LOs in the front-end (SBX, UBX)</h2> 
+         <p>Using timed commands, multiple frontends can be tuned at a specific time. This timed-tuning ensures that the phase offsets between VCO/PLL chains will remain constant after each re-tune. See notes below:</p> 
+         <ul> 
+          <li>Phase synchronization with the UBX is only supported on the X3x0 Series</li> 
+          <li>Phase synchronization with the SBX works on both N2x0 and X3x0 Series</li> 
+          <li>There is a random phase offset between any two frontends</li> 
+          <li>This phase offset is different for different LO frequencies</li> 
+          <li>This phase offset remains constant after retuning</li> 
+          <li>This phase offset will drift over time due to thermal and other characteristics</li> 
+          <li>Periodic calibration will be necessary for phase-coherent applications</li> 
+         </ul> 
+         <p>Code snippet example, tuning with timed commands:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <span class="comment">//we will tune the frontends in 100ms from now</span> 
+          </div> 
+          <div class="line"> 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a> cmd_time = usrp-&gt;get_time_now() + 
+           <a class="code" href="classuhd_1_1time__spec__t.html">uhd::time_spec_t</a>(0.1); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//sets command time on all devices</span> 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//the next commands are all timed</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_command_time(cmd_time); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//tune channel 0 and channel 1</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(1.03e9, 0); 
+           <span class="comment">// Channel 0</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(1.03e9, 1); 
+           <span class="comment">// Channel 1</span> 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//end timed commands</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;clear_command_time(); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h2><a class="anchor" id="sync_phase_lootherfe"></a> Align LOs in the front-end (others)</h2> 
+         <p>After tuning the RF front-ends, each local oscillator may have a random phase offset due to the dividers in the VCO/PLL chains. This offset will remain constant after the device has been initialized, and will remain constant until the device is closed or re-tuned. This phase offset is typically removed by the user in MIMO applications, using a training sequence to estimate the offset. It will be necessary to re-align the LOs after each tune command. </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

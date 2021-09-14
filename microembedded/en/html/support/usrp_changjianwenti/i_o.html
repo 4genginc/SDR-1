@@ -1,0 +1,353 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">数字 I/O 管脚控制问题</p>
+				<hr />
+				<p class="faq_title">I am using the daughterboard’s DEBUG IO pins, and I am connecting them to my logic analyzer. I have to enter the threshold value in my logic analyzer. I can choose between TTL (1.4V) CMOS (2.5V) ECL (- 1.3V). I am not sure which one to choose. Right now I have it set to a user value of 3.30V, is that the right choice? </p>
+				<p class="faq_mingxi">All the signals are LVCMOS, 0 to 3.3V. The correct threshold is 1.65V (3.3V/2) </p>
+				
+				<p class="faq_title">I generated a signal using the usrp_siggen.py function and tried to use the IO pins on the basic TX board to monitor the digital output on a logic analyzer but it seems that no signal goes to those pins. Is there something I need to change in the verilog code to be able to use the debug IO pins? </p>
+				<pre>
+	There are two ways to control the I/O pins, either from the host, or from within the FPGA. 
+
+	Method A:
+	To control them from the host no changes are required in the verilog. From python you need to tell it to "output enable" the pins
+you are interested, and then write whatever values you like to them: 
+	
+	From gr-usrp/src/usrp1.i:
+	/*!
+	* \brief Write direction register (output enables) for pins that go to daughterboard.
+	*
+	* \param which_dboard [0,1] which daughterboard
+	* \param value value to write into register
+	* \param mask which bits of value to write into reg
+	*
+	* Each daughterboard has 16-bits of general purpose i/o.
+	* Setting the bit makes it an output from the FPGA to the daughterboard.
+	*
+	* This register is initialized based on a value stored in the
+	* daughterboard EEPROM. In general, you shouldn't be using this routine
+	* without a very good reason. Using this method incorrectly will
+	* kill your USRP motherboard and/or daughterboard.
+	*/
+	bool _write_oe (int which_dboard, int value, int mask);
+
+	/*!
+	* \brief Write daughterboard i/o pin value
+	*
+	* \param which_dboard [0,1] which daughterboard
+	* \param value value to write into register
+	* \param mask which bits of value to write into reg
+	*/
+	bool write_io (int which_dboard, int value, int mask);
+
+	/*!
+	* \brief Read daughterboard i/o pin value
+	*
+	* \param which_dboard [0,1] which daughterboard
+	* \returns register value if successful, else READ_FAILED
+	*/
+	int read_io (int which_dboard);
+
+	E.g.,
+	# Assumes Basic_Tx in slot A. Do not do this blindly! Output enabling all the i/o pins
+	# on other daughterboards will cause problems (burn up daughterboard and/or FPGA)
+
+	u = usrp.sink_c(0, 64)
+	side = 0 # side A
+	u._write_oe(side, 0xffff, 0xffff) # set all i/o pins as outputs
+	counter = 0
+	while 1:
+	u.write_io(side, counter, 0xffff)
+	counter = (counter + 1) & 0xffff
+
+	Method B:
+
+	If however, you're trying to control the debug pins from the FPGA, you'll need to output enable them from the host, and enable them 
+as debug outputs. You do the last step by writing to the FR_DEBUG_ENABLE FPGA register: 
+
+	From usrp/firmware/include/fpga_regs_common.h:
+	// If the corresponding bit is set, internal FPGA debug circuitry
+	// controls the i/o pins for the associated bank of daughterboard
+	// i/o pins. Typically used for debugging FPGA designs.
+
+	#define FR_DEBUG_EN 14
+	# define bmFR_DEBUG_EN_TX_A (1 &lt;&lt; 0) // debug controls TX_A i/o
+	# define bmFR_DEBUG_EN_RX_A (1 &lt;&lt; 1) // debug controls RX_A i/o
+	# define bmFR_DEBUG_EN_TX_B (1 &lt;&lt; 2) // debug controls TX_B i/o
+	# define bmFR_DEBUG_EN_RX_B (1 &lt;&lt; 3) // debug controls RX_B i/o
+
+	These defines are available in python like this:
+	from usrp_fpga_regs import *
+
+	u = usrp.sink_c(0, 64)
+	u._write_oe(0, 0xffff, 0xffff)
+	u._write_fpga_reg(FR_DEBUG_EN, bmFR_DEBUG_EN_TX_A)
+				</pre>
+				
+				<p class="faq_title">I would appreciate any suggestions on how to connect outputs from the FPGA to the debug pins (such as the io_tx_a output) in verilog? </p>
+				<pre>
+        Look at usrp/fpga/toplevel/usrp_std/usrp_std.v:
+        wire [15:0] reg_0,reg_1,reg_2,reg_3;
+        master_control master_control
+        ( .master_clk(clk64),.usbclk(usbclk),
+        .serial_addr(serial_addr),.serial_data(serial_data),.serial_strobe(serial_strobe),
+        .tx_bus_reset(tx_bus_reset),.rx_bus_reset(rx_bus_reset),
+        .tx_dsp_reset(tx_dsp_reset),.rx_dsp_reset(rx_dsp_reset),
+        .enable_tx(enable_tx),.enable_rx(enable_rx),
+        .interp_rate(interp_rate),.decim_rate(decim_rate),
+        .tx_sample_strobe(tx_sample_strobe),.strobe_interp(strobe_interp),
+        .rx_sample_strobe(rx_sample_strobe),.strobe_decim(strobe_decim),
+        .tx_empty(tx_empty),
+        //.debug_0(rx_a_a),.debug_1(ddc0_in_i),
+        .debug_0(tx_debugbus[15:0]),.debug_1(tx_debugbus[31:16]),
+        .debug_2(rx_debugbus[15:0]),.debug_3(rx_debugbus[31:16]),
+        .reg_0(reg_0),.reg_1(reg_1),.reg_2(reg_2),.reg_3(reg_3) );
+
+    The arguments .debug_0(...) through .debug_3(...) are the signals that get connected to the debug pins.
+
+        debug_0 -> TX_A
+        debug_1 -> RX_A
+        debug_2 -> TX_B
+        debug_3 -> RX_B
+				</pre>
+				
+				<p class="faq_title">How do I assign the pins for the FPGA? I mean the external IO pins. </p>
+				<p class="faq_mingxi">The external IO pins should not have to be mapped if you use Matt's Quartus II project. It will already have the pins mapped to where they have to be mapped. </p>
+				
+				<p class="faq_title">I have the TV_RX board in slot B and Basic RX in slot A of the USRP. I am trying to get the raw A/D data that comes into the FPGA, out on the daughter card connector. I would like to use the 16-bit general purpose debug pins from the FPGA on the connector on Basic RX. However, I’d like to be careful before I write to the direction register using the _write_oe given that an improper setting can cause damage. My question is whether I can have both TV_RX and Basic RX boards plugged in, while I use the _write_oe? If yes, what is the precaution that I have to follow? </p>
+				<p class="faq_mingxi">You are safe with both the basic boards and the TVRX, since they don't drive any of the pins. </p>
+				
+				<p class="faq_title">I have an application where I will need the USRP AUX digital I/O to control an antenna switching network at approximately 1 kHz frequencies. How far up the software chain does support for the USRP AUX digital I/O go? Is there much support for them at the python level? </p>
+				<p class="faq_mingxi">There are several ways to do this. All of the daughterboard IO pins can be controlled from software, all the way up to the python application level. However, if you want the pins to change quickly, you need to do it in the FPGA. There is already a mechanism for antenna switching. Look in the auto_tr code in db_flexrf.py. Also you can use the gr_gpio. </p>
+				
+				<p class="faq_title">What is the gr_gpio? </p>
+				<p class="faq_mingxi">gr-gpio is an extension to the normal USRP firmware, implemented as an alternative FPGA bit stream, using the existing USRP host code. With the gr-gpio component you can transmit and receive a digital stream to and from the USRP which is aligned with the existing analog stream. Digital data is sent to or received from the daughterboard GPIO pins and sacrifice one bit each from the I and the Q analog streams to transport the digital bits. See CompGrGpio. </p>
+				
+				<p class="faq_title">I would like access to I and Q output data (12 bits each) from ADC U601 using the debug headers from two RFX2400 daughterboards. I Know that: /* Each daughterboard has 16-bits of general purpose i/o.</p>
+				<pre>
+	* Setting the bit makes it an output from the FPGA to the daughterboard.
+    * This register is initialized based on a value stored in the
+    * daughterboard EEPROM. In general, you shouldn't be using this routine
+    * without a very good reason. Using this method incorrectly will
+    * kill your USRP motherboard and/or daughterboard.
+    */
+
+    bool _write_oe (int which_dboard, int value, int mask);
+
+    u = usrp.sink_c(0, 64)
+
+    side0 = 0 # side A
+    u._write_oe(side0, 0xffff, 0xffff) # set all i/o pins as outputs
+    side1=1 # side B
+    u._write_oe(side1, 0xffff, 0xffff) # set all i/o pins as outputs
+
+    The daughterboard and the FPGA are both driving at least pin 2. Though the pins are called "general purpose i/o", that doesn't mean
+the user should mess with all of them. Some of them are used by the daughterboard code to control or read status from parts on the
+daughterboards.
+Which pins are safe for the user to mess with depends on the design of the given daughterboard. Hence our scary warning on _write_oe. 
+
+    Step one:
+
+        Look at the schematics for the RFX-2400 board and figure out which of the 16 I/O pins are actually used by the TX and RX halves
+of the transceiver daughterboard, and which ones are available for your use. See which of the I/O pins actually makes it to the header 
+on the board. 
+
+    Step two:
+    Look again and check your work. 
+
+    Step three:
+    Look at the daughterboard code (db_flexrf.py). See what it's doing to the various output enables and I/O pins. Does this match your 
+understanding of which pins are available for your use? 
+
+    Step four:
+    Confirm again which pins are safe for you to be messing with. (I believe that the high 7-bits are available for your use. It might be 8, 
+but I haven't looked at the schematics in a _long_ time. I'm not kidding when I say _you_ should check the schematics.) 
+
+    Now figure out new values for the calls to u._write_oe(...), that only change the OE values of the pins that make it to the header and 
+aren't used for some other purpose by the code that's controlling the daughterboard. 
+				</pre>
+				
+				<p class="faq_title">To enable debug outputs, I am not sure how to safely output enable the debug outputs. Would 0xf do the job? u._write_fpga_reg(FR_DEBUG_EN, ??) </p>
+				<pre>
+    All the output enables are controlled using _write_oe. FR_DEBUG_EN determines whether the debug pins are routed to the i/o pins 
+or whether the normal write_io and auto T/R values make it to the header. See the bottom of master_control.v for the details. 
+
+    Given what you'll find out after you look at the schematics, no value of FR_DEBUG_EN except for 0 is safe when you're using two
+RFX-2400 boards. If you can get by with a single RFX-2400, my suggestion is that you put it on the A-side, and then put a Basic Tx 
+and a Basic Rx on the B-side. Then you've got a total of 32 uncommitted I/O pins on the B-side. 
+
+The FR_DEBUG_EN register wasn't designed to solve every possible problem. It solved the one we had, which was getting debug info out
+to a Basic Rx and/or Basic Tx. 
+				</pre>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+				<p class="faq_title"></p>
+				<p class="faq_mingxi"></p>
+				
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

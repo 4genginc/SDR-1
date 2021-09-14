@@ -1,0 +1,1014 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>vrt_if_packet.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>vrt_if_packet.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">vrt_if_packet.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="vrt__if__packet_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2010-2014 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_TRANSPORT_VRT_IF_PACKET_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_TRANSPORT_VRT_IF_PACKET_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;boost/cstdint.hpp&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;cstddef&gt;</span> 
+          <span class="comment">//size_t</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+          <span class="keyword">namespace </span>uhd{ 
+          <span class="keyword">namespace </span>transport{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00027"></a> 
+          <span class="lineno"> 27</span>&nbsp; 
+          <span class="keyword">namespace </span>vrt{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00028"></a> 
+          <span class="lineno"> 28</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00030"></a> 
+          <span class="lineno"> 30</span>&nbsp; 
+          <span class="keyword">static</span> 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">size_t</span> num_vrl_words32 = 3; 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"> 31</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp; 
+          <span class="keyword">static</span> 
+          <span class="keyword">const</span> 
+          <span class="keywordtype">size_t</span> max_if_hdr_words32 = 7; 
+          <span class="comment">//hdr+sid+cid+tsi+tsf</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00034"></a> 
+          <span class="lineno"> 34</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00040"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html"> 40</a></span>&nbsp; 
+          <span class="keyword">struct </span> 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a> 
+         </div> 
+         <div class="line"> 
+          <a name="l00041"></a> 
+          <span class="lineno"> 41</span>&nbsp; { 
+         </div> 
+         <div class="line"> 
+          <a name="l00042"></a> 
+          <span class="lineno"> 42</span>&nbsp; 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a>( 
+          <span class="keywordtype">void</span>); 
+         </div> 
+         <div class="line"> 
+          <a name="l00043"></a> 
+          <span class="lineno"> 43</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00044"></a> 
+          <span class="lineno"> 44</span>&nbsp; 
+          <span class="comment">//link layer type - always set for pack and unpack</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00045"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755"> 45</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">link_type_t</a> 
+         </div> 
+         <div class="line"> 
+          <a name="l00046"></a> 
+          <span class="lineno"> 46</span>&nbsp; { 
+         </div> 
+         <div class="line"> 
+          <a name="l00047"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755ad4dbc799ee7f79403a992caf03320498"> 47</a></span>&nbsp; LINK_TYPE_NONE = 0x0, 
+         </div> 
+         <div class="line"> 
+          <a name="l00048"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755ac2de300441c2037edd176ef83f429261"> 48</a></span>&nbsp; LINK_TYPE_CHDR = 0x1, 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755a7e714ee818dbc4440ce03f66f12a9e23"> 49</a></span>&nbsp; LINK_TYPE_VRLP = 0x2 
+         </div> 
+         <div class="line"> 
+          <a name="l00050"></a> 
+          <span class="lineno"> 50</span>&nbsp; } link_type; 
+         </div> 
+         <div class="line"> 
+          <a name="l00051"></a> 
+          <span class="lineno"> 51</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"> 52</span>&nbsp; 
+          <span class="comment">//packet type</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00053"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d"> 53</a></span>&nbsp; 
+          <span class="keyword">enum</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">packet_type_t</a> 
+         </div> 
+         <div class="line"> 
+          <a name="l00054"></a> 
+          <span class="lineno"> 54</span>&nbsp; { 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"> 55</span>&nbsp; 
+          <span class="comment">// VRT language:</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00056"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dabbe3763040597c11af66d1d415df8529"> 56</a></span>&nbsp; PACKET_TYPE_DATA = 0x0, 
+         </div> 
+         <div class="line"> 
+          <a name="l00057"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7daa8ec1539e47d08d1be2fd53b3a2fabfb"> 57</a></span>&nbsp; PACKET_TYPE_IF_EXT = 0x1, 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da14297e47ba63c41a2665993263d93e4d"> 58</a></span>&nbsp; PACKET_TYPE_CONTEXT = 0x2, 
+          <span class="comment">//extension context: has_sid = true</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00059"></a> 
+          <span class="lineno"> 59</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00060"></a> 
+          <span class="lineno"> 60</span>&nbsp; 
+          <span class="comment">// CVITA language:</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00061"></a> 
+          <span class="lineno"> 61</span>&nbsp; 
+          <span class="comment">//PACKET_TYPE_DATA = 0x0, // Data</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00062"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dafb0f264649ac78e4db13b75a8275c4fe"> 62</a></span>&nbsp; PACKET_TYPE_FC = 0x1, 
+          <span class="comment">// Flow control</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00063"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dac6cd4fcd51848d799117bca860869283"> 63</a></span>&nbsp; PACKET_TYPE_ACK = 0x1, 
+          <span class="comment">// Flow control (ack)</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00064"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da3323c0973ad5d32cb26289c0f87d09ef"> 64</a></span>&nbsp; PACKET_TYPE_CMD = 0x2, 
+          <span class="comment">// Command</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00065"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dab4d168206bac0fc8c63bf7d1dad64d17"> 65</a></span>&nbsp; PACKET_TYPE_RESP = 0x3, 
+          <span class="comment">// Command response</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00066"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da6dd1bfffc127947a4b81962c1fb1a3c9"> 66</a></span>&nbsp; PACKET_TYPE_ERROR = 0x3 
+          <span class="comment">// Command response: Error (the EOB bit is raised in this case)</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00067"></a> 
+          <span class="lineno"> 67</span>&nbsp; } packet_type; 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"> 68</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+          <span class="comment">//size fields</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00070"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae9b8baf85d44c7b91a6b27d139f5b1d8"> 70</a></span>&nbsp; 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae9b8baf85d44c7b91a6b27d139f5b1d8">num_payload_words32</a>; 
+          <span class="comment">//required in pack, derived in unpack</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00071"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a708b649b3cb7c54cde707b93a31caca8"> 71</a></span>&nbsp; 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a708b649b3cb7c54cde707b93a31caca8">num_payload_bytes</a>; 
+          <span class="comment">//required in pack, derived in unpack</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00072"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff387148e3f0d739f09816776bc06176"> 72</a></span>&nbsp; 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff387148e3f0d739f09816776bc06176">num_header_words32</a>; 
+          <span class="comment">//derived in pack, derived in unpack</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00073"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a734aa3e8bdc9db176c0f52b0b66132d3"> 73</a></span>&nbsp; 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a734aa3e8bdc9db176c0f52b0b66132d3">num_packet_words32</a>; 
+          <span class="comment">//derived in pack, required in unpack</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00074"></a> 
+          <span class="lineno"> 74</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00075"></a> 
+          <span class="lineno"> 75</span>&nbsp; 
+          <span class="comment">//header fields</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00076"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a87ced31ed311ba8c4bd6113844d64abf"> 76</a></span>&nbsp; 
+          <span class="keywordtype">size_t</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a87ced31ed311ba8c4bd6113844d64abf">packet_count</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00078"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a5f63fc4d646221211758f8a611be2202"> 78</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a5f63fc4d646221211758f8a611be2202">sob</a>, eob; 
+         </div> 
+         <div class="line"> 
+          <a name="l00080"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff48430515718b7e075f49921529edad"> 80</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff48430515718b7e075f49921529edad">error</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00081"></a> 
+          <span class="lineno"> 81</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00082"></a> 
+          <span class="lineno"> 82</span>&nbsp; 
+          <span class="comment">//optional fields</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00084"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a8ab298f6597b8a2fbcc7e06b732061c0"> 84</a></span>&nbsp; 
+          <span class="comment"></span> 
+          <span class="keywordtype">bool</span> has_sid; boost::uint32_t 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a8ab298f6597b8a2fbcc7e06b732061c0">sid</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00086"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#abf03386fd2cfaa59b3948645ad9ceb36"> 86</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#abf03386fd2cfaa59b3948645ad9ceb36">has_cid</a>; boost::uint64_t cid; 
+         </div> 
+         <div class="line"> 
+          <a name="l00088"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae3ac2895b30c5cd99b43fe8df8792b7a"> 88</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> has_tsi; boost::uint32_t 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae3ac2895b30c5cd99b43fe8df8792b7a">tsi</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00090"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a935999da982a764e7639062ef50fdd4a"> 90</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> has_tsf; boost::uint64_t 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a935999da982a764e7639062ef50fdd4a">tsf</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00092"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a673c21fe50e7095363a956cfeeba0101"> 92</a></span>&nbsp; 
+          <span class="keywordtype">bool</span> has_tlr; boost::uint32_t 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a673c21fe50e7095363a956cfeeba0101">tlr</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00093"></a> 
+          <span class="lineno"> 93</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00094"></a> 
+          <span class="lineno"> 94</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00120"></a> 
+          <span class="lineno"> 120</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="namespaceuhd_1_1transport_1_1vrt.html#a82d66f54cbb539ab57a714f7e6f5e2af">if_hdr_pack_be</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00121"></a> 
+          <span class="lineno"> 121</span>&nbsp; boost::uint32_t *packet_buff, 
+         </div> 
+         <div class="line"> 
+          <a name="l00122"></a> 
+          <span class="lineno"> 122</span>&nbsp; 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a> &amp;if_packet_info 
+         </div> 
+         <div class="line"> 
+          <a name="l00123"></a> 
+          <span class="lineno"> 123</span>&nbsp; ); 
+         </div> 
+         <div class="line"> 
+          <a name="l00124"></a> 
+          <span class="lineno"> 124</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00158"></a> 
+          <span class="lineno"> 158</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="namespaceuhd_1_1transport_1_1vrt.html#af5f7e117db97b9b5ec1a67d814bc4bdb">if_hdr_unpack_be</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00159"></a> 
+          <span class="lineno"> 159</span>&nbsp; 
+          <span class="keyword">const</span> boost::uint32_t *packet_buff, 
+         </div> 
+         <div class="line"> 
+          <a name="l00160"></a> 
+          <span class="lineno"> 160</span>&nbsp; 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a> &amp;if_packet_info 
+         </div> 
+         <div class="line"> 
+          <a name="l00161"></a> 
+          <span class="lineno"> 161</span>&nbsp; ); 
+         </div> 
+         <div class="line"> 
+          <a name="l00162"></a> 
+          <span class="lineno"> 162</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00171"></a> 
+          <span class="lineno"> 171</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="namespaceuhd_1_1transport_1_1vrt.html#a9a81302e5815054318af9fdcf3140b89">if_hdr_pack_le</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00172"></a> 
+          <span class="lineno"> 172</span>&nbsp; boost::uint32_t *packet_buff, 
+         </div> 
+         <div class="line"> 
+          <a name="l00173"></a> 
+          <span class="lineno"> 173</span>&nbsp; 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a> &amp;if_packet_info 
+         </div> 
+         <div class="line"> 
+          <a name="l00174"></a> 
+          <span class="lineno"> 174</span>&nbsp; ); 
+         </div> 
+         <div class="line"> 
+          <a name="l00175"></a> 
+          <span class="lineno"> 175</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00184"></a> 
+          <span class="lineno"> 184</span>&nbsp; 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <span class="keywordtype">void</span> 
+          <a class="code" href="namespaceuhd_1_1transport_1_1vrt.html#a7ac94f9e8bfd2d3534ff0fe86eaa3d2c">if_hdr_unpack_le</a>( 
+         </div> 
+         <div class="line"> 
+          <a name="l00185"></a> 
+          <span class="lineno"> 185</span>&nbsp; 
+          <span class="keyword">const</span> boost::uint32_t *packet_buff, 
+         </div> 
+         <div class="line"> 
+          <a name="l00186"></a> 
+          <span class="lineno"> 186</span>&nbsp; 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">if_packet_info_t</a> &amp;if_packet_info 
+         </div> 
+         <div class="line"> 
+          <a name="l00187"></a> 
+          <span class="lineno"> 187</span>&nbsp; ); 
+         </div> 
+         <div class="line"> 
+          <a name="l00188"></a> 
+          <span class="lineno"> 188</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00189"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a4225728b77ca303aae48efc2a61823d0"> 189</a></span>&nbsp; 
+          <a class="code" href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> 
+          <a class="code" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a4225728b77ca303aae48efc2a61823d0">if_packet_info_t::if_packet_info_t</a>( 
+          <span class="keywordtype">void</span>): 
+         </div> 
+         <div class="line"> 
+          <a name="l00190"></a> 
+          <span class="lineno"> 190</span>&nbsp; link_type(LINK_TYPE_NONE), 
+         </div> 
+         <div class="line"> 
+          <a name="l00191"></a> 
+          <span class="lineno"> 191</span>&nbsp; packet_type(PACKET_TYPE_DATA), 
+         </div> 
+         <div class="line"> 
+          <a name="l00192"></a> 
+          <span class="lineno"> 192</span>&nbsp; num_payload_words32(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00193"></a> 
+          <span class="lineno"> 193</span>&nbsp; num_payload_bytes(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00194"></a> 
+          <span class="lineno"> 194</span>&nbsp; num_header_words32(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00195"></a> 
+          <span class="lineno"> 195</span>&nbsp; num_packet_words32(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00196"></a> 
+          <span class="lineno"> 196</span>&nbsp; packet_count(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00197"></a> 
+          <span class="lineno"> 197</span>&nbsp; sob(false), eob(false), 
+         </div> 
+         <div class="line"> 
+          <a name="l00198"></a> 
+          <span class="lineno"> 198</span>&nbsp; 
+          <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6">error</a>(false), 
+         </div> 
+         <div class="line"> 
+          <a name="l00199"></a> 
+          <span class="lineno"> 199</span>&nbsp; has_sid(false), sid(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00200"></a> 
+          <span class="lineno"> 200</span>&nbsp; has_cid(false), cid(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00201"></a> 
+          <span class="lineno"> 201</span>&nbsp; has_tsi(false), tsi(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00202"></a> 
+          <span class="lineno"> 202</span>&nbsp; has_tsf(false), tsf(0), 
+         </div> 
+         <div class="line"> 
+          <a name="l00203"></a> 
+          <span class="lineno"> 203</span>&nbsp; has_tlr(false), tlr(0) 
+         </div> 
+         <div class="line"> 
+          <a name="l00204"></a> 
+          <span class="lineno"> 204</span>&nbsp; {} 
+         </div> 
+         <div class="line"> 
+          <a name="l00205"></a> 
+          <span class="lineno"> 205</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00206"></a> 
+          <span class="lineno"> 206</span>&nbsp;} 
+          <span class="comment">//namespace vrt</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00207"></a> 
+          <span class="lineno"> 207</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00208"></a> 
+          <span class="lineno"> 208</span>&nbsp;}} 
+          <span class="comment">//namespace</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00209"></a> 
+          <span class="lineno"> 209</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00210"></a> 
+          <span class="lineno"> 210</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_TRANSPORT_VRT_IF_PACKET_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a673c21fe50e7095363a956cfeeba0101"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a673c21fe50e7095363a956cfeeba0101">uhd::transport::vrt::if_packet_info_t::tlr</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::uint32_t tlr 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:92 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html">uhd::transport::vrt::if_packet_info_t</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:40 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_ae3ac2895b30c5cd99b43fe8df8792b7a"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae3ac2895b30c5cd99b43fe8df8792b7a">uhd::transport::vrt::if_packet_info_t::tsi</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::uint32_t tsi 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:88 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a734aa3e8bdc9db176c0f52b0b66132d3"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a734aa3e8bdc9db176c0f52b0b66132d3">uhd::transport::vrt::if_packet_info_t::num_packet_words32</a> 
+          </div> 
+          <div class="ttdeci">
+            size_t num_packet_words32 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1transport_1_1vrt_html_a9a81302e5815054318af9fdcf3140b89"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1transport_1_1vrt.html#a9a81302e5815054318af9fdcf3140b89">uhd::transport::vrt::if_hdr_pack_le</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API void if_hdr_pack_le(boost::uint32_t *packet_buff, if_packet_info_t &amp;if_packet_info) 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a4225728b77ca303aae48efc2a61823d0"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a4225728b77ca303aae48efc2a61823d0">uhd::transport::vrt::if_packet_info_t::if_packet_info_t</a> 
+          </div> 
+          <div class="ttdeci">
+            if_packet_info_t(void) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:189 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a883c99156bcf6eaf497da93cfba91b7d"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">uhd::transport::vrt::if_packet_info_t::packet_type_t</a> 
+          </div> 
+          <div class="ttdeci">
+            packet_type_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:53 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a935999da982a764e7639062ef50fdd4a"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a935999da982a764e7639062ef50fdd4a">uhd::transport::vrt::if_packet_info_t::tsf</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::uint64_t tsf 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:90 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_abf03386fd2cfaa59b3948645ad9ceb36"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#abf03386fd2cfaa59b3948645ad9ceb36">uhd::transport::vrt::if_packet_info_t::has_cid</a> 
+          </div> 
+          <div class="ttdeci">
+            bool has_cid 
+          </div> 
+          <div class="ttdoc">
+            Class ID. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:86 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a0582bd0a23b0f359185644ab6f431755"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">uhd::transport::vrt::if_packet_info_t::link_type_t</a> 
+          </div> 
+          <div class="ttdeci">
+            link_type_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:45 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1transport_1_1vrt_html_af5f7e117db97b9b5ec1a67d814bc4bdb"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1transport_1_1vrt.html#af5f7e117db97b9b5ec1a67d814bc4bdb">uhd::transport::vrt::if_hdr_unpack_be</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API void if_hdr_unpack_be(const boost::uint32_t *packet_buff, if_packet_info_t &amp;if_packet_info) 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1transport_1_1vrt_html_a82d66f54cbb539ab57a714f7e6f5e2af"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1transport_1_1vrt.html#a82d66f54cbb539ab57a714f7e6f5e2af">uhd::transport::vrt::if_hdr_pack_be</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API void if_hdr_pack_be(boost::uint32_t *packet_buff, if_packet_info_t &amp;if_packet_info) 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1msg_html_a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6">uhd::msg::error</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> msg.hpp:52 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_aff48430515718b7e075f49921529edad"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff48430515718b7e075f49921529edad">uhd::transport::vrt::if_packet_info_t::error</a> 
+          </div> 
+          <div class="ttdeci">
+            bool error 
+          </div> 
+          <div class="ttdoc">
+            This is asserted for command responses that are errors (CHDR only) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:80 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a708b649b3cb7c54cde707b93a31caca8"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a708b649b3cb7c54cde707b93a31caca8">uhd::transport::vrt::if_packet_info_t::num_payload_bytes</a> 
+          </div> 
+          <div class="ttdeci">
+            size_t num_payload_bytes 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:71 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_a8b9b549161081d54c2161046649a0323"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_INLINE 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:63 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_1_1transport_1_1vrt_html_a7ac94f9e8bfd2d3534ff0fe86eaa3d2c"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd_1_1transport_1_1vrt.html#a7ac94f9e8bfd2d3534ff0fe86eaa3d2c">uhd::transport::vrt::if_hdr_unpack_le</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_API void if_hdr_unpack_le(const boost::uint32_t *packet_buff, if_packet_info_t &amp;if_packet_info) 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a87ced31ed311ba8c4bd6113844d64abf"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a87ced31ed311ba8c4bd6113844d64abf">uhd::transport::vrt::if_packet_info_t::packet_count</a> 
+          </div> 
+          <div class="ttdeci">
+            size_t packet_count 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:76 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_ae9b8baf85d44c7b91a6b27d139f5b1d8"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae9b8baf85d44c7b91a6b27d139f5b1d8">uhd::transport::vrt::if_packet_info_t::num_payload_words32</a> 
+          </div> 
+          <div class="ttdeci">
+            size_t num_payload_words32 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:70 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_aff387148e3f0d739f09816776bc06176"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff387148e3f0d739f09816776bc06176">uhd::transport::vrt::if_packet_info_t::num_header_words32</a> 
+          </div> 
+          <div class="ttdeci">
+            size_t num_header_words32 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:72 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a5f63fc4d646221211758f8a611be2202"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a5f63fc4d646221211758f8a611be2202">uhd::transport::vrt::if_packet_info_t::sob</a> 
+          </div> 
+          <div class="ttdeci">
+            bool sob 
+          </div> 
+          <div class="ttdoc">
+            Asserted for start- or end-of-burst. 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:78 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t_html_a8ab298f6597b8a2fbcc7e06b732061c0"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a8ab298f6597b8a2fbcc7e06b732061c0">uhd::transport::vrt::if_packet_info_t::sid</a> 
+          </div> 
+          <div class="ttdeci">
+            boost::uint32_t sid 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> vrt_if_packet.hpp:84 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

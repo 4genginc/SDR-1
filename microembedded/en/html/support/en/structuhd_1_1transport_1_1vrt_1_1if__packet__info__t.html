@@ -1,0 +1,775 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>uhd::transport::vrt::if_packet_info_t Struct Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>uhd::transport::vrt::if_packet_info_t Struct Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">uhd::transport::vrt::if_packet_info_t Struct Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <p><code>#include &lt;<a class="el" href="vrt__if__packet_8hpp_source.html">uhd/transport/vrt_if_packet.hpp</a>&gt;</code></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-types"></a> Public Types</h2></td> 
+          </tr> 
+          <tr class="memitem:a0582bd0a23b0f359185644ab6f431755"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">link_type_t</a> { <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755ad4dbc799ee7f79403a992caf03320498">LINK_TYPE_NONE</a> = 0x0, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755ac2de300441c2037edd176ef83f429261">LINK_TYPE_CHDR</a> = 0x1, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755a7e714ee818dbc4440ce03f66f12a9e23">LINK_TYPE_VRLP</a> = 0x2 }</td> 
+          </tr> 
+          <tr class="separator:a0582bd0a23b0f359185644ab6f431755"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a883c99156bcf6eaf497da93cfba91b7d"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">packet_type_t</a> { <br /> &nbsp;&nbsp;<a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dabbe3763040597c11af66d1d415df8529">PACKET_TYPE_DATA</a> = 0x0, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7daa8ec1539e47d08d1be2fd53b3a2fabfb">PACKET_TYPE_IF_EXT</a> = 0x1, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da14297e47ba63c41a2665993263d93e4d">PACKET_TYPE_CONTEXT</a> = 0x2, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dafb0f264649ac78e4db13b75a8275c4fe">PACKET_TYPE_FC</a> = 0x1, <br /> &nbsp;&nbsp;<a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dac6cd4fcd51848d799117bca860869283">PACKET_TYPE_ACK</a> = 0x1, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da3323c0973ad5d32cb26289c0f87d09ef">PACKET_TYPE_CMD</a> = 0x2, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7dab4d168206bac0fc8c63bf7d1dad64d17">PACKET_TYPE_RESP</a> = 0x3, <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7da6dd1bfffc127947a4b81962c1fb1a3c9">PACKET_TYPE_ERROR</a> = 0x3 <br /> }</td> 
+          </tr> 
+          <tr class="separator:a883c99156bcf6eaf497da93cfba91b7d"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a> Public Member Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:a4225728b77ca303aae48efc2a61823d0"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a4225728b77ca303aae48efc2a61823d0">if_packet_info_t</a> (void)</td> 
+          </tr> 
+          <tr class="separator:a4225728b77ca303aae48efc2a61823d0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a> Public Attributes</h2></td> 
+          </tr> 
+          <tr class="memitem:a6353f1fe270e5bd4481a2ea5beaea3ca"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">uhd::transport::vrt::if_packet_info_t::link_type_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a6353f1fe270e5bd4481a2ea5beaea3ca">link_type</a></td> 
+          </tr> 
+          <tr class="separator:a6353f1fe270e5bd4481a2ea5beaea3ca"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a9e761f9501aa6f7a5f8034e12c5453e6"> 
+           <td class="memItemLeft" align="right" valign="top">enum <br class="typebreak" /> <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">uhd::transport::vrt::if_packet_info_t::packet_type_t</a>&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a9e761f9501aa6f7a5f8034e12c5453e6">packet_type</a></td> 
+          </tr> 
+          <tr class="separator:a9e761f9501aa6f7a5f8034e12c5453e6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ae9b8baf85d44c7b91a6b27d139f5b1d8"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae9b8baf85d44c7b91a6b27d139f5b1d8">num_payload_words32</a></td> 
+          </tr> 
+          <tr class="separator:ae9b8baf85d44c7b91a6b27d139f5b1d8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a708b649b3cb7c54cde707b93a31caca8"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a708b649b3cb7c54cde707b93a31caca8">num_payload_bytes</a></td> 
+          </tr> 
+          <tr class="separator:a708b649b3cb7c54cde707b93a31caca8"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aff387148e3f0d739f09816776bc06176"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff387148e3f0d739f09816776bc06176">num_header_words32</a></td> 
+          </tr> 
+          <tr class="separator:aff387148e3f0d739f09816776bc06176"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a734aa3e8bdc9db176c0f52b0b66132d3"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a734aa3e8bdc9db176c0f52b0b66132d3">num_packet_words32</a></td> 
+          </tr> 
+          <tr class="separator:a734aa3e8bdc9db176c0f52b0b66132d3"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a87ced31ed311ba8c4bd6113844d64abf"> 
+           <td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a87ced31ed311ba8c4bd6113844d64abf">packet_count</a></td> 
+          </tr> 
+          <tr class="separator:a87ced31ed311ba8c4bd6113844d64abf"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a5f63fc4d646221211758f8a611be2202"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a5f63fc4d646221211758f8a611be2202">sob</a></td> 
+          </tr> 
+          <tr class="memdesc:a5f63fc4d646221211758f8a611be2202"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Asserted for start- or end-of-burst. <a href="#a5f63fc4d646221211758f8a611be2202">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a5f63fc4d646221211758f8a611be2202"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a6873bfffa90438a78307045d29191660"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a6873bfffa90438a78307045d29191660">eob</a></td> 
+          </tr> 
+          <tr class="separator:a6873bfffa90438a78307045d29191660"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aff48430515718b7e075f49921529edad"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aff48430515718b7e075f49921529edad">error</a></td> 
+          </tr> 
+          <tr class="memdesc:aff48430515718b7e075f49921529edad"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">This is asserted for command responses that are errors (CHDR only) <a href="#aff48430515718b7e075f49921529edad">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:aff48430515718b7e075f49921529edad"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8415dcafcf5b32750a757b5b15424aad"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a8415dcafcf5b32750a757b5b15424aad">has_sid</a></td> 
+          </tr> 
+          <tr class="memdesc:a8415dcafcf5b32750a757b5b15424aad"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Stream ID (SID). See <a class="el" href="classuhd_1_1sid__t.html" title="Represents a stream ID (SID). ">uhd::sid_t</a>. <a href="#a8415dcafcf5b32750a757b5b15424aad">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a8415dcafcf5b32750a757b5b15424aad"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8ab298f6597b8a2fbcc7e06b732061c0"> 
+           <td class="memItemLeft" align="right" valign="top">boost::uint32_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a8ab298f6597b8a2fbcc7e06b732061c0">sid</a></td> 
+          </tr> 
+          <tr class="separator:a8ab298f6597b8a2fbcc7e06b732061c0"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:abf03386fd2cfaa59b3948645ad9ceb36"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#abf03386fd2cfaa59b3948645ad9ceb36">has_cid</a></td> 
+          </tr> 
+          <tr class="memdesc:abf03386fd2cfaa59b3948645ad9ceb36"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Class ID. <a href="#abf03386fd2cfaa59b3948645ad9ceb36">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:abf03386fd2cfaa59b3948645ad9ceb36"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a302a43eb29f41c88f6d7beb4af7e8ef6"> 
+           <td class="memItemLeft" align="right" valign="top">boost::uint64_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a302a43eb29f41c88f6d7beb4af7e8ef6">cid</a></td> 
+          </tr> 
+          <tr class="separator:a302a43eb29f41c88f6d7beb4af7e8ef6"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a9dcd8f46d3f39627945dd9d429fec8a3"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a9dcd8f46d3f39627945dd9d429fec8a3">has_tsi</a></td> 
+          </tr> 
+          <tr class="memdesc:a9dcd8f46d3f39627945dd9d429fec8a3"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Integer timestamp. <a href="#a9dcd8f46d3f39627945dd9d429fec8a3">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a9dcd8f46d3f39627945dd9d429fec8a3"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:ae3ac2895b30c5cd99b43fe8df8792b7a"> 
+           <td class="memItemLeft" align="right" valign="top">boost::uint32_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#ae3ac2895b30c5cd99b43fe8df8792b7a">tsi</a></td> 
+          </tr> 
+          <tr class="separator:ae3ac2895b30c5cd99b43fe8df8792b7a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a05620235be16ac3b9ad1eaf0864d6627"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a05620235be16ac3b9ad1eaf0864d6627">has_tsf</a></td> 
+          </tr> 
+          <tr class="memdesc:a05620235be16ac3b9ad1eaf0864d6627"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Fractional timestamp. <a href="#a05620235be16ac3b9ad1eaf0864d6627">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a05620235be16ac3b9ad1eaf0864d6627"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a935999da982a764e7639062ef50fdd4a"> 
+           <td class="memItemLeft" align="right" valign="top">boost::uint64_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a935999da982a764e7639062ef50fdd4a">tsf</a></td> 
+          </tr> 
+          <tr class="separator:a935999da982a764e7639062ef50fdd4a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:aae2d1fc554402f5eda38879578af0add"> 
+           <td class="memItemLeft" align="right" valign="top">bool&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#aae2d1fc554402f5eda38879578af0add">has_tlr</a></td> 
+          </tr> 
+          <tr class="memdesc:aae2d1fc554402f5eda38879578af0add"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Trailer. <a href="#aae2d1fc554402f5eda38879578af0add">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:aae2d1fc554402f5eda38879578af0add"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a673c21fe50e7095363a956cfeeba0101"> 
+           <td class="memItemLeft" align="right" valign="top">boost::uint32_t&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a673c21fe50e7095363a956cfeeba0101">tlr</a></td> 
+          </tr> 
+          <tr class="separator:a673c21fe50e7095363a956cfeeba0101"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <a name="details" id="details"></a> 
+        <h2 class="groupheader">Detailed Description</h2> 
+        <div class="textblock"> 
+         <p>Definition for fields that can be packed into a vrt if header. The size fields are used for input and output depending upon the operation used (ie the pack or unpack function call). </p> 
+        </div> 
+        <h2 class="groupheader">Member Enumeration Documentation</h2> 
+        <a class="anchor" id="a0582bd0a23b0f359185644ab6f431755"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">uhd::transport::vrt::if_packet_info_t::link_type_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a0582bd0a23b0f359185644ab6f431755ad4dbc799ee7f79403a992caf03320498"></a>LINK_TYPE_NONE</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a0582bd0a23b0f359185644ab6f431755ac2de300441c2037edd176ef83f429261"></a>LINK_TYPE_CHDR</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a0582bd0a23b0f359185644ab6f431755a7e714ee818dbc4440ce03f66f12a9e23"></a>LINK_TYPE_VRLP</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7d"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">uhd::transport::vrt::if_packet_info_t::packet_type_t</a></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <table class="fieldtable"> 
+           <tbody> 
+            <tr> 
+             <th colspan="2">Enumerator</th> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7dabbe3763040597c11af66d1d415df8529"></a>PACKET_TYPE_DATA</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7daa8ec1539e47d08d1be2fd53b3a2fabfb"></a>PACKET_TYPE_IF_EXT</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7da14297e47ba63c41a2665993263d93e4d"></a>PACKET_TYPE_CONTEXT</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7dafb0f264649ac78e4db13b75a8275c4fe"></a>PACKET_TYPE_FC</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7dac6cd4fcd51848d799117bca860869283"></a>PACKET_TYPE_ACK</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7da3323c0973ad5d32cb26289c0f87d09ef"></a>PACKET_TYPE_CMD</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7dab4d168206bac0fc8c63bf7d1dad64d17"></a>PACKET_TYPE_RESP</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+            <tr> 
+             <td class="fieldname"><em><a class="anchor" id="a883c99156bcf6eaf497da93cfba91b7da6dd1bfffc127947a4b81962c1fb1a3c9"></a>PACKET_TYPE_ERROR</em>&nbsp;</td> 
+             <td class="fielddoc"> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2> 
+        <a class="anchor" id="a4225728b77ca303aae48efc2a61823d0"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname"><a class="el" href="config_8hpp.html#a8b9b549161081d54c2161046649a0323">UHD_INLINE</a> uhd::transport::vrt::if_packet_info_t::if_packet_info_t </td> 
+             <td>(</td> 
+             <td class="paramtype">void&nbsp;</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <h2 class="groupheader">Member Data Documentation</h2> 
+        <a class="anchor" id="a302a43eb29f41c88f6d7beb4af7e8ef6"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">boost::uint64_t uhd::transport::vrt::if_packet_info_t::cid</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a6873bfffa90438a78307045d29191660"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::eob</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aff48430515718b7e075f49921529edad"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::error</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>This is asserted for command responses that are errors (CHDR only) </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="abf03386fd2cfaa59b3948645ad9ceb36"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::has_cid</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Class ID. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8415dcafcf5b32750a757b5b15424aad"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::has_sid</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Stream ID (SID). See <a class="el" href="classuhd_1_1sid__t.html" title="Represents a stream ID (SID). ">uhd::sid_t</a>. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aae2d1fc554402f5eda38879578af0add"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::has_tlr</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Trailer. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a05620235be16ac3b9ad1eaf0864d6627"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::has_tsf</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Fractional timestamp. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a9dcd8f46d3f39627945dd9d429fec8a3"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::has_tsi</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Integer timestamp. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a6353f1fe270e5bd4481a2ea5beaea3ca"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a0582bd0a23b0f359185644ab6f431755">uhd::transport::vrt::if_packet_info_t::link_type_t</a> uhd::transport::vrt::if_packet_info_t::link_type</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="aff387148e3f0d739f09816776bc06176"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::transport::vrt::if_packet_info_t::num_header_words32</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a734aa3e8bdc9db176c0f52b0b66132d3"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::transport::vrt::if_packet_info_t::num_packet_words32</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a708b649b3cb7c54cde707b93a31caca8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::transport::vrt::if_packet_info_t::num_payload_bytes</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ae9b8baf85d44c7b91a6b27d139f5b1d8"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::transport::vrt::if_packet_info_t::num_payload_words32</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a87ced31ed311ba8c4bd6113844d64abf"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">size_t uhd::transport::vrt::if_packet_info_t::packet_count</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a9e761f9501aa6f7a5f8034e12c5453e6"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">enum <a class="el" href="structuhd_1_1transport_1_1vrt_1_1if__packet__info__t.html#a883c99156bcf6eaf497da93cfba91b7d">uhd::transport::vrt::if_packet_info_t::packet_type_t</a> uhd::transport::vrt::if_packet_info_t::packet_type</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8ab298f6597b8a2fbcc7e06b732061c0"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">boost::uint32_t uhd::transport::vrt::if_packet_info_t::sid</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a5f63fc4d646221211758f8a611be2202"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">bool uhd::transport::vrt::if_packet_info_t::sob</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Asserted for start- or end-of-burst. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a673c21fe50e7095363a956cfeeba0101"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">boost::uint32_t uhd::transport::vrt::if_packet_info_t::tlr</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a935999da982a764e7639062ef50fdd4a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">boost::uint64_t uhd::transport::vrt::if_packet_info_t::tsf</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ae3ac2895b30c5cd99b43fe8df8792b7a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">boost::uint32_t uhd::transport::vrt::if_packet_info_t::tsi</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+         </div> 
+        </div> 
+        <hr />The documentation for this struct was generated from the following file: 
+        <ul> 
+         <li>include/uhd/transport/<a class="el" href="vrt__if__packet_8hpp_source.html">vrt_if_packet.hpp</a></li> 
+        </ul> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

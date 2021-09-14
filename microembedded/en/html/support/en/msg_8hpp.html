@@ -1,0 +1,411 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>msg.hpp File Reference</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>msg.hpp File Reference</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">msg.hpp File Reference</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="textblock"> 
+         <code>#include &lt;<a class="el" href="config_8hpp_source.html">uhd/config.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;<a class="el" href="pimpl_8hpp_source.html">uhd/utils/pimpl.hpp</a>&gt;</code> 
+         <br /> 
+         <code>#include &lt;ostream&gt;</code> 
+         <br /> 
+         <code>#include &lt;iomanip&gt;</code> 
+         <br /> 
+         <code>#include &lt;string&gt;</code> 
+         <br /> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           Include dependency graph for msg.hpp: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="msg_8hpp__incl.png" border="0" usemap="#include_2uhd_2utils_2msg_8hpp" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2msg_8hpp" id="include_2uhd_2utils_2msg_8hpp"> <area shape="rect" id="node2" href="config_8hpp.html" title="uhd/config.hpp" alt="" coords="11,155,117,181"></area><area shape="rect" id="node4" href="pimpl_8hpp.html" title="uhd/utils/pimpl.hpp" alt="" coords="101,80,231,107"></area></map> 
+         </div> 
+        </div> 
+        <div class="textblock"> 
+         <div class="dynheader">
+           This graph shows which files directly or indirectly include this file: 
+         </div> 
+         <div class="dyncontent"> 
+          <div class="center"> 
+           <img src="msg_8hpp__dep__incl.png" border="0" usemap="#include_2uhd_2utils_2msg_8hppdep" alt="" /> 
+          </div> 
+          <map name="include_2uhd_2utils_2msg_8hppdep" id="include_2uhd_2utils_2msg_8hppdep"> <area shape="rect" id="node2" href="filters_8hpp.html" title="include/uhd/types/filters.hpp" alt="" coords="5,88,189,115"></area><area shape="rect" id="node4" href="fp__compare__delta_8ipp.html" title="include/uhd/utils/fp\l_compare_delta.ipp" alt="" coords="214,81,348,122"></area><area shape="rect" id="node6" href="fp__compare__epsilon_8ipp.html" title="include/uhd/utils/fp\l_compare_epsilon.ipp" alt="" coords="373,81,520,122"></area><area shape="rect" id="node3" href="multi__usrp_8hpp.html" title="include/uhd/usrp/multi\l_usrp.hpp" alt="" coords="23,171,171,213"></area><area shape="rect" id="node5" href="math_8hpp.html" title="include/uhd/utils/math.hpp" alt="" coords="278,179,452,205"></area></map> 
+         </div> 
+        </div> 
+        <p><a href="msg_8hpp_source.html">Go to the source code of this file.</a></p> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a> Classes</h2></td> 
+          </tr> 
+          <tr class="memitem:"> 
+           <td class="memItemLeft" align="right" valign="top">class &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="classuhd_1_1msg_1_1__msg.html">uhd::msg::_msg</a></td> 
+          </tr> 
+          <tr class="memdesc:"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Internal message object (called by UHD_MSG macro) <a href="classuhd_1_1msg_1_1__msg.html#details">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="namespaces"></a> Namespaces</h2></td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd.html">uhd</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:namespaceuhd_1_1msg"> 
+           <td class="memItemLeft" align="right" valign="top">&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1msg.html">uhd::msg</a></td> 
+          </tr> 
+          <tr class="separator:"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="define-members"></a> Macros</h2></td> 
+          </tr> 
+          <tr class="memitem:ab71fc642612b85370d18b6e35f5fed15"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(type)&nbsp;&nbsp;&nbsp;<a class="el" href="classuhd_1_1msg_1_1__msg.html">uhd::msg::_msg</a>(uhd::msg::type)()</td> 
+          </tr> 
+          <tr class="separator:ab71fc642612b85370d18b6e35f5fed15"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a0ec718025802d29e8ed78a66e9a1908a"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="msg_8hpp.html#a0ec718025802d29e8ed78a66e9a1908a">UHD_HERE</a>()&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</td> 
+          </tr> 
+          <tr class="memdesc:a0ec718025802d29e8ed78a66e9a1908a"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Helpful debug tool to print site info. <a href="#a0ec718025802d29e8ed78a66e9a1908a">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a0ec718025802d29e8ed78a66e9a1908a"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a8439acc29dcd403f77b8a021f5c64f07"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="msg_8hpp.html#a8439acc29dcd403f77b8a021f5c64f07">UHD_VAR</a>(var)&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; #var &lt;&lt; &quot; = &quot; &lt;&lt; var &lt;&lt; std::endl;</td> 
+          </tr> 
+          <tr class="memdesc:a8439acc29dcd403f77b8a021f5c64f07"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Helpful debug tool to print a variable. <a href="#a8439acc29dcd403f77b8a021f5c64f07">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a8439acc29dcd403f77b8a021f5c64f07"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+          <tr class="memitem:a98e566c4d02f4b4a6f7d4c7f5385b7de"> 
+           <td class="memItemLeft" align="right" valign="top">#define&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="msg_8hpp.html#a98e566c4d02f4b4a6f7d4c7f5385b7de">UHD_HEX</a>(var)&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; #var &lt;&lt; &quot; = 0x&quot; &lt;&lt; std::hex &lt;&lt; std::setfill('0') &lt;&lt; std::setw(8) &lt;&lt; var &lt;&lt; std::dec &lt;&lt; std::endl;</td> 
+          </tr> 
+          <tr class="memdesc:a98e566c4d02f4b4a6f7d4c7f5385b7de"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Helpful debug tool to print a variable in hex. <a href="#a98e566c4d02f4b4a6f7d4c7f5385b7de">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a98e566c4d02f4b4a6f7d4c7f5385b7de"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a> Typedefs</h2></td> 
+          </tr> 
+          <tr class="memitem:a45b6cdcb700a41c8f7020cc63a8bd1e3"> 
+           <td class="memItemLeft" align="right" valign="top">typedef void(*&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1msg.html#a45b6cdcb700a41c8f7020cc63a8bd1e3">uhd::msg::handler_t</a> )(type_t, const std::string &amp;)</td> 
+          </tr> 
+          <tr class="memdesc:a45b6cdcb700a41c8f7020cc63a8bd1e3"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Typedef for a user-registered message handler. <a href="#a45b6cdcb700a41c8f7020cc63a8bd1e3">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a45b6cdcb700a41c8f7020cc63a8bd1e3"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="enum-members"></a> Enumerations</h2></td> 
+          </tr> 
+          <tr class="memitem:a39e78d22a268a4f0375423a1d588139b"> 
+           <td class="memItemLeft" align="right" valign="top">enum &nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">uhd::msg::type_t</a> { <a class="el" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba4a6791e1c064188a13d6a802e0fe073a">uhd::msg::status</a> = 's', <a class="el" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139baeece253580978ed29753e248e36ca44b">uhd::msg::warning</a> = 'w', <a class="el" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba51300d826692a9c1b6e846aed789e3a6">uhd::msg::error</a> = 'e', <a class="el" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139ba6747ccde4b852b6baf912a96e4c90f4c">uhd::msg::fastpath</a> = 'f' }</td> 
+          </tr> 
+          <tr class="memdesc:a39e78d22a268a4f0375423a1d588139b"> 
+           <td class="mdescLeft">&nbsp;</td> 
+           <td class="mdescRight">Possible message types. <a href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">More...</a><br /></td> 
+          </tr> 
+          <tr class="separator:a39e78d22a268a4f0375423a1d588139b"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="memberdecls"> 
+         <tbody> 
+          <tr class="heading"> 
+           <td colspan="2"><h2 class="groupheader"><a name="func-members"></a> Functions</h2></td> 
+          </tr> 
+          <tr class="memitem:aa5380a801e1ac6b8a35aa95543fc3e8e"> 
+           <td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8hpp.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> void&nbsp;</td> 
+           <td class="memItemRight" valign="bottom"><a class="el" href="namespaceuhd_1_1msg.html#aa5380a801e1ac6b8a35aa95543fc3e8e">uhd::msg::register_handler</a> (const handler_t &amp;handler)</td> 
+          </tr> 
+          <tr class="separator:aa5380a801e1ac6b8a35aa95543fc3e8e"> 
+           <td class="memSeparator" colspan="2">&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <h2 class="groupheader">Macro Definition Documentation</h2> 
+        <a class="anchor" id="a0ec718025802d29e8ed78a66e9a1908a"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_HERE</td> 
+             <td>(</td> 
+             <td class="paramname"></td> 
+             <td>)</td> 
+             <td>&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; __FILE__ &lt;&lt; &quot;:&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Helpful debug tool to print site info. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a98e566c4d02f4b4a6f7d4c7f5385b7de"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_HEX</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">var</td> 
+             <td>)</td> 
+             <td>&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; #var &lt;&lt; &quot; = 0x&quot; &lt;&lt; std::hex &lt;&lt; std::setfill('0') &lt;&lt; std::setw(8) &lt;&lt; var &lt;&lt; std::dec &lt;&lt; std::endl;</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Helpful debug tool to print a variable in hex. </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="ab71fc642612b85370d18b6e35f5fed15"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_MSG</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">type</td> 
+             <td>)</td> 
+             <td>&nbsp;&nbsp;&nbsp;<a class="el" href="classuhd_1_1msg_1_1__msg.html">uhd::msg::_msg</a>(uhd::msg::type)()</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>A UHD message macro with configurable type. Usage: <a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG(warning)</a> &lt;&lt; &quot;some warning message&quot; &lt;&lt; std::endl; </p> 
+         </div> 
+        </div> 
+        <a class="anchor" id="a8439acc29dcd403f77b8a021f5c64f07"></a> 
+        <div class="memitem"> 
+         <div class="memproto"> 
+          <table class="memname"> 
+           <tbody> 
+            <tr> 
+             <td class="memname">#define UHD_VAR</td> 
+             <td>(</td> 
+             <td class="paramtype">&nbsp;</td> 
+             <td class="paramname">var</td> 
+             <td>)</td> 
+             <td>&nbsp;&nbsp;&nbsp;<a class="el" href="msg_8hpp.html#ab71fc642612b85370d18b6e35f5fed15">UHD_MSG</a>(status) &lt;&lt; #var &lt;&lt; &quot; = &quot; &lt;&lt; var &lt;&lt; std::endl;</td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <div class="memdoc"> 
+          <p>Helpful debug tool to print a variable. </p> 
+         </div> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

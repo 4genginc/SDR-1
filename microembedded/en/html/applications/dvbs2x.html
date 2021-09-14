@@ -1,0 +1,196 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>DVB-S2X Modem Prototype</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,SDR,Openbts">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css" />
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../support/faq.html">Documents</a></li>
+				<li><a class="menu_son" href="applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="application">
+            <div class="middle">
+                <div class="tab">
+                    <a href="applications.html">Applications</a> » <span>DVB-S2X Modem Prototype</span>
+                </div>
+                <div class="content box_shadow">
+                    <p class="content_title">DVB-S2X Modem Prototype</p>
+                    <hr />
+                    <p><b>Authors</b>：Juan D. Deaton, Brian A. Banister, Tom Hansen, Tony Summers, Adam Bacon, Tim Halvorson, Ryan Hoffman</p>
+                    <p><b>Institution</b>：AHA Products Group – Comtech EF Data</p>
+                    <p><b>Ettus Research Product Used</b>：X310，SBX</p>
+                    <p><b>Challenge</b>：Create a working prototype of a DVB-S2X modem.</p>
+                    <p class="xiao-title">Introduction</p>
+                    <p class="mingxi">With the increase in additional surveillance capabilities, and battle-fronts to monitor and defend, Command, Control, Communications, Computers, Intelligence, Surveillance and Reconnaissance (C4ISR) has become proportionally more dependent on SATellite COMmunication (SATCOM). Consequently, commercial SATCOM provides 80% of the Department of Defense (DoD)'s total capacity [1]. To this end, High Throughput Satellite (HTS) SATCOM has become a key interest. Ratified in October of 2014, Digital Video Broadcast-Satellite Second Generation Extension (DVB-S2X) offers a next generation increase in capacity and spectral efficiency [2]. Although DVB-S2X standard is targeted for satellite communications, it can support other C4ISR links such as bent pipe and direct connections with airborne assets. Figure 1 shows examples of C4ISR communications links suitable for DVB-S2X.</p>
+                    <img src="../../images/applications/svbs2x/1.png" width="759" height="385">
+                    <p>Figure 1: DVB-SX increases spectral efficiency for point-to-point applications in C4ISR communications</p>
+                    <p class="mingxi">To demonstrate the performance benefits of DVB-S2X, we implement our design of the DVB-S2X standard, the 4709 E2IQ Core, on the Ettus X310 [3] Software Defined Radio (SDR). Using this SDR platform and our E2IQ Core, we show performance of a real modem in the Additive White Gaussian Noise (AWGN) channel. To the best of our knowledge, we are the first to implement the new DVB-S2X standard onto an SDR platform. Through these efforts, it is our objective to demonstrate to C4ISR users the flexible adaptability of using our E2IQ core in next generation systems.</p>
+                    <p class="xiao-title">Hardware Configuration</p>
+                    <p class="mingxi">Our implementation is built using the Ettus X310 SDR platform [5] and the SBX-120 daughter board. A diagram showing our hardware configuration is captured in Figure 2.The SBX-120 daughter-board provides the RF front end, which includes the local oscillators, mixers and attenuators for the RX and TX paths. At the interface between the SBX-120 and X310, analog I/Q samples are processed in/out of the X310. On the Ettus X310, our design comprises the Xilinx Kintex-7 Field Programmable Gate Array (FPGA), Digital to Analog Converter (DAC), and Analog to Digital Converter (ADC). The core of our modem design, the E2IQ, is placed on the FPGA. Our host, via the Serial Peripheral Interface (SPI) bus, calibrates and configures the DAC, ADC, and the SBX-120 front end. For external data and control to the FPGA, we use the Ethernet and RS-232 interface, respectively.</p>
+                    <img src="../../images/applications/svbs2x/2.png" width="900" height="400">
+                    <p>Figure 2: Hardware block diagram of X310 and SBX-120 SDR.</p>
+                    <p class="mingxi">Our E2IQ design comprises two main parts: the control and data flow. A block diagram of our E2IQ core is shown in Figure 3. Driven by the host, the purpose of the control flow is to configure and calibrate the encoder, modulator, and RF front end. The modem control block design is built on the Zylin CPU (ZPU), which is a small embedded processor. Leveraging the ZPU, the modem control block is able to perform algorithms required for ACM, gain control, and other real-time functions. To this end, the modem control block instructs the stream adaptation block which MODCOD to use for transmission. Additionally, modem control configures the modulation block to use the appropriate symbol rate. The stream adaptation block passes down MODCOD information to the subsequent modules to indicate block size, code rate, and modulation to use for the transmission. Finally, the center frequency and transmit power level may be configured via the SPI bus using a modem control algorithm or by the host.</p>
+                    <img src="../../images/applications/svbs2x/3.png" width="900" height="400" >
+                    <p>Figure 3: Block diagram of our DVB-S2X implementation, E2IQ</p>
+                    <p class="mingxi">The data flow paths transform the digital I/Q into Ethernet packets and vice-versa. A diagram showing the encapsulation of Ethernet packets to I/Q symbols is shown in Figure 4. For the Ethernet to I/Q or transmit flow, Ethernet packets are first received by the modem and framed using the Generic Stream Encapsulation (GSE) protocol [6]. The GSE packets are then framed with a Base Band (BB) header to indicate ACM control, roll-off factor, and other frame control information. The entire BB frame is sized according to the input block of the MODCOD, which is then passed along to the Forward Error Correction (FEC) encoder. To encode the BB frame, DVB-S2X uses an outer BCH code and with an inner LDPC code1. After encoding, the FEC frame is mapped to symbols and slots to be processed by the Physical Layer (PL) framer. Through its own header, the PL framer creates the start of frame followed by information used to decode the entire FEC frame. Additionally, the PL framer periodically inserts pilot slots for maintaining synchronization. As the PL processes each symbol, the data is then modulated into a digital I/Q signal and sent to the RF front end.</p>
+                    <img src="../../images/applications/svbs2x/4.png" width="900" height="350" >
+                    <p>Figure 4: Illustration of framing from Ethernet Packets (EP) to I/Q symbols used by each functional block in the E2IQ core.</p>
+                    <p class="mingxi">On the receive path, the demodulator, working with the PL deframer, looks for the start of the PL frame and the PL header to determine the MODCOD and the size of the slotted FEC frame. Signal measurements from detected symbols are then used as an input for the Log Likelihood Ratio (LLR) computation and subsequent decoding of the FEC frame. The stream adaptation block and GSE deframer blocks then remove the BB header and decapsulate back into Ethernet packets, respectively.</p>
+                    <p class="xiao-title">Performance Demonstration of the E2IQ and X310 Modem</p>
+                    <p class="mingxi">To characterize performance of our DVB-S2X design we configure a single modem in a loop-back configuration for both the E2IQ FEC core and the Ettus SDR Platform. For performance characterization of the E2IQ core, we create an AWGN channel model on the FPGA and insert the channel between the FEC encoder and decoder core. A known pseudo-random number sequence is then generated and feed into the FEC encoder, which passes through the AWGN channel and back into the FEC decoder. When a statistically significant number of errors and associated data points for SNR values are performed, we calculate the 10-5 Block Error Rate (BLER) for all MODCOD [2].<br>
+Similar to the characterization of the E2IQ FEC core, the TX of our Ettus SDR is connected to a carrier-to-noise generator, which provides a programmable SNR to evaluate each MODCOD in the AWGN channel model. The RX path is returned to the same modem from the generator. In same way as the FEC characterization, the TX begins sending a known pseudo-random number sequence at incremental SNR values. From these experiments, the corresponding SNR at 10-5 BLER is determined. In our Ettus SDR design, we use the mid-range MODCODs for performance comparison. The results of the E2IQ core and the Ettus SDR implementation are shown in Figure 5.</p>
+
+                    <img src="../../images/applications/svbs2x/5.png" width="900" height="850" >
+                    <p>Figure 5: Comparison of the E2IQ FEC core (dark blue) and the Ettus SDR implementation (magenta) with the DVB-S2X specification (light blue). Both implementations have small performance gaps over the range of tested MODCODs.</p>
+                    <p class="mingxi">As shown in Figure 5, the performance gap between the E2IQ core and the DVB-S2X spec is small. On average, the E2IQ performance gap is 0.1 dB. On the SDR implementation, the average performance gap of 0.29 dB also tracks closely to the DVB-S2X spec. This demonstrates the high quality of the E2IQ core design and implementation on the Ettus SDR. Finally, the designed SDR, the maximum symbol rate and most spectral efficient MODCOD is 72 MSPS and 4.5 bits/s/Hz, i.e., a maximum data rate of 324 Mb/s.</p>
+                    <p class="xiao-title">Conclusion</p>
+                    <p class="mingxi">Through our experiments and results, we have shown that the E2IQ core and X310 is a low loss implementation of the DVB-S2X specification. Additionally, given that the Ettus SDR is a multi-purpose platform, the E2IQ core is flexible can be adapted effectively to create a high performance data modem for variety of C4ISR applications. From our performance demonstration, we have shown that C4ISR applications can leverage DVB-S2X advances for increases in operating range and throughput.</p>
+                    <p class="xiao-title">References</p>
+                    <p class="mingxi">[1]    R. Lober, "Why the military needs commercial satellite technology," Defense One, September 2013.</p>
+                    <p class="mingxi">[2]    Digital Video Broadcasting, "Part 2: DVB-S2 Extensions (DVB-S2X)," ETSI EN 302 307-2, October 2014.</p>
+                    <p class="mingxi">[3]    National Instruments, "Ettus Research Releases Software Defined Radio Platforms Featuring Kintex-7 FPGA," Press Release, February 2014.</p>
+                    <p class="mingxi">[4]    AHA Products Group, "DVB-S2X Digital Ethernet Modem IP Core," AHA4709E2IQ Product Brief, April 2015.</p>
+                    <p class="mingxi">[5]    Ettus Research, "USRPTM X300 and X310 X Series," Product Specification, 2014.</p>
+                    <p class="mingxi">[6]    Digital Video Broadcasting, "Digital Video Broadcasting (DVB); Generic Stream Encapsulation (GSE) Protocol," ETSI TS 102 606, October 2007. </p>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

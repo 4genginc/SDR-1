@@ -1,0 +1,617 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>ranges.hpp</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>ranges.hpp</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">ranges.hpp</p> 
+       <hr /> 
+       <div class="contents"> 
+        <a href="ranges_8hpp.html">Go to the documentation of this file.</a> 
+        <div class="fragment"> 
+         <div class="line"> 
+          <a name="l00001"></a> 
+          <span class="lineno"> 1</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00002"></a> 
+          <span class="lineno"> 2</span>&nbsp; 
+          <span class="comment">// Copyright 2010-2012 Ettus Research LLC</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00003"></a> 
+          <span class="lineno"> 3</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00004"></a> 
+          <span class="lineno"> 4</span>&nbsp; 
+          <span class="comment">// This program is free software: you can redistribute it and/or modify</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00005"></a> 
+          <span class="lineno"> 5</span>&nbsp; 
+          <span class="comment">// it under the terms of the GNU General Public License as published by</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00006"></a> 
+          <span class="lineno"> 6</span>&nbsp; 
+          <span class="comment">// the Free Software Foundation, either version 3 of the License, or</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00007"></a> 
+          <span class="lineno"> 7</span>&nbsp; 
+          <span class="comment">// (at your option) any later version.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00008"></a> 
+          <span class="lineno"> 8</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00009"></a> 
+          <span class="lineno"> 9</span>&nbsp; 
+          <span class="comment">// This program is distributed in the hope that it will be useful,</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00010"></a> 
+          <span class="lineno"> 10</span>&nbsp; 
+          <span class="comment">// but WITHOUT ANY WARRANTY; without even the implied warranty of</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00011"></a> 
+          <span class="lineno"> 11</span>&nbsp; 
+          <span class="comment">// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00012"></a> 
+          <span class="lineno"> 12</span>&nbsp; 
+          <span class="comment">// GNU General Public License for more details.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00013"></a> 
+          <span class="lineno"> 13</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00014"></a> 
+          <span class="lineno"> 14</span>&nbsp; 
+          <span class="comment">// You should have received a copy of the GNU General Public License</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00015"></a> 
+          <span class="lineno"> 15</span>&nbsp; 
+          <span class="comment">// along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00016"></a> 
+          <span class="lineno"> 16</span>&nbsp; 
+          <span class="comment">//</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00017"></a> 
+          <span class="lineno"> 17</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00018"></a> 
+          <span class="lineno"> 18</span>&nbsp; 
+          <span class="preprocessor">#ifndef INCLUDED_UHD_TYPES_RANGES_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00019"></a> 
+          <span class="lineno"> 19</span>&nbsp; 
+          <span class="preprocessor"></span> 
+          <span class="preprocessor">#define INCLUDED_UHD_TYPES_RANGES_HPP</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00020"></a> 
+          <span class="lineno"> 20</span>&nbsp; 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00021"></a> 
+          <span class="lineno"> 21</span>&nbsp; 
+          <span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">uhd/config.hpp</a>&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00022"></a> 
+          <span class="lineno"> 22</span>&nbsp; 
+          <span class="preprocessor">#include &lt;string&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00023"></a> 
+          <span class="lineno"> 23</span>&nbsp; 
+          <span class="preprocessor">#include &lt;vector&gt;</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00024"></a> 
+          <span class="lineno"> 24</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00025"></a> 
+          <span class="lineno"> 25</span>&nbsp; 
+          <span class="keyword">namespace </span>uhd{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00026"></a> 
+          <span class="lineno"> 26</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00031"></a> 
+          <span class="lineno"><a class="line" href="classuhd_1_1range__t.html"> 31</a></span>&nbsp; 
+          <span class="keyword">class </span> 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="classuhd_1_1range__t.html">range_t</a>{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00032"></a> 
+          <span class="lineno"> 32</span>&nbsp; 
+          <span class="keyword">public</span>: 
+         </div> 
+         <div class="line"> 
+          <a name="l00033"></a> 
+          <span class="lineno"> 33</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00039"></a> 
+          <span class="lineno"> 39</span>&nbsp; 
+          <a class="code" href="classuhd_1_1range__t.html">range_t</a>( 
+          <span class="keywordtype">double</span> value = 0); 
+         </div> 
+         <div class="line"> 
+          <a name="l00040"></a> 
+          <span class="lineno"> 40</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00048"></a> 
+          <span class="lineno"> 48</span>&nbsp; 
+          <a class="code" href="classuhd_1_1range__t.html">range_t</a>( 
+          <span class="keywordtype">double</span> start, 
+          <span class="keywordtype">double</span> stop, 
+          <span class="keywordtype">double</span> step = 0); 
+         </div> 
+         <div class="line"> 
+          <a name="l00049"></a> 
+          <span class="lineno"> 49</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00051"></a> 
+          <span class="lineno"> 51</span>&nbsp; 
+          <span class="keywordtype">double</span> start( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00052"></a> 
+          <span class="lineno"> 52</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00054"></a> 
+          <span class="lineno"> 54</span>&nbsp; 
+          <span class="keywordtype">double</span> stop( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00055"></a> 
+          <span class="lineno"> 55</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00057"></a> 
+          <span class="lineno"> 57</span>&nbsp; 
+          <span class="keywordtype">double</span> step( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00058"></a> 
+          <span class="lineno"> 58</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00060"></a> 
+          <span class="lineno"> 60</span>&nbsp; 
+          <span class="keyword">const</span> std::string to_pp_string( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00061"></a> 
+          <span class="lineno"> 61</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00062"></a> 
+          <span class="lineno"> 62</span>&nbsp; 
+          <span class="keyword">private</span>: 
+          <span class="keywordtype">double</span> _start, _stop, _step; 
+         </div> 
+         <div class="line"> 
+          <a name="l00063"></a> 
+          <span class="lineno"> 63</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00064"></a> 
+          <span class="lineno"> 64</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00068"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1meta__range__t.html"> 68</a></span>&nbsp; 
+          <span class="keyword">struct </span> 
+          <a class="code" href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          <a class="code" href="structuhd_1_1meta__range__t.html">meta_range_t</a> : std::vector&lt;range_t&gt;{ 
+         </div> 
+         <div class="line"> 
+          <a name="l00069"></a> 
+          <span class="lineno"> 69</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00071"></a> 
+          <span class="lineno"> 71</span>&nbsp; 
+          <a class="code" href="structuhd_1_1meta__range__t.html">meta_range_t</a>( 
+          <span class="keywordtype">void</span>); 
+         </div> 
+         <div class="line"> 
+          <a name="l00072"></a> 
+          <span class="lineno"> 72</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00079"></a> 
+          <span class="lineno"> 79</span>&nbsp; 
+          <span class="keyword">template</span> &lt; 
+          <span class="keyword">typename</span> InputIterator&gt; 
+         </div> 
+         <div class="line"> 
+          <a name="l00080"></a> 
+          <span class="lineno"><a class="line" href="structuhd_1_1meta__range__t.html#a3cc9dc38cb26185596b785070f6b3cda"> 80</a></span>&nbsp; 
+          <a class="code" href="structuhd_1_1meta__range__t.html#a3cc9dc38cb26185596b785070f6b3cda">meta_range_t</a>(InputIterator first, InputIterator last): 
+         </div> 
+         <div class="line"> 
+          <a name="l00081"></a> 
+          <span class="lineno"> 81</span>&nbsp; std::vector&lt; 
+          <a class="code" href="classuhd_1_1range__t.html">range_t</a>&gt;(first, last){ 
+          <span class="comment">/* NOP */</span> } 
+         </div> 
+         <div class="line"> 
+          <a name="l00082"></a> 
+          <span class="lineno"> 82</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00090"></a> 
+          <span class="lineno"> 90</span>&nbsp; meta_range_t( 
+          <span class="keywordtype">double</span> start, 
+          <span class="keywordtype">double</span> stop, 
+          <span class="keywordtype">double</span> step = 0); 
+         </div> 
+         <div class="line"> 
+          <a name="l00091"></a> 
+          <span class="lineno"> 91</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00093"></a> 
+          <span class="lineno"> 93</span>&nbsp; 
+          <span class="keywordtype">double</span> start( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00094"></a> 
+          <span class="lineno"> 94</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00096"></a> 
+          <span class="lineno"> 96</span>&nbsp; 
+          <span class="keywordtype">double</span> stop( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00097"></a> 
+          <span class="lineno"> 97</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00099"></a> 
+          <span class="lineno"> 99</span>&nbsp; 
+          <span class="keywordtype">double</span> step( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00100"></a> 
+          <span class="lineno"> 100</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00107"></a> 
+          <span class="lineno"> 107</span>&nbsp; 
+          <span class="keywordtype">double</span> 
+          <a class="code" href="namespaceuhd.html#a6edec8184d2f6d70f59f34d674c57a37">clip</a>( 
+          <span class="keywordtype">double</span> value, 
+          <span class="keywordtype">bool</span> clip_step = 
+          <span class="keyword">false</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00108"></a> 
+          <span class="lineno"> 108</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00110"></a> 
+          <span class="lineno"> 110</span>&nbsp; 
+          <span class="keyword">const</span> std::string to_pp_string( 
+          <span class="keywordtype">void</span>) 
+          <span class="keyword">const</span>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00111"></a> 
+          <span class="lineno"> 111</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00112"></a> 
+          <span class="lineno"> 112</span>&nbsp; }; 
+         </div> 
+         <div class="line"> 
+          <a name="l00113"></a> 
+          <span class="lineno"> 113</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00114"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd.html#ac9b64ecbaa15596e07f58122c82482e3"> 114</a></span>&nbsp; 
+          <span class="keyword">typedef</span> 
+          <a class="code" href="structuhd_1_1meta__range__t.html">meta_range_t</a> 
+          <a class="code" href="namespaceuhd.html#ac9b64ecbaa15596e07f58122c82482e3">gain_range_t</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00115"></a> 
+          <span class="lineno"><a class="line" href="namespaceuhd.html#a948ed1f408f7737060d0b6a5d75a135d"> 115</a></span>&nbsp; 
+          <span class="keyword">typedef</span> 
+          <a class="code" href="structuhd_1_1meta__range__t.html">meta_range_t</a> 
+          <a class="code" href="namespaceuhd.html#a948ed1f408f7737060d0b6a5d75a135d">freq_range_t</a>; 
+         </div> 
+         <div class="line"> 
+          <a name="l00116"></a> 
+          <span class="lineno"> 116</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00117"></a> 
+          <span class="lineno"> 117</span>&nbsp;} 
+          <span class="comment">//namespace uhd</span> 
+         </div> 
+         <div class="line"> 
+          <a name="l00118"></a> 
+          <span class="lineno"> 118</span>&nbsp; 
+         </div> 
+         <div class="line"> 
+          <a name="l00119"></a> 
+          <span class="lineno"> 119</span>&nbsp; 
+          <span class="preprocessor">#endif </span> 
+          <span class="comment">/* INCLUDED_UHD_TYPES_RANGES_HPP */</span> 
+          <span class="preprocessor"></span> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_a948ed1f408f7737060d0b6a5d75a135d"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#a948ed1f408f7737060d0b6a5d75a135d">uhd::freq_range_t</a> 
+          </div> 
+          <div class="ttdeci">
+            meta_range_t freq_range_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> ranges.hpp:115 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1meta__range__t_html_a3cc9dc38cb26185596b785070f6b3cda"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1meta__range__t.html#a3cc9dc38cb26185596b785070f6b3cda">uhd::meta_range_t::meta_range_t</a> 
+          </div> 
+          <div class="ttdeci">
+            meta_range_t(InputIterator first, InputIterator last) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> ranges.hpp:80 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_a6edec8184d2f6d70f59f34d674c57a37"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#a6edec8184d2f6d70f59f34d674c57a37">uhd::clip</a> 
+          </div> 
+          <div class="ttdeci">
+            UHD_INLINE T clip(const T &amp;val, const T &amp;bound1, const T &amp;bound2) 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> algorithm.hpp:81 
+          </div> 
+         </div> 
+         <div class="ttc" id="namespaceuhd_html_ac9b64ecbaa15596e07f58122c82482e3"> 
+          <div class="ttname"> 
+           <a href="namespaceuhd.html#ac9b64ecbaa15596e07f58122c82482e3">uhd::gain_range_t</a> 
+          </div> 
+          <div class="ttdeci">
+            meta_range_t gain_range_t 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> ranges.hpp:114 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8hpp_html"> 
+          <div class="ttname"> 
+           <a href="config_8hpp.html">config.hpp</a> 
+          </div> 
+         </div> 
+         <div class="ttc" id="classuhd_1_1range__t_html"> 
+          <div class="ttname"> 
+           <a href="classuhd_1_1range__t.html">uhd::range_t</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> ranges.hpp:31 
+          </div> 
+         </div> 
+         <div class="ttc" id="config_8h_html_adc68e1c030efb88af856decedf19aedf"> 
+          <div class="ttname"> 
+           <a href="config_8h.html#adc68e1c030efb88af856decedf19aedf">UHD_API</a> 
+          </div> 
+          <div class="ttdeci">
+            #define UHD_API 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> config.h:73 
+          </div> 
+         </div> 
+         <div class="ttc" id="structuhd_1_1meta__range__t_html"> 
+          <div class="ttname"> 
+           <a href="structuhd_1_1meta__range__t.html">uhd::meta_range_t</a> 
+          </div> 
+          <div class="ttdef"> 
+           <b>Definition:</b> ranges.hpp:68 
+          </div> 
+         </div> 
+        </div> 
+        <!-- fragment --> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

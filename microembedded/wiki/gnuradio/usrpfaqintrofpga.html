@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UsrpFAQIntroFPGA</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div dir="ltr">
+<p style="color:rgb(0,0,0)"><font size="2"><a name="TOC-FPGA"></a><b><font size="3">FPGA</font></b></font></p><p><b><font size="2">[ <a href="usrpfaqintroauxdio.html">&lt;&lt;
+ 辅助数字量输入/输出通道</a> | <a href="usrpfaqintro.html">^ 
+USRP简介 ^</a> 
+| <a href="usrpfaqintrodboard.html">子
+板 &gt;&gt;</a> ]</font></b></p><p><font size="2">理解 USRP 上 FPGA 
+是如何工作是 GNU Radio 用户最重要的部分。正如下图所示，所有的 ADCs 和 DACs 都同 FPGA 相连。FPGA 是 USRP 
+的核心关键。它基本功能是实现对数字宽频信号处理的算法，压缩数据速率以迎合 USB2.0 传输的要求。FPGA 同 USB2 的接口芯片（Cypress 
+FX2）相连。所有的一切（FPGA 内部电路逻辑和 USB 控制器）都可通过 USB2 总线进行编程控制。</font></p><div style="text-align:left"><div style="display:block;text-align:center;margin-right:auto;margin-left:auto"><font size="2"><a href="../images/SimpleUSRPBlockDiagram_max.jpeg" target="_blank" imageanchor="1"><img border="0" src="../images/SimpleUSRPBlockDiagram.jpeg"></a></font></div></div>
+<p style="color:rgb(255,0,0)"><font size="2"><span style="color:rgb(0,0,0)">标准的 FPGA 
+配置包含由四阶级联积分梳状滤波器（CIC filters）构成的数字下变频。级联积分梳状滤波器（CIC 
+filters)是仅仅利用加法器和延时器（寄存器）来构成的高效滤波器。<span style="color:rgb(0,0,0)">鉴于频谱整形和带外信号抑制的需求，</span></span></font><font size="2"><span style="color:rgb(0,0,0)"><span style="color:rgb(0,0,0)">完整的数字</span></span></font><font size="2"><span style="color:rgb(0,0,0)"><span style="color:rgb(0,0,0)">下变频（DDC）的过程是利用抽头系数为 31 的半带滤波器（31 Tap HBF）与联积分梳状滤波器（CIC Filter）级联在一起完成的。 </span></span></font><font color="#000000" size="2" style="color:rgb(0,0,0)">标准的 FPGA 配置包含两个完整的数字下变频器。</font><font size="2" style="color:rgb(0,0,0)">同时还有另一种配置是包含四个不带半带滤波器的</font><font color="#000000" size="2" style="color:rgb(0,0,0)">数字下变频器，它可用来接收独立的</font><font color="#000000" size="2" style="color:rgb(0,0,0)">1，2 或4路输入信号的。</font><font size="2"><br></font></p>
+<p><font size="2">在由四个 DDC 构成的构建中，接收链路（RX path）有四个 ADCs 和 四个 DDCs。每个 DDC 有两个输入：I 和 Q。四个 ADCs 
+中的任何一个都可被连接到四个 DDCs 的两个输入 I 或 Q 中任何一个中去。这使得 ADCs 采样数据流具有多通道选择功能。<br></font></p>
+<div style="text-align:left"><p><font size="2">下图是 USRP 数字下变频原理框图。&nbsp; </font></p><font size="2"><br></font></div>
+<div style="text-align:center;display:block;margin-left:auto;margin-right:auto"><font size="2"><div style="display:block;text-align:center;margin-right:auto;margin-left:auto"><a href="../images/USRPFPGADDC_max.jpeg" imageanchor="1"><img border="0" src="../images/USRPFPGADDC.jpeg"></a></div></font></div><font size="2"><br></font>
+<p><font size="2">数字下变频 DDC 工作<font size="2">原理<font size="2">如下</font></font>，首先，变换信号从中频（IF）到基频。其次，它抽取（</font><font size="2">decimate）信号使得其速率迎合 USB2 ，同时也符合计算机的处理速度。复合输入信号（IF）通过同不同次幂的恒定频率相乘。其结果产生仍<font size="2">就</font>复合但中心频率为零的信号（基频）。然后对信号进行系数为 N 的抽取。</font></p><p><font size="2">抽取转换器（</font>Decimator<font size="2">）可被理解为是</font><font size="2">低通滤波器加</font><font size="2">采样降频器。假设抽取系数是N，从数字频谱特性观察，低通滤波器所选择的带宽是 [-Fs/N, 
+Fs/N]，所谓使采样率降低就是把频谱从[-Fs, Fs] 降到 [-Fs/N, Fs/N]。因此可以说，把数字信号的带宽通过系数 N（抽取）变窄。</font></p>
+<p><font size="2">言及带宽的概念，</font><font size="2">通过 USB </font><font size="2">系统可以支持 32MB/sec。所有通过 USB 接口的采样信号是以 IQ 形式的 16 位的带符号的整数，或者说是 16 位 I 和 16 位 
+Q（复合），也就是 4 字节长的复合采样信号。这使得每秒通过 USB 可达 8Mega 复合采样（每 sec/4 Byte 内通过 32 MByte ）。 因为采用复合（信号）处理，根据 Nyquist 
+定律，系统提供的最大频带可达 8 MHz。当然，可以选取抽取系数来实现更窄的带宽。比如，设计一个 FM 接收机，FM 的带宽一般是 200 
+KHz。因此，选取一个系数为 250 的抽取。这样通过 USB的数据速率便是 64MHz/250 = 256 KHz，这对 200 KHz 
+带宽的要求能够很好的满足而且不丢失任何频谱信息。抽取速率范围是 [8, 256]。复合 I/Q 信号通过 USB 进入计算机中，那便是软件世界了。</font></p>
+<p><font size="2">值得注意的是多信道（最多四个通道）信</font><font size="2">号是</font><font size="2">信道交织复接的。比如，对于这四个信道，通过 
+USB 传输的顺序是 I0 Q0 I1 Q1 I2 Q2 I3 Q3 I0 Q0 I1 Q1, …诸如此类。在复合接收链路（1，2，或 
+4）中，所有的输入信道必须是相同的数据速率（比如：相同的抽取速率）。<br></font></p>
+<p><font size="2">发射链路除流向相反外，故事情节基本相同。基带 I/Q 复合信号传送到 USRP 板。数字上变频（DUC）将信号内插（</font><font size="2">interpolate）上变频至中频 IF 而后送往 DAC 
+部分。</font></p>
+<p style="text-align:center"><font size="2"><a href="../images/USRPDUC_max.jpeg" imageanchor="1"><img border="0" src="../images/USRPDUC.jpeg"></a></font><font size="2">&nbsp;&nbsp;&nbsp; </font></p>
+<p><font size="2">发射端的数字上变频（DUC）实际上是包含在 AD9862 CODEC 芯片中，而非 FPGA （如上图所示）。FPGA 的处理发射信号的模块仅仅是 
+CIC 内插转换器。内插转换器的输出可被链路到四个 CODEC 的任一输入。<br></font></p>
+<p><font size="2">在多信道 TX 链路（1 或 
+2）中所有的输出信道必须是相同的数据处理速度（比如：相同的内插速率）。但值得注意的是发射（TX）的速率可以同接收（RX）速率<font size="2">相<font size="2">异</font></font>。</font></p><p><font size="2">USRP 
+可全双工模式工作。在这种情况下，发射和接收是完全独立的。唯一要考虑的是 USB 32 Megabyte<font size="2">/<font size="2">s </font></font>的速率（双工复合后数据的）能力。</font></p><p><br></p>
+<p><br></p>
+<p><br></p><p><b><font size="2"><br></font></b></p>
+<p><b><font size="2">[ <a href="usrpfaqintroauxdio.html">&lt;&lt; 辅助数字量输入/输出通道</a> | <a href="usrpfaqintro.html">^ USRP简介 ^</a> 
+| <a href="usrpfaqintrodboard.html">子板 &gt;&gt;</a> ]</font></b></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><div><font size="2"><br><br><br><br><br></font><p><font size="2"><b>注： </b><b><a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/UsrpFAQIntroFPGA" target="_blank"><span style="color:rgb(0,0,0)">FPGA</span></a>（原文出处，翻译整理仅供参考!）</b></font></p></div></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

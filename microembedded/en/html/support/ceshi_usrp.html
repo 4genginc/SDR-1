@@ -1,0 +1,225 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="faq.html">返回 常见问题</a></p>
+				<hr />
+				<p class="content_title">如何测试新到手的 USRP？</p>
+				<hr />
+				<p class="faq_title">准备:</p>
+				<p class="faq_mingxi">1.安装操作系统: <a href="ceshi_usrp/select_os.html">需选择 OS</a></p>
+				<p class="faq_mingxi">2.安装 GNU Radio: 创建指导</p>
+				<p class="faq_mingxi">3.(可选) 阅读硬件平台文档: USRP2 介绍 USRP 文档</p>
+				<p class="faq_mingxi">背景阅读: Blossom Research, LLC  Ettus Research LLC</p>
+				<p class="faq_mingxi">4.相关下载  Datasheet</p>
+				<p class="faq_mingxi">5.(可选) 阅读驱动（driver）代码 </p>
+				<p class="faq_mingxi">同 USRP 相关联的代码：</p>
+					<pre>
+		/usrp
+			firmware（固件）: USB 控制器的 8051, 大多数以 .c 和 .a51 形式编写；
+			FPGA: 对于 FPGA, 大多数以 .v (似乎 fpga 内仅仅含有 SRAM , 因而它需每次为 FPGA 下载程序) 形式编写；
+			host: 相关 PC 大多数以 .cc 形式编写：
+		/gr-usrp
+			子板驱动: 大多数以 .py 和 .cc 形式编写；
+		/gnuradio-example/python/usrp
+			对单个 USRP 板使用例程: 都以 .py 形式编写；
+		/gnuradio-example/python/multi-usrp
+			对以多个 USRP 的使用例程: 都以 .py 形式编写。
+					</pre>
+				
+				<p class="faq_title">开始测试:</p>
+	<pre>
+    1.如何上电开始:
+		步骤1. 在插入 USB 电缆之前, 打开两个终端.
+		步骤2. 需实时查看所有记录信息: 键入 tail -f /var/log/messages (检查 USB 驱动安装正常)
+    如何停止及断电:
+		步骤1. 停止程序.
+		步骤2. 断开 USB 连接， 断电。
+    2.USRP 第一次不带子板上电，需要运行什么脚本测试?
+		http://gnuradio.microembedded.com/udevconfig
+		gnuradio\gnuradio-examples\python\usrp\usrp_siggen.py & usrp_fft.py
+    3.如何测试子板的发射和接受?
+    天线连接在 Tx/Rx SMA 而不是 Rx2！ RX2 受开关控制并且缺省处于 “off" 状态！
+    Tx 和 RX 不能由电缆相连！需要大约 40-50 DB 的衰减器！！
+		/gnuradio-examples/python/usrp/usrp_siggen.py and usrp_fft.py to observe signal
+		/gnuradio-examples/python/digital/benchmark_tx.py and benchmark_rx.py to test data transmission.
+    板件之间至少需要 3 M 的距离。 --/home/james/gnuradio/gnuradio-examples/python/digital/README
+		用 tx_voice.py 和 rx_voice.py 测试 voice 发射. 
+		还有一些宣称 /gnuradio-examples/python/usrp/usrp_nbfm_ptt.py 双工测试语音呼叫，我还没调通。
+	</pre>
+				
+				<p class="faq_title">测试声音:</p>
+	<pre>
+    1.gnuradio-examples\python\audio\dial_tone.py as tutorial
+    2.gnuradio-examples\python\audio\audio_copy.py
+		gnuradio-examples\python\audio\audio_to_file.py
+		gnuradio-examples\python\audio\audio_play.py
+    3.gnuradio-examples\python\digital_voice\encdec.py to test by one USRP
+    4.gnuradio-examples\python\digital\tx_voice.py
+		gnuradio-examples\python\digital\rx_voice.py to test by two USRP
+	</pre>
+				
+				<p class="faq_title">测试数据:</p>
+	<pre>
+    gnuradio-examples\python\digital\benchmark_tx.py
+        gnuradio-examples\python\digital\benchmark_rx.py to test by two USRP
+	</pre>
+				
+				<p class="faq_title">其它:</p>
+	<pre>
+    1.<a href="http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html" target="_blank">http://www.nabble.com/High-packet-error-and-reception-problems-with-RFX-2400-t3522095.html</a>
+    ./benchmark_tx.py -f 2412M --bitrate 500k -v --tx-amplitude=30000
+    usrp_siggen.py 和 usrp_oscope.py
+    ./benchmark_rx.py -f 2412M --bitrate 100k -v --rx-gain=75
+    --in digital folder
+    2.<a href="http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using" target="_blank">http://staff.washington.edu/jon/gr-osx/gr-osx-usrp.html#using</a>
+    benchmark_usb.py 评估 USB 通量
+    usrp_siggen.py 信号发生器
+    usrp_oscope.py 示波器 (screenshot)
+    usrp_fft.py 频谱分析仪 (screenshot)
+	</pre>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --><!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

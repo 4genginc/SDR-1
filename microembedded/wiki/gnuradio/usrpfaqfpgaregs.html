@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><!-- InstanceBegin template="/Templates/gnuradio.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../images/sites-16.ico" />
+<!--声明当前的页面的编码集-->
+<meta charset="utf-8"/>
+<meta name="title" content="GNU Radio 中文社区">
+<meta itemprop="name" content="GNU Radio 中文社区">
+<meta property="og:title" content="GNU Radio 中文社区">
+<meta name="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta itemprop="description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<meta id="meta-tag-description" property="og:description" content="微嵌 - GNU Radio 中文维客 由 微嵌软件技术(北京)有限责任公司维护。GNU Radio 是免费的软件开发工具套件。它提供信号运行和处理模块，用它可以在易制作的低成本的射频（RF）硬件（比如：USRP 和USRP2）和通用微处理器上实现软件定义无线电。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GNU Radio 中文社区</title>
+<!-- InstanceEndEditable -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+<link rel="stylesheet" type="text/css" href="../css/css.css">
+<link rel="stylesheet" type="text/css" href="../css/overlay.css">
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" zh_CN">
+<div id="sites-chrome-everything-scrollbar">
+    <div id="sites-chrome-everything" class="">
+        <div id="sites-chrome-page-wrapper" style="direction: ltr">
+            <div id="sites-chrome-page-wrapper-inside">
+                <div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="height:auto;">
+                    <table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="height:auto;">
+                        <tbody>
+                            <tr class="sites-header-primary-row" id="sites-chrome-userheader">
+                                <td id="sites-header-title" class="sites-chrome-header-valign-bottom"><div class="sites-header-cell-buffer-wrapper">
+                                        <h2><a href="http://gnuradio.microembedded.com/" id="sites-chrome-userheader-logo"> <img id="logo-img-id" src="../images/logo.jpg" alt="GNU Radio 中文社区" class="sites-logo sites-chrome-header-valign-bottom "></a></h2>
+                                    </div></td>
+                            </tr>
+                            <tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+                                <td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sites-chrome-main-wrapper">
+                    <div id="sites-chrome-main-wrapper-inside">
+                    <!-- InstanceBeginEditable name="head" -->
+                    <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tbody><tr>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="display: none;">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="display: none;" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">UsrpFAQFpgaregs</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1"><div dir="ltr"><div>
+
+<h2><a name="TOC-FPGA-"></a><font size="3">控制 FPGA 寄存器问题</font></h2><div style="text-align:right"><font size="2"><b>[ <a href="usrpfaqadc.html">&lt;&lt;
+ AD9862 
+Codec</a> |&nbsp;<a href="usrpfaq.html">^ USRP 
+FAQ 首页 ^</a>| <a href="usrpfaqddc.html">数字下变频
+（DDC）&gt;&gt;</a> 
+]</b><br></font></div><ul><li><font size="2"><b>能告诉这些寄存器位置何处、如何读/写？&nbsp; </b></font></li></ul>
+<blockquote>
+<blockquote>
+</blockquote><p><font size="2">一旦</font><font size="2">生成</font><font size="2">对象&nbsp; usrp.source_c() 或 usrp.sink_c() ，便可调用： 
+</font></p><blockquote><font face="Courier New" size="2">u = usrp.source_c() <br>u._write_fpga_reg(regno, 
+val)<br></font></blockquote></blockquote>
+<blockquote>
+<p><font size="2">FPGA 寄存器是<span style="color:rgb(0,0,0)">只写（write-only）</span>类型的。可如下调用： </font></p><div style="margin-left:40px"><font face="Courier New" size="2">u._read_fpga_reg(regno)</font><br></div></blockquote>
+<blockquote>
+<p><font size="2">但返回将只是零或</font><font size="2">一组</font><font size="2">准注释的与寄存器编号无关的诊断值。FPGA 寄存器定义</font><font size="2">（参阅如下代码）</font><font size="2">：<br></font></p><p style="margin-left:40px">[source:gnuradio/trunk/usrp/firmware/include/fpga_regs_common.h  
+<span>&nbsp;&nbsp; &nbsp;</span><a href="http://gnuradio.org/redmine/repositories/entry/gnuradio/usrp/firmware/include/fpga_regs_common.h" target="_blank">usrp/firmware/include/fpga_regs_common.h</a>], <br></p><p style="margin-left:40px">
+[source:gnuradio/trunk/usrp/firmware/include/fpga_regs_common.h  
+<span>&nbsp;&nbsp; &nbsp;</span><a href="http://gnuradio.org/redmine/repositories/entry/gnuradio/usrp/firmware/include/fpga_regs_standard.h" target="_blank">usrp/firmware/include/fpga_regs_standard.h</a>].</p></blockquote><p style="margin-left:40px"><b>NOTE：</b>不当地配置这些寄存器将可能损坏硬件，毫无疑问 <font size="2">setting_reg.v 是在寄存器可被写入时被实例化（初始化）。能够访读每个寄存器并非一个简单的问题。FPGA 寄存器是通过 SPI 配置，而非 I2C 配置。</font><font size="2">已有一套通过 SPI 读取数值的方法，但只能最大读取 8 个数值，它主要是用于读取 I/O 管脚和 RSSI 水平，并非所有的寄存器。</font><font size="2"> </font><font size="2">参阅：</font></p><p style="margin-left:80px">[source:gnuradio/trunk/usrp/fpga/sdr_lib/serial_io.v&nbsp; -&nbsp; <a href="http://vps.gnuradio.org/redmine/repositories/entry/gnuradio/usrp/fpga/sdr_lib/serial_io.v?rev=6af2c9c58cc6afcab371b769da5738c1f52fc969" target="_blank">serial_io.v</a>] <br></p><p style="margin-left:80px">和 <br></p><p style="margin-left:80px">[source:gnuradio/trunk/usrp/fpga/sdr_lib/setting_reg.v&nbsp; -&nbsp; <a href="http://vps.gnuradio.org/redmine/repositories/entry/gnuradio/usrp/fpga/sdr_lib/setting_reg.v?rev=6af2c9c58cc6afcab371b769da5738c1f52fc969" target="_blank">setting_reg.v</a>]</p><ul><li><font size="2"><b>哪些 FPGA 的寄存器用于 SPI、I2C 控制？或者说它们只是标准寄存器？</b></font></li></ul></div><div style="margin-left:40px"><font size="2">所有</font> I2C 和 SPI 同 FPGA 无关。SPI 是用于设置子板的串行总线，FPGA 和 AD9862 仅受 FX2 遣调。<br></div><div>
+<blockquote>
+<blockquote>
+</blockquote></blockquote>
+<ul><li><font size="2"><b>诸如下面例程所示，</b></font><b>使用 </b><font size="2"><b>libusrp 读写 FPGA 寄存器。无关乎 FPGA 的</b></font><font size="2"><b>那个寄存器</b></font><font size="2"><b>，返回“写”的过程都是“true”，返回“读”的过程都是 0。这是何因？<br></b></font></li></ul><blockquote><div style="margin-left:40px"><font face="Courier New" size="2">if 
+(utx-&gt;_write_fpga_reg(FR_ADC_OFFSET_0,0x7777)) </font><br><font face="Courier New" size="2">int readregvalue2 = 
+(utx-&gt;_read_fpga_reg(FR_ADC_OFFSET_0));</font><br></div></blockquote>
+<blockquote>
+<blockquote>
+</blockquote></blockquote><p style="margin-left:40px"><font size="2">FPGA 寄存器是<span style="color:rgb(0,0,0)">只写（write-only）</span>类型的寄存器。而当“读”操作时，读取的并非寄存器的内容，而是一组 FPGA 内的有用的信号。参看如下程序代码：</font></p><p style="margin-left:80px">[source: gnuradio/trunk/usrp/fpga/toplevel/usrp_std/usrp_std.v&nbsp; -&nbsp; <a href="http://vps.gnuradio.org/redmine/repositories/entry/gnuradio/usrp/fpga/toplevel/usrp_std/usrp_std.v?rev=6af2c9c58cc6afcab371b769da5738c1f52fc969" target="_blank">usrp_std.v</a>] </p><p style="margin-left:40px"><font size="2">的 304 和 305 行便可明了所读取的信号的内容。一个经典的处理“只写”类型的寄存器</font>的方法是维护一个影子拷贝记录将每次写入寄存器的内容并更新，这样，如果日后想“读取”该寄存器的话，只需查看该影子拷贝即可。也可以据此方法来“读取”-“修改”-“写入”。</p><ul><li><b>Verilog 代码里并无用户定义的 FPGA 寄存器。需手动添加吗？需在 usrp_std.v 内完善这些吗。</b><br></li></ul>
+<blockquote>
+<blockquote>
+</blockquote><p><font size="2">正确。实际使用中的寄存器并没有被实例化（在综合过程中所作的任何实例化也随后被剔除）如想编写用户（定制）FPGA 代码，可在编写的任何 Verilog 模块中随意实例化任何所需的数目如下：<br></font></p><blockquote><font face="Courier New" size="2">setting_reg 
+#(FR_USER_XX) user_reg(...);<br></font></blockquote></blockquote>
+<blockquote>
+<p><font size="2">只是确保代码表述 include 包含如下：<br></font></p><p style="margin-left:40px">[source:gnuradio/trunk/usrp/firmware/include/fpga_regs_common.h  
+<span>&nbsp;&nbsp; &nbsp;</span><a href="http://gnuradio.org/redmine/repositories/entry/gnuradio/usrp/firmware/include/fpga_regs_common.h" target="_blank">usrp/firmware/include/fpga_regs_common.h</a>]</p></blockquote>
+<blockquote>
+<p><font size="2">代码表述 include 中的路径（path）取决于 Verilog 模块在文件系统的位置不同而不同。还有，</font><font size="2">现存模块如若</font><font size="2">添加了配置寄存器（</font><font size="2">setting registers</font><font size="2">）的话，代码表述</font><font size="2">“include” 便会完成这些工作。</font></p><p><font size="2">最后，常量 </font><font size="2">FR_USER_0 到 FR_USER_15 通过代码表述 “include” 包含如下便可使用：<br></font></p></blockquote>
+<blockquote>
+</blockquote>
+<p style="margin-left:80px">[source:gnuradio/trunk/usrp/firmware/include/fpga_regs_common.h  
+<span>&nbsp;&nbsp; &nbsp;</span><a href="http://gnuradio.org/redmine/repositories/entry/gnuradio/usrp/firmware/include/fpga_regs_standard.h" target="_blank">usrp/firmware/include/fpga_regs_standard.h</a>]<font size="2">&nbsp; (再强调一下，在此路径可能不同)。 <br></font></p><ul><li><b>可以使用 usrper 来读取 FPGA 的寄存器吗？</b><br></li></ul>
+<blockquote>
+<blockquote>
+</blockquote><p><font size="2">不，不能。基于如下的 </font><font size="2">python 代码: </font></p></blockquote><blockquote><div style="margin-left:40px"><font face="Courier New" size="2"># returns 32-bit int </font><br><font face="Courier New" size="2">v = 
+u._read_fpga_reg(regno) </font><br></div></blockquote>
+<blockquote>
+<p><font size="2">不难注意到仅有 4 个可读寄存器，在此强烈建议使用 </font><font size="2">use u.read_io(which_dboard) 而非直接读取寄存器 1 或 2.<br></font></p></blockquote>
+<blockquote>
+<p><font size="2">参考表格：</font></p><table border="1" bordercolor="#888888" cellspacing="0" style="border-collapse:collapse;border-color:rgb(136,136,136);border-width:1px"><tbody><tr><td style="width:118px;height:18px">&nbsp;<font size="2"><font size="2">regno 寄存器编号<br></font></font></td><td style="width:279px;height:18px">&nbsp;<font size="2"><font size="2">result&nbsp; 结果<br></font></font></td><td style="width:362px;height:18px">&nbsp;</td></tr><tr><td style="width:118px;height:18px">&nbsp;1</td><td style="width:279px;height:18px">&nbsp;<font size="2"><font size="2">(io_rx_a &lt;&lt; 16) | io_tx_a</font></font></td><td style="width:362px;height:18px">&nbsp;<font size="2"><font size="2"><font size="2"># read daughterboard i/o pins</font></font></font></td></tr><tr><td style="width:118px;height:18px">&nbsp;2</td><td style="width:279px;height:18px">&nbsp;<font size="2"><font size="2">(io_rx_b &lt;&lt; 16) | io_tx_b</font></font></td><td style="width:362px;height:18px">&nbsp;<font size="2"><font size="2"># read daughterboard i/o pins</font></font></td></tr><tr><td style="width:118px;height:18px">&nbsp;3</td><td style="width:279px;height:18px">&nbsp;<font size="2"><font size="2">returns const 0xaa55ff77</font></font></td><td style="width:362px;height:18px">&nbsp;<font size="2"><font size="2"># don't count on this </font></font></td></tr><tr><td style="width:118px;height:18px">&nbsp;4</td><td style="width:279px;height:18px">&nbsp;<font size="2"><font size="2">returns const 0xf0f0931a</font></font></td><td style="width:362px;height:18px">&nbsp;<font size="2"><font size="2"># don't count on this</font></font></td></tr></tbody></table></blockquote><div style="margin-left:40px">仅供参考（FYI）,&nbsp;“常规”的 python 到 usrp 的接口是在 gr-usrp/src/usrp1.i 中被定义。<br></div><font size="2"><br><br></font>
+<p style="text-align:right"><b><font size="2">[ <a href="usrpfaqadc.html">&lt;&lt; AD9862 
+Codec</a> |&nbsp;<a href="usrpfaq.html">^ USRP FAQ 首页 ^</a><a href="http://gnuradio.org/trac/wiki/UsrpFAQ" rel="nofollow"> </a>| <a href="usrpfaqddc.html">数字下变频（DDC）&gt;&gt;</a> 
+]</font></b></p><p style="text-align:right"><font size="2"><br></font></p><p style="text-align:right"><font size="2"><br></font></p><p style="text-align:right"><font size="2"><br></font></p><p style="text-align:right"><font size="2"><br></font></p><p style="text-align:left"><font size="2"><b><br></b></font></p><p style="text-align:left"><font size="2"><b><br></b></font></p><p style="text-align:left"><font size="2"><b><br></b></font></p><p style="text-align:left"><font size="2"><b>注：<a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/UsrpFAQFpgaRegs" target="_blank">Controlling FPGA Registers Questions</a>（原文出处，翻译整理仅供参考!）</b></font></p></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div id="sites-attachments-container">
+</div>
+</div>
+</div> 
+</td> 
+<td id="sites-chrome-sidebar-right" class="sites-layout-sidebar-right initial" style="width:190px">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_9153814178763965" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 中文社区</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/" class="sites-navigation-link">GNURadio：中文维客</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/pageindex" class="sites-navigation-link">标题索引：GNURadio</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_3158427237433027" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="/installinggr" jotid="wuid:gx:19c4ea49ca981168" class="sites-navigation-link">GNURadio: 安装指导</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/faq" jotid="wuid:gx:59d38b2d5aff0b87" class="sites-navigation-link">GNURadio: 常见问题</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/tutorials" jotid="wuid:gx:c2443ff1f7a56ec" class="sites-navigation-link">GNURadio: 讲义教程</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="/development" jotid="wuid:gx:447c739ef5066bd4" class="sites-navigation-link">GNURadio: 社区贡献</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6502772558432737" class="sites-embed" role="navigation"><h4 class="sites-embed-title"> GNURadio 最新发布</h4><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-3.6.3-available-for-download" class="sites-navigation-link">GNURadio 3.6.3</a></div></li><li class=""><div dir="ltr" style="padding-left: 5px;"><a href="https://sites.google.com/a/microembedded.com/gnuradio/news#TOC-GNU-Radio:-GNU-Radio-release-candidate-3.6.3rc0-available-for-download" class="sites-navigation-link">GNURadio 3.6.3rc0</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_4277110048101279" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://gnuradio.microembedded.com/openbts" class="sites-navigation-link">GNURadio - OpenBTS 中文维客 </a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_41189823539683246" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://openbts.microembedded.com/" class="sites-navigation-link">（Range）- OpenBTS 中文社区</a></div></li></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_43043355133298733" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"></ul></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_6312697504782834" class="sites-embed" role="navigation"><div class="sites-embed-content sites-sidebar-nav"><ul role="navigation" jotid="navList"><li class="nav-first "><div dir="ltr" style="padding-left: 5px;"><a href="http://ossie.microembedded.com/" class="sites-navigation-link">SCA - OSSIE 中文维客</a></div></li></ul></div></div>
+</td>
+</tr>
+</tbody></table>
+                    <!-- InstanceEndEditable -->
+                    </div>
+                </div>
+                <div id="sites-chrome-footer-wrapper">
+                    <div id="sites-chrome-footer-wrapper-inside">
+                        <div id="sites-chrome-footer">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+                                <div class="sites-subfooter-content">
+                                    <div dir="ltr">
+                                        <div style="text-align:center;font-family:simsun,serif">
+                                            <div style="overflow:auto"> <font size="2"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="text-align:center"><span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">"This is an unofficial translation of the Gnu Radio project homepage.  Please use<span> </span><a href="http://gnuradio.org/">http://gnuradio.org/</a><span> </span> in case of any doubt." 此乃 GNU Radio 非官方中文翻译，如有疑问请参阅<span> </span></span></span><a href="http://gnuradio.org">http://gnuradio.org</a>。<br>
+                                                <span style="border-collapse:separate;color:rgb(0,0,0);font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><span style="border-collapse:collapse">Chinese translation provided by<br>
+                                                <span> </span>
+                                                <a href="http://www.microembedded.com/" target="_blank">Microembedded Electronic (Beijing) Co. Ltd.</a><span> </span></span></span><a href="http://www.microembedded.com/" target="_blank">微嵌电子技术（北京）有限责任公司</a>
+                                                <span> </span>提供翻译</span></span></font><br><br>
+                                                <font>©2009 MicroEmbedded 备案信息：京ICP备15049573号 京公网安备：110108904713</font>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sites-chrome-onebar-footer"> </div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,281 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>OctoClock</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="faq_mingxi">
+        <div class="middle">
+            <div class="tab"> <a href="../faq.html">Documents</a> » <span>OctoClock</span></div>
+            <div class="content box_shadow">
+                <div class="box">
+                    <p class="content_title">OctoClock</p>
+                    <hr />
+                    <div class="textblock"><h1><a class="anchor" id="octoclock_features"></a>
+Feature list</h1>
+<ul>
+<li>Hardware Capabilities:<ul>
+<li>Fully integrated timing and clocking source with 8-way distribution (10 MHz and 1 PPS)</li>
+<li>User selection between internal GPSDO (OctoClock-G) or external 10 MHz/1 PPS source</li>
+<li>Ethernet bootloader for easy firmware upgrade</li>
+<li>Source detection with automatic switch-over in case of failure or disconnect</li>
+<li>Streaming GPS time and NMEA strings over Ethernet (OctoClock-G only)</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="detecting_new_unit"></a>
+Detecting an Ethernet-compatible device</h1>
+<p>Early OctoClock and OctoClock-G units did not have Ethernet functionality and will need to be upgraded to utilize it. To test whether or not you have this early model, connect your device via Ethernet to a computer with <b>UHD 3.9.2</b> or above. The OctoClock will have a default IP address of <b>192.168.10.3</b>.</p>
+<p>Open a terminal and run this command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">ping 192.168.10.3
+</pre><p>If you see an output similar to the following: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">64 bytes from 192.168.10.3: icmp_seq=1 ttl=64 time=3.01 ms
+64 bytes from 192.168.10.3: icmp_seq=2 ttl=64 time=1.92 ms
+64 bytes from 192.168.10.3: icmp_seq=3 ttl=64 time=1.78 ms
+</pre><p>then you have an Ethernet-compatible device. If not, follow the instructions in the next section to upgrade your device.</p>
+<p><b>NOTE:</b> OctoClock and OctoClock-G devices must be used on 1-Gigabit Ethernet or higher.</p>
+<h1><a class="anchor" id="upgrading_device"></a>
+Upgrading your device</h1>
+<p>Follow these steps to upgrade your device.</p>
+<h2><a class="anchor" id="getting_latest"></a>
+Getting the latest firmware images</h2>
+<p>The OctoClock's firmware is divided into two image files: <b>octoclock_bootloader.hex</b> and <b>octoclock_r4_fw.hex</b>. All image files can be found <a href="http://files.ettus.com/binaries/images/">here</a>, in version-specific ZIP files. Download the version corresponding to the version of UHD that you're running. You must use at least version 3.9.2.</p>
+<p>Alternatively, if you already have UHD installed, then the correct images can be obtained by using the <b>uhd_images_downloader</b> utility. Once this is done, check your images directory, which is the following by default:</p>
+<ul>
+<li><b>UNIX/Linux:</b> /usr/local/share/uhd/images</li>
+<li><b>Windows:</b> C:\Program Files\UHD\share\uhd\images</li>
+</ul>
+<h2><a class="anchor" id="bootloader"></a>
+Burning the bootloader onto the device</h2>
+<p>To burn the bootloader, you will need a 6-pin Atmel AVR programmer. We recommend the <a href="http://www.atmel.com/tools/atatmel-ice.aspx">Atmel-ICE</a> kit. The <a href="http://www.atmel.com/tools/AVRISPMKII.aspx">AVRISP mkII</a> programmer, which is no longer sold but is still popular, is also compatible.</p>
+<p>You will also need the <b>AVRDude</b> utility. To install it on a Linux system, run the following command, as appropriate:</p>
+<ul>
+<li><b>Ubuntu:</b> sudo apt-get install avrdude</li>
+<li><b>Fedora:</b> sudo yum install avrdude</li>
+</ul>
+<p>Most other UNIX/Linux package distribution systems include the utility under the name <b>avrdude</b>.</p>
+<p><b>NOTE:</b> To use AVRDude with the Atmel-ICE programmer, you need at least version 6.1.</p>
+<p>For Windows users, we provide an AVRDude executable <a href="http://files.ettus.com/binaries/octoclock/avrdude-6.1-svn-20131205-mingw32.zip">here</a>. Download and unzip the file, and you will see a directory containing the <b>avrdude.exe</b> executable.</p>
+<p>Once AVRDude is set up on your machine, navigate to the directory containing the OctoClock firmware images and run the following command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">avrdude -p atmega128 -c atmelice_isp -P usb -U efuse:w:0xFF:m -U hfuse:w:0x80:m -U lfuse:w:0xEF:m -U flash:w:octoclock_bootloader.hex:i
+</pre><p>If you are using a programmer other than the Atmel-ICE, replace "atmelice_isp" with the appropriate string for your programmer. Run the command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">avrdude -c help
+</pre><p>to see the corresponding string for each programmer.</p>
+<p>If all three LEDs in the left column on the front panel are lit, then the bootloader was successfully loaded onto the device.</p>
+<p>On Linux, it might be necessary to run the avrdude commands as root, which can be done by preceding them with "sudo".</p>
+<h2><a class="anchor" id="firmware"></a>
+Uploading the firmware via Ethernet</h2>
+<p>Once the bootloader is installed on the device, run the <b>uhd_find_devices</b> utility. You should see an output similar to the following:</p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">--------------------------------------------------
+-- UHD Device 0
+--------------------------------------------------
+Device Address:
+    addr: 192.168.10.3
+    type: octoclock-bootloader
+</pre><p>This means that UHD successfully recognizes your device's bootloader and can download the firmware image. Run the following command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">uhd_image_loader --args="type=octoclock,addr=192.168.10.3"
+</pre><p>Once this completes, your OctoClock will load its firmware. Run the <b>uhd_find_devices</b> utility again, and the output should be similar to the following:</p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">--------------------------------------------------
+-- UHD Device 0
+--------------------------------------------------
+Device Address:
+    addr: 192.168.10.3
+    type: octoclock
+    name:
+    serial:
+</pre><h2><a class="anchor" id="eeprom"></a>
+Updating the device's EEPROM</h2>
+<p>As a final step, the device's EEPROM will need to be updated. On the back of your device, you will see a label sticker with a serial number (labelled S/N) and a MAC address (labeled MAC). For later use, the MAC address will have to be used in a different format than is on the label. As an example, if the label lists the MAC address as <b>00802F112233</b>, you will need to format it as <b>00:80:2F:11:22:33</b>.</p>
+<p>Update your device's EEPROM with the following command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">(UHD INSTALL DIRECTORY)/lib/uhd/utils/octoclock_burn_eeprom --args="addr=192.168.10.3" --values="mac-addr=(MAC HERE),ip-addr=192.168.10.3,netmask=255.255.255.0,gateway=192.168.10.1,serial=(SERIAL HERE),revision=4"
+</pre><p>Power-cycle your device, and it should now be fully operational. To confirm, you can query your device in one of two ways.</p>
+<p>Run the <b>uhd_find_devices</b> utility, and you will see basic information regarding the device. To see more specific information, run the following command: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">octoclock_burn_eeprom --args="addr=192.168.10.3" --read-all
+</pre><h1><a class="anchor" id="usage"></a>
+Using your device</h1>
+<h2><a class="anchor" id="boot_process"></a>
+The boot process</h2>
+<p>When the device is turned on, it will wait in the bootloader for one second, after which it will move into the primary firmware.</p>
+<h2><a class="anchor" id="selecting"></a>
+Selecting a reference</h2>
+<p>Both OctoClock models can input a 10 MHz reference and a 1 PPS signal via the SMA connectors <b>EXT 10 MHZ INPUT</b> and <b>EXT PPS INPUT</b>, respectively, located on the front of the device. Additionally, the OctoClock-G contains an internal GPSDO which provides its own internal references to the device.</p>
+<p>There is a switch on the front panel of the device with two positions <b>INTERNAL</b> and <b>EXTERNAL</b> that specifies which reference will be used, when applicable. For the OctoClock, there is no internal timing or clocking source, so the OctoClock will always use external 10 MHz and 1 PPS sources, regardless of the position of the switch. For the OctoClock-G, there is an internal GPSDO which provides an internal 10 MHz and 1 PPS, so the switch will specify whether to use that internal timing and clocking source from the GPSDO, or whether to use an external timing and clocking source, such as those provided by a signal generator.</p>
+<p>The LEDs in the left column show which reference (if any) the device is using. The top and middle LEDs, labeled <b>INTERNAL</b> and <b>EXTERNAL</b>, respectively, show which of the two references the device is using. The bottom LED indicates whether or not the device is actively using a reference. If no LEDs are lit, then the OctoClock is not using any reference and is not distributing a clock signal. The only situation in which all three LEDs are lit is when the device is in its bootloader, as described above.</p>
+<p>Once the device is using a reference, connect SMA cables from any of the <b>10 MHz OUT</b> and <b>PPS OUT</b> SMA connectors to distribute the signals to other devices.</p>
+<h2><a class="anchor" id="front_panel_leds"></a>
+Front Panel LEDs</h2>
+<p>The LEDs on the front panel show the current status of the device. Each LED is described below:</p>
+<ul>
+<li><b>Internal:</b> the device is using the internal GPSDO as the timing and clocking reference</li>
+<li><b>External:</b> the device is using an external reference as the timing and clocking reference</li>
+<li><b>Status:</b> the device is successfully distributing a 10 MHz and 1 PPS signal</li>
+<li><b>PPS:</b> the device has detected a 1 PPS signal</li>
+<li><b>GPS Lock:</b> the internal GPSDO has achieved a GPS lock (not necessary to distribute the signals)</li>
+<li><b>Power:</b> the device is receiving power</li>
+</ul>
+<h2><a class="anchor" id="uhd"></a>
+Communication with UHD</h2>
+<p>As with USRP devices, an OctoClock will appear when you run the <b>uhd_find_devices</b> utility. You can narrow your search to a specific device with the <b>–args</b> option, as seen below: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">uhd_find_devices --args="addr=192.168.10.3"
+uhd_find_devices --args="serial=F12345"
+</pre><p>UHD provides a C++ API for communicating with an OctoClock device, the <a class="el" href="classuhd_1_1usrp__clock_1_1multi__usrp__clock.html">uhd::usrp_clock::multi_usrp_clock</a> class. To instantiate the device or devices, use the factory function as seen below: </p>
+<pre class="fragment" style="background-color: rgb(246, 244, 236);">uhd::usrp_clock::multi_usrp_clock::sptr clock = uhd::usrp_clock::multi_usrp_clock::make("addr=192.168.10.3");
+uhd::usrp_clock::multi_usrp_clock::sptr clocks = uhd::usrp_clock::multi_usrp_clock::make("addr0=192.168.10.4,addr1=192.168.10.5");
+</pre><p>Once UHD starts a session with your device, you can use the <a class="el" href="classuhd_1_1usrp__clock_1_1multi__usrp__clock.html#a9c1ef9c98492c727c8c92f6d0f7d223a">uhd::usrp_clock::multi_usrp_clock::get_sensor()</a> function to query for different information from your device. All OctoClock devices provide the following sensors:</p>
+<ul>
+<li><b>ext_ref_detected:</b> whether or not an external reference is connected ("true", "false")</li>
+<li><b>gps_detected:</b> whether or not the device has an internal GPSDO ("true", "false")</li>
+<li><b>using_ref:</b> which reference the device is using ("none", "internal", "external")</li>
+<li><b>switch_pos:</b> switch position ("Prefer internal", "Prefer external")</li>
+</ul>
+<p>Additionally, the OctoClock-G provides the following sensors to query information from the internal GPSDO:</p>
+<ul>
+<li><b>gps_gpgga:</b> raw GPGGA NMEA sentence</li>
+<li><b>gps_gprmc:</b> raw GPRMC NMEA sentence</li>
+<li><b>gps_time:</b> GPS epoch time</li>
+<li><b>gps_locked:</b> GPSDO lock status ("locked", "unlocked")</li>
+<li><b>gps_servo:</b> GPSDO servo status </li>
+</ul>
+</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

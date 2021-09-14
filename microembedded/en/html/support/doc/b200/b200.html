@@ -1,0 +1,248 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+<title>B200使用手册_微嵌</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+    <div class="doc">
+        <div class="middle">
+            <div class="tab"> <a href="../../faq.html">文档资料</a> » <span>B200使用手册</span> </div>
+            <div class="content box_shadow">
+                <p class="content_title">B200使用手册</p>
+                <hr>
+                <p class="min_title">产品特征：</p>
+                <p>硬件能力</p>
+                <p>•&nbsp;&nbsp;集成RF前端（70MHz~6GHZ）</p>
+                <p>•&nbsp;&nbsp;外部PPS参考输入</p>
+                <p>•&nbsp;&nbsp;外部10 MHz的参考输入</p>
+                <p>•&nbsp;&nbsp;可配置时钟频率</p>
+                <p>•&nbsp;&nbsp;可变模拟带宽（200千赫 - 56兆赫）</p>
+                <p>•&nbsp;&nbsp;GPIO header</p>
+                <p>•&nbsp;&nbsp;B200/ B210（详见<a href="b200gpsdo.html">内部GPSDO应用笔记（USRP-B2x0型号）</a>）&nbsp;</p>
+                <p>•&nbsp;&nbsp;B210/ B200mini JTAG连接器</p>
+                <p>•&nbsp;&nbsp;B210 MICTOR调试连接器&nbsp;</p>
+                <p>FPGA的功能</p>
+                <p>•&nbsp;&nbsp;在FPGA定时命令</p>
+                <p>•&nbsp;&nbsp;在FPGA定时采样</p>
+                <p class="min_title">运行环境</p>
+                <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/system_mirrors/v10-iso/livecd.iso" target="_blank">B2xx系统镜像</a></p>
+                <p><a href="b200install.html">B2xx系统安装测试</a></p>
+                <p class="min_title">相关命令</p>
+                <p>加载设备固件，查看USRP B200设备是否与系统连接</p>
+                <p>&nbsp;&nbsp;#usrp_find_devices</p>
+                <p>加载设备FPGA，查看USRP B200设备的信息</p>
+                <p>&nbsp;&nbsp;#uhd_usrp_probe</p>
+                <p>A:通道测试</p>
+                <p>&nbsp;&nbsp;Benchmark命令发射信号测试</p>
+                <p>&nbsp;&nbsp;#/usr/local/share/gnuradio/examples/digital/benchmark_tx.py -f &nbsp;900M --spec A:A&nbsp;</p>
+                <p>&nbsp;&nbsp;模拟频谱接收</p>
+                <p>&nbsp;&nbsp;#uhd_fft -f &nbsp;900M --spec A:A&nbsp;</p>
+                <p>B:通道测试</p>
+                <p>&nbsp;&nbsp;Benchmark命令发射信号测试</p>
+                <p>&nbsp;&nbsp;#/usr/local/share/gnuradio/examples/digital/benchmark_tx.py -f &nbsp;900M --spec A:B&nbsp;</p>
+                <p>&nbsp;&nbsp;模拟频谱接收</p>
+                <p>&nbsp;&nbsp;#uhd_fft -f &nbsp;900M --spec A:B&nbsp;</p>
+                <p class="min_title">B2xx加载固件、FPGA</p>
+                <p>加载固件(hex)文件到FX3</p>
+                <p>B200</p>
+                <p class="code">/usr/local/lib/uhd/utils/b2xx_fx3_utils –W /usr/local/share/uhd/images/usrp_b200_fw.hex</p>
+                <p>B210</p>
+                <p class="code">/usr/local/lib/uhd/utils/b2xx_fx3_utils –W /usr/local/share/uhd/images/usrp_b200_fw.hex</p>
+                <p>加载FPGA(bin)文件到FPGA</p>
+                <p>B200</p>
+                <p class="code">/usr/local/lib/uhd/utils/b2xx_fx3_utils –L /usr/local/share/uhd/images/usrp_b200_fpga.bin</p>
+                <p>B210</p>
+                <p class="code">/usr/local/lib/uhd/utils/b2xx_fx3_utils –L /usr/local/share/uhd/images/usrp_b210_fpga.bin</p>
+                <p class="min_title">改变主时钟速率</p>
+                <p>主时钟速率提供射频前端和DSP链。用户可以选择非默认的时钟速率来实现整数采样和插值在DSP的链。时钟速率可以设置为5MHz和61.44MHz之间任何值（或30.72兆赫的双通道模式）。请注意，上述56 MHz的速率是可能的，但不推荐。</p>
+                <p>用户可以通过USRP API调用设置主时钟速率UHD:: USRP:: multi_usrp:: set_master_clock_rate（），或时钟速率可以通过设备的参数，其中许多应用程序需要进行设置：</p>
+                <p>uhd_usrp_probe --args=“master_clock_rate=52e6”</p>
+                <p>控制主时钟速率的属性是一个双精度值，称为tick_rate。</p>
+                <p class="min_title">自动时钟速率设置</p>
+                <p>默认的时钟速率设置是自动设置一个时钟速率取决于所要求的采样速率。当任master_clock_rate在设备初始化参数给出，或者当UHD :: USRP :: multi_usrp :: set_master_clock_rate（）被调用时，自动是照片那个频率选择被禁用。</p>
+                <p>请注意，主时钟速率必须是取样率的整数倍。如果一个主时钟速率被选择用于此条件不成立，则显示一个警告，不同的采样速率是在内部使用。</p>
+                <p>然而，也有用于在主时钟速率对于大多数采样速率的多个有效值。自动时钟速率选择尝试使用尽可能大的时钟速率以使尽可能多的半带滤波器越好。专家用户可能会在需要在重采样阶段更细粒度的控制的情况下，在这种情况下，手动选择一个主时钟速率可能比自动速率更合适。该物业以显示或启用自动节拍率是一个布尔值，auto_tick_rate。</p>
+                <p class="min_title">射频前端</p>
+                <p>该B2xx具有集成的RF前端。</p>
+                <p class="min_title">前端调谐</p>
+                <p>射频前端拥有可调独立接收和传输链。在B200和B200 mini，存在一个发射和一个接收射频前端。在B210，发送和接收可以在MIMO配置中使用。对于MIMO情况下，两个接收前端共享RX LO，和两个发射前端共享TX LO。每个LO为50兆赫和6 GHz之间可调。</p>
+                <p class="min_title">前端增益</p>
+                <p>所有的前端拥有独立的模拟增益控制。接收前端有可用增益为73分贝;和发射前端有可用增益为89.5分贝。增益设置是应用特定的，但它建议用户考虑使用可用增益的至少一半以获得合理的动态范围。</p>
+                <p class="min_title">前端带宽</p>
+                <p>该模拟前端具有200千赫到56兆赫无缝可调带宽。</p>
+                <p>通常，请求任何可能的主时钟速率时，UHD将自动配置的模拟滤波器，以避免任何混淆（RX）或外的带外发射，同时通过清洁的信号，让。</p>
+                <p>如果，但是，碰巧有你的RX LO频率的主时钟速率的一半内很强的干扰源，您可能希望减少这种模拟带宽。你可以通过调用UHD这样做:: USRP :: multi_usrp :: set_rx_bandwidth（BW）。</p>
+                <p>控制模拟RX带宽的属性是带宽/值。</p>
+                <p>UHD不会允许你设置比你当前的主时钟速率更大的带宽。</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p class="content_title">硬件相关</p>
+                <hr>
+                <p class="min_title"><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+B200/B200%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/B200%E5%8E%9F%E7%90%86%E5%9B%BE/b200.pdf" target="_blank">B200原理图</a></p>
+                <p class="min_title"><a href="b200datasheet.html">B200 数据手册</a></p>
+                <p class="min_title">参考</p>
+                <p>下面是对B200/B210 LED指示灯及其含义表：</p>
+                <p class="img"><img src="images/b2001.png"></p>
+                <p>下面是对B200mini LED指示灯及其含义表：</p>
+                <p class="img"><img src="images/b2002.png"></p>
+                <p>TX LED指示灯发送数据时亮和不发送数据的时候不亮。 RX LED指示灯发送时，主机样品和关闭时无法做到的。这意味着，TX / RX活动LED指示灯会在一个临时的发送下溢停止闪烁或接收溢出的情况，这表明主机不发送或接收的样本不够快。主机将状态和输出一个“U”或“O”的通知。</p>
+                <p class="min_title">连接</p>
+                <p>下面是表示B200/ B210外部连接和相应的功率信息的表：</p>
+                <p class="img"><img src="images/b2003.png"></p>
+                <p>下面是表示B200mini外部连接和相应的功率信息的表：</p>
+                <p class="img"><img src="images/b2004.png"></p>
+                <p class="min_title">对板连接器和开关</p>
+                <p>下面是表示B200/ B210上板连接器和开关的表：</p>
+                <p class="img"><img src="images/b2005.png"></p>
+                <p>1只有在B210</p>
+                <p>2仅自启。 6（绿板）</p>
+                <p></p>
+                <p>下面是表示B200mini上板连接器和开关的表：</p>
+                <p class="img"><img src="images/b2006.png"></p>
+                <p class="min_title">应用实例</p>
+                <p><a href="b200demo.html">B2xx-mode-s事例</a></p>
+                <p>OpenBTS</p>
+                <p class="min_title">资料</p>
+                <p><a href="https://s3.cn-north-1.amazonaws.com.cn/microembedded/USRP%E4%BA%A7%E5%93%81%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/USRP+B200/B200%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%95%B4%E7%90%86/B200%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0ppt/USRP+B200%E7%A1%AC%E4%BB%B6.pptx" target="_blank">硬件介绍ppt</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

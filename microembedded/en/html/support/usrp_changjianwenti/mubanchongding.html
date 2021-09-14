@@ -1,0 +1,222 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">母板重定时</p>
+				<hr />
+				<p class="faq_mingxi">FIXME this section is outdated, from before c++ drivers.</p>
+				
+				<p class="faq_title">I would like to run my USRP off a 44 MHz clock instead of the 64 MHz clock that is currently used. Can I generate a 44 MHz clock from the 64 MHz or do I have to change the crystal? If I change over to the 44 MHz will everything else still work? Especially the DBSRX and RFX2400 boards? </p>
+	<pre>
+	You need a new crystal or an external oscillator. You'll need to change the definition of
+
+        1. /*!
+        2. * \brief return frequency of master oscillator on USRP
+        3. */
+        4. long fpga_master_clock_freq () const { return 64000000; } 
+
+    in usrp_basic.h. 
+
+    Procedure:
+
+    I purchased a 44 MHz oscillator from digi-key (p/n 300-7254-1-ND, CSX750FJC44) for $3.38. The first attempt to remove the USRP 64
+MHz failed miserably with a pen iron. I purchased a heat gun from digi-key (MA1008-ND) for $52, set it to the 1000 degree setting and
+the old oscillator came up in about 10 seconds. Installed the new oscillator and checked the 44 MHz clock with a scope. I am using the
+std_4rx_0tx.rbf FPGA image. 
+
+    I then tried to run my customized dbs application that records 8-bit I/Q data to a file for me from any of the 802.11b channels.
+I got all zeros in the data. Then remembered Eric told me to change the clock in db_dbs_rx.py. 
+
+    My code is a little older than current but here are my modifications:
+
+    In gr-usrp/src/db_dbs_rx.py changed line 88 from
+    self.refclk_divisor = 16
+
+    to
+    self.refclk_divisor = 11
+
+    and changed line 108 from
+    return 64e6/self.refclk_divisor
+
+    to
+    return 44e6/self.refclk_divisor
+
+    then in /gr-usrp I did
+    make clean
+    make
+    make check
+    make install
+
+    Rerun my custom dbs program and it worked fine. I used a decimation of 4 so I'm recording at 11 MSsamples per second.(#FIXME# is
+this correct ?) 
+	</pre>
+				
+				<p class="faq_title">Is there another way to achieve 10 MSample/second without changing USRP clock? </p>
+				<p class="faq_mingxi">I have been working with fractional rate decimeter/interpolators inside the USRP FPGA. You can put a fractional rate decimeter inside the FPGA which decimates by 6.4. </p>
+				<p class="faq_mingxi">It is a bit hard to get them to fit but you get a lot of flexibility out of them without changing the clocks. .(#FIXME# is this correct ?) </p>
+				
+				<p class="faq_title">The file usrp_basic.h has the following member: </p>
+				<p class="faq_mingxi">long fpga_master_clock_freq () const { return 64000000; } </p>
+				
+				<p class="faq_title">If I want my system to work at 50 MHz, will I need to change this constant? </p>
+				<p class="faq_mingxi">Yes. The idea was that there was a single place in the code (fpga_master_clock_freq) that "knows" the actual frequency. </p>
+				
+				<p class="faq_title">I've got a USRP v4 board that I'm planning to run off of a 13 MHz external clock. However, I'm intending to use a pair of RFX 900 daughterboards, and I’m wondering if there are any known modifications needed to allow these daughterboards to operate with a 13 MHz clock? </p>
+				<p class="faq_mingxi">You need to go into the db_flexrf.py and db_flexrf_mimo.py files in the gr-usrp/src directory. Any references to 64 MHz need to be changed to 13 MHz. You also need to make sure that you tell the usrp object what its sampling rate is. </p>
+				
+				<p class="faq_title">What is the voltage level for the USRP external clock? Is 1.0V peak to peak ok? Do I need to add a dc offset to my external clock to prevent the negative swings? </p>
+				<p class="faq_mingxi">Yes 1V p-p for USRP rev 4. Use 3.3V for rev 2 and 3. </p>
+				
+				<p class="faq_title">What are the limits on the USRP external clock? Will using a “non-standard" clock frequency break any parts of Gnuradio? </p>
+				<p class="faq_mingxi">You can drive the clock line anywhere between about 10MHz and 65MHz. Be sure to edit usrp_basic: :fpga_master_clock_freq() to return the new value. </p>
+				
+				<p class="faq_title">I re-clocked my USRP from 64 to 65.536 MHz and have recently discovered that I & Q samples are no longer orthogonal, rather they seem to be only 70 degrees or so apart. I would guess this is due to some hard coded values in the CIC or HB filters? Is there a USRP command to correct for this phase imbalance? </p>
+				<p class="faq_mingxi">That's an odd problem. Sounds like a timing issue. Keep in mind that the ADCs are only specified to work to 64 MHz and the FPGA image is compiled to meet timing at 64 MHz. You might need to recompile it with the stricter timing numbers. All of the DSP stuff in the FPGA should not care about the absolute frequency as long as it meets timing. </p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

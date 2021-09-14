@@ -1,0 +1,191 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">AD9862 Codec 问题</p>
+				<hr />
+				<p class="faq_title">正在研读 AD9862 Data Sheet，发现在发射链路仅只有一个 14 位的输入但芯片却输出 2 路 TX 信号。这是否意味如果想要输出两路信号，该两路信号数据必须交织（成一个输入）被输入到 AD 芯片中？纳闷为何会有两路输出却只有一个输入？</p>
+				<p class="faq_mingxi">输入到 AD9862 的数据是交织（成一个信号）的， IQIQIQIQIQ。</p>
+				
+				<p class="faq_title">明晰 AD9862 MxFE 是如何被配置的：</p>
+				<p class="faq_mingxi">RX Side:</p>
+				<p class="faq_mingxi2"><b>内部 DLL 采样是否高于 64MSPS? 如果这样的话，DLL （采样）速度如何？它可否被利用？</b></p>
+				<p class="faq_mingxi2">DLL 常常被倍频使用因此 DACs 采样可达 128MHz。ADCs 保持在 64MHz。</p>
+				<p class="faq_mingxi2"><b>用到希尔波特滤波器（Hilbert Filter）吗?</b></p>
+				<p class="faq_mingxi2">没</p>
+				<p class="faq_mingxi">TX Side:</p>
+				<p class="faq_mingxi2"><b>用到希尔波特滤波器（Hilbert Filter）吗?</b></p>
+				<p class="faq_mingxi2">没</p>
+				<p class="faq_mingxi2"><b>用到数控振荡器（NCO） 吗?</b></p>
+				<p class="faq_mingxi2">是，所有场合(无论粗调和细调)都用到数控振荡器（NCO）。在上变频器中（参阅 AD9862 的 Datasheet 的图3所示），它分裂复合乘积（的信号）为两部分 - 粗调和细调（coarse and fine）。细调 (block D) 运行于采样速率的 1/4。也就是说此阶段最大只可调整频率范围的 1/4。顺后便是 4x 插值 - interpolation (Block C)，和粗调 - coarse modulation - Block B. 粗调（Block B）仅可以 +/- fs/4 或 fs/8 来调整信号。</p>
+				<p class="faq_mingxi2"><b>用到插值滤波器（the interpolation filter）吗?</b></p>
+				<p class="faq_mingxi2">是，总用到。</p>
+				<p class="faq_mingxi2"><b>可选恒值混频器 [Fs/4,Fs/8] 用到吗？</b></p>
+				<p class="faq_mingxi2">是，用到。</p>
+				<p class="faq_mingxi2"><b>针对现实的复合信号，TX 数据是以真实数据而不是作为来自 FPGA 的 I/Q 的形式来发射的吗？ </b></p>
+				<p class="faq_mingxi2">错，发往 9682 一直是 I/Q 形式。有那么一些以真实数据形式来发射，但该项目（GNU Radio）没有涉及。</p>
+				<p class="faq_mingxi">Aux Side:</p>
+				<p class="faq_mingxi2"><b>辅助 ADC/DACs（auxiliary ADC/DACs）是否被用于 AGC/VCO 的配置?</b></p>
+				<p class="faq_mingxi2">是的，它们全都被用到。详情取决于具体的子板。辅助 ADC/DACs 全都用于运行子板。</p>
+				
+				<p class="faq_title">AD9862 的寄存器是如何被维护的？</p>
+				<p class="faq_mingxi">AD9862 是通过 SPI 来掌控的。usrp_basic.cc 和 usrp_standard.cc 里包含用来配置 AD9862's 的代码。它们的构建函数是其主要的载体。或许在这里最好再详查一下 USRP 的主板的原理图来更好地体察一下其硬件的构建的过程。</p>
+				
+				<p class="faq_title">为了同时掌控两个 Basic_Tx 子板，现而易见两个 AD9862 相应其独立工作。该对 AD9862 将时钟从 USRP 主板同时引入，是同一时钟吗？  </p>
+				<p class="faq_mingxi">该对 (主板上的) AD9862s 通过时钟配送芯片 AD9513 获得相同的时钟。仅有区别是该时钟信号通过各自独立的（但是完全等同的）滤波器各自到达各个 AD9862。</p>
+				
+				<p class="faq_title">能再唠叨一下 AD9862 的 PGA 的概念吗？ </p>
+				<p class="faq_mingxi">它是软件可控增益的模拟放大器。在 ADC 之前的 Rx 链路上，其递增阶梯是 1.0dB。DAC 之后的 Tx 链路上，其阶梯幅度是 0.1dB。对此详述可参阅 AD9862 的 DataSheet。PGA 的控制是通过来自 FX2 的 SPI 串行数据线来实现的（AD9862 上的所有寄存器也是同理）。</p>
+				
+				<p class="faq_title">更新 AD9862 的 AUX_DAC port, 很明显需通过 USB 控制器来来实现！这样理解正确吗？必须牺牲 USB 的带宽来配置 AUX_DAC 吗?</p>
+				<p class="faq_mingxi">USRP 的硬件构架仅允许 FX2 来掌控 AD9862s 而不允许 FPGA 来染指这些。尽管如此，还是可以通过添加 R2001, R2004, 和 R2005 来改变这个构架的。这些电阻全是零偶电阻。在此提请注意，这样一来系统处于可选择性多方驱动。使用 FPGA 驱动 AD9862s 之前需要驱动 FX2 STOP 。当然也可以让 FPGA 掌控 RFX - 系列子板的调控。</p>
+				<br />
+				<p class="faq_mingxi"><a href="../../../wiki/pdf/AD9860_9862.pdf">Mixed-Signal Front-End (MxFE™) Processor for Broadband Communications - AD9860/AD9862</a></p>
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

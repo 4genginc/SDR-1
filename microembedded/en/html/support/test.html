@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<!--声明当前的页面的编码集-->
+	<meta charset="utf-8"/>
+<title>test</title>
+<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="../../css/css.css"/>
+
+</head>
+<body>
+<style type="text/css">
+    .tool{position:fixed;width:100%;top:0;z-index:999;}
+    .tool .tool_box{border:1px solid #ccc;width:940px;margin:0 auto;padding:10px;background-color:#0C0;}
+    .tool div{margin-bottom:10px;}
+    .tool button{border:0;cursor:pointer;padding:5px 10px;border-radius:3px;margin-right:20px;outline:0;}
+    .tool button:hover{background-color:#006598;color:#fff;}
+    .show{margin-top:150px;}
+</style>
+    <div class="tool">
+        <div class="tool_box">
+        <div>
+            操作：
+            <button id="copy">复制代码</button>
+            <button id="del">删除最后一个元素</button>
+        </div>
+        <div>
+            添加：
+            <button id="conTtile">文章标题</button>
+            <button id="hr">分割线</button>
+            <button id="minTitle">小标题</button>
+            <button id="p">普通文字</button>
+            <button id="code">代码</button>
+            <button id="liebiao">列表</button>
+            <button id="img">插入图片</button>
+            <button id="imgNum">图片序号</button>
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var content = $(".content");
+            var conTitle = "<p class='content_title' contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            var hr = "<hr>";
+            var minTitle = "<p class='min_title' contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            var p = "<p contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            var code = "<p class='code' contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            var liebiao = "<p contenteditable='true' style='background-color:#f1f1f1;'>•&nbsp;&nbsp;</p>";
+            var img = "<p class='img' contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            var imgNum = "<p class='imgNum' contenteditable='true' style='background-color:#f1f1f1;'></p>";
+            
+            
+            $("#conTtile").click(function(){
+                content.append(conTitle);
+                jiaodian();
+            });
+            
+            $("#hr").click(function(){
+                content.append(hr);
+                jiaodian();
+            });
+            
+            $("#minTitle").click(function(){
+                content.append(minTitle);
+                jiaodian();
+            });
+            
+            $("#p").click(function(){
+                content.append(p);    
+                jiaodian();
+            });
+            
+            $("#code").click(function(){
+                content.append(code);
+                jiaodian();
+            });
+            
+            $("#liebiao").click(function(){
+                content.append(liebiao);
+                jiaodian();
+            });
+            
+            $("#img").click(function(){
+                content.append(img);
+                jiaodian();
+            });
+            
+            $("#imgNum").click(function(){
+                content.append(imgNum);
+                jiaodian();
+            });
+            
+            $("#del").click(function(){
+                content.find("*").last().remove();
+                jiaodian();
+            });
+            
+            $("#copy").click(function(){
+                var temp = content.clone();
+                temp.find("*").removeAttr("contenteditable");
+                temp.find("*").removeAttr("style");
+                
+                temp.find(".img").each(function() {
+                    
+					$(this).html("<img src='"+$(this).text()+"'/>");
+				});
+                
+                $("textarea").val(temp.html());
+            });
+            
+            function jiaodian(){
+                content.find("*").last().focus();
+            }
+        });
+    </script>
+	<div class="show">
+    	<div class="doc">
+            <div class="middle">
+                <!--<div class="tab">
+                    <a href="faq.html">文档资料</a> » <a href="n210.html">N210使用手册</a> » <span>N210安装测试</span>
+                </div>-->
+                <div class="content box_shadow"></div>
+                <textarea style="height:auto;width:960px;border:1px solid #ccc;min-height:100px;"></textarea>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
+

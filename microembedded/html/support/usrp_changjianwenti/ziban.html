@@ -1,0 +1,435 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">子板问题</p>
+				<hr />
+				<p class="faq_title">If I want to apply the output (50 ohm) from a function generator directly to the BasicRX inputs, what is the allowed voltage range that can be applied?</p>
+				<p class="faq_title">1.Without damaging anything?</p>
+				<p class="faq_title">2.Without exceeding the range of the ADC?</p>
+				<p class="faq_title">3.Is the input signals need to be DC offset so as never to go below ground? </p>
+				<br />
+				<p class="faq_mingxi2">As follows: </p>
+				<br />
+				<p class="faq_mingxi">1.3V p-p should be safe, since it won't exceed the 3.3V supply voltage. </p>
+				<p class="faq_mingxi">2.The full-scale range of the ADC is 2V p-p.</p>
+				<p class="faq_mingxi">3.No, the transformer handles the biasing. You put in a signal that is +/-1V.</p>
+				
+				<p class="faq_title">I tried to install my newly purchased USRP. When I connected the daughterboards, it became hot and the USRP doesn't work. What is the ptoblem?</p>
+				<p class="faq_mingxi">When you plug-in daughterboards, follow these rules: </p>
+				<ul>
+					<li>If the standoffs don't line up, you have the boards installed incorrectly. </li>
+					<li>TX daughterboards cannot go in RX slots and vice versa. </li>
+					<li>Daughterboards on TX-A and RX-A should be installed right-side up. </li>
+					<li>Daughterboards on TX-B and RX-B should be installed upside-down (i.e. rotated 180 degrees). </li>
+					<li>The side edge of the daughterboard should align with the side edge of the USRP PCB. </li>
+					<li>The TVRX must be installed with the big F connector sticking off the edge of the USRP. If the USRP is in the enclosure this means that the TVRX will only fit in slot RX-B. </li>
+					<li>Never power the board up if any of the above is violated. If you power it up and the led doesn't blink, immediately power down and remove all daughterboards before trying again. </li>
+				</ul>
+				
+				<p class="faq_title">I have a radio with 10.7MHz real IF (not complex) output that I would like to connect to the basic Rx daughter board directly. </p>
+				<p class="faq_mingxi">Just connect the real input to the input connector, and use 0xf0f0f0f0 setting for the mux value of the USRP source. This feeds a zero into each of the DDC Q inputs and ADC0 into the DDC I inputs. For your receiver with the 10.7 MHz IF, set the DDC frequency to -10.7e6 and you'll get complex baseband across the USB. Pick the decimation value to set the width of the the channel you're interested in. The ADC sample rate is 64e6 (adc_freq()). Divide that by the decimation factor and that will give you the sample rate across the USB. The USB samples are 16-bit I and 16-bit Q. i.e., 4 bytes/sample. There's a fourth-order CIC filter in the FPGA, so there's some roll-off across the band. </p>
+				
+				<p class="faq_title">If we apply maximum none distorted input signal to the BasicRX board, what is the USRP DDC output value? </p>
+	<pre>
+        Using high accuracy function generator and USRP with Basic-RX at 0 dB gain with decimation of 8.
+
+    a) With Sine wave signal at frequency =250 KHz and 0dBm input power to BasicRX we get:
+
+    Theoretical calculations:
+    When 0dBm signal injected into 50 Ohm load, then we should have signal RMS = 0.225Volt and Signal voltage P-P = 0.636396103Volt.
+
+    USRP readings:
+    The maximum counting obtained from USRP for this signal was 4845.
+
+    b) With Sine wave signal at frequency =250 KHz and 5dBm input power to BasicRX we get:
+
+    Theoretical calculations:
+    When +5dBm signal injected into 50 Ohm load, then signal RMS = 0.4Volt and Signal P-P = 1.13137085Volt.
+
+    USRP readings:
+    The maximum counting obtained from USRP for this signal was 8337.
+
+    c) With Sine wave signal at frequency =250 KHz and 9dBm input power to BasicRX we get:
+
+    Theoretical calculations :
+    When +9dBm signal injected into 50 Ohm load, then signal RMS = 0.64Volt and Signal P-P = 1.81019336Volt.
+
+    USRP readings:
+    The maximum counting obtained from USRP for this signal was 13096.
+
+    d) With Sine wave signal at frequency =250 KHz and 10dBm input power to BasicRX we get:
+
+    Theoretical calculations:
+    When +10dBm signal injected into 50 Ohm load, then signal RMS = 0.71Volt and Signal P-P = 2.008183259Volt.
+
+    USRP readings:
+    The maximum counting obtained from USRP for this signal was 13570 (Saturated).
+
+    From the above results we see that the BASIC-RX is saturated when the input signal power was +10dBm. This is logical, since the maximum 
+input signal to the USRP ADC AD9862 is 2Volt P-P (according to its data sheets). The value obtained from USRP FPGA for input signal of 2V 
+P-P was about 13570. 
+	</pre>
+				<p class="faq_title">How is RF tuning accomplished in daughterboards? </p>
+				<p class="faq_mingxi">We have to understand the comments about tuning being a "two-step process"? First we ask the front-end to tune as close to the desired frequency as it can (For example, on the RFX boards, the PLL step size is 4 MHz.). Then we use the result of that operation and our target_frequency to determine the value for the digital down converter. <br /><br />The return value from tune software function is an instance of tune_result which can be examined to see how everything was setup: <br /><br />The baseband_freq is the RF frequency that corresponds to DC in the RF front-end IF output (the input to the A/D's and from there to the digital down-converter). Note that this isn't necessarily the location of the signal of interest. Some daughterboards have the signal of interest at a non-zero IF frequency. <br /><br />The dxc_freq is the frequency value used in the digital down or up converter. <br /><br />The residual_freq is a very small number on the order of 1/100 of a Hz. It can be ignored. <br /><br />The Inverted is true if the spectrum is inverted, and we weren't able to fix it for you. <br /><br />On the receive path, the end result of tune is that the signal at the given target RF frequency ends up at DC in the complex baseband input from the USRP. <br /><br />Note: Abstractly, TX and RX daughterboards can be split into two general categories: <br /><br />Those that use both converters as a pair (boards doing quadrature up or down conversion) and those that can use the converters independently. <br /><br />Because we're using the digital up converter in the AD9862 in "Dual Channel Complex DAC Data Mode", both D/A outputs are related (I&Q) and as a result, all TX daughterboards are "quadrature" boards. On the receive side we've got a bit more variation. The TV_RX board (for example) is *not* a quadrature board, since it only uses a single A/D. <br /><br />On the RFX transceiver boards (400, 900, 1200 and 2400), both the Tx side and Rx side are quadrature. <br /></p>
+				
+				<p class="faq_title">What is a subdevice? </p>
+	<pre>
+        The TX or RX daughterboard consists of either one or two subdevices. Quadrature boards have a single subdevice. Non-quadrature boards 
+have one or two subdevices and it is depending on the daughterboard design. 
+
+    The fundamental capabilities of a subdevice are the ability to tune and set gain. Each subdevice has a daughterboard specific class that 
+is derived from db_base.py (in gr-usrp). 
+
+    The visible methods are:
+    def dbid(self):
+    """
+    Returns integer daughterboard ID from EEPROM
+    """
+
+    def name(self):
+    """
+    Name of daughterboard. E.g., "TV Rx"
+    """
+
+    def freq_range(self):
+    """
+    Return range of frequencies in Hz that can be tuned by this daughterboard.
+
+    @returns (min_freq, max_freq, step_size)
+    @rtype tuple
+    """
+
+    def set_freq(self, target_freq):
+    """
+    Set the frequency.
+
+    @param freq: target RF frequency in Hz
+    @type freq: float
+
+    @returns (ok, actual_baseband_freq) where:
+    ok is True or False and indicates success or failure,
+    actual_baseband_freq is the RF frequency that corresponds to DC in
+    the IF.
+    """
+
+    def gain_range(self):
+    """
+    Return range of gain that can be set by this daughterboard.
+
+    @returns (min_gain, max_gain, step_size)
+    Where gains are expressed in decibels (your mileage may vary)
+    """
+
+    def set_gain(self, gain):
+    """
+    Set the gain.
+
+    @param gain: gain in decibels
+    @returns True/False
+    """
+
+    def is_quadrature(self):
+    """
+    Return True if this daughterboard does quadrature up or down conversion.
+    That is, return True if this board requires both I & Q analog channels.
+
+    This bit of info is useful when setting up the USRP Rx mux register.
+    """
+
+        When we create an instance of a usrp source or sink, we now get an additional attribute, "db", that lets us control the daughterboard
+	subdevices. 
+
+u = usrp.source_c(0, 64)
+
+u.db is a tuple of length 2.
+
+u.db[0] contains a tuple of the subdevices for "side A"
+u.db[1] contains a tuple of the subdevices for "side B"
+
+    The tuples of subdevices each have either 1 or 2 elements depending on the daughterboard installed on the respective side. Each
+subdevice is an instance of a class that's derived from db_base and exports the methods listed above. When we're tuning, there are 
+really at least two knobs
+ to twist:
+
+        (1) Some kind of PLL on the daughterboard that determines what RF frequency appears in the IF.
+
+        (2) The digital down converter that extracts the band of interest from the digitized IF.
+
+    Given a target frequency, we control them both like this:
+    def set_freq(self, target_freq):
+    """
+    Set the center frequency we're interested in.
+
+    @param target_freq: frequency in Hz
+    @rtype: bool
+
+    Tuning is a two step process. First we ask the front-end to
+    tune as close to the desired frequency as it can. Then we use
+    the result of that operation and our target_frequency to
+    determine the value for the digital down converter.
+    """
+
+    # self.subdev is the subdevice we are controlling
+    ok, baseband_freq = subdev.set_freq(target_freq)
+
+    ddc_freq, inverted = usrp.calc_dxc_freq(target_freq, baseband_freq, self.u.converter_rate())
+
+    ok &= self.u.set_rx_freq(0, ddc_freq)
+
+    The Local Oscillator (LO) frequency of the RFX boards is set automatically when we set the frequency of reception or transmission. 
+The LO is 
+a multiple of 2 or 4 MHz depending on which RFX board we have. We can change that to be a multiple of 1MHz, but we will have worse 
+phase noise. 
+	</pre>
+				
+				<p class="faq_title">In LFRX board, with the input open, I measure 108 mV on the SMA connector and a DC component from the ADC. What is the problem? </p>
+				<p class="faq_mingxi2">If you connect a 50 ohm resistor across the SMA, you do indeed get 62mV at the connector, but 0V at the ADC, which is what we really care about. If you leave the SMA open, you do get a small voltage being read at the ADC. </p>
+				<p class="faq_mingxi">So yes, the LFRX does have DC bias on its input, but as long as you drive it with a 50 ohm load, you get the right answer at the ADC. The LFRX wasn't designed for measuring DC voltages, although it can as long as you have a 50 ohm source. And if your source is not 50 ohms, you can do the calculations necessary to scale the gain. Also, please note that the amp is inverting, so if you put 1V through 50 ohms into the SMA, the ADC will tell you that it is -1V. </p>
+				
+				<p class="faq_title">The gEDA PCB layout program returns illegal file format when opening RFX boards, however, it reads the basic RX/TX daughter boards, why? </p>
+				<p class="faq_mingxi">The RFX daughterboard PCBs were designed using a commercial program called PADS, not using PCB from the gEDA suite. </p>
+				
+				<p class="faq_title">Can any one tell me how far apart the SMA connectors are set on the basic TX daughter board; I’m trying to design a PCB to match up with it. </p>
+				<p class="faq_mingxi">0.570 inches </p>
+				
+				<p class="faq_title">How we can know what our daughterboard type is? </p>
+				<p class="faq_mingxi">You can find out what version you have by running usrp_print_db.py in the gr-utils/src/python directory. </p>
+				
+				<p class="faq_title">What is the input impedance for the TVRX and DBSRX daughterboards? </p>
+				<p class="faq_mingxi">The TVRX is really 75 ohms, but putting in 50 ohms is not a problem. The DBSRX tuner chip is 75 ohms, but we have a 50 ohm input impedance because of the LNA ahead of it. </p>
+				
+				<p class="faq_title">What is involved in changing an RFX2400 to an RFX1200? </p>
+				<p class="faq_mingxi2">To convert to an RFX1200, you need to: </p>
+				<p class="faq_mingxi">Cut the traces which FIL1 </p>
+				<p class="faq_mingxi">Put a capacitor in C204, anything between about 50pF and 1000pF is fine, size 0603 </p>
+				<p class="faq_mingxi">Put the board on side A of a USRP, power it up, and reburn the EEPROM using the command </p>
+				<p class="faq_mingxi">usrp/host/apps/burn-db-eeprom -A -f -t rfx1200_mimo_b</p>
+				<p class="faq_mingxi2">You can also change some of the final amp tuning components if the power out is a little low.This is not always necessary, but sometimes gets another dB of extra power. </p>
+				
+				<p class="faq_title">What is involved in changing an RFX900 to an RFX1800? </p>
+				<p class="faq_mingxi">To convert the you only have to do 3 things: </p>
+				<p class="faq_mingxi">Cut the traces which go to FIL1. </p>
+				<p class="faq_mingxi">Put a capacitor in C204. </p>
+				<p class="faq_mingxi">Run the following command: </p>
+				<p class="faq_mingxi">./burn-db-eeprom -A --force -t rfx1800_mimo_b</p>
+				<p class="faq_mingxi">If you cut the filter out you need to complete the signal path by populating C204 with a capacitor in roughly the 100pF to 10,000pF range (#FIXME#). Very high capacitor values have bad parasitic effects -- 0.1uF is fine but don't use 10uF. </p>
+				<p class="faq_mingxi">To turn it back into a RFX900 again, or to turn your RFX1800 into a RFX900, you can run the command: </p>
+				<p class="faq_mingxi">./burn-db-eeprom -A --force -t rfx900_mimo_b</p>
+				
+				<p class="faq_title">I couldn't find any documentation on what is stored in the USRP daughterboards EEPROMs? </p>
+				<p class="faq_mingxi">The EEPROMs on the daughterboards basically store an identifier for the type of board, and can store some DC offsets and the like. The daughterboard EEPROM format is defined in usrp/firmware/include/usrp_i2c_addr.h. </p>
+				
+				<p class="faq_title">I would like to develop a user daughter card, to interface with the USRP motherboard, Please give me some clues (pointer to information) to know what should be written in the ROM (EEPROM) and consequences in the devices programming? </p>
+	<pre>
+        The format of the ROM is documented in usrp/firmware/include/usrp_i2c_addr.h. Just be sure that bytes 0x00 through 0x02 make 
+sense. You can set the remainder to 0x00, but be sure to set the checksum correctly in 0x1f. There's a script that will do this for 
+you over the USB. See
+	usrp/host/apps/burn-db-eeprom. 
+
+    The relevant portion is:
+    // format of daughterboard EEPROM
+    // 00: 0xDB code for ``I'm a daughterboard''
+    // 01: .. Daughterboard ID (LSB)
+    // 02: .. Daughterboard ID (MSB)
+    // 03: .. io bits 7-0 direction (bit set if it's an output from motherboard)
+    // 04: .. io bits 15-8 direction (bit set if it's an output from motherboard)
+    // 05: .. ADC0 DC offset correction (LSB)
+    // 06: .. ADC0 DC offset correction (MSB)
+    // 07: .. ADC1 DC offset correction (LSB)
+    // 08: .. ADC1 DC offset correction (MSB)
+    // ...
+    // 1f: .. negative of the sum of bytes [0x00, 0x1e]
+
+    #define DB_EEPROM_MAGIC 0x00
+    #define DB_EEPROM_MAGIC_VALUE 0xDB
+    #define DB_EEPROM_ID_LSB 0x01
+    #define DB_EEPROM_ID_MSB 0x02
+    #define DB_EEPROM_OE_LSB 0x03
+    #define DB_EEPROM_OE_MSB 0x04
+    #define DB_EEPROM_OFFSET_0_LSB 0x05 // offset correction for ADC or DAC 0
+    #define DB_EEPROM_OFFSET_0_MSB 0x06
+    #define DB_EEPROM_OFFSET_1_LSB 0x07 // offset correction for ADC or DAC 1
+    #define DB_EEPROM_OFFSET_1_MSB 0x08
+    #define DB_EEPROM_CHKSUM 0x1f
+
+    #define DB_EEPROM_CLEN 0x20 // length of common portion of EEPROM
+
+    You can use the existing "Experimental Rx" daughterboard id, 0xffff, or define a new one. See usrp/host/lib/usrp_dbid.dat. 
+
+    The dbid is read from the daughterboards and is use to instantiate the correct daughterboard code. You can see what you've got by calling
+u.daughterboard_id(0) and u.daughterboard_id(1) to retrieve the dbid's from slots 0 and 1. 
+
+    To talk to your daughterboard using our standard interface, you'll need to write a bit of python. Take a look at gr-usrp/src/db_*.py. Start 
+with db_base.py, then maybe db_basic.py 
+
+
+
+	</pre>
+
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

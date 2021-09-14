@@ -1,0 +1,214 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>DVB-S2X调制解调器原型</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../css/general.css"/>
+        <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../css/css.css" />
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../support/faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../support/faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="application">
+            <div class="middle">
+                <div class="tab">
+                    <a href="applications.html">应用案例</a> » <span>DVB-S2X调制解调器原型</span>
+                </div>
+                <div class="content box_shadow">
+                    <p class="content_title">DVB-S2X调制解调器原型</p>
+                    <hr />
+                    <p><b>原作者</b>：Juan D. Deaton, Brian A. Banister, Tom Hansen, Tony Summers, Adam Bacon, Tim Halvorson, Ryan Hoffman</p>
+                    <p><b>机构</b>：AHA产品集团 - Comtech EF Data公司</p>
+                    <p><b>Ettus研究使用产品</b>：X310，SBX</p>
+                    <p><b>挑战</b>：创建一个DVB-S2X调制解调器的工作原型。</p>
+                    <p class="xiao-title">介绍</p>
+                    <p class="mingxi">随着增加额外的监视能力，和战斗方面，监测和维护，指挥，控制，通信，计算机，情报，监视和侦察（C4ISR）已经成为比例更依赖于卫星通信（SATCOM）。因此，商业SATCOM提供国防部（DOD）的总容量的80％[1]。为此，高通量卫星（HTS）SATCOM已成为一个关键的兴趣。在2014年10月批准，数字视频广播卫星第二代扩展（DVB-S2X）提供的容量和频谱效率的下一代增加[2]。虽然DVB-S2X标准是针对卫星通信，它可以支持其他的C4ISR环节，如弯管和空中资产的直接连接。图1显示了C4ISR通信的例子链接适用于DVB-S2X。</p>
+                    <img src="../../images/applications/svbs2x/1.png" width="759" height="385">
+                    <p>图1：DVB-SX提高频谱效率用于C4ISR通信点至点的应用程序</p>
+                    <p class="mingxi">为了证明DVB-S2X的性能优势，我们实现了我们对DVB-S2X标准设计，4709 E2IQ核心，在Ettus X310 [3]软件定义无线电（SDR）。使用这种SDR平台和我们E2IQ核心，我们表明在加性高斯白噪声（AWGN）信道的真实的调制解调器的性能。据我们所知，我们是第一批实施新的DVB-S2X标准到一个平台SDR。通过这些努力，我们的目标是展示给用户的C4ISR下一代系统中使用我们的E2IQ核心的灵活适应性。</p>
+                    <p class="xiao-title">硬件配置</p>
+                    <p class="mingxi">我们的实现是建立使用Ettus X310 SDR平台[5]和SBX-120子板。示出我们的硬件结构的图在图2，SBX-120子板捕获提供RF前端，其包括用于接收和发送路径的本地振荡器，混频器和衰减器。在SBX-120和X310，模拟之间的接口的I / Q样本/缩小X310的处理。在Ettus X310，我们的设计包括赛灵思的Kintex-7现场可编程门阵列（FPGA），数字模拟转换器（DAC）和模数转换器（ADC）。我们的调制解调器设计中，E2IQ，核心放置在FPGA中。我们的主人，通过串行外设接口（SPI）总线，校准和配置DAC，ADC，和SBX-120前端。外部数据和控制到FPGA，我们使用分别以太网和RS-232接口。</p>
+                    <img src="../../images/applications/svbs2x/2.png" width="900" height="400">
+                    <p>图2：X310和SBX-120 SDR的硬件框图。</p>
+                    <p class="mingxi">我们E2IQ设计包括两个主要部分：控制和数据流。我们E2IQ核心的框图在图3中由主机驱动的显示，控制流程的目的是为了配置和校准编码器，调制器，和射频前端。调制解调器控制块设计是建立在Zylin CPU（ZPU），这是一个小型的嵌入式处理器上。凭借ZPU，调制解调器控制模块能够执行对ACM需要算法，增益控制等实时功能。为此，调制解调器控制块指示流适配块MODCOD用于传输哪些。此外，调制解调器控制配置调制块使用适当的符号率。流适配块向下传递MODCOD信息到后续模块，以指示块大小，编码率和调制以用于传输。最后，中心频率和发射功率水平可以通过使用调制解调器控制算法SPI总线或主机来配置。</p>
+                    <img src="../../images/applications/svbs2x/3.png" width="900" height="400" >
+                    <p>图3：我们的DVB-S2X实施，E2IQ框图</p>
+                    <p class="mingxi">该数据流路径转换数字I / Q成以太网数据包，反之亦然。示出的以太网报文到的I / Q码元封装的图示于图4.对于以太网到I / Q或传输流，以太网数据包首先被调制解调器接收的，并使用通用流封装（GSE）协议[成帧6。的GSE分组然后用基带（BB）标题尚未指示的ACM控制，滚降因子，和其它的帧的控制信息。整个BB帧是根据MODCOD，然后沿该前向纠错（FEC）编码器传递的输入块尺寸。以编码BB帧，DVB-S2X使用的外BCH码和用内LDPC码1.编码后，将FEC帧被映射到由物理层（PL）成帧器被处理的符号和时隙。通过自身的头球攻门，PL成帧器创建帧其次是信息的使用给整个FEC帧解码的开始。此外，PL成帧器定期插入保持同步试点插槽。作为对PL处理每个符号，数据被再调制成数字I / Q信号并将其发送到RF前端。</p>
+                    <img src="../../images/applications/svbs2x/4.png" width="900" height="350" >
+                    <p>图4：以太网数据包（EP）制定通过在E2IQ核心的各个功能模块使用的I / Q符号的插图。</p>
+                    <p class="mingxi">在接收路径上，解调器，与PL解帧器工作时，查找的PL帧的开始和PL报头，以确定MODCOD和开槽FEC帧的大小。从检测的符号信号测量值随后用作用于对数似然比（LLR）的计算以及FEC帧的后续解码的输入。流适配模块和GSE去帧块然后取出BB头和解封回以太网数据包，分别为。</p>
+                    <p class="xiao-title">在E2IQ和X310调制解调器性能演示</p>
+                    <p class="mingxi">为了表征我们的DVB-S2X设计的性能，我们配置为两个E2IQ FEC芯和Ettus SDR平台环回结构的一个调制解调器。对于E2IQ核心的性能特征，我们建立在FPGA上的AWGN信道模型，并插入FEC编码器和解码器内核之间的通道。然后将已知的伪随机数序列被产生并馈入的FEC编码器，它通过AWGN信道和返回到FEC解码器。当执行错误的对SNR值有统计学显著号码和相关联的数据点，我们计算对于所有的MODCOD 10-5块错误率（BLER）[2]。
+类似于E2IQ FEC芯的表征，我们Ettus SDR的TX被连接到一个载波 - 噪声发生器，它提供了一个可编程的SNR在AWGN信道模型来评估每个MODCOD。所述RX路径返回到从发电机相同的调制解调器。在相同的方式，对FEC表征，所述TX开始发送在增量SNR值一个已知的伪随机数序列。从这些实验中，在10-5 BLER相应的SNR被确定。在我们的Ettus SDR的设计，我们使用性能比较中档MODCODs。的E2IQ芯和Ettus SDR执行结果显示在图5。</p>
+
+                    <img src="../../images/applications/svbs2x/5.png" width="900" height="850" >
+                    <p>图5：E2IQ FEC核心（深蓝色）和Ettus实现SDR（品红色）与DVB-S2X规范（浅蓝色）的比较。两种实现有超过测试MODCODs范围小的性能差距。</p>
+                    <p class="mingxi">正如图5所示，E2IQ芯和DVB-S2X规范之间的性能差距小。平均起来，E2IQ性能差距为0.1分贝。在实现SDR，0.29分贝平均业绩差距也密切跟踪对DVB-S2X规范。这表明E2IQ核心设计和实施上Ettus SDR的高品质。最后，该设计的SDR，最大符号速率和最频谱效率MODCOD是72 MSPS和4.5位/秒/赫兹，即324 Mb / s的最大数据速率。</p>
+                    <p class="xiao-title">结论</p>
+                    <p class="mingxi">通过我们的实验和结果，我们已经表明，E2IQ芯和X310是DVB-S2X说明书的低损耗实现。此外，鉴于Ettus SDR是一个多用途平台，E2IQ芯是柔性的可以有效地适用于创建用于各种C4ISR应用的高性能数据调制解调器。从我们的性能演示，我们已经表明，C4ISR应用程序可以利用DVB-S2X垫款经营范围和吞吐量的增加。</p>
+                    <p class="xiao-title">参考</p>
+                    <p class="mingxi">[1] R. Lober，“为什么军方需要商业卫星技术，”国防部一，2013年9月。</p>
+                    <p class="mingxi">[2]数字视频广播，“第2部分：DVB-S2扩展（DVB-S2X），”ETSI EN302307-2，2014年10月。</p>
+                    <p class="mingxi">[3]美国国家仪器，“Ettus研究发布软件无线电平台之上的Kintex-7 FPGA，”新闻稿，2014年2月。</p>
+                    <p class="mingxi">[4] AHA产品集团，“DVB-S2X数字调制解调器的以太网IP核，”AHA4709E2IQ产品简介，2015年4月。</p>
+                    <p class="mingxi">[5] Ettus研究，“USRP X300和X310 X系列”，产品规格，2014年。</p>
+                    <p class="mingxi">[6]数字视频广播，“数字视频广播（DVB）;通用流封装（GSE）协议，”ETSI TS 102606，2007年10月。</p>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>

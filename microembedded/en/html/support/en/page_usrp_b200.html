@@ -1,0 +1,468 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>USRP B2x0 Series</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>USRP B2x0 Series</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">USRP B2x0 Series</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#b200_features">Comparative features list - B200/B210/B200mini</a></li> 
+          <li class="level1"><a href="#b200_power">Power</a></li> 
+          <li class="level1"><a href="#b200_imgs">Specifying a Non-standard Image</a></li> 
+          <li class="level1"><a href="#b200_mcr">Changing the Master Clock Rate</a> 
+           <ul> 
+            <li class="level2"><a href="#b200_auto_mcr">Automatic Clock Rate Setting</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#b200_fe">RF Frontend Notes</a> 
+           <ul> 
+            <li class="level2"><a href="#b200_fe_tuning">Frontend tuning</a></li> 
+            <li class="level2"><a href="#b200_fe_gain">Frontend gain</a></li> 
+            <li class="level2"><a href="#b200_fe_bw">Frontend bandwidth</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#Hardware">Reference</a> 
+           <ul> 
+            <li class="level2"><a href="#LED">Indicators</a></li> 
+            <li class="level2"><a href="#External">Connections</a></li> 
+            <li class="level2"><a href="#b200_switches">On-Board Connectors and Switches</a></li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="b200_features"></a> Comparative features list - B200/B210/B200mini</h1> 
+         <ul> 
+          <li>Hardware Capabilities: 
+           <ul> 
+            <li>Integrated RF frontend (70 MHz - 6 GHz)</li> 
+            <li>External PPS reference input</li> 
+            <li>External 10 MHz reference input</li> 
+            <li>Configurable clock rate</li> 
+            <li>Variable analog bandwidth (200 kHz - 56 MHz)</li> 
+            <li>GPIO header</li> 
+            <li>[B200/B210] Internal GPSDO option (see <a class="el" href="page_gpsdo_b2x0.html">Internal GPSDO Application Notes (USRP-B2x0 Models)</a> for details)</li> 
+            <li>[B210/B200mini] JTAG Connector</li> 
+            <li>[B210] MICTOR Debug Connector</li> 
+           </ul> </li> 
+          <li>FPGA Capabilities: 
+           <ul> 
+            <li>Timed commands in FPGA</li> 
+            <li>Timed sampling in FPGA</li> 
+           </ul> </li> 
+         </ul> 
+         <h1><a class="anchor" id="b200_power"></a> Power</h1> 
+         <p>In most cases, USB 3.0 bus power will be sufficient to power the device. If using USB 2.0 or an internal GPSDO, an external power supply or a cable designed to pull power from 2 USB ports (USB 3.0 dual A to micro-B or B) must be used.</p> 
+         <h1><a class="anchor" id="b200_imgs"></a> Specifying a Non-standard Image</h1> 
+         <p>UHD software will automatically select the USRP B2X0 images from the installed images package. The image selection can be overridden with the <code>fpga</code> and <code>fw</code> device address parameters.</p> 
+         <p>Example device address string representations to specify non-standard images: </p> 
+         <pre class="fragment">fpga=usrp_b200_fpga.bin
+
+-- OR --
+
+fw=usrp_b200_fw.hex
+</pre> 
+         <h1><a class="anchor" id="b200_mcr"></a> Changing the Master Clock Rate</h1> 
+         <p>The master clock rate feeds the RF frontends and the DSP chains. Users may select non-default clock rates to acheive integer decimations or interpolations in the DSP chains. The clock rate can be set to any value between 5 MHz and 61.44 MHz (or 30.72 MHz for dual-channel mode). Note that rates above 56 MHz are possible, but not recommended.</p> 
+         <p>The user can set the master clock rate through the usrp API call <a class="el" href="classuhd_1_1usrp_1_1multi__usrp.html#a99254abfa5259b70a020e667eee619b9">uhd::usrp::multi_usrp::set_master_clock_rate()</a>, or the clock rate can be set through the device arguments, which many applications take: </p> 
+         <pre class="fragment">uhd_usrp_probe --args=&quot;master_clock_rate=52e6&quot;
+</pre> 
+         <p>The property to control the master clock rate is a double value, called <code>tick_rate</code>.</p> 
+         <h2><a class="anchor" id="b200_auto_mcr"></a> Automatic Clock Rate Setting</h2> 
+         <p>The default clock rate setting is to automatically set a clock rate depending on the requested sampling rate. The automatic clock rate selection is disabled when either <code>master_clock_rate</code> is given in the device initialization arguments, or when <a class="el" href="classuhd_1_1usrp_1_1multi__usrp.html#a99254abfa5259b70a020e667eee619b9">uhd::usrp::multi_usrp::set_master_clock_rate()</a> is called.</p> 
+         <p>Note that the master clock rate must be an integer multiple of the sampling rate. If a master clock rate is chosen for which this condition does not hold, a warning will be displayed and a different sampling rate is used internally.</p> 
+         <p>Nevertheless, there are multiple valid values for the master clock rate for most sampling rates. The auto clock rate selection attempts to use the largest possible clock rate as to enable as many half-band filters as possible. Expert users might have cases where a more fine-grained control over the resampling stages is required, in which case manually selecting a master clock rate might be more suitable than the automatic rate.</p> 
+         <p>The property to dis- or enable the auto tick rate is a boolean value, <code>auto_tick_rate</code>.</p> 
+         <h1><a class="anchor" id="b200_fe"></a> RF Frontend Notes</h1> 
+         <p>The B200 features an integrated RF frontend.</p> 
+         <h2><a class="anchor" id="b200_fe_tuning"></a> Frontend tuning</h2> 
+         <p>The RF frontend has individually tunable receive and transmit chains. On the B200 and B200 mini, there is one transmit and one receive RF frontend. On the B210, both transmit and receive can be used in a MIMO configuration. For the MIMO case, both receive frontends share the RX LO, and both transmit frontends share the TX LO. Each LO is tunable between 50 MHz and 6 GHz.</p> 
+         <h2><a class="anchor" id="b200_fe_gain"></a> Frontend gain</h2> 
+         <p>All frontends have individual analog gain controls. The receive frontends have 73 dB of available gain; and the transmit frontends have 89.5 dB of available gain. Gain settings are application specific, but it is recommended that users consider using at least half of the available gain to get reasonable dynamic range.</p> 
+         <h2><a class="anchor" id="b200_fe_bw"></a> Frontend bandwidth</h2> 
+         <p>The analog frontend has a seamlessly adjustable bandwidth of 200 kHz to 56 MHz.</p> 
+         <p>Generally, when requesting any possible master clock rate, UHD will automatically configure the analog filters to avoid any aliasing (RX) or out-of-band emissions whilst letting through the cleanest possible signal.</p> 
+         <p>If you, however, happen to have a very strong interferer within half the master clock rate of your RX LO frequency, you might want to reduce this analog bandwidth. You can do so by calling uhd::usrp::multi_usrp::set_rx_bandwidth(bw).</p> 
+         <p>The property to control the analog RX bandwidth is <code>bandwidth/value</code>.</p> 
+         <p>UHD will not allow you to set bandwidths larger than your current master clock rate.</p> 
+         <h1><a class="anchor" id="Hardware"></a> Reference</h1> 
+         <h2><a class="anchor" id="LED"></a> Indicators</h2> 
+         <p>Below is a table of the B200/B210 LED indicators and their meanings:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID</th> 
+            <th>Description</th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>LED600 </td> 
+            <td>Power Indicator </td> 
+            <td>off = no power applied<br /> red = external power applied<br /> blue(red prior to rev 6) = USB power applied </td> 
+           </tr> 
+           <tr> 
+            <td>LED800 </td> 
+            <td>Channel 2 RX2 Activity </td> 
+            <td>off = no power applied<br /> green = receiving </td> 
+           </tr> 
+           <tr> 
+            <td>LED801 </td> 
+            <td>Channel 2 TX/RX Activity </td> 
+            <td>off = no activity<br /> green = receiving<br /> red = transmitting<br /> orange = switching between transmitting and receiving </td> 
+           </tr> 
+           <tr> 
+            <td>LED802 </td> 
+            <td>Channel 1 TX/RX Activity </td> 
+            <td>off = no activity green = receiving<br /> red = transmitting<br /> orange = switching between transmitting and receiving </td> 
+           </tr> 
+           <tr> 
+            <td>LED803 </td> 
+            <td>Channel 1 RX2 Activity </td> 
+            <td>off = no power applied<br /> green = receiving </td> 
+           </tr> 
+           <tr> 
+            <td>LED100 </td> 
+            <td>GPS lock indicator </td> 
+            <td>off = no lock<br /> green = lock </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Below is a table of the B200mini LED indicators and their meanings:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID</th> 
+            <th>Description</th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>PWR LED </td> 
+            <td>Power Indicator </td> 
+            <td>off = no power applied<br /> on = power applied (external or USB) </td> 
+           </tr> 
+           <tr> 
+            <td>TRX LED </td> 
+            <td>TX/RX Activity </td> 
+            <td>off = no activity<br /> green = receiving<br /> red = transmitting<br /> orange = switching between transmitting and receiving </td> 
+           </tr> 
+           <tr> 
+            <td>RX2 LED </td> 
+            <td>RX2 Activity </td> 
+            <td>off = no activity<br /> green = receiving </td> 
+           </tr> 
+           <tr> 
+            <td>S0 LED </td> 
+            <td>Reference Lock </td> 
+            <td>off = no activity green = locked </td> 
+           </tr> 
+           <tr> 
+            <td>S1 LED </td> 
+            <td>Reference Present </td> 
+            <td>off = reference level low or not present<br /> green = reference level high </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>TX LED indicators are on when transmitting data and off when no samples are available to transmit. RX LED indicators are on when sending samples to the host and off when unable to do so. This means that TX/RX activity LED indicators will blink off in a temporary transmit underflow or receive overflow condition, indicating that the host is not sending or receiving samples fast enough. The host will be notified of the condition and output a &quot;U&quot; or &quot;O&quot; as well.</p> 
+         <h2><a class="anchor" id="External"></a> Connections</h2> 
+         <p>Below is a table showing the B200/B210 external connections and respective power information:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID </th> 
+            <th>Description </th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>J601 </td> 
+            <td>External Power </td> 
+            <td>6 V<br /> 3 A </td> 
+           </tr> 
+           <tr> 
+            <td>J701 </td> 
+            <td>USB Connector </td> 
+            <td>USB 3.0 </td> 
+           </tr> 
+           <tr> 
+            <td>J104 </td> 
+            <td>External PPS Input </td> 
+            <td>1.8 V - 5 V </td> 
+           </tr> 
+           <tr> 
+            <td>J101 </td> 
+            <td>GPS Antenna </td> 
+            <td>GPSDO will supply nominal voltage to antenna. </td> 
+           </tr> 
+           <tr> 
+            <td>J100 </td> 
+            <td>External 10 MHz Input </td> 
+            <td>+15 dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J800 </td> 
+            <td>RF B: TX/RX </td> 
+            <td>TX power +20dBm max<br /> RX power -15dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J802 </td> 
+            <td>RF B: RX2 </td> 
+            <td>RX power -15dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J803 </td> 
+            <td>RF A: RX2 </td> 
+            <td>RX power -15dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J801 </td> 
+            <td>RF A: TX/RX </td> 
+            <td>TX power +20dBm max<br /> RX power -15dBm max </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Below is a table showing the B200mini external connections and respective power information:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID </th> 
+            <th>Description </th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>USB3 </td> 
+            <td>USB Connector </td> 
+            <td>USB 3.0 </td> 
+           </tr> 
+           <tr> 
+            <td>J1 </td> 
+            <td>TRX </td> 
+            <td>TX power +20dBm max<br /> RX power -15dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J2 </td> 
+            <td>RX2 </td> 
+            <td>RX power -15dBm max </td> 
+           </tr> 
+           <tr> 
+            <td>J3 </td> 
+            <td>External 10MHz/PPS Reference </td> 
+            <td>+15 dBm max </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h2><a class="anchor" id="b200_switches"></a> On-Board Connectors and Switches</h2> 
+         <p>Below is a table showing the B200/B210 on-board connectors and switches:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID </th> 
+            <th>Description </th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>J502<sup>1</sup> </td> 
+            <td>Mictor Connector </td> 
+            <td>Interface to FPGA for I/O and inspection. </td> 
+           </tr> 
+           <tr> 
+            <td>J503<sup>1</sup> </td> 
+            <td>JTAG Header </td> 
+            <td>Interface to FPGA for programming and debugging. </td> 
+           </tr> 
+           <tr> 
+            <td>J504<sup>2</sup> </td> 
+            <td>GPIO Header </td> 
+            <td>Header connected to the FPGA for GPIO purposes. </td> 
+           </tr> 
+           <tr> 
+            <td>S700 </td> 
+            <td>FX3 Hard Reset Switch </td> 
+            <td>Resets the USB controller / System reset </td> 
+           </tr> 
+           <tr> 
+            <td>U100 </td> 
+            <td>GPSDO socket </td> 
+            <td>Interface to GPS disciplined reference oscillator </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p><sup>1</sup> Only on the B210</p> 
+         <p><sup>2</sup> Only since rev. 6 (green board)</p> 
+         <p>Below is a table showing the B200mini on-board connectors and switches:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Component ID </th> 
+            <th>Description </th> 
+            <th>Details </th> 
+           </tr> 
+           <tr> 
+            <td>J5 </td> 
+            <td>JTAG Header </td> 
+            <td>Interface to FPGA for programming and debugging. </td> 
+           </tr> 
+           <tr> 
+            <td>J6<sup>1</sup> </td> 
+            <td>GPIO Header </td> 
+            <td>Header connected to the FPGA for GPIO purposes. </td> 
+           </tr> 
+           <tr> 
+            <td>SW1 </td> 
+            <td>FX3 Hard Reset Switch </td> 
+            <td>Resets the USB controller / System reset </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p><sup>1</sup> GPIO pinout is 1=3.3V, 2=GPIO_0, 3=GPIO_1, 4=GPIO_2, 5=GPIO_3, 6=GND, 7=3.3V, 8=GPIO_4, 9=GPIO_5, 10=,GPIO_6 11=GPIO_7, 12=GND </p> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

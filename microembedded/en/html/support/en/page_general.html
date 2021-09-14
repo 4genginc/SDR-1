@@ -1,0 +1,358 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>General Application Notes</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>General Application Notes</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">General Application Notes</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#general_tuning">Tuning Notes</a> 
+           <ul> 
+            <li class="level2"><a href="#general_tuning_process">Two-stage tuning process</a> 
+             <ul> 
+              <li class="level3"><a href="#general_tuning_rxchain">Tuning the receive chain:</a></li> 
+             </ul> </li> 
+            <li class="level2"><a href="#general_tuning_rfsettling">RF front-end settling time</a> 
+             <ul> 
+              <li class="level3"><a href="#general_tuning_waitcode">Pseudo-code for dealing with settling time after tuning on receive:</a></li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li class="level1"><a href="#general_sampleratenotes">Sample rate notes</a> 
+           <ul> 
+            <li class="level2"><a href="#general_sampleratenotes_automatic">Automatic master-clock selection</a></li> 
+            <li class="level2"><a href="#general_sampleratenotes_nyquist">Master clock rate and Nyquist</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#general_ounotes">Overflow/Underflow Notes</a> 
+           <ul> 
+            <li class="level2"><a href="#general_ounotes_overflow">Overflow notes</a></li> 
+            <li class="level2"><a href="#general_ounotes_underrun">Underrun notes</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#general_threading">Threading Notes</a> 
+           <ul> 
+            <li class="level2"><a href="#general_threading_safety">Thread safety notes</a></li> 
+            <li class="level2"><a href="#general_threading_prio">Thread priority scheduling</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#general_misc">Miscellaneous Notes</a> 
+           <ul> 
+            <li class="level2"><a href="#general_misc_dynamic">Support for dynamically loadable modules</a></li> 
+            <li class="level2"><a href="#general_misc_prints">Disabling or redirecting prints to stdout</a></li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="general_tuning"></a> Tuning Notes</h1> 
+         <h2><a class="anchor" id="general_tuning_process"></a> Two-stage tuning process</h2> 
+         <p>A USRP device has two stages of tuning:</p> 
+         <ul> 
+          <li>RF front-end: translates bewteen RF and IF</li> 
+          <li>DSP: translates between IF and baseband</li> 
+         </ul> 
+         <p>In a typical use-case, the user specifies an overall center frequency for the signal chain. The RF front-end will be tuned as close as possible to the center frequency, and the DSP will account for the error in tuning between target frequency and actual frequency. The user may also explicitly control both stages of tuning through through the <a class="el" href="structuhd_1_1tune__request__t.html">uhd::tune_request_t</a> object, which allows for more advanced tuning.</p> 
+         <p>In general, Using UHD software's advanced tuning is highly recommended as it makes it easy to move the DC component out of your band-of-interest. This can be done by passing your desired LO offset to the <a class="el" href="structuhd_1_1tune__request__t.html">uhd::tune_request_t</a> object, and letting the UHD software handle the rest.</p> 
+         <p>The <a class="el" href="structuhd_1_1tune__request__t.html">uhd::tune_request_t</a> object can also be used with certain daughterboards to use Integer-N tuning instead of the default fractional tuning, allowing for better spur performance. The daughterboards that support this functionality are:</p> 
+         <ul> 
+          <li>WBX (all revisions)</li> 
+          <li>WBX-120</li> 
+          <li>SBX (all revisions)</li> 
+          <li>SBX-120</li> 
+          <li>CBX</li> 
+          <li>CBX-120</li> 
+          <li>UBX</li> 
+          <li>UBX-160</li> 
+         </ul> 
+         <h3><a class="anchor" id="general_tuning_rxchain"></a> Tuning the receive chain:</h3> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <span class="comment">//tuning to a desired center frequency</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(target_frequency_in_hz); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line">
+            --OR-- 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="comment">//advanced tuning with tune_request_t uhd::tune_request_t</span> 
+          </div> 
+          <div class="line">
+            tune_req(target_frequency_in_hz, desired_lo_offset); 
+          </div> 
+          <div class="line">
+            tune_req.args = 
+           <a class="code" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a>( 
+           <span class="stringliteral">&quot;mode_n=integer&quot;</span>); 
+           <span class="comment">//to use Int-N tuning</span> 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//fill in any additional/optional tune request fields...</span> 
+          </div> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(tune_req); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p>More information can be found in <a class="el" href="structuhd_1_1tune__request__t.html">uhd::tune_request_t</a>.</p> 
+         <h2><a class="anchor" id="general_tuning_rfsettling"></a> RF front-end settling time</h2> 
+         <p>After tuning, the RF front-end will need time to settle into a usable state. Typically, this means that the local oscillators must be given time to lock before streaming begins. Lock time is not consistent; it varies depending upon the device and requested settings. After tuning and before streaming, the user should wait for the <b>lo_locked</b> sensor to become true or sleep for a conservative amount of time (perhaps a second).</p> 
+         <h3><a class="anchor" id="general_tuning_waitcode"></a> Pseudo-code for dealing with settling time after tuning on receive:</h3> 
+         <div class="fragment"> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(...); 
+          </div> 
+          <div class="line">
+            sleep(1); 
+          </div> 
+          <div class="line">
+            usrp-&gt;issue_stream_command(...); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line">
+            --OR-- 
+          </div> 
+          <div class="line"></div> 
+          <div class="line">
+            usrp-&gt;set_rx_freq(...); 
+          </div> 
+          <div class="line"> 
+           <span class="keywordflow">while</span> (not usrp-&gt;get_rx_sensor( 
+           <span class="stringliteral">&quot;lo_locked&quot;</span>).to_bool()){ 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//sleep for a short time in milliseconds</span> 
+          </div> 
+          <div class="line">
+            } 
+          </div> 
+          <div class="line">
+            usrp-&gt;issue_stream_command(...); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h1><a class="anchor" id="general_sampleratenotes"></a> Sample rate notes</h1> 
+         <p>Sample rates as delivered to the host computer for USRP devices are constrained to follow several important rules.</p> 
+         <p>It is important to understand that strictly-integer <b>decimation</b> and <b>interpolation</b> are used within USRP hardware to meet the requested sample-rate requirements of the application at hand. That means that the desired sample rate must meet the requirement that master-clock-rate/desired-sample-rate be an integer ratio. Further, it is strongly desirable for that ratio to be <b>even</b>.</p> 
+         <p>There are further constraints on the desired sample rate, such that if the required decimation or interpolation exceeds 128, then the resulting decimation <b>must</b> be evenly divisible by 2, and that if the required decimation exceeds 256, the resulting decimation <b>must</b> be evenly divisible by 4.</p> 
+         <p>For USRP devices with fixed master clocks (notably: USRP1, USRP2, N2xx), there are fewer effective sample rates available than on USRP hardware that provides some flexibility in selecting a master clock. Several USRP devices support flexible master clock selection, allowing a broader range of sample rate selections by applications. See the individual devices' manual pages for more details.</p> 
+         <p>In many cases using USRPs with flexible master-clock rates, it is possible to achieve lower sample rates without running into the constraints of higher decimations, simply by choosing a lower master-clock rate to keep required decimation below 128.</p> 
+         <h2><a class="anchor" id="general_sampleratenotes_automatic"></a> Automatic master-clock selection</h2> 
+         <p>In recent versions of UHD software (3.8.5 and newer), and on some devices (currently: B2xx and E3xx series), the master clock rate is chosen automatically (unless specified by the user). UHD will select a master clock rate that is consistent with the desired sample rate indicated by the application.</p> 
+         <h2><a class="anchor" id="general_sampleratenotes_nyquist"></a> Master clock rate and Nyquist</h2> 
+         <p>In selecting a master clock rate on certain USRP hardware (X3xx and B1xx), it is important to select a rate that still provides correct alias suppression by the analog hardware. For daughtercards with a 40 MHz analog bandwidth, this means the clock rate must be <b>at least</b> 40 MHz, with better performance to be expected with a higher clock rate. For daughtercards with 160 MHz bandwidth, it must be <b>at least</b> 160 MHz, again, better performance is to expected with a higher clock rate.</p> 
+         <p>For hardware with fixed master clock rates, of course, this isn't a consideration.</p> 
+         <p>For B2xx and E3xx hardware, the alias suppression is handled differently by the AD936x RFIC, and master clock rate is significantly more flexible as a result.</p> 
+         <h1><a class="anchor" id="general_ounotes"></a> Overflow/Underflow Notes</h1> 
+         <p><b>Note:</b> The following overflow/underflow notes do not apply to USRP1, which does not support the advanced features available in newer products.</p> 
+         <h2><a class="anchor" id="general_ounotes_overflow"></a> Overflow notes</h2> 
+         <p>When receiving, the device produces samples at a constant rate. Overflows occurs when the host does not consume data fast enough. When UHD software detects the overflow, it prints an &quot;O&quot; or &quot;D&quot; to stdout, and pushes an inline message packet into the receive stream.</p> 
+         <p><b>Network-based devices</b>: The host does not back-pressure the receive stream. When the kernel's socket buffer becomes full, it will drop subsequent packets. UHD software detects the overflow as a discontinuity in the packet's sequence numbers, and pushes an inline message packet into the receive stream. In this case the character &quot;D&quot; is printed to stdout as an indication.</p> 
+         <p><b>Other devices</b>: The host back-pressures the receive stream. Therefore, overflows always occur in the device itself. When the device's internal buffers become full, streaming is shut off, and an inline message packet is sent to the host. In this case the character &quot;O&quot; is printed to stdout as an indication. If the device was in continuous streaming mode, the UHD software will automatically restart streaming when the buffer has space again.</p> 
+         <h2><a class="anchor" id="general_ounotes_underrun"></a> Underrun notes</h2> 
+         <p>When transmitting, the device consumes samples at a constant rate. Underflow occurs when the host does not produce data fast enough. When UHD software detects the underflow, it prints a &quot;U&quot; to stdout, and pushes a message packet into the async message stream.</p> 
+         <p><b>Note:</b> &quot;O&quot; and &quot;U&quot; message are generally harmless, and just mean the host machine can't keep up with the requested rates.</p> 
+         <h1><a class="anchor" id="general_threading"></a> Threading Notes</h1> 
+         <h2><a class="anchor" id="general_threading_safety"></a> Thread safety notes</h2> 
+         <p>For the most part, UHD software is thread-safe. Please observe the following limitations:</p> 
+         <p><b>Fast-path thread requirements:</b> There are three fast-path methods for a device: <a class="el" href="classuhd_1_1tx__streamer.html#aeb2e0f44810693d9da99ea1e04fad21f">uhd::tx_streamer::send()</a>, <a class="el" href="classuhd_1_1rx__streamer.html#af4e581b97d92553c6091108393a7da1b">uhd::rx_streamer::recv()</a>, and <a class="el" href="classuhd_1_1tx__streamer.html#a14eef202de5a15bb72a149a7891af208">uhd::tx_streamer::recv_async_msg()</a>. All three methods are thread-safe and can be called from different thread contexts. For performance, the user should call each method from a separate thread context. These methods can also be used in a non-blocking fashion by using a timeout of zero.</p> 
+         <p><b>Slow-path thread requirements:</b> It is safe to change multiple settings simultaneously. However, this could leave the settings for a device in an uncertain state. This is because changing one setting could have an impact on how a call affects other settings. Example: setting the channel mapping affects how the antennas are set. It is recommended to use at most one thread context for manipulating device settings.</p> 
+         <h2><a class="anchor" id="general_threading_prio"></a> Thread priority scheduling</h2> 
+         <p>When UHD software spawns a new thread, it may try to boost the thread's scheduling priority. If setting the new priority fails, the UHD software prints a warning to the console, as shown below. This warning is harmless; it simply means that the thread will retain a normal or default scheduling priority. </p> 
+         <pre class="fragment">UHD Warning:
+    Unable to set the thread priority. Performance may be negatively affected.
+    Please see the general application notes in the manual for instructions.
+    EnvironmentError: OSError: error in pthread_setschedparam
+</pre> 
+         <p><b>Linux Notes:</b></p> 
+         <p>Non-privileged users need special permission to change the scheduling priority. Add the following line to the file <code>/etc/security/limits.conf</code>: </p> 
+         <pre class="fragment">@GROUP    - rtprio    99
+</pre> 
+         <p>Replace <code>GROUP</code> with a group in which your user is a member. You may need to log out and log back into the account for the settings to take effect. In most Linux distributions, a list of groups and group members can be found in the file <code>/etc/group</code>.</p> 
+         <h1><a class="anchor" id="general_misc"></a> Miscellaneous Notes</h1> 
+         <h2><a class="anchor" id="general_misc_dynamic"></a> Support for dynamically loadable modules</h2> 
+         <p>For a module to be loaded at runtime, it must be:</p> 
+         <ul> 
+          <li>found in the <code>UHD_MODULE_PATH</code> environment variable,</li> 
+          <li>installed into the <code>\&lt;install-path\&gt;/share/uhd/modules</code> directory,</li> 
+          <li>or installed into <code>/usr/share/uhd/modules</code> directory (UNIX only).</li> 
+         </ul> 
+         <h2><a class="anchor" id="general_misc_prints"></a> Disabling or redirecting prints to stdout</h2> 
+         <p>The user can disable the UHD library from printing directly to stdout by registering a custom message handler. The handler will intercept all messages, which can be dropped or redirected. Only one handler can be registered at a time. Make <b>register_handler</b> your first call into the UHD library:</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <span class="preprocessor">#include &lt;<a class="code" href="msg_8hpp.html">uhd/utils/msg.hpp</a>&gt;</span> 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <span class="keywordtype">void</span> my_handler( 
+           <a class="code" href="namespaceuhd_1_1msg.html#a39e78d22a268a4f0375423a1d588139b">uhd::msg::type_t</a> type, 
+           <span class="keyword">const</span> std::string &amp;msg){ 
+          </div> 
+          <div class="line"> 
+           <span class="comment">//handle the message...</span> 
+          </div> 
+          <div class="line">
+            } 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <a class="code" href="namespaceuhd_1_1msg.html#aa5380a801e1ac6b8a35aa95543fc3e8e">uhd::msg::register_handler</a>(&amp;my_handler); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

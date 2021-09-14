@@ -1,0 +1,291 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>常见问题_微嵌</title>
+		<meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales.">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+        <div class="faq_mingxi">
+        <div class="middle">
+        	<div class="content box_shadow">
+				<p><a href="../usrp_changjianwenti.html">返回 USRP常见问题</a></p>
+				<hr />
+				<p class="content_title">USRP 一般常见问题</p>
+				<hr />
+				<p class="faq_title">USRP一上电，USB控制器右面的 LED 指示灯以每秒三次的频率闪烁。只要 USRP 的应用启动，灯的闪烁频率降至每秒一次。是什么在控制 LED 指示灯闪烁？ </p>
+				<p class="faq_mingxi">LED 指示灯是由母板上的 FX2 USB 控制器控制。当 USRP 刚一上电，一段特别小的程序从 256 byte 的 EEPROM 中载入。这段代码把 AD9862 设置成低功耗状态同时快速循环使得 LED 灯每秒闪烁三次。 </p>
+				<p class="faq_mingxi2">gnuradio/trunk/usrp/firmware/src/usrp2/eeprom_init.c </p>
+				<p class="faq_mingxi2">usrp/firmware/src/usrp2/eeprom_init.c</p>
+				<p class="faq_mingxi">一旦“常规”固件载入，定时器中断服务例程 （isr_tick）使得闪烁变慢</p>
+				<p class="faq_mingxi2">gnuradio/trunk/usrp/firmware/src/usrp2/usrp_main.c </p>
+				<p class="faq_mingxi2">usrp/firmware/src/usrp2/usrp_main.c</p>
+				
+				<p class="faq_title">当运行 gnu radio 程序时，会有时看见 "O" "U" "u" "a" 字符出现在屏幕上。这一般当数据从 USRP 到 PC 机数据传输停止或什么事情发生时会出现。很好奇它的涵义？速度快的 PC 能减少这些错误吗？</p>
+				<p class="faq_mingxi">"u" = USRP </p>
+				<p class="faq_mingxi">"a" = audio (声卡) </p>
+				<p class="faq_mingxi">"O" = overrun （PC 无法同步地接受来自 USRP 或 声卡的数据 - PC not keeping up with received data from usrp or audio card）</p>
+				<p class="faq_mingxi">"U" = underrun（PC 无法快速的提供数据 - PC not providing data quickly enough）</p>
+				<p class="faq_mingxi">aUaU == audio underrun  （PC 无法快速地给“漏”-  声卡提供数据 - not enough samples ready to send to sound card sink）</p>
+				<p class="faq_mingxi">uUuU == USRP underrun （PC 无法快速地给“漏”- USRP提供数据 - not enough sample ready to send to USRP sink）</p>
+				<p class="faq_mingxi">uOuO == USRP overrun （USRP 采样掉链源于它没有及时准备到位  - USRP samples dropped because they weren't read in time）</p>
+				<p class="faq_mingxi">是的，速度快的计算机可以避免问题。当然，前提是没有让 USB 干它负荷不起的事情。理想的情况是 USB 负荷 32MB/s。建议尽量避免使用 Intel 的 Celeron 或 “缓存能力不强”的部件。</p>
+				
+				<p class="faq_title">是否 ‘uO' 出现的频率同采样丢失的频率相同？</p>
+				<p class="faq_mingxi">不是的。Overrun 的检测显示是由一个大概 10Hz 频率的循环来控制的。 如果以数据流的频率（显示），将无法看见 uO 字符。 </p>
+				
+				<p class="faq_title">一旦上电和 插入 USB 连接器，会发生什么事情？ 启动的顺序如何？</p>
+				<p class="faq_mingxi">USRP 自身不带任何性质的 ROM 固件，（EEPROM 内）仅仅几个字节的数据用来标识设备编号（VID），产品编号（PID）和版本修正号。当 USRP 第一次插入 PC 的 USB 连接器中，宿主机（上的 gnu radio）程序库便发现了一个没有被配置的 USRP。通过设备编号（VID），产品编号（PID）和版本修正号，程序库便可确认 USRP 是否被配置。此后它要做的第一件事就是下载描述 USB 外围控制器的（固件 -firmware）代码到母板上的 8051 器件中。当下载的代码一旦运行，USRP 便模拟常规 USB 的断开和重新连接的过程。</p>
+				<p class="faq_mingxi">
+一旦重新连接，计算机便检测到不同的设备编号（VID），产品编号（PID）和版本修正号。正在运行的（固件 -firmware）代码同时定义了 USB 的端点（endpoints），接口（interfaces）和命令句柄（command handlers）。此时一条应当被 USB 控制器解释的命令便是下载 FPGA - 也就是说程序库识别到通过重新连接被配置成一个新设备的 USRP，它便进入启动的另一个阶段，下载配置 FPGA 的数据流。</p>
+				<p class="faq_mingxi">一旦（固件 -firmware）代码被下载到FX2，它便配置其内部寄存器并重新启动它，同时将呈现出，通过 FX 断开再相连而标识出的，同USB相连的设备的“最终”的设备编号（VID），产品编号（PID）。</p>
+				
+				<p class="faq_title">在 FPGA 编程时你使用什么工具？在布局 USRP 母板时你使用什么工具？</p>
+				<p class="faq_mingxi">编写 FPGA 程序使用 Verilog，编译使用 Altera 公司的 Quartus 。母板用 PADS 布局（PCB），但不提供布局（PCB）文件。原理图使用 gEDA。 </p>
+				
+				<p class="faq_title">可以用 5V 输出的 DC-DC 电源转换器驱动 USRP 吗？</p>
+				<p class="faq_mingxi">USRP 母板可以由 5V 电源驱动。但是大多数的子板需从 6V 调整到 5V,也就是说需要的正确电压是 5.5 到 5.75 V。只有只有 BasixRX 和 BasicTX 不需 6V。</p>
+				
+				<p class="faq_title">USRP 的最大直流供电电压是多少？ 可以用 13.8V 吗？</p>
+				<p class="faq_mingxi">不，不可以。USRP 使用线性调节器，所以加载 13.8V 结果导致负荷额外的10瓦能量。而且，母板上的很多电容器的电压范围是 6V, 10V 将毁坏它们。</p>
+				
+				<p class="faq_title">USRP 母板的保险丝的规格？</p>
+				<p class="faq_mingxi">保险丝的尺 寸是 0603。规格 3Amps。 </p>
+				
+				<p class="faq_title">我想 EP1C12Q240C8 FPGA 运行频率远远超过 64MHz。</p>
+				<p class="faq_mingxi">当 Fmax 工作大于 64MHz 的频率时，FPGA 是足以胜任的（或者，我这么认为）. </p>
+				
+				<p class="faq_title">控制信号是如何工作的？ 协议如何？当我写下如下代码时，它是如何被解释和传输到 FPGA 的 master_control 模块的。 </p>
+				<p class="faq_mingxi2">src = usrp.source_c (0, decim)</p>
+				<p class="faq_mingxi2">src.set_rx_freq (0, IF_freq)</p>
+				<p class="faq_mingxi2">src.set_pga(0,20)</p>
+				<p class="faq_mingxi">请参阅代码 usrp_standard.{h,cc}, usrp_basic.{h,cc}, and usrp_prims.{h,cc}。它们都作为控制信息通过 USB 到端点 0（endpoint 0）。这些控制信息在 FX2 被解释并被执行。一般而言，通过 I2C 和 SPI 总线实现其意图。</p>
+				<p class="faq_mingxi">通过 SPI 总线读写 FPGA 寄存器，AD9862 寄存器和子板。通过 I2C 配置 EEPROM 和子板。详细信息参阅 USRP 原理图。代码 usrp/firmware/include/usrp_spi_defs.h 包含 SPI 总线的定义。代码 usrp/firmware/include/usrp_i2c_addr.h 包含标准的 I2C 的地址的定义。还有一些子板用另外的子板插入时所赋予的插槽的功能。</p>
+				
+				<p class="faq_title">USRP 的缓存空间多大？</p>
+				<p class="faq_mingxi">USRP 在以下三个地方具有缓存：</p>
+				<p class="faq_mingxi2">在计算机： 目前 8MB 用于 TX, 8MB 用于 Rx. ( #如果有错的话# )</p>
+				<p class="faq_mingxi2">在 Cypress FX2 USB 的外设： 2KB TX 和 2KB Rx. ( #FIXME# )</p>
+				<p class="faq_mingxi2">在 FPGA: 4KB TX 和 4KB RX.</p>
+				
+				<p class="faq_title">当有两路 RX 链路时，rx_buffer 是如何用来分别处理两个 RX 链路的？</p>
+				<p class="faq_mingxi">两个不同的链路交替的先进先出 FIFO。其数据如下顺序：</p>
+				<p class="faq_mingxi">CH1-I</p>
+				<p class="faq_mingxi">CH1-Q</p>
+				<p class="faq_mingxi">CH2-I</p>
+				<p class="faq_mingxi">CH2-Q</p>
+				<p class="faq_mingxi">诸如此类...</p>
+				
+				<p class="faq_title">只想配置一个带半带滤波的 RX 链路和一个 TX。在 [source:gnuradio/trunk/usrp/fpga/toplevel/usrp_std/usrp_std.vh usrp_std.vh] 里只有 2rx, 1tx 或 4rx. 该如何办? </p>
+				<p class="faq_mingxi">编辑 config.vh，去掉 // ，开启下行命令：</p>
+				<p class="faq_mingxi">//`include "../include/common_config_1rxhb_1tx.vh"</p>
+				<p class="faq_mingxi">用 // 关闭后面的命令 :</p>
+				<p class="faq_mingxi">`include "../include/common_config_2rxhb_2tx.vh"</p>
+				<p class="faq_mingxi">通过 // 的使用，这样一来只有一个 RX 链路带半带滤波和一个 TX。 </p>
+				
+				<p class="faq_title">用 Python 可以控制 FPGA 和 AD/DA 转换器的有：增益和抽取速率。AD/DA 的位/采样（bits/sample）可由 PYTHON 控制吗？PYTHON 还能干什么？</p>
+				<p class="faq_mingxi">ADCs 总是用 12 位 采样。ADCs 是 14 位。USRP 内的数据处理是16位的。用 Python 你可以通过 USB 把它切换到 8 位。这可以让你加倍你的采样速率（16MSPS)。</p>
+				
+				<p class="faq_title">正在熟悉的应用程序 usrper。 可以读写 9862芯片但对 i2c_read 的所有尝试都失败了？ 存储器的映射如何?</p>
+				<p class="faq_mingxi">PYTHON 可以干这些事情，出错大概用错了 I2C 的地址。 参看： [source:gnuradio/trunk/usrp/firmware/include/usrp_i2c_addr.h  usrp/firmware/include/usrp_i2c_addr.h]. 可与核实其地址。</p>
+				<p class="faq_mingxi">但请注意，如仅想去读 EEPROM 的内容，最好请使用 read_eeprom。</p>
+				<p class="faq_mingxi">python 的有关代码如下：</p>
+				<p class="faq_mingxi2">u = usrp.sink_c(0)     # or u = usrp.source_c(0) </p>
+				<p class="faq_mingxi2"># returns a string</p>
+				<p class="faq_mingxi2">s = u.read_eeprom(i2c_addr, eeprom_offset, nbytes) </p>
+				<p class="faq_mingxi2">print s</p>
+				<p class="faq_mingxi2"># returns a string </p>
+				<p class="faq_mingxi2">s = u.read_i2c(i2c_addr, nbytes) </p>
+				<p class="faq_mingxi2">print s</p>
+				
+				<p class="faq_title">如何控制自动收/发开关时延？</p>
+				<p class="faq_mingxi">通过 Python，在使用外部收/发开关时可以手动的调整自动收/发开关的时间偏置，以便更好的调整发射数据。</p>
+				<p class="faq_mingxi">在早期的代码中，自动收/发功的能是基于 FPGA 的发送 FIFO 寄存器中是否有数据来切换的。然而这没有考虑到 FPGA 插值器和 AD9862 的DAC 上变频的管道时滞（pipeline delay）问题。尽管实际情况取决于发射端的插值速率，在发送数据被全部传送完之前这有可能导致 ATR (自动收/发功能切换)信号或早 25 us，或迟 35us。如果使用用高速外部 Rx/Tx 切换的话，可能会导致发射数据流的切分（ slicing off the end of a transmission）。 </p>
+				<p class="faq_mingxi">新添加的功能是在 ATR (自动收/发功能切换)信号的上升和下降沿添加了一个独立的，可配置的精确到一个时钟的时延。在需要配置 ATR （自动收/发功能切换）时，只需调用下面所示的两个新的子板的功能：</p>
+				<p class="faq_mingxi2">subdev.set_atr_tx_delay(clock_ticks_to_delay_tx) # Rising edge </p>
+				<p class="faq_mingxi2">subdev.set_atr_rx_delay(clock_ticks_to_delay_rx) # Falling edge </p>
+				<p class="faq_mingxi">其中的‘subdev’ 是在使用子板时生成的对象。 （目前的） 困难是如何找出合适的偏置值，这个偏置值能很好的表达从ATR (自动收/发功能)信号突发到子板信号发射完毕的震荡。 目前采用的方法是让 FPGA 确定应当放置什么值（ 或甚至放置缺省值），但还没有找到一个最好的方法来实现它。不同的外部 Rx/Tx 切换需配置需要不同的参数，没有找到一个统一的答案。 在这儿给出经验性的估计， 通过 USRP 发射链路的管道时延大约是 50 + 3x (插值速率）个时钟。似乎下降沿需要比这长的时延才能使信号能量降到零，这似乎还同具体的数据相关联。总之最佳值取决于具体的应用。 </p>
+				
+				<p class="faq_title">什么是 USRP 参考时钟的稳定性？</p>
+				<p class="faq_mingxi">时钟具有 20 ppm 的精度，但是在室温的情况，一般都在 5 ppm 内. </p>
+				
+				<p class="faq_title">带内发射时间戳的功用？ </p>
+				<p class="faq_mingxi">把 FX2 接收的数据包送往 FPGA </p>
+				<p class="faq_mingxi">FX2 是以整 512 Byte 字节的数据包送往 FPGA </p>
+				<p class="faq_mingxi">FPGA 的状态机在处理数据包时做如下工作： </p>
+				<ul>
+					<li>检查和确定数据包应该往那儿发送 </li>
+					<li>检查和确定 FIFO 存储器是否"满"标志 </li>
+					<li>读取数据包的长度 </li>
+					<li>填充接受的数据到 FIFO 存储器到“满”或填充完一个完整的数据包 </li>
+					<li>如果填充完一个完整的数据包（它一般小于 512 字节）的话，即使还正在接收数据便不考虑后面的（数据流）。 </li>
+					<li>否则，数据包将充满整个 FIFO ，发送、回复再填充、直到添完一个完整数据包。 </li>
+				</ul>
+				<p class="faq_mingxi">FPGA 的命令和信道状态机对 tx_cmd 和 tx_channel 的 FIFO 存储器做如下工作</p>
+				<ul>
+					<li>读取数据包的时间戳和长度 </li>
+					<li>确保时间戳的未来有效性 </li>
+					<li>如果时间戳已经过时，省略该数据包并设置合适的标志位 </li>
+					<li>要么等待该时间片结束</li>
+					<li>当前的时间片一结束便把数据包的大小发出去 </li>
+				</ul>
+				
+				<p class="faq_title">纳闷 USRP 温度关联指标</p>
+				<p class="faq_mingxi">USRP 上的所有芯片的温度特性都在 0 - 70 C 的范围。在室温的情况下 USRP 能够连续工作好多天。任何附件单元（子板）都会消耗电源。取决于不同子板，这可高达 15 - 18 Watts。 </p>
+				
+				<p class="faq_title">USRP 上有本地环回接口吗，它如何工作？ </p>
+				<p class="faq_mingxi">FPGA 代码有本地环回接口。它通过写 FR_MODE 存储器使能。在 Verilog 代码中查找“loopback", 并查找 fpga_regs_common.{h,v}。 </p>
+				
+				<p class="faq_title">纳闷为何 USRP 只可达到 32 MBytes/sec. 或者 256 Mbits/sec ，USB 2.0 的特性不是 480 MBits/sec 吗？ </p>
+				<p class="faq_mingxi">USRP 很容易达到 256 Mbits/s （也就是 32 MByte/sec）。USB 2.0 的信号处理速率可达 480 MBits/sec，或者说 60 MByte/sec。由于数据包头数据和数据包之间的空闲间隔的存在，无法占满整个 480 MByte/sec 的信道。可以通过压缩来扩展一些带宽，但这不是当务之急。USRP 需要双向（双工）通信，这也导致接口芯片中的 8位微处理器也有微码的时延（firmware delays)。 </p>
+				<p class="faq_mingxi">如果有人对此感兴趣，可以重编该微码（firmware）使得在没有数据传输时，硬件使用自动模式。（重编后的）微码应当知道或被告知，什么时候切换为传入或什么时候切换为传出。这也需要占用25%的带宽。 </p>
+				
+				<p class="faq_title">只要把发射和接收的频率分开（TX 和 RX 有各自独立的锁相环频率合成器），USRP RFX 子板系列的发射和接受（TX/RX）链路的各自的 20 MHz 的带宽便可用于双工通信。是否有办法在计算机和 RFX 子板之间来移动这 20MHz 带宽的信号？</p>
+				<p class="faq_mingxi">20 MHz 表示的是基带滤波器的的带宽。所以可以从 LO（本地振荡缓冲器）任意的上下 +/- 10MHz 来调整。如果使用 16 位采样，只需顾及 USB 的带宽。 </p>
+				<p class="faq_mingxi">为何 20 MHz 很有用？有以下三个例证： </p>
+				<p class="faq_mingxi">可以同时接受或发送两个独立的 4 MHz 宽的用 12 MHz 分割的信号。</p>
+				<p class="faq_mingxi">可以用 8 位采样来得到 16 MHz 的带宽。对于射电天文学家，可以用 4 位采样达到 32 MHz 的带宽。</p>
+				<p class="faq_mingxi">可以在 FPGA 进行宽带调制解调。可以处理更宽的频带，传输更低速度的信号。</p>
+				
+				<p class="faq_title">DC偏置是被硬件自动去除的，但是可以关闭这个特点。是否有个代码标志位用来关闭这个特性的？ </p>
+				<p class="faq_mingxi">在 "通用寄存器": [ 15 FR_DC_OFFSET_CL_EN DC offset control loop enable ]</p>
+				
+			</div>
+		</div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+		<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

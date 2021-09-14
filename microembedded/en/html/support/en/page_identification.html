@@ -1,0 +1,313 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/en.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" --> 
+  <title>Device Identification</title> 
+  <meta name="Description" content="The company's main business software-defined radio, cognitive radio, the Universal Software Radio, USRP design and sales." /> 
+  <meta name="Keywords" content="" /> 
+  <!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" --> 
+  <link rel="stylesheet" type="text/css" href="../../../css/css.css" /> 
+  <!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">MicroElectronics (Beijing), Inc.</span>
+	        		<span class="top-tel"><a href="../../../../index.html">中文版</a>&nbsp;&nbsp;|&nbsp;&nbsp;English</span>
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                        <li class="HRT_right"><a href="../../product/usrp_ziban_xilie.html">Daughterboards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../index.html">Home</a></li>
+				<li><a class="menu_son" href="../../product/product.html">Products</a></li>
+				<li><a class="menu_son" href="../../software/software.html">SDR Software</a></li>
+				<li><a class="menu_son" href="../faq.html">Documents</a></li>
+				<li><a class="menu_son" href="../../applications/applications.html">Applications</a></li>
+				<li><a class="menu_son" href="../../contact_us/contact_us.html">Contact Us</a></li>
+				<li><a class="menu_son menu_6" href="../../join_us/join_us.html">About Us</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" --> 
+   <div class="faq_mingxi"> 
+    <div class="middle"> 
+     <div class="tab"> 
+      <a href="../faq.html">Documents</a> &raquo; 
+      <span>Device Identification</span>
+     </div> 
+     <div class="content box_shadow"> 
+      <div class="box"> 
+       <p class="content_title">Device Identification</p> 
+       <hr /> 
+       <div class="contents"> 
+        <div class="toc"> 
+         <h3>Table of Contents</h3> 
+         <ul> 
+          <li class="level1"><a href="#id_identifying">Identifying USRP Devices</a> 
+           <ul> 
+            <li class="level2"><a href="#id_identifying_common">Common device identifiers</a></li> 
+            <li class="level2"><a href="#id_identifying_cmdline">Device discovery via command line</a></li> 
+            <li class="level2"><a href="#id_identifying_api">Device discovery through the API</a></li> 
+            <li class="level2"><a href="#id_identifying_props">Device properties</a></li> 
+           </ul> </li> 
+          <li class="level1"><a href="#id_naming">Naming a USRP Device</a> 
+           <ul> 
+            <li class="level2"><a href="#id_naming_set">Set a custom name</a></li> 
+            <li class="level2"><a href="#id_naming_discovery">Discovery via name</a></li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="textblock"> 
+         <h1><a class="anchor" id="id_identifying"></a> Identifying USRP Devices</h1> 
+         <p>Devices are addressed through key/value string pairs. These string pairs can be used to narrow down the search for a specific device or group of devices. Most UHD utility applications and examples have an <code>--args</code> parameter that takes a device address, which is expressed as a delimited string.</p> 
+         <p>See <a class="el" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a> for reference.</p> 
+         <p>Note that the device &quot;address&quot; can also take configuration options. See <a class="el" href="page_configuration.html">Configuring Devices and Streamers</a> for a list of those options.</p> 
+         <h2><a class="anchor" id="id_identifying_common"></a> Common device identifiers</h2> 
+         <p>Every device has several ways of identifying it on the host system:</p> 
+         <table class="doxtable"> 
+          <tbody> 
+           <tr> 
+            <th>Identifier </th> 
+            <th>Key </th> 
+            <th>Notes </th> 
+            <th>Example </th> 
+           </tr> 
+           <tr> 
+            <td>Serial # </td> 
+            <td>serial </td> 
+            <td>globally unique identifier </td> 
+            <td>12345678 </td> 
+           </tr> 
+           <tr> 
+            <td>IP Address </td> 
+            <td>addr </td> 
+            <td>unique identifier on a network </td> 
+            <td>192.168.10.2 </td> 
+           </tr> 
+           <tr> 
+            <td>Resource </td> 
+            <td>resource </td> 
+            <td>unique identifier for USRP RIO devices (over PCI Express) </td> 
+            <td>RIO0 </td> 
+           </tr> 
+           <tr> 
+            <td>Name </td> 
+            <td>name </td> 
+            <td>optional user-set identifier </td> 
+            <td>my_usrp1 (User-defined value) </td> 
+           </tr> 
+           <tr> 
+            <td>Type </td> 
+            <td>type </td> 
+            <td>hardware series identifier </td> 
+            <td>usrp1, usrp2, b200, x300, ... </td> 
+           </tr> 
+           <tr> 
+            <td>Vendor/Product ID </td> 
+            <td>vid,pid </td> 
+            <td>For USB devices. Both must be provided </td> 
+            <td>vid=0x04b4,pid=0x8613 </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <h2><a class="anchor" id="id_identifying_cmdline"></a> Device discovery via command line</h2> 
+         <p>Devices attached to your system can be discovered using the <code>uhd_find_devices</code> program. This program scans your system for supported devices and prints out an enumerated list of discovered devices and their addresses. The list of discovered devices can be narrowed down by specifying device address args. </p> 
+         <pre class="fragment">uhd_find_devices
+</pre> 
+         <p>Device address arguments can be supplied to narrow the scope of the search. </p> 
+         <pre class="fragment">uhd_find_devices --args=&quot;type=usrp1&quot;
+
+-- OR --
+
+uhd_find_devices --args=&quot;serial=12345678&quot;
+</pre> 
+         <h2><a class="anchor" id="id_identifying_api"></a> Device discovery through the API</h2> 
+         <p>The device::find() API call searches for devices and returns a list of discovered devices.</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <a class="code" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a> hint; 
+           <span class="comment">//an empty hint discovers all devices</span> 
+          </div> 
+          <div class="line"> 
+           <a class="code" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">uhd::device_addrs_t</a> dev_addrs = 
+           <a class="code" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">uhd::device::find</a>(hint); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <p>The <code>hint</code> argument can be populated to narrow the scope of the search.</p> 
+         <div class="fragment"> 
+          <div class="line"> 
+           <a class="code" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a> hint; 
+          </div> 
+          <div class="line">
+            hint[ 
+           <span class="stringliteral">&quot;type&quot;</span>] = 
+           <span class="stringliteral">&quot;usrp1&quot;</span>; 
+          </div> 
+          <div class="line"> 
+           <a class="code" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">uhd::device_addrs_t</a> dev_addrs = 
+           <a class="code" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">uhd::device::find</a>(hint); 
+          </div> 
+          <div class="line"></div> 
+          <div class="line">
+            -- OR -- 
+          </div> 
+          <div class="line"></div> 
+          <div class="line"> 
+           <a class="code" href="classuhd_1_1device__addr__t.html">uhd::device_addr_t</a> hint; 
+          </div> 
+          <div class="line">
+            hint[ 
+           <span class="stringliteral">&quot;serial&quot;</span>] = 
+           <span class="stringliteral">&quot;12345678&quot;</span>; 
+          </div> 
+          <div class="line"> 
+           <a class="code" href="namespaceuhd.html#af4fc6d6f813e411184c069ba39901737">uhd::device_addrs_t</a> dev_addrs = 
+           <a class="code" href="classuhd_1_1device.html#a1b103f9db343b8ef9439677c670d05de">uhd::device::find</a>(hint); 
+          </div> 
+         </div> 
+         <!-- fragment --> 
+         <h2><a class="anchor" id="id_identifying_props"></a> Device properties</h2> 
+         <p>Properties of devices attached to your system can be probed with the <code>uhd_usrp_probe</code> program. This program constructs an instance of the device and prints out its properties, such as detected daughterboards, frequency range, gain ranges, etc...</p> 
+         <p><b>Usage:</b> </p> 
+         <pre class="fragment">uhd_usrp_probe --args &lt;device-specific-address-args&gt;
+</pre> 
+         <h1><a class="anchor" id="id_naming"></a> Naming a USRP Device</h1> 
+         <p>For convenience purposes, users may assign a custom name to their USRP device. The USRP device can then be identified via name, rather than a difficult to remember serial or address.</p> 
+         <p>A name has the following properties:</p> 
+         <ul> 
+          <li>is composed of ASCII characters</li> 
+          <li>is 0-20 characters</li> 
+          <li>is not required to be unique</li> 
+         </ul> 
+         <h2><a class="anchor" id="id_naming_set"></a> Set a custom name</h2> 
+         <p>Run the following commands: </p> 
+         <pre class="fragment">cd &lt;install-path&gt;/lib/uhd/utils
+./usrp_burn_mb_eeprom --args=&lt;optional device args&gt; --values=&quot;name=lab1_xcvr&quot;
+</pre> 
+         <h2><a class="anchor" id="id_naming_discovery"></a> Discovery via name</h2> 
+         <p>The keyword <code>name</code> can be used to narrow the scope of the search. Example with the find devices utility: </p> 
+         <pre class="fragment">uhd_find_devices --args=&quot;name=lab1_xcvr&quot;
+
+-- OR --
+
+uhd_find_devices --args=&quot;type=usrp1, name=lab1_xcvr&quot;</pre> 
+        </div> 
+       </div>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><b>Add&nbsp;&nbsp;:</b>&nbsp;&nbsp;10A Zhongguancun South Blvd.,Yinhai Bldg. Rm.710s, Haidian, Beijing 100081, China</li>
+                            <li><b>Email:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>Tel&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>Phone:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>Fax&nbsp;&nbsp;:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="../../product/usrp_usb_xilie.html">USRP USB Series</a></li>
+                            <li><a href="../../product/usrp_wangkou_xilie.html">USRP Networked Series</a></li>
+                            <li><a href="../../product/usrp_qianrushi_xilie.html">USRP Embedded Series</a></li>
+                            <li><a href="../../product/usrp_x_xilie.html">USRP X Series</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="../../contact_us/contact_us.html">Contact Us</a></li>
+                            <li><a href="../../join_us/join_us.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--<div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../en/youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>-->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" --> 
+  <!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+<!-- InstanceEnd --></html>

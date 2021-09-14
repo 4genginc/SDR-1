@@ -1,0 +1,172 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/moban.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<!--声明当前的页面的编码集-->
+		<meta charset="utf-8"/>
+		<!-- InstanceBeginEditable name="head" -->
+		<title>N210DEMO_微嵌</title>
+		<meta name="Description" content="公司主营业务软件无线电,认知无线电,通用软件无线电平台,USRP 设计、销售。">
+		<meta name="Keywords" content="USRP,GNURadio,软件无线电,SDR,Openbts,射频子板,收发子板">
+		<!-- InstanceEndEditable -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        <link rel="stylesheet" type="text/css" href="../../../../css/general.css"/>
+        <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
+		<!-- InstanceBeginEditable name="link" -->
+		<link rel="stylesheet" type="text/css" href="../../../../css/css.css"/>
+		<!-- InstanceEndEditable -->
+	</head>
+<body>
+	<div class="show">
+    	<!--head start-->
+        <div class="head">
+            <div class="top-wraper">
+	       		<div class="top">
+	        		<span class="top-name">微嵌电子技术（北京）有限责任公司</span>
+	        		<!--<span class="top-tel">中文版&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../en/index.html">English</a></span>-->
+				</div>
+        	</div>
+            <div class="head-bottom">
+                <a class="logo" href="../../../../index.html"></a>
+                <div class="head_right">
+                    <ul>
+                        <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        <li><a href="../../../product/usrp_wangkou_xilie.html">USRP N系列</a></li>
+                        <li class="HRT_right"><a href="../../../product/usrp_ziban_xilie.html">USRP 子板系列</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<!--menu-->
+		<div class="menus">
+			<ul class="menu">
+				<li><a class="menu_son" href="../../../../index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<li><a class="menu_son" href="../../../product/product.html">产品中心</a></li>
+				<li><a class="menu_son" href="../../../software/software.html">SDR 软件</a></li>
+				<li><a class="menu_son_4" href="../../faq.html">文档资料</a>
+                	<div  class="list">
+	         		 <a class="menu_son_14" href="../../faq.html">技术支持</a>
+	         		 <a class="menu_son_14" href="/doc">技术文档</a>
+	        		</div>
+                </li>
+				<li><a class="menu_son" href="../../../applications/applications.html">应用案例</a></li>
+				<li><a class="menu_son" href="../../../contact_us/contact_us.html">联系我们</a></li>
+				<li><a class="menu_son menu_6" href="../../../join_us/join_us.html">加入我们</a></li>
+			</ul>
+		</div>
+        <!--head end-->
+        
+        <!-- InstanceBeginEditable name="content" -->
+		<div class="doc">
+            <div class="middle">
+                <div class="tab">
+                    <a href="../../faq.html">文档资料</a> » <a href="n210.html">N210使用手册</a> » <span>N210DEMO</span>
+                </div>
+                <div class="content box_shadow">
+                    <p class="content_title">usrp设备跟踪飞机轨迹</p><hr><p class="min_title">硬件要求：</p><p>1. 一台装有ubuntu-12.04.3-desktop-i386.iso的电脑。</p><p>2. 一个USRP N210主板</p><p>3. 一个WBX</p><p>4. 两个1.8GHz的天线。</p><p>5. 一个6V电源。</p><p class="min_title">软件环境：</p><p>1.安装gnuradio3.7.3。</p><p>2.安装uhd(UHD_003.007.000)。</p><p>3.安装gr-osmosdr。</p><p>4.安装gr-air-modes。</p><p>5.安装google-earth。</p><p class="min_title">原理概述</p><p>之所以能够很容易的跟踪飞机,是因为航空CNS(通信导航监视)系统里大量采用非常古老的无线标准.因为航空业巨头们建立了一整套适航规定,飞机上任何一点小小的改动若想获得广泛的应用是非常麻烦的,更不要说对CNS系统的升级换代. CNS系统中大量采用脉冲体制以及明文传输,因此我们得以很容易的监听飞机以及地面站发射的信号,并解码.脉冲体制的含义是,通信的基本方式是大功率的脉冲,瞬间功率上千瓦,持续us量级,信息承载在脉冲的位置和相对强度中.</p><p>比如二次监视雷达(SSR)系统,地面站发射1030MHz的查询信号,飞机接收到此信号之后在1090MHz发射应答信号,信号中包含了飞机的一些信息,显示在空管的雷达屏幕上.还有空中防撞系统(TCAS),飞机可以自己发射1030MHz的查询信号,其他飞机接收到此信号之后在1090MHz发射应答信号,因此一架飞机得以"看到"周围的飞机.由于以上的查询-应答模式在飞机很多的时候显得效率不是那么高(碰撞,干扰等等),因此新出现了一种ADS-B方式.在ADS-B中,每架飞机不等查询,主动广播自己的信息,这时监视和防撞需要做的就仅仅是接收了.在通用航空当中ADS-B信号经常在978MHz发射.在商业飞行中ADS-B信号经常在1090MHz发射(和SSR和TCAS发射频率相同,即复用物理层数据链).(通用航空可类比与私家车,商业飞行可类比与公交车长途大巴). 欲知这些CNS系统详情,请在en.wikipedia.org搜索Secondary surveillance radar, TCAS,ADS-B等.</p><p>用计算机软件进行通信信号解调的方法就是所谓的"软件无线电"(Software Defined Radio -- SDR). 实际上软件无线电技术的研究和开发已经有几十年的历史了,最初源于美军的多制式电台项目. 目前我们日常使用的移动通信系统中其实已经大量使用软件无线电技术, 比如基站中的信号处理大量的使用可编程的FPGA和DSP完成, 比如手机当中的基带处理器也越来越多的采用软解调的方法(少数运算量特别大实时性要求特别高的模块除外,比如turbo解码器,扩频相关器等,这些模块往往在基带处理器中嵌入一些高度定制化"硬"核来实现)</p><p class="min_title">环境搭建</p><p>1、gnuradio与uhd的安装。</p><p class="code">gnuradio与uhd的安装参考文档本目录下：ubuntu系统上搭建gnuradio-3.7.3和uhd/ubuntu12.04上gnuradio-3.7.3和uhd的搭建与安装.pdf&nbsp;</p><p>2、gr-osmosdr的安装。</p><p class="code">接下来还需要把usrp作为组件安装到gnuradio中,方法大同小异:</p><p class="code">首先进入某个你想放源代码的目录,然后</p><p class="code">&nbsp; &nbsp; git clone git://git.osmocom.org/gr-osmosdr</p><p class="code">&nbsp; &nbsp;&nbsp;或见本目录下：安装软件/ gr-osmosdr</p><p class="code">&nbsp; &nbsp;&nbsp;cd gr-osmosdr/</p><p class="code">&nbsp; &nbsp;&nbsp;mkdir build&nbsp;</p><p class="code">&nbsp; &nbsp;&nbsp;cd build/&nbsp;</p><p class="code">&nbsp; &nbsp;&nbsp;cmake ../</p><p class="code">&nbsp; &nbsp;&nbsp;make</p><p class="code">&nbsp; &nbsp;&nbsp;sudo make install</p><p class="code">&nbsp; &nbsp;&nbsp;sudo ldconfig</p><p>3、gir-air-modes的安装。</p><p class="code">接下来安装飞机信号解调软件。</p><p class="code">打开https://github.com/bistromath/gr-air-modes</p><p class="code">你可以看到该软件的git链接:https://github.com/bistromath/gr-air-modes.git</p><p class="code">打开命令行,进入一个你希望软件源代码存放的目录,然后</p><p class="code">&nbsp; &nbsp;&nbsp;git clone https://github.com/bistromath/gr-air-modes.git</p><p class="code">&nbsp; &nbsp;&nbsp;或（本目录下：安装软件/gr-air-modes-master.zip）</p><p class="code">&nbsp; &nbsp;&nbsp;安装gr-air-modes之前安装一些软件</p><p class="code">终端输入以下命令：</p><p class="code">&nbsp; &nbsp;&nbsp;sudo apt-get install pyqt4-dev-tools qt4-designer</p><p class="code">&nbsp; &nbsp;&nbsp;sudo apt-get install python-numpy</p><p class="code">&nbsp; &nbsp;&nbsp;sudo apt-get install python-scipy&nbsp;</p><p class="code">&nbsp; &nbsp;&nbsp;cd gr-air-modes/</p><p class="code">gedit README &amp; 查看安装方法</p><p class="code">在README中给了需要预安装的软件包:</p><p class="code">=================================</p><p class="code">REQUIREMENTS</p><p class="code">gr-air-modes requires:</p><p class="code">* Python &gt;= 2.5 (written for Python 2.7, Python 3.0 might work)</p><p class="code">** NumPy and SciPy are required for the FlightGear output plugin.</p><p class="code">* Gnuradio &gt;= 3.5.0</p><p class="code">* Ettus UHD &gt;= 3.4.0 for use with USRPs</p><p class="code">* osmosdr (any version) for use with RTLSDR dongles</p><p class="code">* SQLite 3.7 or later</p><p class="code">* CMake 2.6 or later</p><p class="code">其中NumPy and SciPy are required for the FlightGear output plugin.和Ettus UHD &gt;= 3.4.0 for use with USRPs我们这里暂时用不到.osmosdr (any version) for use with RTLSDR dongles和Gnuradio前面安装好了. 其他软件包请按照之前介绍的各种软件安装方法自行搞定(如果在接下来的安装过程中有相关的错误)</p><p class="code">注意：注意查看你的系统中的所安装的软件的版本是否符合gr-air-modes的要求<br></p><p class="code">&nbsp; &nbsp; &nbsp;&nbsp;安装查看软件aptitude，apt-get install aptitude ,安装成功后运行：</p><p class="code">&nbsp; &nbsp; &nbsp;&nbsp;Aptitude show FILENAME(FILENAME为相应软件的名字) ，没有的下载安装。</p><p class="code">接着编译安装:</p><p class="code">&nbsp; &nbsp;&nbsp;mkdir build</p><p class="code">&nbsp; &nbsp;&nbsp;cd build</p><p class="code">&nbsp; &nbsp;&nbsp;cmake ../</p><p class="code">&nbsp; &nbsp;&nbsp;make</p><p class="code">&nbsp; &nbsp;&nbsp;sudo make install</p><p class="code">&nbsp; &nbsp;&nbsp;sudo ldconfig</p><p class="code">此时会出现一个错误信息见本文档末尾:FAQ:a</p><p class="code">注意：如果此前你在安装 gnuradio、uhd和gr-osmosdr软件时，有些gr-</p><p class="code">uhd或usrp设备文件没编译安装上，那么你在安装完上面的这些软件之后，卸载gnuradio、uhd、gr-osmosdr这三个软件，并重新安装那么上面的问题就解决的了，这个问题是有你在安装软件时可能有什么需要软件没安装所造成的。</p><p>4、google-earth的安装。</p><p class="code">下载网址：</p><p class="code">http://dl.google.com/dl/earth/client/current/google-earth-stable_current_i386.deb（外网下载网址）</p><p class="code">终端通过wget命令将它下载到你要放置的目录。</p><p class="code">或见本目录下：安装软件/ google-earth-stable_current_i386.deb</p><p class="code">安装命令：</p><p class="code">&nbsp; &nbsp;&nbsp;sudo dpkg -i google-earth-stable_current_i386.deb</p><p class="code">安装完成后在终端输入：google-earth&nbsp;</p><p class="code">出现图一、图二表示安装成功</p><p class="img"><img src="images/demo1.png"></p><p class="imgNum">图一</p><p class="img"><img src="images/demo2.png"></p><p class="imgNum">图二</p><p class="min_title">实例演示</p><p>将usrp n210 +wbx与搭建好本环境的电脑相连，运行接收信号的脚本。</p><p>终端输入命令：</p><p><span>&nbsp; &nbsp;&nbsp;</span>cd /microembedded/examples/mode-s/gr-air-modes-master/apps/</p><p><span>&nbsp; &nbsp;&nbsp;</span>./modes_rx &nbsp;-K out.kml</p><p>其中out.kml文件为usrp n210+wbx设备接收到飞机信号并将解调存储信号的文件。</p><p>把out.kml上的信息反馈到google-earth上以图形的形式表现出来。（注意此时不要把./modes_rx &nbsp;-K out.kml断开）</p><p>1、终端输入命令：google-earth &nbsp;如图三</p><p class="img"><img src="images/demo3.png"></p><p class="imgNum">图三</p><p>2、将out.kml文件里的信息传到google-earth上。<br></p><p><div>单击菜单添加网络连接。如图四<br></div></p><p class="img"><img src="images/demo4.png"></p><p class="imgNum">图四</p><p><p class="MsoNormal"><span>3、建立一个工程文件名称：ASD-B-1,连接到out.kml文件。如图五</span><span><o:p></o:p></span></p></p><p class="img"><img src="images/demo5.png"></p><p class="imgNum">图五</p><p>4、选择信息刷新时间：刷新时间：定期 7秒，图上“刷新时前往视图”选项前用鼠标打上钩，然后点击OK。如图六。</p><p class="img"><img src="images/demo6.png"></p><p class="imgNum">图六</p><p>5、如图七，双击ASD-B-1,google-earth会自动定位到你所在的区域，搜索到该区域上空飞机，并显示出来。如图七、图八</p><p class="img"><img src="images/demo7.png"></p><p class="imgNum">图七</p><p>6、飞机图标上会显示飞机的航班号，双击飞机图标可以显示该飞机的高度、速度等信息。</p><p class="img"><img src="images/demo8.png" width="900"></p><p class="imgNum">图八</p><p>google-earth还一些别的功能，可尝试玩一下。</p><p class="min_title">FAQ：a</p><p>遇到问题如下：</p><p>-- Python checking for PyZMQ&nbsp;</p><p>-- Python checking for PyZMQ - not found&nbsp;</p><p>CMake Error at CMakeLists.txt:87 (message):&nbsp;</p><p>Python ZMQ bindings not found.&nbsp;</p><p>-- Configuring incomplete, errors occurred!</p><p>解决方法：</p><p class="code">1安装zmq过程</p><p class="code">1.1 安装编译工具:&nbsp;</p><p class="code">&nbsp; &nbsp; sudo apt-get install libtool autoconf automake</p><p class="code">&nbsp; &nbsp; sudo apt-get install uuid-dev g++</p><p class="code">1.2 下载zmq tarball</p><p class="code">&nbsp; &nbsp; wget http://download.zeromq.org/zeromq-2.1.11.tar.gz</p><p class="code">&nbsp; &nbsp; 或（见本目录下：安装软件/ zeromq-2.1.11.tar.gz）</p><p class="code">&nbsp; &nbsp; 解压编译</p><p class="code">&nbsp; &nbsp; ./configure&nbsp;</p><p class="code">&nbsp; &nbsp; make&nbsp;</p><p class="code">&nbsp; &nbsp; sudo make install&nbsp;</p><p class="code">&nbsp; &nbsp; sudo ldconfig</p><p class="code">至此, zmq 本身安装成功, 安装的结果是:&nbsp;</p><p class="code">在/usr/local/lib/目录下多了</p><p class="code">&nbsp; &nbsp; libzmq.so.1.0.0</p><p class="code">&nbsp; &nbsp; libzmq.a</p><p class="code">动静两个连接库</p><p class="code">2 安装python binding</p><p class="code">&nbsp; 2.1 安装python自动安装工具: easy_install http://baike.baidu.com/view/4087352.htm</p><p class="code">&nbsp; &nbsp; sudo apt-get install python-setuptools</p><p class="code">&nbsp; 2.2 安装python的编译环境</p><p class="code">&nbsp; &nbsp; sudo apt-get install python-dev</p><p class="code">&nbsp; 2.3 安装pythong binding:</p><p class="code">&nbsp; &nbsp; sudo easy_install pyzmq</p><p class="code">然后再重新安装gr-air-modes就可以安装成功了。</p><p class="code">成功执行后,飞机解调软件的可执行文件已经安装于/usr/local/bin。</p>
+                </div>
+            </div>
+        </div>
+		<!-- InstanceEndEditable --> 
+        
+        
+        <div class="foot-wrapper">
+            <div class="footer">
+                <div class="bottombar">
+                    <div class="bottombar-list1">
+                        <h4>联系与支持</h4>
+                        <ul>
+                            <li><b>地址:</b>&nbsp;&nbsp;北京市海淀区中关村南大街甲10号银海大厦七层南217室</li>
+                            <li><b>邮箱:</b>&nbsp;&nbsp;sales@microembedded.com</li>
+                            <li><b>电话:</b>&nbsp;&nbsp;010-62416824(9:00-5:30)</li>
+                            <li><b>手机:</b>&nbsp;&nbsp;152-1082-2019</li>
+                            <li><b>传真:</b>&nbsp;&nbsp;010-62416834</li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list2">
+                        <h4>推荐产品</h4>
+                        <ul>
+                            <li><a href="../../../product/usrp_usb_xilie.html">USRP USB接口系列</a></li>
+                            <li><a href="../../../product/usrp_wangkou_xilie.html">USRP 网口系列</a></li>
+                            <li><a href="../../../product/usrp_qianrushi_xilie.html">USRP 嵌入式系列</a></li>
+                            <li><a href="../../../product/usrp_x_xilie.html">USRP X系列</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottombar-list3">
+                        <h4>关于我们</h4>
+                        <ul>
+                            <li><a href="../../../contact_us/contact_us.html">关于我们</a></li>
+                            <li><a href="../../../contact_us/contact_us.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="beian">©2009 MicroEmbedded    备案信息：京ICP备15049573号    京公网安备：110108904713</div>
+            </div>
+        </div>
+        <!--foot end-->
+    </div>
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div class="cebian">
+	<!--<div id="BizQQWPA" class="qq"></div>-->
+	<div class="tel"><div class="tel_num" id="tel_num">010-62416824</div><div class="tel_pic" id="tel_pic"></div></div>
+    <!--
+    <div class="youhui_a" id="youhui_a">
+        <p class="youhui_a_title">微嵌 - 产品活动信息</p>
+        <hr />
+        <p>为大学生毕业设计，推出USRP1套件，现特价优惠！</p>
+        <a href="../youhui.html">详&nbsp;&nbsp;&nbsp;&nbsp;情</a>
+    </div>
+    -->
+</div>
+<!--js-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5763a9d70e138a3e688e94d5/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script type="text/javascript" src="../../../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    <!--BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800028546, selector: 'BizQQWPA'});-->
+    $(function(){
+        $("#youhui_a").animate({
+            left:0
+        });  
+    });
+</script>
+<!-- InstanceBeginEditable name="js" -->
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+	//显示隐藏
+		$(".menu_son_4").hover(function (){
+			//$(".list").toggle();
+			$(".list").show();
+			$(".list").delay(2000).hide(0);
+		});
+	});
+</script>
+</body>
+<!-- InstanceEnd --></html>
